@@ -1,0 +1,2802 @@
+[
+    {
+        "chart": "../data/CHARTSENSE/pie/00187.png",
+        "type": "pie"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pareto/00042.png",
+        "type": "pareto"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/111.jpeg",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/00155.png",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pie/52.jpeg",
+        "type": "pie"
+    },
+    {
+        "chart": "../data/CHARTSENSE/venndiagram/370.jpeg",
+        "type": "venndiagram"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/173.png",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/venndiagram/852.png",
+        "type": "venndiagram"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pie/213.png",
+        "type": "pie"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pie/481.jpeg",
+        "type": "pie"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/361.jpeg",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/bar/725.png",
+        "type": "bar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pie/563.jpeg",
+        "type": "pie"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/00199.png",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/bar/26.jpeg",
+        "type": "bar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/312.png",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/00190.png",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/84.png",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/508.png",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/area/252.png",
+        "type": "area"
+    },
+    {
+        "chart": "../data/CHARTSENSE/venndiagram/623.jpeg",
+        "type": "venndiagram"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/00000.png",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/424.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/111.png",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/00092.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/00136.png",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/00228.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/bar/302.png",
+        "type": "bar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/radar/00045.png",
+        "type": "radar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/bar/766.jpeg",
+        "type": "bar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/bar/675.png",
+        "type": "bar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/00065.png",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/bar/00181.png",
+        "type": "bar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/bar/00011.png",
+        "type": "bar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/00176.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/venndiagram/334.jpeg",
+        "type": "venndiagram"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/00287.png",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/851.png",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pie/00062.png",
+        "type": "pie"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/379.png",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/bar/441.jpeg",
+        "type": "bar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pie/00237.png",
+        "type": "pie"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/00167.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/260.png",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pareto/00160.png",
+        "type": "pareto"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/00309.png",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/radar/558.png",
+        "type": "radar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pie/657.jpeg",
+        "type": "pie"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/470.jpeg",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/00276.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/568.jpeg",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pie/845.jpeg",
+        "type": "pie"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/625.jpeg",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/bar/219.png",
+        "type": "bar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/00175.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pareto/00141.png",
+        "type": "pareto"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/127.png",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/854.png",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pareto/00078.png",
+        "type": "pareto"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/00141.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/155.png",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pareto/350.jpeg",
+        "type": "pareto"
+    },
+    {
+        "chart": "../data/CHARTSENSE/bar/770.jpeg",
+        "type": "bar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/radar/00134.png",
+        "type": "radar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/22.jpeg",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pareto/670.png",
+        "type": "pareto"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/339.png",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/radar/140.jpeg",
+        "type": "radar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/00048.png",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pareto/71.jpeg",
+        "type": "pareto"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pie/00184.png",
+        "type": "pie"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/708.jpeg",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/00246.png",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/area/519.png",
+        "type": "area"
+    },
+    {
+        "chart": "../data/CHARTSENSE/venndiagram/12.png",
+        "type": "venndiagram"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/00133.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/bar/818.png",
+        "type": "bar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pie/00071.png",
+        "type": "pie"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/852.jpeg",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/781.jpeg",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/00154.png",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/venndiagram/248.png",
+        "type": "venndiagram"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/525.jpeg",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/venndiagram/840.jpeg",
+        "type": "venndiagram"
+    },
+    {
+        "chart": "../data/CHARTSENSE/area/333.png",
+        "type": "area"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/572.jpeg",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/556.png",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/radar/626.jpeg",
+        "type": "radar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/00031.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/radar/00102.png",
+        "type": "radar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/504.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/venndiagram/31.png",
+        "type": "venndiagram"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/00202.png",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/314.jpeg",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/646.png",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pie/518.png",
+        "type": "pie"
+    },
+    {
+        "chart": "../data/CHARTSENSE/bar/861.jpeg",
+        "type": "bar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/1.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/area/483.png",
+        "type": "area"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pie/114.jpeg",
+        "type": "pie"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pie/696.jpeg",
+        "type": "pie"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/00014.png",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/00322.png",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/499.png",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/433.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/108.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/00065.png",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/161.png",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/361.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/00129.png",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/319.png",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/24.png",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/area/39.png",
+        "type": "area"
+    },
+    {
+        "chart": "../data/CHARTSENSE/bar/252.png",
+        "type": "bar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pie/100.png",
+        "type": "pie"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/00124.png",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/904.png",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/703.png",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/736.png",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/radar/375.png",
+        "type": "radar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/00100.png",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/00144.png",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/bar/328.jpeg",
+        "type": "bar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/radar/665.jpeg",
+        "type": "radar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/bar/44.jpeg",
+        "type": "bar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/radar/00077.png",
+        "type": "radar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/748.jpeg",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/376.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/radar/00015.png",
+        "type": "radar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pareto/00125.png",
+        "type": "pareto"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/00248.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/00352.png",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/39.jpeg",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pareto/00002.png",
+        "type": "pareto"
+    },
+    {
+        "chart": "../data/CHARTSENSE/venndiagram/620.jpeg",
+        "type": "venndiagram"
+    },
+    {
+        "chart": "../data/CHARTSENSE/bar/854.jpeg",
+        "type": "bar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pareto/44.png",
+        "type": "pareto"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pareto/00066.png",
+        "type": "pareto"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/75.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pareto/00049.png",
+        "type": "pareto"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pie/458.jpeg",
+        "type": "pie"
+    },
+    {
+        "chart": "../data/CHARTSENSE/venndiagram/00078.png",
+        "type": "venndiagram"
+    },
+    {
+        "chart": "../data/CHARTSENSE/radar/279.jpeg",
+        "type": "radar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pie/471.png",
+        "type": "pie"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/00142.png",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/area/387.png",
+        "type": "area"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/00068.png",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/bar/00060.png",
+        "type": "bar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/area/630.jpeg",
+        "type": "area"
+    },
+    {
+        "chart": "../data/CHARTSENSE/bar/00188.png",
+        "type": "bar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pareto/00130.png",
+        "type": "pareto"
+    },
+    {
+        "chart": "../data/CHARTSENSE/venndiagram/326.png",
+        "type": "venndiagram"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/92.png",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/714.jpeg",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/venndiagram/725.jpeg",
+        "type": "venndiagram"
+    },
+    {
+        "chart": "../data/CHARTSENSE/venndiagram/629.jpeg",
+        "type": "venndiagram"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/865.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/area/230.png",
+        "type": "area"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/432.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/00203.png",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/216.png",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/6.bmp",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/venndiagram/304.jpeg",
+        "type": "venndiagram"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pie/29.jpeg",
+        "type": "pie"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/243.png",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/00090.png",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pie/398.jpeg",
+        "type": "pie"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/423.jpeg",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/24.jpeg",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/area/787.png",
+        "type": "area"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/00133.png",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/radar/00079.png",
+        "type": "radar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/00306.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/139.jpeg",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/131.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/00113.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/80.jpeg",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/82.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pareto/569.jpeg",
+        "type": "pareto"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/506.jpeg",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/502.jpeg",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/332.jpeg",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pie/38.png",
+        "type": "pie"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/603.jpeg",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pareto/59.jpeg",
+        "type": "pareto"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/00029.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pie/13.jpeg",
+        "type": "pie"
+    },
+    {
+        "chart": "../data/CHARTSENSE/bar/259.png",
+        "type": "bar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/358.png",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pareto/00071.png",
+        "type": "pareto"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/706.png",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/849.jpeg",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/748.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/220.jpeg",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pie/39.png",
+        "type": "pie"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/00164.png",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/venndiagram/487.jpeg",
+        "type": "venndiagram"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/216.png",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/radar/510.jpeg",
+        "type": "radar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/00130.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/venndiagram/385.jpeg",
+        "type": "venndiagram"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/00021.png",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/885.jpeg",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/565.png",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/245.png",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/area/625.png",
+        "type": "area"
+    },
+    {
+        "chart": "../data/CHARTSENSE/venndiagram/527.png",
+        "type": "venndiagram"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/215.png",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/area/239.png",
+        "type": "area"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/760.png",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/bar/552.png",
+        "type": "bar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/549.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/00238.png",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pie/404.png",
+        "type": "pie"
+    },
+    {
+        "chart": "../data/CHARTSENSE/bar/158.png",
+        "type": "bar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/area/335.jpeg",
+        "type": "area"
+    },
+    {
+        "chart": "../data/CHARTSENSE/radar/00080.png",
+        "type": "radar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/bar/839.png",
+        "type": "bar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/00038.png",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/00178.png",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/748.png",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/00089.png",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/venndiagram/836.jpeg",
+        "type": "venndiagram"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/225.png",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/bar/00066.png",
+        "type": "bar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/753.png",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/195.png",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/radar/00039.png",
+        "type": "radar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/696.png",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/869.jpeg",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/bar/00111.png",
+        "type": "bar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/550.png",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/00166.png",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/bar/00014.png",
+        "type": "bar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/area/503.png",
+        "type": "area"
+    },
+    {
+        "chart": "../data/CHARTSENSE/bar/353.png",
+        "type": "bar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pie/00094.png",
+        "type": "pie"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/849.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pareto/182.jpeg",
+        "type": "pareto"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/00051.png",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/area/00090.png",
+        "type": "area"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/00119.png",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/767.jpeg",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/radar/131.png",
+        "type": "radar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/00017.png",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pie/68.png",
+        "type": "pie"
+    },
+    {
+        "chart": "../data/CHARTSENSE/area/00031.png",
+        "type": "area"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/00361.png",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/00217.png",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/00205.png",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/bar/146.jpeg",
+        "type": "bar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/251.jpeg",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/bar/00029.png",
+        "type": "bar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pareto/573.jpeg",
+        "type": "pareto"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pie/00043.png",
+        "type": "pie"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/00028.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/radar/318.jpeg",
+        "type": "radar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pareto/77.png",
+        "type": "pareto"
+    },
+    {
+        "chart": "../data/CHARTSENSE/venndiagram/508.jpeg",
+        "type": "venndiagram"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/142.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/789.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/224.jpeg",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/bar/00140.png",
+        "type": "bar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pareto/00099.png",
+        "type": "pareto"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/00209.png",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pie/685.jpeg",
+        "type": "pie"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/666.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pie/236.png",
+        "type": "pie"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/679.png",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/00193.png",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/274.png",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/441.png",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pie/469.png",
+        "type": "pie"
+    },
+    {
+        "chart": "../data/CHARTSENSE/radar/00035.png",
+        "type": "radar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pareto/00063.png",
+        "type": "pareto"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/682.jpeg",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/00225.png",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/00222.png",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/98.png",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/radar/261.png",
+        "type": "radar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/487.jpeg",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pie/647.jpeg",
+        "type": "pie"
+    },
+    {
+        "chart": "../data/CHARTSENSE/area/514.png",
+        "type": "area"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/86.png",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/venndiagram/00102.png",
+        "type": "venndiagram"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/00312.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/area/173.png",
+        "type": "area"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/112.png",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/venndiagram/173.png",
+        "type": "venndiagram"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pie/24.png",
+        "type": "pie"
+    },
+    {
+        "chart": "../data/CHARTSENSE/radar/384.png",
+        "type": "radar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pareto/175.jpeg",
+        "type": "pareto"
+    },
+    {
+        "chart": "../data/CHARTSENSE/area/00054.png",
+        "type": "area"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/185.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/bar/724.png",
+        "type": "bar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/00117.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/00299.png",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/395.png",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/293.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/514.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/233.jpeg",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/401.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/537.jpeg",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/venndiagram/780.png",
+        "type": "venndiagram"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/875.jpeg",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pie/186.jpeg",
+        "type": "pie"
+    },
+    {
+        "chart": "../data/CHARTSENSE/bar/318.jpeg",
+        "type": "bar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/area/373.png",
+        "type": "area"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/87.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pie/372.jpeg",
+        "type": "pie"
+    },
+    {
+        "chart": "../data/CHARTSENSE/area/654.png",
+        "type": "area"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pie/276.png",
+        "type": "pie"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/00210.png",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/850.jpeg",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/venndiagram/796.jpeg",
+        "type": "venndiagram"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/253.jpeg",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/radar/34.jpeg",
+        "type": "radar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/782.jpeg",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pie/533.png",
+        "type": "pie"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/00051.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/503.png",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/area/27.jpeg",
+        "type": "area"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/00281.png",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/88.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pareto/588.jpeg",
+        "type": "pareto"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/00003.png",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/558.jpeg",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pie/88.jpeg",
+        "type": "pie"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/849.jpeg",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pie/231.png",
+        "type": "pie"
+    },
+    {
+        "chart": "../data/CHARTSENSE/venndiagram/57.png",
+        "type": "venndiagram"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/157.png",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/venndiagram/657.jpeg",
+        "type": "venndiagram"
+    },
+    {
+        "chart": "../data/CHARTSENSE/area/480.jpeg",
+        "type": "area"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pareto/215.png",
+        "type": "pareto"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/215.jpeg",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/venndiagram/00098.png",
+        "type": "venndiagram"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/657.png",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/venndiagram/461.jpeg",
+        "type": "venndiagram"
+    },
+    {
+        "chart": "../data/CHARTSENSE/area/427.jpeg",
+        "type": "area"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pie/235.png",
+        "type": "pie"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pie/857.jpeg",
+        "type": "pie"
+    },
+    {
+        "chart": "../data/CHARTSENSE/area/340.png",
+        "type": "area"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/00077.png",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pie/00119.png",
+        "type": "pie"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pareto/00134.png",
+        "type": "pareto"
+    },
+    {
+        "chart": "../data/CHARTSENSE/radar/198.jpeg",
+        "type": "radar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pie/36.jpeg",
+        "type": "pie"
+    },
+    {
+        "chart": "../data/CHARTSENSE/radar/00117.png",
+        "type": "radar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/686.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/00056.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/bar/826.png",
+        "type": "bar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/00291.png",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/venndiagram/00012.png",
+        "type": "venndiagram"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/00194.png",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/120.jpeg",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pareto/602.jpeg",
+        "type": "pareto"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pie/00145.png",
+        "type": "pie"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pareto/300.jpeg",
+        "type": "pareto"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pie/00019.png",
+        "type": "pie"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/00088.png",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/radar/203.jpeg",
+        "type": "radar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/area/306.jpeg",
+        "type": "area"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/716.jpeg",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/482.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/00036.png",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/00149.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/area/23.jpeg",
+        "type": "area"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/718.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pareto/459.png",
+        "type": "pareto"
+    },
+    {
+        "chart": "../data/CHARTSENSE/radar/45.png",
+        "type": "radar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/radar/00130.png",
+        "type": "radar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/00030.png",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/00235.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pareto/270.jpeg",
+        "type": "pareto"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/837.jpeg",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/area/415.jpeg",
+        "type": "area"
+    },
+    {
+        "chart": "../data/CHARTSENSE/bar/82.png",
+        "type": "bar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/radar/00118.png",
+        "type": "radar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/bar/648.jpeg",
+        "type": "bar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pie/177.png",
+        "type": "pie"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/00024.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/425.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/bar/767.png",
+        "type": "bar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/00139.png",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pie/798.jpeg",
+        "type": "pie"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/130.jpeg",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pie/502.jpeg",
+        "type": "pie"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/192.jpeg",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/00160.png",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pie/00152.png",
+        "type": "pie"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pareto/00144.png",
+        "type": "pareto"
+    },
+    {
+        "chart": "../data/CHARTSENSE/radar/103.png",
+        "type": "radar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/400.png",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/bar/808.jpeg",
+        "type": "bar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/00109.png",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pie/523.jpeg",
+        "type": "pie"
+    },
+    {
+        "chart": "../data/CHARTSENSE/radar/195.png",
+        "type": "radar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/area/00103.png",
+        "type": "area"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pareto/00081.png",
+        "type": "pareto"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/453.png",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/872.jpeg",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/00311.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/radar/458.png",
+        "type": "radar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/186.jpeg",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pie/444.jpeg",
+        "type": "pie"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/00290.png",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/115.png",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pie/220.png",
+        "type": "pie"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/00079.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pareto/420.png",
+        "type": "pareto"
+    },
+    {
+        "chart": "../data/CHARTSENSE/bar/674.png",
+        "type": "bar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/radar/24.jpeg",
+        "type": "radar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/venndiagram/00074.png",
+        "type": "venndiagram"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/334.png",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/350.png",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/bar/526.jpeg",
+        "type": "bar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pie/00137.png",
+        "type": "pie"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/419.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/00188.png",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pie/00207.png",
+        "type": "pie"
+    },
+    {
+        "chart": "../data/CHARTSENSE/bar/00016.png",
+        "type": "bar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/venndiagram/427.png",
+        "type": "venndiagram"
+    },
+    {
+        "chart": "../data/CHARTSENSE/bar/223.png",
+        "type": "bar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/339.png",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pie/284.jpeg",
+        "type": "pie"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/473.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/bar/466.png",
+        "type": "bar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/area/46.png",
+        "type": "area"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/168.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/00108.png",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/venndiagram/818.jpeg",
+        "type": "venndiagram"
+    },
+    {
+        "chart": "../data/CHARTSENSE/bar/00026.png",
+        "type": "bar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/bar/00079.png",
+        "type": "bar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/304.png",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/371.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/00342.png",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/00034.png",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/area/198.png",
+        "type": "area"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/00014.png",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/radar/557.png",
+        "type": "radar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/00217.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/156.jpeg",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/00350.png",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/353.jpeg",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/412.png",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/00029.png",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pie/357.jpeg",
+        "type": "pie"
+    },
+    {
+        "chart": "../data/CHARTSENSE/venndiagram/543.jpeg",
+        "type": "venndiagram"
+    },
+    {
+        "chart": "../data/CHARTSENSE/venndiagram/542.jpeg",
+        "type": "venndiagram"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/336.png",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/798.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/442.png",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/735.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/bar/645.jpeg",
+        "type": "bar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/298.jpeg",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/venndiagram/808.png",
+        "type": "venndiagram"
+    },
+    {
+        "chart": "../data/CHARTSENSE/area/511.jpeg",
+        "type": "area"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pareto/00025.png",
+        "type": "pareto"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/00146.png",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/405.png",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/00215.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/00191.png",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/00015.png",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/area/536.jpeg",
+        "type": "area"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/328.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/00158.png",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/area/135.png",
+        "type": "area"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/811.jpeg",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/637.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/bar/639.png",
+        "type": "bar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/bar/00157.png",
+        "type": "bar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/19.jpeg",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/310.jpeg",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/bar/407.jpeg",
+        "type": "bar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/210.jpeg",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/bar/81.jpeg",
+        "type": "bar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/area/118.png",
+        "type": "area"
+    },
+    {
+        "chart": "../data/CHARTSENSE/venndiagram/845.png",
+        "type": "venndiagram"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/631.jpeg",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/venndiagram/247.jpeg",
+        "type": "venndiagram"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pareto/479.jpeg",
+        "type": "pareto"
+    },
+    {
+        "chart": "../data/CHARTSENSE/radar/38.jpeg",
+        "type": "radar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/11.png",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/radar/575.png",
+        "type": "radar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/radar/452.jpeg",
+        "type": "radar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pie/118.png",
+        "type": "pie"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pie/00168.png",
+        "type": "pie"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pie/200.png",
+        "type": "pie"
+    },
+    {
+        "chart": "../data/CHARTSENSE/radar/69.png",
+        "type": "radar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/radar/623.png",
+        "type": "radar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/radar/521.png",
+        "type": "radar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/698.jpeg",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pie/701.jpeg",
+        "type": "pie"
+    },
+    {
+        "chart": "../data/CHARTSENSE/venndiagram/437.png",
+        "type": "venndiagram"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/00093.png",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/00045.png",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/bar/389.jpeg",
+        "type": "bar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/00208.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/831.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/818.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/651.jpeg",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/area/4.png",
+        "type": "area"
+    },
+    {
+        "chart": "../data/CHARTSENSE/area/13.jpeg",
+        "type": "area"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/736.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/00139.png",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/radar/00036.png",
+        "type": "radar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/56.jpeg",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/bar/437.jpeg",
+        "type": "bar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/850.jpeg",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pareto/222.png",
+        "type": "pareto"
+    },
+    {
+        "chart": "../data/CHARTSENSE/bar/98.png",
+        "type": "bar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/00231.png",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/132.png",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/00072.png",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pareto/00131.png",
+        "type": "pareto"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pareto/482.png",
+        "type": "pareto"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/27.jpeg",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/480.png",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/00072.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/bar/71.png",
+        "type": "bar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/bar/00172.png",
+        "type": "bar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/113.png",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/venndiagram/855.jpeg",
+        "type": "venndiagram"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/750.jpeg",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pie/14.png",
+        "type": "pie"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/00113.png",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/radar/586.png",
+        "type": "radar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/826.png",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pareto/457.png",
+        "type": "pareto"
+    },
+    {
+        "chart": "../data/CHARTSENSE/area/186.png",
+        "type": "area"
+    },
+    {
+        "chart": "../data/CHARTSENSE/bar/835.png",
+        "type": "bar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/00218.png",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pie/201.jpeg",
+        "type": "pie"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/150.png",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/587.jpeg",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/radar/612.png",
+        "type": "radar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pie/552.png",
+        "type": "pie"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/158.png",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/bar/305.jpeg",
+        "type": "bar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/641.png",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/846.png",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/207.png",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/venndiagram/821.png",
+        "type": "venndiagram"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pareto/417.jpeg",
+        "type": "pareto"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/163.jpeg",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/bar/00000.png",
+        "type": "bar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pie/147.jpeg",
+        "type": "pie"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/139.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/venndiagram/785.png",
+        "type": "venndiagram"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pareto/00017.png",
+        "type": "pareto"
+    },
+    {
+        "chart": "../data/CHARTSENSE/venndiagram/205.jpeg",
+        "type": "venndiagram"
+    },
+    {
+        "chart": "../data/CHARTSENSE/venndiagram/301.jpeg",
+        "type": "venndiagram"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pie/642.jpeg",
+        "type": "pie"
+    },
+    {
+        "chart": "../data/CHARTSENSE/venndiagram/612.jpeg",
+        "type": "venndiagram"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/00032.png",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/687.png",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/bar/145.png",
+        "type": "bar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pie/208.jpeg",
+        "type": "pie"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pareto/391.jpeg",
+        "type": "pareto"
+    },
+    {
+        "chart": "../data/CHARTSENSE/radar/8.bmp",
+        "type": "radar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/venndiagram/634.png",
+        "type": "venndiagram"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/353.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/895.png",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/620.jpeg",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/bar/296.png",
+        "type": "bar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/318.png",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/270.png",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/00261.png",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/area/796.jpeg",
+        "type": "area"
+    },
+    {
+        "chart": "../data/CHARTSENSE/radar/549.png",
+        "type": "radar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/802.jpeg",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/17.png",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/470.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/8.jpeg",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/706.png",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/176.jpeg",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/766.png",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/00040.png",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/80.png",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/308.png",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/area/588.jpeg",
+        "type": "area"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/00123.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/553.jpeg",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pareto/161.png",
+        "type": "pareto"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pareto/00035.png",
+        "type": "pareto"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/33.jpeg",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/area/356.jpeg",
+        "type": "area"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/769.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/area/633.jpeg",
+        "type": "area"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/00042.png",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/522.png",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/bar/20.jpeg",
+        "type": "bar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/175.png",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/00192.png",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pareto/00117.png",
+        "type": "pareto"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/00151.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/radar/42.png",
+        "type": "radar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/322.png",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/area/403.jpeg",
+        "type": "area"
+    },
+    {
+        "chart": "../data/CHARTSENSE/venndiagram/705.jpeg",
+        "type": "venndiagram"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pie/641.jpeg",
+        "type": "pie"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/226.jpeg",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pareto/00163.png",
+        "type": "pareto"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/504.png",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/378.jpeg",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/00236.png",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pie/348.png",
+        "type": "pie"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pie/368.jpeg",
+        "type": "pie"
+    },
+    {
+        "chart": "../data/CHARTSENSE/area/51.png",
+        "type": "area"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/280.jpeg",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/266.png",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/area/37.png",
+        "type": "area"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/93.jpeg",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/area/434.png",
+        "type": "area"
+    },
+    {
+        "chart": "../data/CHARTSENSE/radar/75.jpeg",
+        "type": "radar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/241.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pie/520.jpeg",
+        "type": "pie"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/00174.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/853.png",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pareto/276.png",
+        "type": "pareto"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pareto/00032.png",
+        "type": "pareto"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pareto/00038.png",
+        "type": "pareto"
+    },
+    {
+        "chart": "../data/CHARTSENSE/bar/169.png",
+        "type": "bar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pareto/535.jpeg",
+        "type": "pareto"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pareto/328.jpeg",
+        "type": "pareto"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/00022.png",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/254.jpeg",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/bar/00186.png",
+        "type": "bar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/bar/228.jpeg",
+        "type": "bar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/00129.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/venndiagram/289.jpeg",
+        "type": "venndiagram"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/00304.png",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/00088.png",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/00202.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/area/266.png",
+        "type": "area"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pareto/00051.png",
+        "type": "pareto"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/672.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/radar/00050.png",
+        "type": "radar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/area/582.png",
+        "type": "area"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pareto/17.jpeg",
+        "type": "pareto"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/680.png",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/bar/00017.png",
+        "type": "bar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/144.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pie/8.jpeg",
+        "type": "pie"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/594.jpeg",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/area/244.png",
+        "type": "area"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/00049.png",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/75.png",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pareto/330.png",
+        "type": "pareto"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/326.jpeg",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pie/749.png",
+        "type": "pie"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pareto/410.png",
+        "type": "pareto"
+    },
+    {
+        "chart": "../data/CHARTSENSE/bar/100.png",
+        "type": "bar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/bar/197.png",
+        "type": "bar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/bar/364.png",
+        "type": "bar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/00299.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/bar/00101.png",
+        "type": "bar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/667.png",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/583.png",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pie/00087.png",
+        "type": "pie"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/610.jpeg",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/00158.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/00131.png",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/area/437.png",
+        "type": "area"
+    },
+    {
+        "chart": "../data/CHARTSENSE/venndiagram/00106.png",
+        "type": "venndiagram"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pie/00070.png",
+        "type": "pie"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pareto/19.png",
+        "type": "pareto"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/436.jpeg",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pareto/00166.png",
+        "type": "pareto"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/00024.png",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/venndiagram/389.png",
+        "type": "venndiagram"
+    },
+    {
+        "chart": "../data/CHARTSENSE/area/286.png",
+        "type": "area"
+    },
+    {
+        "chart": "../data/CHARTSENSE/radar/238.png",
+        "type": "radar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/venndiagram/801.jpeg",
+        "type": "venndiagram"
+    },
+    {
+        "chart": "../data/CHARTSENSE/bar/726.png",
+        "type": "bar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pie/455.jpeg",
+        "type": "pie"
+    },
+    {
+        "chart": "../data/CHARTSENSE/bar/00166.png",
+        "type": "bar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/area/365.png",
+        "type": "area"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/52.png",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/00115.png",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/00020.png",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/venndiagram/00093.png",
+        "type": "venndiagram"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/732.jpeg",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/00109.png",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/822.png",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/305.png",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/venndiagram/522.png",
+        "type": "venndiagram"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/00051.png",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/00184.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/radar/211.png",
+        "type": "radar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/scatterplot/435.png",
+        "type": "scatterplot"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pie/3.png",
+        "type": "pie"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/203.png",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/bar/866.bmp",
+        "type": "bar"
+    },
+    {
+        "chart": "../data/CHARTSENSE/table/817.jpeg",
+        "type": "table"
+    },
+    {
+        "chart": "../data/CHARTSENSE/map/594.jpeg",
+        "type": "map"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pareto/216.jpeg",
+        "type": "pareto"
+    },
+    {
+        "chart": "../data/CHARTSENSE/line/00264.png",
+        "type": "line"
+    },
+    {
+        "chart": "../data/CHARTSENSE/pie/23.png",
+        "type": "pie"
+    }
+]

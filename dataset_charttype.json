@@ -1,0 +1,35 @@
+{
+    "CHARTSENSE": [
+        "venndiagram",
+        "area",
+        "pareto",
+        "pie",
+        "map",
+        "line",
+        "table",
+        "scatterplot",
+        "bar",
+        "radar"
+    ],
+    "PMC": [
+        "Line",
+        "Vertical bar",
+        "Scatter",
+        "Vertical box",
+        "Horizontal bar",
+        "Pie",
+        "Horizontal box"
+    ],
+    "SUMIT": [
+        "Vertical box",
+        "Donut",
+        "Stacked vertical bar",
+        "Scatter",
+        "Horizontal box",
+        "Line",
+        "Grouped vertical bar",
+        "Pie",
+        "Grouped horizontal bar",
+        "Stacked horizontal bar"
+    ]
+}

@@ -5,8 +5,8 @@ import numpy as np
 import shutil
 from tqdm import tqdm
 
-data_path = "../original_data/SUMIT/images/"
-json_gt_path = "../original_data/SUMIT/json_gt/"
+data_path = "../data/SUMIT/images/"
+json_gt_path = "../data/SUMIT/json_gt/"
 
 color_lib = [
     (255,255,0),

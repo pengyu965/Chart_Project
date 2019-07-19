@@ -23,13 +23,6 @@ def img_resize(image):
         print(image_path+image)
 
 start_time = time.time()
-
-pool = multiprocessing.Pool()
-pool.map(img_resize, os.listdir(image_path))
-pool.close()
-print(time.time()-start_time)
-
-start_time = time.time()
 pool = multiprocessing.Pool()
 for i in tqdm(pool.imap(img_resize, os.listdir(image_path)), total = len(os.listdir(image_path))):
     pass

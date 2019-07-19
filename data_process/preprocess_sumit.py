@@ -1,7 +1,7 @@
 import os 
 import json 
 
-sumit_path = "./data/sumit/"
+sumit_path = "./data/SUMIT/"
 data_list = []
 
 for file in os.listdir(os.path.join(sumit_path, "json_gt")):

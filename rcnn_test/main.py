@@ -67,7 +67,7 @@ class PennFudanDataset(object):
         if self.transforms is not None:
             img, target = self.transforms(img, target)
 
-        return (img, target)
+        return img, target
 
     def __len__(self):
         return len(self.imgs)

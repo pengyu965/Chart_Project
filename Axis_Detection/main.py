@@ -11,6 +11,9 @@ from torch.utils.data import Dataset, DataLoader
 from torchvision.models.detection import FasterRCNN
 from torchvision.models.detection.rpn import AnchorGenerator
 import utils
+import resource
+rlimit = resource.getrlimit(resource.RLIMIT_NOFILE)
+resource.setrlimit(resource.RLIMIT_NOFILE, (20480, rlimit[1]))
 
 device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
 
@@ -153,7 +156,7 @@ model.train()
 
 dataset = axisdataset("../../data/SUMIT/rs_images_sampled/", "../../data/SUMIT/rs_json_gt_sampled/", None)
 
-dataloader = DataLoader(dataset = dataset, batch_size = 4, num_workers = 28, collate_fn=utils.collate_fn)
+dataloader = DataLoader(dataset = dataset, batch_size = 2, num_workers = 28, collate_fn=utils.collate_fn)
 
 model.to(device)
 

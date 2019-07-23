@@ -136,7 +136,7 @@ class axisdataset(Dataset):
 
 backbone = torchvision.models.mobilenet_v2(pretrained=True).features
 backbone.out_channels = 1280
-anchor_generator = AnchorGenerator(sizes=((10),),
+anchor_generator = AnchorGenerator(sizes=((100),),
                                 aspect_ratios=((0.5, 1.0, 2.0),))
 
 

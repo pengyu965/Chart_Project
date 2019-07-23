@@ -169,11 +169,10 @@ lr_scheduler = torch.optim.lr_scheduler.StepLR(optimizer,
 for idi, (images, targets) in enumerate(dataloader):
     images = list(image.to(device) for image in images)
     targets = [{k: v.to(device) for k, v in t.items()} for t in targets]
-    print(images.shape)
     
     loss_dict = model(images, targets)
     losses = sum(loss for loss in loss_dict.values())
-    print(losses.item())
+    print(idi, losses.item())
 
     optimizer.zero_grad()
     losses.backward()

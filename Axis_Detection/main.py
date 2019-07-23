@@ -17,38 +17,39 @@ resource.setrlimit(resource.RLIMIT_NOFILE, (20480, rlimit[1]))
 
 device = torch.device('cuda:1') if torch.cuda.is_available() else torch.device('cpu')
 
-def get_args():
-    parser = argparse.ArgumentParser()
 
-    parser.add_argument('--train', action='store_true',
-                        help='Train the model')
-    parser.add_argument('--eval', action='store_true',
-                        help='Evaluate the model')
-    parser.add_argument('--predict', action='store_true',
-                        help='Get prediction result')
-    parser.add_argument('--finetune', action='store_true',
-                        help='Fine tuning the model')
-    # parser.add_argument('--load', type=int, default=99,
-                        # help='Epoch id of pre-trained model')
-    parser.add_argument("--data", type= str, help='input_data')
+parser = argparse.ArgumentParser()
 
-    parser.add_argument('--lr', type=float, default=1e-4,
-                        help='Initial learning rate')
-    parser.add_argument('--epoch', type=int, default = 10, 
-                        help = "Max Epoch")
-    parser.add_argument('--bsize', type=int, default=60,
-                        help='Batch size')
-    parser.add_argument('--keep_prob', type=float, default=0.4,
-                        help='Keep probability for dropout')
-    parser.add_argument('--class_num', type=int, default = 10, 
-                        help='class number')
-    # parser.add_argument('--maxepoch', type=int, default=100,
-    #                     help='Max number of epochs for training')
+parser.add_argument('--train', action='store_true',
+                    help='Train the model')
+parser.add_argument('--eval', action='store_true',
+                    help='Evaluate the model')
+parser.add_argument('--predict', action='store_true',
+                    help='Get prediction result')
+parser.add_argument('--finetune', action='store_true',
+                    help='Fine tuning the model')
+# parser.add_argument('--load', type=int, default=99,
+                    # help='Epoch id of pre-trained model')
+parser.add_argument("--data", type= str, help='input_data')
 
-    # parser.add_argument('--im_name', type=str, default='.png',
-    #                     help='Part of image name')
+parser.add_argument('--lr', type=float, default=1e-4,
+                    help='Initial learning rate')
+parser.add_argument('--epoch', type=int, default = 10, 
+                    help = "Max Epoch")
+parser.add_argument('--bsize', type=int, default=60,
+                    help='Batch size')
+parser.add_argument('--keep_prob', type=float, default=0.4,
+                    help='Keep probability for dropout')
+parser.add_argument('--class_num', type=int, default = 10, 
+                    help='class number')
+# parser.add_argument('--maxepoch', type=int, default=100,
+#                     help='Max number of epochs for training')
 
-    return parser.parse_args()
+# parser.add_argument('--im_name', type=str, default='.png',
+#                     help='Part of image name')
+
+cfg = parser.parse_args()
+
 
 class axisdataset(Dataset):
     def __init__(self, img_root, gt_root, transforms):
@@ -153,46 +154,71 @@ model = FasterRCNN(backbone,
 
 # x = [torch.rand(3, 300, 400), torch.rand(3, 500, 400)]
 
-dataset = axisdataset("../../data/SUMIT/rs_images_sampled/", "../../data/SUMIT/rs_json_gt_sampled/", None)
+if cfg.train:
 
-dataloader = DataLoader(dataset = dataset, batch_size = 2, num_workers = 28, collate_fn=utils.collate_fn)
+    dataset = axisdataset("../../data/SUMIT/rs_images_sampled/", "../../data/SUMIT/rs_json_gt_sampled/", None)
 
-model.to(device)
+    dataloader = DataLoader(dataset = dataset, batch_size = 2, num_workers = 28, collate_fn=utils.collate_fn)
 
-    # construct an optimizer
-params = [p for p in model.parameters() if p.requires_grad]
-lr = 0.005
-optimizer = torch.optim.SGD(params, lr=lr,
-                            momentum=0.9, weight_decay=0.0005)
-# and a learning rate scheduler
-epoch = 10
-for ep in range(epoch):
-    if ep == int(epoch //3):
-        lr = lr/10
-        optimizer = torch.optim.SGD(params, lr=lr,
-                            momentum=0.9, weight_decay=0.0005)
-    if ep == int(epoch*2//3):
-        lr = lr/10
-        optimizer = torch.optim.SGD(params, lr=lr,
-                            momentum=0.9, weight_decay=0.0005)
+    model.to(device)
 
-    for idi, (images, targets) in enumerate(dataloader):
-        images = list(image.to(device) for image in images)
-        targets = [{k: v.to(device) for k, v in t.items()} for t in targets]
-        
-        model.train()
-        loss_dict = model(images, targets)
-        losses = sum(loss for loss in loss_dict.values())
-        print("===Epoch:{}/{}===Step:{}/{}===Loss:{:.4f}".format(ep, epoch, idi, len(dataloader), losses.item()))
-        # print(loss_dict)
-        optimizer.zero_grad()
-        losses.backward()
-        optimizer.step()
-        
-        # model.eval()
-        # prediction = model(images)
-        # print(prediction[0])
+        # construct an optimizer
+    params = [p for p in model.parameters() if p.requires_grad]
+    lr = 0.005
+    optimizer = torch.optim.SGD(params, lr=lr,
+                                momentum=0.9, weight_decay=0.0005)
+    # and a learning rate scheduler
+    epoch = 10
+    for ep in range(epoch):
+        if ep == int(epoch //3):
+            lr = lr/10
+            optimizer = torch.optim.SGD(params, lr=lr,
+                                momentum=0.9, weight_decay=0.0005)
+        if ep == int(epoch*2//3):
+            lr = lr/10
+            optimizer = torch.optim.SGD(params, lr=lr,
+                                momentum=0.9, weight_decay=0.0005)
 
-    torch.save(model.state_dict(), "./weight_2/{}.pt".format(ep))
-# img_array = predictions.permute(1,2,0).detach().cpu().numpy().astype(uint8)
-# cv2.imshow("img", cv2.fromarray(img_array))
+        for idi, (images, targets) in enumerate(dataloader):
+            images = list(image.to(device) for image in images)
+            targets = [{k: v.to(device) for k, v in t.items()} for t in targets]
+            
+            model.train()
+            loss_dict = model(images, targets)
+            losses = sum(loss for loss in loss_dict.values())
+            print("===Epoch:{}/{}===Step:{}/{}===Loss:{:.4f}".format(ep, epoch, idi, len(dataloader), losses.item()))
+            # print(loss_dict)
+            optimizer.zero_grad()
+            losses.backward()
+            optimizer.step()
+            
+            # model.eval()
+            # prediction = model(images)
+            # print(prediction[0])
+
+        torch.save(model.state_dict(), "./weight_2/{}.pt".format(ep))
+    # img_array = predictions.permute(1,2,0).detach().cpu().numpy().astype(uint8)
+    # cv2.imshow("img", cv2.fromarray(img_array))
+
+if cfg.predict:
+    img_path = "../../data/SUMIT/rs_images_sampled/"
+    dataset = os.listdir(img_path)
+    indices = torch.randperm(len(dataset)).tolist()
+
+    model = FasterRCNN(backbone,
+                num_classes=2,
+                min_size = 512,
+                # max_size = 1400,
+                rpn_anchor_generator=anchor_generator,
+                box_roi_pool=roi_pooler)
+    model.load_state_dict(torch.load("./weight/9.pt"))
+    model.eval()
+    
+    for idi in indices[-10:]:
+        img = Image.open(img_path+dataset[idi])
+        img = torch.tensor(np.array(img)).float().permute(2,0,1).to(device)
+        predict = model(img)
+        print(predict)
+
+    
+

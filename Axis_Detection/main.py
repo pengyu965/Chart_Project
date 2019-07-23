@@ -206,7 +206,7 @@ if cfg.predict:
     indices = torch.randperm(len(dataset)).tolist()
 
     
-    model.load_state_dict(torch.load("./weight/9.pt"))
+    model.load_state_dict(torch.load("./weight/9.pt", strict = False))
     model.eval()
     
     for idi in indices[-10:]:

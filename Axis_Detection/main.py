@@ -205,12 +205,7 @@ if cfg.predict:
     dataset = os.listdir(img_path)
     indices = torch.randperm(len(dataset)).tolist()
 
-    model = FasterRCNN(backbone,
-                num_classes=2,
-                min_size = 512,
-                # max_size = 1400,
-                rpn_anchor_generator=anchor_generator,
-                box_roi_pool=roi_pooler)
+    
     model.load_state_dict(torch.load("./weight/9.pt"))
     model.eval()
     

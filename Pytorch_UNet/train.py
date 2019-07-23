@@ -21,8 +21,8 @@ def train_net(net,
               gpu=False,
               img_scale=0.5):
 
-    dir_img = 'data/train/'
-    dir_mask = 'data/train_masks/'
+    dir_img = '../../data/SUMIT/rs_images_sampled/'
+    dir_mask = '../../data/SUMIT/rs_linemap_sampled/'
     dir_checkpoint = 'checkpoints/'
 
     ids = get_ids(dir_img)

@@ -2,6 +2,7 @@
 /Axis_Detection/samples/
 /Axis_Detection/samples_2/
 **/*.pt
+**/*.pth
 **/.DS_Store
 **/.vscode
 **/__pycache__/

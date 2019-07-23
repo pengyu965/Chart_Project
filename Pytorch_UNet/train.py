@@ -22,7 +22,7 @@ def train_net(net,
               img_scale=0.5):
 
     dir_img = '../../data/SUMIT/rs_images_sampled/'
-    dir_mask = '../data/SUMIT/rs_ticks_masks_sampled/'
+    dir_mask = '../../data/SUMIT/rs_ticks_masks_sampled/'
     dir_checkpoint = 'checkpoints/'
 
     ids = get_ids(dir_img)

@@ -1,9 +1,9 @@
 import os 
 import json 
 
-gt_path = "../data/rs_json_gt_sampled/"
+gt_path = "../data/SUMIT/rs_json_gt_sampled/"
 
-img_path = "../data/rs_images_sampled/"
+img_path = "../data/SUMIT/rs_images_sampled/"
 
 gt_list = os.listdir(gt_path)
 img_list = os.listdir(img_path)

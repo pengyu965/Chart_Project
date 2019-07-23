@@ -217,7 +217,7 @@ if cfg.predict:
         img = torch.tensor(np.array(img)).float().permute(2,0,1).unsqueeze(0).to(device)
         predict = model(img)
         boxes_list = predict[0]["boxes"].data.cpu().numpy()
-        print(predict[0]["boxes"].data.cpu().numpy())
+        print(predict[0]["boxes"].data.cpu().numpy(),"hh")
 
         iimg = cv2.imread(img_path+dataset[idi])
         for box in boxes_list[0]:

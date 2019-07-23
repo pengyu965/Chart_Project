@@ -6,6 +6,7 @@ import cv2
 import json
 import numpy as np
 import torchvision
+import cv2
 from PIL import Image
 from torch.utils.data import Dataset, DataLoader
 from torchvision.models.detection import FasterRCNN
@@ -215,7 +216,14 @@ if cfg.predict:
         # print(np.array(img).shape)
         img = torch.tensor(np.array(img)).float().permute(2,0,1).unsqueeze(0).to(device)
         predict = model(img)
+        boxes_list = predict[0]["boxes"].data.cpu().numpy()
         print(predict[0]["boxes"].data.cpu().numpy())
+
+        iimg = cv2.imread(img_path+dataset[idi])
+        for box in boxes_list[0]:
+            cv2.rectangle(iimg, (box[0],box[1]), (box[2], box[3]), (0,0,255), 2)
+        
+        cv2.imwrite("./samples/"+dataset[idi])
 
     
 

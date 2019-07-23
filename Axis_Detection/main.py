@@ -166,7 +166,7 @@ lr_scheduler = torch.optim.lr_scheduler.StepLR(optimizer,
                                                 step_size=3,
                                                 gamma=0.1)
 
-for idi, images, targets in enumerate(dataloader):
+for idi, (images, targets) in enumerate(dataloader):
     images = list(image.to(device) for image in images)
     targets = [{k: v.to(device) for k, v in t.items()} for t in targets]
     print(images.shape)

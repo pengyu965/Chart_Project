@@ -224,7 +224,7 @@ if cfg.predict:
             print(box)
             cv2.rectangle(iimg, (box[0],box[1]), (box[2], box[3]), (0,0,255), 2)
         
-        cv2.imwrite("./samples/"+dataset[idi])
+        cv2.imwrite("./samples/"+dataset[idi], iimg)
 
     
 

@@ -15,7 +15,7 @@ import resource
 rlimit = resource.getrlimit(resource.RLIMIT_NOFILE)
 resource.setrlimit(resource.RLIMIT_NOFILE, (20480, rlimit[1]))
 
-device = torch.device('cuda:0') if torch.cuda.is_available() else torch.device('cpu')
+device = torch.device('cuda:1') if torch.cuda.is_available() else torch.device('cpu')
 
 
 parser = argparse.ArgumentParser()
@@ -207,6 +207,7 @@ if cfg.predict:
 
     
     model.load_state_dict(torch.load("./weight/9.pt"), strict = False)
+    model.to(device)
     model.eval()
     
     for idi in indices[-10:]:

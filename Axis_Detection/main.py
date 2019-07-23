@@ -215,7 +215,7 @@ if cfg.predict:
         # print(np.array(img).shape)
         img = torch.tensor(np.array(img)).float().permute(2,0,1).unsqueeze(0).to(device)
         predict = model(img)
-        print(predict[0]["boxes"])
+        print(predict[0]["boxes"].detach())
 
     
 

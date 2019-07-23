@@ -184,7 +184,7 @@ for ep in range(epoch):
         loss_dict = model(images, targets)
         losses = sum(loss for loss in loss_dict.values())
         print("===Epoch:{}/{}===Step:{}/{}===Loss:{:.4f}".format(ep, epoch, idi, len(dataloader), losses.item()))
-        print(losses)
+        print(loss_dict)
         optimizer.zero_grad()
         losses.backward()
         optimizer.step()

@@ -184,5 +184,6 @@ for ep in range(epoch):
         optimizer.zero_grad()
         losses.backward()
         optimizer.step()
+    torch.save(model.state_dict(), "./weight/{}.pt".format(ep))
 # img_array = predictions.permute(1,2,0).detach().cpu().numpy().astype(uint8)
 # cv2.imshow("img", cv2.fromarray(img_array))

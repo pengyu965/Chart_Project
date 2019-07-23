@@ -45,6 +45,9 @@ def train_one_epoch(model, optimizer, data_loader, device, epoch, print_freq):
         optimizer.zero_grad()
         losses.backward()
         optimizer.step()
+        model.eval()
+        print(model(images))
+        model.train()
 
         if lr_scheduler is not None:
             lr_scheduler.step()

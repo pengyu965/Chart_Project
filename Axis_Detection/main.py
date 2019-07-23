@@ -153,7 +153,7 @@ model.train()
 
 dataset = axisdataset("../../data/SUMIT/rs_images_sampled/", "../../data/SUMIT/rs_json_gt_sampled/", None)
 
-dataloader = DataLoader(dataset = dataset, batch_size = 2, num_workers = 2, collate_fn=utils.collate_fn)
+dataloader = DataLoader(dataset = dataset, batch_size = 2, num_workers = 28, collate_fn=utils.collate_fn)
 
 model.to(device)
 

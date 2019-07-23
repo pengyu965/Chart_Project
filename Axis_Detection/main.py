@@ -210,7 +210,7 @@ if cfg.predict:
     model.eval()
     
     for idi in indices[-10:]:
-        img = Image.open(img_path+dataset[idi])
+        img = Image.open(img_path+dataset[idi]).convert("RGB")
         img = torch.tensor(np.array(img)).float().permute(2,0,1).to(device)
         predict = model(img)
         print(predict)

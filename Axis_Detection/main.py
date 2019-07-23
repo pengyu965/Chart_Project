@@ -103,10 +103,10 @@ class axisdataset(Dataset):
         #     boxes.append([xmin, ymin, xmax, ymax])
 
         # convert everything into a torch.Tensor
-        img = torch.as_tensor(img, dtype=torch.float32).permute(2,0,1).to(device)
-        boxes = torch.as_tensor(boxes, dtype=torch.float32).to(device)
+        img = torch.tensor(img).float().permute(2,0,1).to(device)
+        boxes = torch.tensor(boxes).float().to(device)
         # there is only one class
-        labels = torch.ones((num_objs,), dtype=torch.int64).to(device)
+        labels = torch.ones((num_objs,).int().to(device)
         # masks = torch.as_tensor(masks, dtype=torch.uint8)
 
         image_id = torch.tensor([idx]).to(device)

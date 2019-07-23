@@ -1,4 +1,7 @@
 /data/
+/Axis_Detection/samples/
+/Axis_Detection/samples_2/
+**/*.pt
 **/.DS_Store
 **/.vscode
 **/__pycache__/

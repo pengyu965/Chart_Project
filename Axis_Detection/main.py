@@ -162,21 +162,18 @@ params = [p for p in model.parameters() if p.requires_grad]
 optimizer = torch.optim.SGD(params, lr=0.005,
                             momentum=0.9, weight_decay=0.0005)
 # and a learning rate scheduler
-lr_scheduler = torch.optim.lr_scheduler.StepLR(optimizer,
-                                                step_size=3,
-                                                gamma=0.1)
+epoch = 10
+for _ in range(epoch):
+    for idi, (images, targets) in enumerate(dataloader):
+        images = list(image.to(device) for image in images)
+        targets = [{k: v.to(device) for k, v in t.items()} for t in targets]
+        
+        loss_dict = model(images, targets)
+        losses = sum(loss for loss in loss_dict.values())
+        print(idi, losses.item())
 
-for idi, (images, targets) in enumerate(dataloader):
-    images = list(image.to(device) for image in images)
-    targets = [{k: v.to(device) for k, v in t.items()} for t in targets]
-    
-    loss_dict = model(images, targets)
-    losses = sum(loss for loss in loss_dict.values())
-    print(idi, losses.item())
-
-    optimizer.zero_grad()
-    losses.backward()
-    optimizer.step()
-    lr_scheduler.step()
+        optimizer.zero_grad()
+        losses.backward()
+        optimizer.step()
 # img_array = predictions.permute(1,2,0).detach().cpu().numpy().astype(uint8)
 # cv2.imshow("img", cv2.fromarray(img_array))

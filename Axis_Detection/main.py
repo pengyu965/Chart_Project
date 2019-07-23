@@ -138,8 +138,8 @@ class axisdataset(Dataset):
 
 backbone = torchvision.models.mobilenet_v2(pretrained=True).features
 backbone.out_channels = 1280
-anchor_generator = AnchorGenerator(sizes=((3, 5, 10, 15),),
-                                aspect_ratios=((0.5, 1.0, 2),))
+anchor_generator = AnchorGenerator(sizes=((3, 5, 10, 15, 20),),
+                                aspect_ratios=((1.0),))
 
 
 roi_pooler = torchvision.ops.MultiScaleRoIAlign(featmap_names=[0],
@@ -207,7 +207,7 @@ if cfg.predict:
     indices = torch.randperm(len(dataset)).tolist()
 
     
-    model.load_state_dict(torch.load("./weight/9.pt"), strict = False)
+    model.load_state_dict(torch.load("./weight_2/9.pt"), strict = False)
     model.to(device)
     model.eval()
     
@@ -224,7 +224,7 @@ if cfg.predict:
             print(box)
             cv2.rectangle(iimg, (box[0],box[1]), (box[2], box[3]), (0,0,255), 2)
         
-        cv2.imwrite("./samples/"+dataset[idi], iimg)
+        cv2.imwrite("./samples_2/"+dataset[idi], iimg)
 
     
 

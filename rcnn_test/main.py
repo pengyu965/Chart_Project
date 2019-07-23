@@ -202,16 +202,16 @@ import utils
 
 def main():
     # train on the GPU or on the CPU, if a GPU is not available
-    device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
+    device = torch.device('cuda:1') if torch.cuda.is_available() else torch.device('cpu')
 
     # our dataset has two classes only - background and person
     num_classes = 2
     # use our dataset and defined transformations
-    # dataset = PennFudanDataset('PennFudanPed', get_transform(train=True))
-    # dataset_test = PennFudanDataset('PennFudanPed', get_transform(train=False))
+    dataset = PennFudanDataset('PennFudanPed', get_transform(train=True))
+    dataset_test = PennFudanDataset('PennFudanPed', get_transform(train=False))
 
-    dataset = axisdataset("../data/SUMIT/rs_images_sampled/", "../data/SUMIT/rs_json_gt_sampled/","../data/SUMIT/rs_linemap_sampled/", get_transform(train=True))
-    dataset_test = axisdataset("../data/SUMIT/rs_images_sampled/", "../data/SUMIT/rs_json_gt_sampled/", "../data/SUMIT/rs_linemap_sampled/", get_transform(train=False))
+    # dataset = axisdataset("../data/SUMIT/rs_images_sampled/", "../data/SUMIT/rs_json_gt_sampled/","../data/SUMIT/rs_linemap_sampled/", get_transform(train=True))
+    # dataset_test = axisdataset("../data/SUMIT/rs_images_sampled/", "../data/SUMIT/rs_json_gt_sampled/", "../data/SUMIT/rs_linemap_sampled/", get_transform(train=False))
     
     # dataloader = DataLoader(dataset = dataset, batch_size = 1, num_workers = 2)
 
@@ -222,11 +222,11 @@ def main():
 
     # define training and validation data loaders
     data_loader = torch.utils.data.DataLoader(
-        dataset, batch_size=4, shuffle=True, num_workers=4,
+        dataset, batch_size=4, shuffle=True, num_workers=28,
         collate_fn=utils.collate_fn)
 
     data_loader_test = torch.utils.data.DataLoader(
-        dataset_test, batch_size=1, shuffle=False, num_workers=4,
+        dataset_test, batch_size=1, shuffle=False, num_workers=28,
         collate_fn=utils.collate_fn)
 
     # for i, img in enumerate(data_loader):

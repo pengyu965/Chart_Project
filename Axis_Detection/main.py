@@ -136,7 +136,7 @@ class axisdataset(Dataset):
 
 backbone = torchvision.models.mobilenet_v2(pretrained=True).features
 backbone.out_channels = 1280
-anchor_generator = AnchorGenerator(sizes=((100),),
+anchor_generator = AnchorGenerator(sizes=((3, 5, 10, 15),),
                                 aspect_ratios=((0.5, 1.0, 2.0),))
 
 
@@ -151,7 +151,6 @@ model = FasterRCNN(backbone,
                 rpn_anchor_generator=anchor_generator,
                 box_roi_pool=roi_pooler)
 
-model.train()
 # x = [torch.rand(3, 300, 400), torch.rand(3, 500, 400)]
 
 dataset = axisdataset("../../data/SUMIT/rs_images_sampled/", "../../data/SUMIT/rs_json_gt_sampled/", None)
@@ -181,6 +180,7 @@ for ep in range(epoch):
         images = list(image.to(device) for image in images)
         targets = [{k: v.to(device) for k, v in t.items()} for t in targets]
         
+        model.train()
         loss_dict = model(images, targets)
         losses = sum(loss for loss in loss_dict.values())
         print("===Epoch:{}/{}===Step:{}/{}===Loss:{:.4f}".format(ep, epoch, idi, len(dataloader), losses.item()))
@@ -188,6 +188,11 @@ for ep in range(epoch):
         optimizer.zero_grad()
         losses.backward()
         optimizer.step()
+        
+        model.eval()
+        prediction = model(images)
+        print(prediction[0])
+
     torch.save(model.state_dict(), "./weight/{}.pt".format(ep))
 # img_array = predictions.permute(1,2,0).detach().cpu().numpy().astype(uint8)
 # cv2.imshow("img", cv2.fromarray(img_array))

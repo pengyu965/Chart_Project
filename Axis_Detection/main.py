@@ -163,14 +163,23 @@ optimizer = torch.optim.SGD(params, lr=0.005,
                             momentum=0.9, weight_decay=0.0005)
 # and a learning rate scheduler
 epoch = 10
-for _ in range(epoch):
+for ep in range(epoch):
+    if ep == int(epoch //3):
+        lr = lr/10
+        optimizer = torch.optim.SGD(params, lr=0.005,
+                            momentum=0.9, weight_decay=0.0005)
+    if ep == int(epoch*2//3):
+        lr = lr/10
+        optimizer = torch.optim.SGD(params, lr=0.005,
+                            momentum=0.9, weight_decay=0.0005)
+
     for idi, (images, targets) in enumerate(dataloader):
         images = list(image.to(device) for image in images)
         targets = [{k: v.to(device) for k, v in t.items()} for t in targets]
         
         loss_dict = model(images, targets)
         losses = sum(loss for loss in loss_dict.values())
-        print(idi, losses.item())
+        print("===Epoch:{}/{}===Step:{}/{}===Loss:{:.4f}".format(ep, epoch, idi, len(dataset), losses.item()))
 
         optimizer.zero_grad()
         losses.backward()

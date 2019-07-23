@@ -174,16 +174,17 @@ for ep in range(epoch):
                             momentum=0.9, weight_decay=0.0005)
 
     for idi, (images, targets) in enumerate(dataloader):
-        images = list(image.to(device) for image in images)
-        targets = [{k: v.to(device) for k, v in t.items()} for t in targets]
+        print(idi)
+    #     images = list(image.to(device) for image in images)
+    #     targets = [{k: v.to(device) for k, v in t.items()} for t in targets]
         
-        loss_dict = model(images, targets)
-        losses = sum(loss for loss in loss_dict.values())
-        print("===Epoch:{}/{}===Step:{}/{}===Loss:{:.4f}".format(ep, epoch, idi, len(dataloader), losses.item()))
+    #     loss_dict = model(images, targets)
+    #     losses = sum(loss for loss in loss_dict.values())
+    #     print("===Epoch:{}/{}===Step:{}/{}===Loss:{:.4f}".format(ep, epoch, idi, len(dataloader), losses.item()))
 
-        optimizer.zero_grad()
-        losses.backward()
-        optimizer.step()
-    torch.save(model.state_dict(), "./weight/{}.pt".format(ep))
+    #     optimizer.zero_grad()
+    #     losses.backward()
+    #     optimizer.step()
+    # torch.save(model.state_dict(), "./weight/{}.pt".format(ep))
 # img_array = predictions.permute(1,2,0).detach().cpu().numpy().astype(uint8)
 # cv2.imshow("img", cv2.fromarray(img_array))

@@ -166,10 +166,9 @@ lr_scheduler = torch.optim.lr_scheduler.StepLR(optimizer,
                                                 step_size=3,
                                                 gamma=0.1)
 
-for idi, sample in enumerate(dataloader):
-    images = [img.numpy().tolist() for img in sample[0]]
-    images = torch.as_tensor(images, dtype=torch.float32).to(device)
-    targets = [target.to(device) for target in sample[1]]
+for idi, images, targets in enumerate(dataloader):
+    images = list(image.to(device) for image in images)
+    targets = [{k: v.to(device) for k, v in t.items()} for t in targets]
     print(images.shape)
     
     loss_dict = model(images, targets)

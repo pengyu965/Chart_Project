@@ -9,10 +9,10 @@ gt_list = os.listdir(gt_path)
 img_list = os.listdir(img_path)
 print(len(gt_list), len(img_list))
 
-# for file in gt_list:
-#     img = file[:-4]+"png"
-#     if img not in img_list:
-#         print(img)
+for file in gt_list:
+    img = file[:-4]+"png"
+    if img not in img_list:
+        print(img)
 
 # for img in img_list:
 #     gt = file[:-3]+"json"

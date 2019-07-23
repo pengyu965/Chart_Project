@@ -15,6 +15,6 @@ for file in gt_list:
         print(img)
 
 for img in img_list:
-    gt = file[:-3]+"json"
+    gt = img[:-3]+"json"
     if gt not in gt_list:
         print(gt)

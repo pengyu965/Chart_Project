@@ -136,8 +136,8 @@ class axisdataset(Dataset):
 
 backbone = torchvision.models.mobilenet_v2(pretrained=True).features
 backbone.out_channels = 1280
-anchor_generator = AnchorGenerator(sizes=((550*550),),
-                                aspect_ratios=((0.5, 1.0, 2.0),))
+anchor_generator = AnchorGenerator(sizes=((3, 5, 10, 15),),
+                                aspect_ratios=((1.0),))
 
 
 roi_pooler = torchvision.ops.MultiScaleRoIAlign(featmap_names=[0],
@@ -184,7 +184,7 @@ for ep in range(epoch):
         loss_dict = model(images, targets)
         losses = sum(loss for loss in loss_dict.values())
         print("===Epoch:{}/{}===Step:{}/{}===Loss:{:.4f}".format(ep, epoch, idi, len(dataloader), losses.item()))
-
+        print(losses)
         optimizer.zero_grad()
         losses.backward()
         optimizer.step()

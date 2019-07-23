@@ -103,16 +103,16 @@ class axisdataset(Dataset):
         #     boxes.append([xmin, ymin, xmax, ymax])
 
         # convert everything into a torch.Tensor
-        img = torch.tensor(img).float().permute(2,0,1).to(device)
-        boxes = torch.tensor(boxes).float().to(device)
+        img = torch.as_tensor(img, dtype=torch.float32).permute(2,0,1)
+        boxes = torch.as_tensor(boxes, dtype=torch.float32)
         # there is only one class
-        labels = torch.ones((num_objs,)).int().to(device)
+        labels = torch.ones((num_objs,), dtype=torch.int64)
         # masks = torch.as_tensor(masks, dtype=torch.uint8)
 
-        image_id = torch.tensor([idx]).to(device)
+        image_id = torch.tensor([idx])
         area = (boxes[:, 3] - boxes[:, 1]) * (boxes[:, 2] - boxes[:, 0])
         # suppose all instances are not crowd
-        iscrowd = torch.zeros((num_objs,), dtype=torch.int64).to(device)
+        iscrowd = torch.zeros((num_objs,), dtype=torch.int64)
         # print(boxes.shape)
 
         target = {}
@@ -169,7 +169,7 @@ lr_scheduler = torch.optim.lr_scheduler.StepLR(optimizer,
 for idi, sample in enumerate(dataloader):
     images = [img.numpy().tolist() for img in sample[0]]
     images = torch.as_tensor(images, dtype=torch.float32).to(device)
-    targets = [target for target in sample[1]]
+    targets = [target.to(device) for target in sample[1]]
     print(images.shape)
     
     loss_dict = model(images, targets)

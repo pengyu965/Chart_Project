@@ -22,7 +22,7 @@ def weights_init(m):
 class Operator:
     def __init__(self, netG, netD = None):
         self.device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-        self.netG = netG.to(self.device)
+        self.netG = nn.DataParallel(netG).to(self.device)
         self.netD = netD
 
     def trainer(self, img_path, gt_path, batch_size, lr, epoch,):

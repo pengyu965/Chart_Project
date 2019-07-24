@@ -24,7 +24,8 @@ def get_args():
                         help='Fine tuning the model')
     # parser.add_argument('--load', type=int, default=99,
                         # help='Epoch id of pre-trained model')
-    parser.add_argument("--data_path", type=str, help='input_data')
+    parser.add_argument("--img_path", type=str, help='input_data')
+    parser.add_argument("--gt_path", type=str, help='Ground Truth Image')
 
     parser.add_argument('--lr', type=float, default=1e-3,
                         help='Initial learning rate')
@@ -54,7 +55,7 @@ if __name__ == "__main__":
         print(netG)
 
         operator = op.Operator(netG)
-        operator.trainer(FLAGS.data_path, FLAGS.bsize, FLAGS.lr, FLAGS.epoch)
+        operator.trainer(FLAGS.img_path, FLAGS.gt_path, FLAGS.bsize, FLAGS.lr, FLAGS.epoch)
 
     if FLAGS.predict:
         netG = UNet(in_channels = 3, out_channels = 3)

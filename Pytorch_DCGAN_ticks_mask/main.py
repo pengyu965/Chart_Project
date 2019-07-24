@@ -51,14 +51,14 @@ if __name__ == "__main__":
     FLAGS = get_args()
 
     if FLAGS.train:
-        netG = UNet(in_channels = 3, out_channels = 3)
+        netG = UNet(in_channels = 3, out_channels = 1)
         print(netG)
 
         operator = op.Operator(netG)
         operator.trainer(FLAGS.img_path, FLAGS.gt_path, FLAGS.bsize, FLAGS.lr, FLAGS.epoch)
 
     if FLAGS.predict:
-        netG = UNet(in_channels = 3, out_channels = 3)
+        netG = UNet(in_channels = 3, out_channels = 1)
         print(netG)
 
         if os.path.exists("./weight/9.pt"):

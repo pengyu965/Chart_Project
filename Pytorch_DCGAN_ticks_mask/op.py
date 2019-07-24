@@ -29,10 +29,7 @@ class Operator:
         self.batch_size = batch_size
         self.lr = lr 
         self.epoch = epoch 
-        self.optimizer = optim.SGD(self.netG.parameters(),
-                          lr=self.lr,
-                          momentum=0.9,
-                          weight_decay=0.0005)
+        self.optimizer = optim.Adam(self.netG.parameters(), lr = self.lr)
         self.criterion = nn.BCELoss()
         self.data = Chartdata(img_path = img_path, gt_path = gt_path)
         self.dataloader = DataLoader(dataset = self.data, batch_size = self.batch_size, shuffle = True, num_workers = 28)
@@ -50,16 +47,10 @@ class Operator:
 
             if ep == int(self.epoch //3):
                 self.lr = self.lr/10
-                self.optimizer = optim.SGD(self.netG.parameters(),
-                          lr=self.lr,
-                          momentum=0.9,
-                          weight_decay=0.0005)
+                self.optimizer = optim.Adam(self.netG.parameters(), lr = self.lr)
             if ep == int(self.epoch*2//3):
                 self.lr = self.lr/10
-                self.optimizer = optim.SGD(self.netG.parameters(),
-                          lr=self.lr,
-                          momentum=0.9,
-                          weight_decay=0.0005)
+                self.optimizer = optim.Adam(self.netG.parameters(), lr = self.lr)
 
             for idi, train_batch in enumerate(self.dataloader):
                 train_images = train_batch[0].to(self.device)

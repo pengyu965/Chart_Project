@@ -42,7 +42,7 @@ class Operator:
 
         idx = len(self.dataloader)
 
-        print_idx = int(self.epoch * idx*1. /100)
+        print_idx = int(self.epoch * idx*1. /300)
 
         for ep in range(self.epoch):
 

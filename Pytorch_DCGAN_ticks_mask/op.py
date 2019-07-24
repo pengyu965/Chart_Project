@@ -94,7 +94,8 @@ class Operator:
                 global_step += 1
 
             ## Validation
-            val_loss = self.validator(self.val_data)
+            with torch.no_grad():
+                val_loss = self.validator(self.val_data)
 
             if val_loss < val_min_loss:
                 val_min_loss = val_loss 
@@ -115,9 +116,9 @@ class Operator:
             val_images = val_batch[0].to(self.device)
             val_gt = val_batch[1].to(self.device)
 
-            fake_images = self.netG(val_images)
+            fake_val_images = self.netG(val_images)
 
-            valloss = self.criterion(fake_images*1., val_gt*1./255)
+            valloss = self.criterion(fake_val_images*1., val_gt*1./255)
             val_total_loss += valloss.item()
         
         print("***"*3, "\nValidation Loss:{:.4f}".format(val_total_loss*1./val_idx), "\n"+"***"*3)

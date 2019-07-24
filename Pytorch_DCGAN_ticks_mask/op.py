@@ -106,7 +106,7 @@ class Operator:
     def validator(self, val_data):
 
         self.netG.eval()
-        val_dataloader = DataLoader(dataset = val_data, batch_size = self.batch_size, shuffle = True, num_workers = 28)
+        val_dataloader = DataLoader(dataset = val_data, batch_size = 1, shuffle = True, num_workers = 28)
         val_idx = len(val_dataloader)
 
         val_total_loss = 0

@@ -164,7 +164,7 @@ class Chartdata(Dataset):
         input_images_path = os.path.join(self.img_path, img_name)
         gt_images_path = os.path.join(self.gt_path, img_name)
         input_images = torch.tensor(np.array(cv2.imread(input_images_path))).float().permute(2,0,1)
-        print(np.array(cv2.imread(gt_images_path)).shape)
+        # print(np.array(cv2.imread(gt_images_path)).shape)
         gt_images = torch.tensor(np.array(cv2.imread(gt_images_path))[:,:,0]).float().unsqueeze(0)
         
 

@@ -30,9 +30,14 @@ class Operator:
         self.lr = lr 
         self.epoch = epoch 
         self.optimizer = optim.Adam(self.netG.parameters(), lr = self.lr)
-        self.criterion = nn.BCELoss()
+        self.criterion = nn.MSELoss()
         self.data = Chartdata(img_path = img_path, gt_path = gt_path)
-        self.dataloader = DataLoader(dataset = self.data, batch_size = self.batch_size, shuffle = True, num_workers = 28)
+        
+        indices = torch.randperm(len(self.data)).tolist()
+        self.train_data = torch.utils.data.Subset(self.data, indices[:-int(len(self.data)*1./10)])
+        self.val_data = torch.utils.data.Subset(self.data, indices[-int(len(self.data)*1./10):])
+        
+        self.dataloader = DataLoader(dataset = self.train_data, batch_size = self.batch_size, shuffle = True, num_workers = 28)
 
         global_step = 0
         start_time = time.time()
@@ -41,9 +46,12 @@ class Operator:
 
         print_idx = int(self.epoch * idx*1. /50)
 
-        self.netG.train()
+        val_min_loss = 10
+
 
         for ep in range(self.epoch):
+
+            self.netG.train()
 
             if ep == int(self.epoch //3):
                 self.lr = self.lr/10
@@ -84,13 +92,37 @@ class Operator:
                     new_im.save("./samples/{}.png".format(global_step))
 
                 global_step += 1
-                
-            try:
+
+            ## Validation
+            val_loss = self.validator(self.val_data)
+
+            if val_loss < val_min_loss:
+                val_min_loss = val_loss 
                 if os.path.exists("./weight/") == False:
                     os.mkdir("./weight/")
-                torch.save(self.netG.state_dict(), "./weight/{}.pt".format(ep))
-            except:
-                pass
+                torch.save(self.netG.state_dict(), "./weight/model.pt")
+
+
+    def validator(self, val_data):
+
+        self.netG.val()
+        val_dataloader = DataLoader(dataset = val_data, batch_size = self.batch_size, shuffle = True, num_workers = 28)
+        val_idx = len(val_dataloader)
+
+        val_total_loss = 0
+
+        for idi, val_batch in enumerate(val_dataloader):
+            val_images = val_batch[0].to(self.device)
+            val_gt = val_batch[1].to(self.device)
+
+            fake_images = self.netG(val_images)
+
+            valloss = self.criterion(fake_images*1., val_gt*1./255)
+            val_total_loss += valloss.item()
+        
+        print("***"*3, "\nValidation Loss:{:.4f}".format(val_total_loss*1./val_idx), "\n"+"***"*3)
+        return val_total_loss*1. / val_idx
+
 
     def predictor(self, image_path):
         self.netG.eval()

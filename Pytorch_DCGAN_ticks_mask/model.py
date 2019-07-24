@@ -7,7 +7,7 @@ import torch.backends.cudnn as cudnn
 import torch.optim as optim
 
 class Generator(nn.Module):
-    def __init__(self, ngpu):
+    def __init__(self):
         super(Generator, self).__init__()
         self.ngpu = ngpu
         self.main = nn.Sequential(
@@ -38,15 +38,12 @@ class Generator(nn.Module):
         )
 
     def forward(self, input):
-        if input.is_cuda and self.ngpu > 1:
-            output = nn.parallel.data_parallel(self.main, input, range(self.ngpu))
-        else:
-            output = self.main(input)
+        output = self.main(input)
         return output
 
 
 class Discriminator(nn.Module):
-    def __init__(self, ngpu):
+    def __init__(self):
         super(Discriminator, self).__init__()
         self.ngpu = ngpu
         self.main = nn.Sequential(
@@ -71,9 +68,5 @@ class Discriminator(nn.Module):
         )
 
     def forward(self, input):
-        if input.is_cuda and self.ngpu > 1:
-            output = nn.parallel.data_parallel(self.main, input, range(self.ngpu))
-        else:
-            output = self.main(input)
-
+        output = self.main(input)
         return output.view(-1, 1).squeeze(1)

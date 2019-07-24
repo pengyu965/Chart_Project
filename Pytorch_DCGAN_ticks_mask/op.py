@@ -76,12 +76,12 @@ class Operator:
                 if (global_step%print_idx) == 0:
                     index = 0
                     nroll = int(self.batch_size**0.5)
-                    new_im = Image.new('RGB', (12800,9600))
-                    for i in range(0,12800-12800//nroll,12800//nroll):
+                    new_im = Image.new('RGB', (5120,5120))
+                    for i in range(0,5120-5120//nroll,5120//nroll):
                         try:
-                            for j in range(0, 9600-9600//nroll,9600//nroll):
+                            for j in range(0, 5120-5120//nroll,5120//nroll):
                                 im = Image.fromarray(image_norm(fake_images[index].permute(1,2,0).squeeze(2).detach().cpu().clone().numpy()).astype("uint8"))
-                                im.thumbnail((1280,960))
+                                im.thumbnail((512,512))
                                 new_im.paste(im, (i,j))
                                 print(index)
                                 index += 1
@@ -93,6 +93,8 @@ class Operator:
                 global_step += 1
                 
             try:
+                if os.path.exists("./weight/") == False:
+                    os.mkdir("./weight/")
                 torch.save(self.netG.state_dict(), "./weight/{}.pt".format(ep))
             except:
                 pass

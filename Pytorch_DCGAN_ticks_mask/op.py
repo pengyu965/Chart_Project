@@ -30,7 +30,7 @@ class Operator:
         self.lr = lr 
         self.epoch = epoch 
         self.optimizer = optim.Adam(self.netG.parameters(), lr = self.lr)
-        self.criterion = nn.MSELoss()
+        self.criterion = nn.BCELoss()
         self.data = Chartdata(img_path = img_path, gt_path = gt_path)
         
         indices = torch.randperm(len(self.data)).tolist()

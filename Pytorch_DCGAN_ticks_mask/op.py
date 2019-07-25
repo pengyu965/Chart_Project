@@ -67,6 +67,8 @@ class Operator:
                 self.optimizer.zero_grad()
                 fake_images = self.netG(train_images)
 
+                print(np.max(fake_images.detach().cpu().clone().numpy()),np.min(fake_images.detach().cpu().clone().numpy()))
+                print(np.max(train_gt.detach().cpu().clone().numpy()), np.min(train_gt.detach().cpu().clone().numpy()))
                 loss = self.criterion(fake_images*1. , train_gt*1./255)
                 loss.backward()
                 self.optimizer.step()

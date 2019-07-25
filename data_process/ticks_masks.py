@@ -8,7 +8,7 @@ import multiprocessing
 gt_path = "../data/SUMIT/rs_json_gt_sampled/"
 img_path = "../data/SUMIT/rs_images_sampled/"
 
-ticks_mask_path = "../data/SUMIT/rs_ticks_masks_sampled/"
+ticks_mask_path = "../data/SUMIT/rs_masks_sampled/"
 
 if os.path.exists(ticks_mask_path) == False:
     os.mkdir(ticks_mask_path)
@@ -16,15 +16,20 @@ if os.path.exists(ticks_mask_path) == False:
 def masks_gen(gt_json):
 # for gt_json in os.listdir(gt_path):
     gt_file = json.load(open(os.path.join(gt_path, gt_json),'r'))
-    img_arr = np.zeros((512,512)).astype(np.uint8)
-    img = img_arr
+    background_mask = np.ones((512,512)).astype(np.uint8)*255
+    ticks_mask = np.zeros((512,512)).astype(np.uint8)
+    ticks_labels_mask = np.zeros((512,512)).astype(np.uint8)
+    axis_labels_mask = np.zeros((512,512)).astype(np.uint8)
+    
 
-
+    # ticks_mask
     for axis in gt_file["input"]["task4_output"]["axes"]:
         for item in gt_file["input"]["task4_output"]["axes"][axis]:
             x = item["tick_pt"]["x"]
             y = item["tick_pt"]["y"]
-            cv2.circle(img,(x,y), 5, (255,255,255), -1)
+            cv2.circle(ticks_mask,(x,y), 5, (255,255,255), -1)
+            cv2.circle(background_mask,(x,y), 5, (0,0,0), -1)
+            
             # print([x,y])
 
     # cv2.imshow("masks", img)

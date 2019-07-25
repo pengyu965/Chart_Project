@@ -3,6 +3,7 @@ import argparse
 import random
 import torch
 import sys
+import torch.nn as nn
 
 from model import Generator
 from model import Discriminator
@@ -60,7 +61,8 @@ if __name__ == "__main__":
 
     if FLAGS.predict:
         netG = UNet(in_channels = 3, out_channels = 1)
-        # print(netG)
+        netG = nn.DataParallel(netG)
+        print(netG)
 
         if os.path.exists("./weight/model.pt"):
             if torch.cuda.is_available():

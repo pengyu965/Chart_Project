@@ -30,13 +30,14 @@ class Operator:
         self.lr = lr 
         self.epoch = epoch 
         self.optimizer = optim.Adam(self.netG.parameters(), lr = self.lr)
-        self.criterion = nn.BCELoss()
+        self.criterion = nn.CrossEntropyLoss()
         self.data = Chartdata(img_path = img_path, gt_path = gt_path)
         
         indices = torch.randperm(len(self.data)).tolist()
-        self.train_data = torch.utils.data.Subset(self.data, indices[:-int(len(self.data)*1./10)])
-        self.val_data = torch.utils.data.Subset(self.data, indices[-int(len(self.data)*1./10):])
-        
+        self.train_data = torch.utils.data.Subset(self.data, indices[:-int(len(self.data)*2./10)])
+        self.val_data = torch.utils.data.Subset(self.data, indices[-int(len(self.data)*2./10):-int(len(self.data)*1./10)])
+        self.test_data = torch.utils.data.Subset(self.data, indices[-int(len(self.data)*1./10):])
+
         self.dataloader = DataLoader(dataset = self.train_data, batch_size = self.batch_size, shuffle = True, num_workers = 28)
 
         global_step = 0
@@ -83,7 +84,8 @@ class Operator:
                     for i in range(0,5121-5120//nroll,5120//nroll):
                         try:
                             for j in range(0, 5121-5120//nroll,5120//nroll):
-                                im = Image.fromarray(image_norm(fake_images[index].permute(1,2,0).squeeze(2).detach().cpu().clone().numpy()).astype("uint8"))
+                                # im = Image.fromarray(image_norm(fake_images[index].permute(1,2,0).squeeze(2).detach().cpu().clone().numpy()).astype("uint8"))
+                                im = Image.fromarray(out_vis(fake_images.permute(1,2,0).detach().cpu().clone().numpy()))
                                 im.thumbnail((512,512))
                                 new_im.paste(im, (i,j))
                                 print(index)
@@ -104,6 +106,9 @@ class Operator:
                 if os.path.exists("./weight/") == False:
                     os.mkdir("./weight/")
                 torch.save(self.netG.state_dict(), "./weight/model.pt")
+        
+        ## Testing
+        self.validator(self.test_data)
 
 
     def validator(self, val_data):
@@ -143,9 +148,10 @@ class Operator:
                 ).permute(2,0,1).float().unsqueeze(0).to(self.device)
                 generated_img_tensor = self.netG(img_tensor)
                 generated_img = Image.fromarray(
-                    image_norm(
-                        generated_img_tensor[0].permute(1,2,0).squeeze(2).detach().cpu().clone().numpy()
-                    ).astype("uint8")
+                    out_vis(generated_img_tensor.permute(1,2,0).squeeze(2).detach().cpu().clone().numpy())
+                    # image_norm(
+                    #     generated_img_tensor[0].permute(1,2,0).squeeze(2).detach().cpu().clone().numpy()
+                    # ).astype("uint8")
                 )
                 generated_img.save("./predict_result/{}".format(image))
                 print(idi)
@@ -169,6 +175,25 @@ class Operator:
             generated_img.save("./predict_result/{}.png".format(image_name))
 
 
+class Chartdata(Dataset):
+    def __init__(self, img_path, gt_path):
+        self.img_path = img_path
+        self.gt_path = gt_path
+    def __len__(self):
+        return len(os.listdir(self.img_path))
+    
+    def __getitem__(self, idx):
+        img_name = os.listdir(self.img_path)[idx]
+        input_images_path = os.path.join(self.img_path, img_name)
+        gt_npy_path = os.path.join(self.gt_path, img_name[:-3]+"npy")
+        input_images = torch.tensor(np.array(cv2.imread(input_images_path))).float().permute(2,0,1)
+        # print(np.array(cv2.imread(gt_images_path)).shape)
+        gt_images = torch.tensor(np.load(gt_npy_path)).float()
+        
+
+        return (input_images, gt_images)
+
+
 def image_norm(arr):
     if len(arr.shape) > 2:
         (x, y, _) = arr.shape
@@ -190,22 +215,33 @@ def image_norm(arr):
     
     return new_arr
 
+def out_vis(arr):
+    color_lib = [
+        (255,255,0),
+        (255,0,255),
+        (0,255,255),
+        (135,206,250),
+        (255,192,203),
+        (191,62,255),
+        (255,215,0),
+        (255,128,0),
+        (100,149,237),
+        (0,255,255),
+        (202,255,112),
+        (255,165,0),
+        (250,128,114)
+    ]
 
-class Chartdata(Dataset):
-    def __init__(self, img_path, gt_path):
-        self.img_path = img_path
-        self.gt_path = gt_path
-    def __len__(self):
-        return len(os.listdir(self.img_path))
-    
-    def __getitem__(self, idx):
-        img_name = os.listdir(self.img_path)[idx]
-        input_images_path = os.path.join(self.img_path, img_name)
-        gt_images_path = os.path.join(self.gt_path, img_name)
-        input_images = torch.tensor(np.array(cv2.imread(input_images_path))).float().permute(2,0,1)
-        # print(np.array(cv2.imread(gt_images_path)).shape)
-        gt_images = torch.tensor(np.array(cv2.imread(gt_images_path))[:,:,0]).float().unsqueeze(0)
-        
+    x, y, z = arr.shape
+    new_arr = np.zeros((x,y,3))
 
-        return (input_images, gt_images)
+    for i in range(x):
+        for j in range(y):
+            pixel = arr(x,y,:)
+            idi = np.argmax(pixel)
+            new_arr[i,j,:] = np.array(color_lib[idi])
+
+    return new_arr
+                
+
 

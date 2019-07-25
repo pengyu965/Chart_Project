@@ -151,7 +151,10 @@ class Operator:
             image_name,_ = os.path.splitext(os.path.split(image_path)[1])
             print("image_path is a image file")
             img_tensor = torch.tensor(
-                    cv2.imread(image_path)
+                cv2.resize(
+                    cv2.imread(image_path),
+                    (512,512)
+                )
                 ).permute(2,0,1).float().unsqueeze(0).to(self.device)
             generated_img_tensor = self.netG(img_tensor)
             generated_img = Image.fromarray(

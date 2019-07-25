@@ -133,7 +133,10 @@ class Operator:
             idi = 1
             for image in os.listdir(image_path):
                 img_tensor = torch.tensor(
-                    cv2.imread(os.path.join(image_path, image))
+                    cv2.resize(
+                        cv2.imread(os.path.join(image_path, image)),
+                        (512,512)
+                    )
                 ).permute(2,0,1).float().unsqueeze(0).to(self.device)
                 generated_img_tensor = self.netG(img_tensor)
                 generated_img = Image.fromarray(
@@ -141,10 +144,11 @@ class Operator:
                         generated_img_tensor[0].permute(1,2,0).squeeze(2).detach().cpu().clone().numpy()
                     ).astype("uint8")
                 )
-                generated_img.save("./predict_result/{}.png".format(image))
+                generated_img.save("./predict_result/{}".format(image))
                 print(idi)
                 idi += 1
         elif os.path.isfile(image_path):
+            image_name,_ = os.path.splitext(os.path.split(image_path)[1])
             print("image_path is a image file")
             img_tensor = torch.tensor(
                     cv2.imread(image_path)
@@ -155,7 +159,7 @@ class Operator:
                     generated_img_tensor[0].permute(1,2,0).squeeze(2).detach().cpu().clone().numpy()
                 ).astype("uint8")
             )
-            generated_img.save("./predict_result/{}.png".format(image))
+            generated_img.save("./predict_result/{}.png".format(image_name))
 
 
 def image_norm(arr):

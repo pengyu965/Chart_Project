@@ -2,6 +2,7 @@ import os
 import argparse 
 import random
 import torch
+import sys
 
 from model import Generator
 from model import Discriminator
@@ -61,15 +62,18 @@ if __name__ == "__main__":
         netG = UNet(in_channels = 3, out_channels = 1)
         print(netG)
 
-        if os.path.exists("./weight/9.pt"):
+        if os.path.exists("./weight/model.pt"):
             if torch.cuda.is_available():
-                netG.load_state_dict(torch.load("./weight/9.pt"), strict=False)
+                netG.load_state_dict(torch.load("./weight/model.pt"), strict=False)
             else:
                 netG.load_state_dict(torch.load("./weight/9.pt", map_location='cpu'), strict=False)
             print("="*6, "\nModel loaded, start prediction", "\n"+"="*6)
+        else:
+            print("Model isn't found, train the network first.")
+            sys.exit()
 
         if os.path.exists("./predict_result/") == False:
             os.mkdir("./predict_result/")
 
         operator = op.Operator(netG)
-        operator.predictor(FLAGS.data_path)
+        operator.predictor(FLAGS.img_path)

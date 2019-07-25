@@ -237,7 +237,7 @@ def out_vis(arr):
 
     for i in range(x):
         for j in range(y):
-            pixel = arr(x,y,:)
+            pixel = arr[x,y,:]
             idi = np.argmax(pixel)
             new_arr[i,j,:] = np.array(color_lib[idi])
 

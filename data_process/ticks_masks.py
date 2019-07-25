@@ -16,7 +16,7 @@ if os.path.exists(ticks_mask_path) == False:
 def masks_gen(gt_json):
 # for gt_json in os.listdir(gt_path):
     gt_file = json.load(open(os.path.join(gt_path, gt_json),'r'))
-    img_arr = np.ones((512,512)).astype(np.uint8)
+    img_arr = np.zeros((512,512)).astype(np.uint8)
     img = img_arr
 
 

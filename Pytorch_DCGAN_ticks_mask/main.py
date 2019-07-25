@@ -60,13 +60,13 @@ if __name__ == "__main__":
 
     if FLAGS.predict:
         netG = UNet(in_channels = 3, out_channels = 1)
-        print(netG)
+        # print(netG)
 
         if os.path.exists("./weight/model.pt"):
             if torch.cuda.is_available():
-                netG.load_state_dict(torch.load("./weight/model.pt"), strict=False)
+                netG.load_state_dict(torch.load("./weight/model.pt"), strict=True)
             else:
-                netG.load_state_dict(torch.load("./weight/model.pt", map_location='cpu'), strict=False)
+                netG.load_state_dict(torch.load("./weight/model.pt", map_location='cpu'), strict=True)
             print("="*6, "\nModel loaded, start prediction", "\n"+"="*6)
         else:
             print("Model isn't found, train the network first.")

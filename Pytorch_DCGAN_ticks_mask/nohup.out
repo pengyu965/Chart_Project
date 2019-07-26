@@ -11270,3 +11270,1747 @@ Train_loss:[1.0490]]
 ********* 
 Validation Loss:2.0311 
 *********
+Epoch:[13]===Step:[0/400]===Time:[3542.43]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[1/400]===Time:[3542.95]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[2/400]===Time:[3543.49]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0488]]
+Epoch:[13]===Step:[3/400]===Time:[3544.02]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[4/400]===Time:[3544.55]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0497]]
+Epoch:[13]===Step:[5/400]===Time:[3545.08]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[6/400]===Time:[3545.63]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+Epoch:[13]===Step:[7/400]===Time:[3546.16]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0488]]
+Epoch:[13]===Step:[8/400]===Time:[3546.69]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[9/400]===Time:[3547.22]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+Epoch:[13]===Step:[10/400]===Time:[3547.76]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[11/400]===Time:[3548.30]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[12/400]===Time:[3548.83]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[13/400]===Time:[3549.37]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[14/400]===Time:[3549.91]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[15/400]===Time:[3550.44]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[16/400]===Time:[3550.97]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[17/400]===Time:[3551.51]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+Epoch:[13]===Step:[18/400]===Time:[3552.04]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[13]===Step:[19/400]===Time:[3552.58]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[20/400]===Time:[3553.11]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+Epoch:[13]===Step:[21/400]===Time:[3553.66]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[22/400]===Time:[3554.18]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[23/400]===Time:[3554.72]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0493]]
+Epoch:[13]===Step:[24/400]===Time:[3555.25]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0488]]
+Epoch:[13]===Step:[25/400]===Time:[3555.79]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0494]]
+Epoch:[13]===Step:[26/400]===Time:[3556.33]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[27/400]===Time:[3556.88]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[28/400]===Time:[3557.44]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0490]]
+Epoch:[13]===Step:[29/400]===Time:[3557.98]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[30/400]===Time:[3558.52]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0488]]
+Epoch:[13]===Step:[31/400]===Time:[3559.06]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[32/400]===Time:[3559.63]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+Epoch:[13]===Step:[33/400]===Time:[3560.15]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[34/400]===Time:[3560.69]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[35/400]===Time:[3561.23]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[36/400]===Time:[3561.77]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[37/400]===Time:[3562.31]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[38/400]===Time:[3562.86]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0488]]
+Epoch:[13]===Step:[39/400]===Time:[3563.40]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[40/400]===Time:[3563.96]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[41/400]===Time:[3564.50]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0489]]
+Epoch:[13]===Step:[42/400]===Time:[3565.04]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+Epoch:[13]===Step:[43/400]===Time:[3565.58]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[44/400]===Time:[3566.13]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[45/400]===Time:[3566.67]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[46/400]===Time:[3567.21]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0489]]
+Epoch:[13]===Step:[47/400]===Time:[3567.76]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[48/400]===Time:[3568.31]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[49/400]===Time:[3568.85]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[50/400]===Time:[3569.40]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0488]]
+Epoch:[13]===Step:[51/400]===Time:[3569.94]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[52/400]===Time:[3570.49]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+Epoch:[13]===Step:[53/400]===Time:[3571.03]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0491]]
+Epoch:[13]===Step:[54/400]===Time:[3571.58]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[55/400]===Time:[3572.13]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+Epoch:[13]===Step:[56/400]===Time:[3572.68]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+Epoch:[13]===Step:[57/400]===Time:[3573.23]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[58/400]===Time:[3573.77]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[59/400]===Time:[3574.33]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0492]]
+Epoch:[13]===Step:[60/400]===Time:[3574.88]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0489]]
+Epoch:[13]===Step:[61/400]===Time:[3575.43]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[62/400]===Time:[3575.98]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[63/400]===Time:[3576.53]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[64/400]===Time:[3577.08]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[65/400]===Time:[3577.63]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+Epoch:[13]===Step:[66/400]===Time:[3578.18]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+Epoch:[13]===Step:[67/400]===Time:[3578.73]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0489]]
+Epoch:[13]===Step:[68/400]===Time:[3579.29]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[69/400]===Time:[3579.84]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[70/400]===Time:[3580.39]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[71/400]===Time:[3580.94]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0488]]
+Epoch:[13]===Step:[72/400]===Time:[3581.49]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+Epoch:[13]===Step:[73/400]===Time:[3582.05]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[74/400]===Time:[3582.59]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[75/400]===Time:[3583.14]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0489]]
+Epoch:[13]===Step:[76/400]===Time:[3583.70]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[77/400]===Time:[3584.24]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0488]]
+Epoch:[13]===Step:[78/400]===Time:[3584.80]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[79/400]===Time:[3585.36]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[80/400]===Time:[3585.91]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+Epoch:[13]===Step:[81/400]===Time:[3595.15]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0497]]
+Epoch:[13]===Step:[82/400]===Time:[3595.71]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[83/400]===Time:[3596.24]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[84/400]===Time:[3596.78]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[85/400]===Time:[3597.31]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[86/400]===Time:[3597.84]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[87/400]===Time:[3598.38]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[88/400]===Time:[3598.92]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[89/400]===Time:[3599.46]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+Epoch:[13]===Step:[90/400]===Time:[3599.99]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[91/400]===Time:[3600.53]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[92/400]===Time:[3601.07]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[93/400]===Time:[3601.60]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[94/400]===Time:[3602.14]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[95/400]===Time:[3602.68]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+Epoch:[13]===Step:[96/400]===Time:[3603.22]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[13]===Step:[97/400]===Time:[3603.76]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[98/400]===Time:[3604.30]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0488]]
+Epoch:[13]===Step:[99/400]===Time:[3604.86]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[100/400]===Time:[3605.37]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0489]]
+Epoch:[13]===Step:[101/400]===Time:[3605.92]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0488]]
+Epoch:[13]===Step:[102/400]===Time:[3606.46]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[103/400]===Time:[3607.00]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[104/400]===Time:[3607.55]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[105/400]===Time:[3608.10]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[106/400]===Time:[3608.65]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[107/400]===Time:[3609.20]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[108/400]===Time:[3609.74]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[109/400]===Time:[3610.29]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[110/400]===Time:[3610.83]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+Epoch:[13]===Step:[111/400]===Time:[3611.38]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[112/400]===Time:[3611.93]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0489]]
+Epoch:[13]===Step:[113/400]===Time:[3612.47]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[114/400]===Time:[3613.02]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[13]===Step:[115/400]===Time:[3613.56]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[116/400]===Time:[3614.11]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[117/400]===Time:[3614.65]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[118/400]===Time:[3615.20]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0495]]
+Epoch:[13]===Step:[119/400]===Time:[3615.75]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0488]]
+Epoch:[13]===Step:[120/400]===Time:[3616.30]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[121/400]===Time:[3616.85]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0492]]
+Epoch:[13]===Step:[122/400]===Time:[3617.39]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[123/400]===Time:[3617.93]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[13]===Step:[124/400]===Time:[3618.47]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[125/400]===Time:[3619.02]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[126/400]===Time:[3619.57]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+Epoch:[13]===Step:[127/400]===Time:[3620.12]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[128/400]===Time:[3620.67]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[129/400]===Time:[3621.22]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[130/400]===Time:[3621.76]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[131/400]===Time:[3622.31]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[132/400]===Time:[3622.86]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[133/400]===Time:[3623.41]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[134/400]===Time:[3623.96]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[135/400]===Time:[3624.51]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0489]]
+Epoch:[13]===Step:[136/400]===Time:[3625.07]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+Epoch:[13]===Step:[137/400]===Time:[3625.61]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0495]]
+Epoch:[13]===Step:[138/400]===Time:[3626.17]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+Epoch:[13]===Step:[139/400]===Time:[3626.71]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0489]]
+Epoch:[13]===Step:[140/400]===Time:[3627.27]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[13]===Step:[141/400]===Time:[3627.83]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0488]]
+Epoch:[13]===Step:[142/400]===Time:[3628.38]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[143/400]===Time:[3628.94]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0497]]
+Epoch:[13]===Step:[144/400]===Time:[3629.49]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[145/400]===Time:[3630.05]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0489]]
+Epoch:[13]===Step:[146/400]===Time:[3630.60]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+Epoch:[13]===Step:[147/400]===Time:[3631.15]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[148/400]===Time:[3631.71]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[149/400]===Time:[3632.26]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[150/400]===Time:[3632.82]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0489]]
+Epoch:[13]===Step:[151/400]===Time:[3633.38]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[152/400]===Time:[3633.94]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[153/400]===Time:[3634.49]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0490]]
+Epoch:[13]===Step:[154/400]===Time:[3635.04]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[155/400]===Time:[3635.61]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+Epoch:[13]===Step:[156/400]===Time:[3636.16]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[157/400]===Time:[3636.72]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[158/400]===Time:[3637.28]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+Epoch:[13]===Step:[159/400]===Time:[3637.84]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[160/400]===Time:[3638.39]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[161/400]===Time:[3638.94]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[162/400]===Time:[3639.50]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[163/400]===Time:[3640.06]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[164/400]===Time:[3640.63]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[165/400]===Time:[3641.18]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[166/400]===Time:[3641.74]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+Epoch:[13]===Step:[167/400]===Time:[3642.29]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+Epoch:[13]===Step:[168/400]===Time:[3642.84]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+Epoch:[13]===Step:[169/400]===Time:[3643.40]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[170/400]===Time:[3643.96]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[171/400]===Time:[3644.53]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0488]]
+Epoch:[13]===Step:[172/400]===Time:[3645.07]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0489]]
+Epoch:[13]===Step:[173/400]===Time:[3645.64]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[13]===Step:[174/400]===Time:[3646.19]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[175/400]===Time:[3646.76]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[176/400]===Time:[3647.31]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+Epoch:[13]===Step:[177/400]===Time:[3647.88]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0490]]
+Epoch:[13]===Step:[178/400]===Time:[3648.43]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0490]]
+Epoch:[13]===Step:[179/400]===Time:[3648.98]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[180/400]===Time:[3649.54]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[181/400]===Time:[3650.10]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+Epoch:[13]===Step:[182/400]===Time:[3650.67]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[183/400]===Time:[3651.21]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+Epoch:[13]===Step:[184/400]===Time:[3651.77]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[185/400]===Time:[3652.33]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[186/400]===Time:[3652.89]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+Epoch:[13]===Step:[187/400]===Time:[3653.46]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[188/400]===Time:[3654.02]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[189/400]===Time:[3654.58]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[190/400]===Time:[3655.13]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[191/400]===Time:[3655.69]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0488]]
+Epoch:[13]===Step:[192/400]===Time:[3656.26]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[193/400]===Time:[3656.82]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[194/400]===Time:[3657.36]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0493]]
+Epoch:[13]===Step:[195/400]===Time:[3657.92]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[196/400]===Time:[3658.49]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[197/400]===Time:[3659.05]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[198/400]===Time:[3659.62]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[13]===Step:[199/400]===Time:[3660.18]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[200/400]===Time:[3660.74]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0497]]
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+Epoch:[13]===Step:[201/400]===Time:[3670.19]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[202/400]===Time:[3670.74]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[203/400]===Time:[3671.28]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+Epoch:[13]===Step:[204/400]===Time:[3671.81]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0490]]
+Epoch:[13]===Step:[205/400]===Time:[3672.35]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[206/400]===Time:[3672.88]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[207/400]===Time:[3673.41]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[208/400]===Time:[3673.95]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0491]]
+Epoch:[13]===Step:[209/400]===Time:[3674.50]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+Epoch:[13]===Step:[210/400]===Time:[3675.04]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[211/400]===Time:[3675.57]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[212/400]===Time:[3676.12]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0489]]
+Epoch:[13]===Step:[213/400]===Time:[3676.65]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[214/400]===Time:[3677.20]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+Epoch:[13]===Step:[215/400]===Time:[3677.73]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+Epoch:[13]===Step:[216/400]===Time:[3678.28]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+Epoch:[13]===Step:[217/400]===Time:[3678.83]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[218/400]===Time:[3679.37]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0491]]
+Epoch:[13]===Step:[219/400]===Time:[3679.93]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0488]]
+Epoch:[13]===Step:[220/400]===Time:[3680.47]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0488]]
+Epoch:[13]===Step:[221/400]===Time:[3681.01]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[222/400]===Time:[3681.55]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[223/400]===Time:[3682.10]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[224/400]===Time:[3682.64]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[225/400]===Time:[3683.20]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[13]===Step:[226/400]===Time:[3683.74]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[227/400]===Time:[3684.28]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[228/400]===Time:[3684.83]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[13]===Step:[229/400]===Time:[3685.38]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[230/400]===Time:[3685.92]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[231/400]===Time:[3686.46]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[232/400]===Time:[3687.02]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0490]]
+Epoch:[13]===Step:[233/400]===Time:[3687.56]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[234/400]===Time:[3688.10]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[235/400]===Time:[3688.65]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[236/400]===Time:[3689.20]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[237/400]===Time:[3689.74]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[238/400]===Time:[3690.29]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0488]]
+Epoch:[13]===Step:[239/400]===Time:[3690.84]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+Epoch:[13]===Step:[240/400]===Time:[3691.39]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0489]]
+Epoch:[13]===Step:[241/400]===Time:[3691.96]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[242/400]===Time:[3692.50]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+Epoch:[13]===Step:[243/400]===Time:[3693.06]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[244/400]===Time:[3693.60]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[245/400]===Time:[3694.15]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[246/400]===Time:[3694.70]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[247/400]===Time:[3695.25]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[248/400]===Time:[3695.80]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[13]===Step:[249/400]===Time:[3696.36]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0490]]
+Epoch:[13]===Step:[250/400]===Time:[3696.91]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+Epoch:[13]===Step:[251/400]===Time:[3697.46]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[252/400]===Time:[3698.02]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[253/400]===Time:[3698.57]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[254/400]===Time:[3699.13]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+Epoch:[13]===Step:[255/400]===Time:[3699.67]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[256/400]===Time:[3700.23]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0488]]
+Epoch:[13]===Step:[257/400]===Time:[3700.77]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[258/400]===Time:[3701.33]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0488]]
+Epoch:[13]===Step:[259/400]===Time:[3701.88]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+Epoch:[13]===Step:[260/400]===Time:[3702.43]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[261/400]===Time:[3702.99]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[262/400]===Time:[3703.54]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[263/400]===Time:[3704.09]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[264/400]===Time:[3704.66]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[13]===Step:[265/400]===Time:[3705.21]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0489]]
+Epoch:[13]===Step:[266/400]===Time:[3705.77]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[267/400]===Time:[3706.31]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[13]===Step:[268/400]===Time:[3706.87]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[269/400]===Time:[3707.42]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[270/400]===Time:[3707.98]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[271/400]===Time:[3708.54]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[272/400]===Time:[3709.10]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[273/400]===Time:[3709.66]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[274/400]===Time:[3710.20]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[275/400]===Time:[3710.76]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[276/400]===Time:[3711.32]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+Epoch:[13]===Step:[277/400]===Time:[3711.88]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[278/400]===Time:[3712.44]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[279/400]===Time:[3713.00]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[280/400]===Time:[3713.55]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[281/400]===Time:[3714.11]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[282/400]===Time:[3714.67]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[283/400]===Time:[3715.23]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0488]]
+Epoch:[13]===Step:[284/400]===Time:[3715.78]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+Epoch:[13]===Step:[285/400]===Time:[3716.34]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[286/400]===Time:[3716.91]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[287/400]===Time:[3717.45]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[288/400]===Time:[3718.00]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[13]===Step:[289/400]===Time:[3718.56]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0490]]
+Epoch:[13]===Step:[290/400]===Time:[3719.13]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0492]]
+Epoch:[13]===Step:[291/400]===Time:[3719.69]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[292/400]===Time:[3720.22]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0488]]
+Epoch:[13]===Step:[293/400]===Time:[3720.80]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[13]===Step:[294/400]===Time:[3721.35]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[295/400]===Time:[3721.91]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+Epoch:[13]===Step:[296/400]===Time:[3722.47]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+Epoch:[13]===Step:[297/400]===Time:[3723.03]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[298/400]===Time:[3723.59]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[299/400]===Time:[3724.14]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[300/400]===Time:[3724.70]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[301/400]===Time:[3725.27]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[302/400]===Time:[3725.82]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[303/400]===Time:[3726.38]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0488]]
+Epoch:[13]===Step:[304/400]===Time:[3726.94]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+Epoch:[13]===Step:[305/400]===Time:[3727.50]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0489]]
+Epoch:[13]===Step:[306/400]===Time:[3728.06]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0488]]
+Epoch:[13]===Step:[307/400]===Time:[3728.62]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0490]]
+Epoch:[13]===Step:[308/400]===Time:[3729.18]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[309/400]===Time:[3729.75]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[13]===Step:[310/400]===Time:[3730.30]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[311/400]===Time:[3730.87]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[312/400]===Time:[3731.44]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[313/400]===Time:[3731.99]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[314/400]===Time:[3732.54]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[315/400]===Time:[3733.11]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[316/400]===Time:[3733.67]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[317/400]===Time:[3734.23]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+Epoch:[13]===Step:[318/400]===Time:[3734.77]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+Epoch:[13]===Step:[319/400]===Time:[3735.34]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[320/400]===Time:[3735.91]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+Epoch:[13]===Step:[321/400]===Time:[3745.32]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[322/400]===Time:[3745.88]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0489]]
+Epoch:[13]===Step:[323/400]===Time:[3746.42]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[324/400]===Time:[3746.95]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[325/400]===Time:[3747.48]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[326/400]===Time:[3748.02]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[327/400]===Time:[3748.55]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0482]]
+Epoch:[13]===Step:[328/400]===Time:[3749.10]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[329/400]===Time:[3749.64]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[330/400]===Time:[3750.17]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0493]]
+Epoch:[13]===Step:[331/400]===Time:[3750.71]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0488]]
+Epoch:[13]===Step:[332/400]===Time:[3751.26]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0500]]
+Epoch:[13]===Step:[333/400]===Time:[3751.80]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[13]===Step:[334/400]===Time:[3752.34]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[335/400]===Time:[3752.88]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[336/400]===Time:[3753.42]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[337/400]===Time:[3753.96]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[338/400]===Time:[3754.51]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[339/400]===Time:[3755.05]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[340/400]===Time:[3755.59]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+Epoch:[13]===Step:[341/400]===Time:[3756.13]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[13]===Step:[342/400]===Time:[3756.68]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[343/400]===Time:[3757.22]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[13]===Step:[344/400]===Time:[3757.76]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[13]===Step:[345/400]===Time:[3758.30]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[346/400]===Time:[3758.84]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0490]]
+Epoch:[13]===Step:[347/400]===Time:[3759.39]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[13]===Step:[348/400]===Time:[3759.93]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0490]]
+Epoch:[13]===Step:[349/400]===Time:[3760.48]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0482]]
+Epoch:[13]===Step:[350/400]===Time:[3761.02]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[351/400]===Time:[3761.57]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0488]]
+Epoch:[13]===Step:[352/400]===Time:[3762.12]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+Epoch:[13]===Step:[353/400]===Time:[3762.66]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+Epoch:[13]===Step:[354/400]===Time:[3763.21]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[13]===Step:[355/400]===Time:[3763.75]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[356/400]===Time:[3764.30]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[357/400]===Time:[3764.84]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[358/400]===Time:[3765.39]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0488]]
+Epoch:[13]===Step:[359/400]===Time:[3765.94]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[360/400]===Time:[3766.48]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[13]===Step:[361/400]===Time:[3767.04]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[362/400]===Time:[3767.58]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[363/400]===Time:[3768.13]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[13]===Step:[364/400]===Time:[3768.68]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[365/400]===Time:[3769.23]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0488]]
+Epoch:[13]===Step:[366/400]===Time:[3769.77]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[13]===Step:[367/400]===Time:[3770.32]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[368/400]===Time:[3770.87]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[369/400]===Time:[3771.41]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0494]]
+Epoch:[13]===Step:[370/400]===Time:[3771.96]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[371/400]===Time:[3772.51]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0491]]
+Epoch:[13]===Step:[372/400]===Time:[3773.06]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0490]]
+Epoch:[13]===Step:[373/400]===Time:[3773.61]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[374/400]===Time:[3774.17]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[13]===Step:[375/400]===Time:[3774.71]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[376/400]===Time:[3775.27]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[377/400]===Time:[3775.82]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[378/400]===Time:[3776.37]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[13]===Step:[379/400]===Time:[3776.93]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[380/400]===Time:[3777.48]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[381/400]===Time:[3778.04]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[382/400]===Time:[3778.59]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[383/400]===Time:[3779.14]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[13]===Step:[384/400]===Time:[3779.69]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[385/400]===Time:[3780.25]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[386/400]===Time:[3780.80]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[387/400]===Time:[3781.36]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[388/400]===Time:[3781.92]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[389/400]===Time:[3782.48]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[390/400]===Time:[3783.03]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[391/400]===Time:[3783.59]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[392/400]===Time:[3784.13]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[393/400]===Time:[3784.70]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[394/400]===Time:[3785.25]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[395/400]===Time:[3785.80]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[13]===Step:[396/400]===Time:[3786.37]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+Epoch:[13]===Step:[397/400]===Time:[3786.93]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[13]===Step:[398/400]===Time:[3787.48]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[13]===Step:[399/400]===Time:[3788.02]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+********* 
+Validation Loss:2.0311 
+*********
+Epoch:[14]===Step:[0/400]===Time:[3810.90]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[1/400]===Time:[3811.45]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[2/400]===Time:[3811.98]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[14]===Step:[3/400]===Time:[3812.51]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[4/400]===Time:[3813.04]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[5/400]===Time:[3813.57]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+Epoch:[14]===Step:[6/400]===Time:[3814.10]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[7/400]===Time:[3814.64]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+Epoch:[14]===Step:[8/400]===Time:[3815.18]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[14]===Step:[9/400]===Time:[3815.71]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[10/400]===Time:[3816.24]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[14]===Step:[11/400]===Time:[3816.78]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[12/400]===Time:[3817.31]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[13/400]===Time:[3817.85]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+Epoch:[14]===Step:[14/400]===Time:[3818.39]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0482]]
+Epoch:[14]===Step:[15/400]===Time:[3818.92]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0488]]
+Epoch:[14]===Step:[16/400]===Time:[3819.46]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[14]===Step:[17/400]===Time:[3820.00]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[18/400]===Time:[3820.54]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[14]===Step:[19/400]===Time:[3821.08]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[14]===Step:[20/400]===Time:[3821.61]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0482]]
+Epoch:[14]===Step:[21/400]===Time:[3822.16]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[22/400]===Time:[3822.69]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[23/400]===Time:[3823.23]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[24/400]===Time:[3823.77]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[25/400]===Time:[3824.30]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[14]===Step:[26/400]===Time:[3824.84]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[14]===Step:[27/400]===Time:[3825.39]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0488]]
+Epoch:[14]===Step:[28/400]===Time:[3825.94]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[29/400]===Time:[3826.48]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0494]]
+Epoch:[14]===Step:[30/400]===Time:[3827.03]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[31/400]===Time:[3827.57]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[32/400]===Time:[3828.12]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[14]===Step:[33/400]===Time:[3828.68]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[34/400]===Time:[3829.22]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[35/400]===Time:[3829.76]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[14]===Step:[36/400]===Time:[3830.31]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[37/400]===Time:[3830.86]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[14]===Step:[38/400]===Time:[3831.40]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[14]===Step:[39/400]===Time:[3831.95]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[40/400]===Time:[3832.50]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+Epoch:[14]===Step:[41/400]===Time:[3841.99]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[42/400]===Time:[3842.54]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[14]===Step:[43/400]===Time:[3843.07]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[44/400]===Time:[3843.60]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[14]===Step:[45/400]===Time:[3844.15]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[46/400]===Time:[3844.67]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0482]]
+Epoch:[14]===Step:[47/400]===Time:[3845.20]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[14]===Step:[48/400]===Time:[3845.73]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[49/400]===Time:[3846.27]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+Epoch:[14]===Step:[50/400]===Time:[3846.80]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[51/400]===Time:[3847.33]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0482]]
+Epoch:[14]===Step:[52/400]===Time:[3847.86]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[53/400]===Time:[3848.40]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[14]===Step:[54/400]===Time:[3848.93]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0489]]
+Epoch:[14]===Step:[55/400]===Time:[3849.47]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[56/400]===Time:[3850.02]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[14]===Step:[57/400]===Time:[3850.53]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[58/400]===Time:[3851.07]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[14]===Step:[59/400]===Time:[3851.61]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[60/400]===Time:[3852.15]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[61/400]===Time:[3852.69]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0488]]
+Epoch:[14]===Step:[62/400]===Time:[3853.23]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0491]]
+Epoch:[14]===Step:[63/400]===Time:[3853.77]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0494]]
+Epoch:[14]===Step:[64/400]===Time:[3854.31]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[14]===Step:[65/400]===Time:[3854.85]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[66/400]===Time:[3855.38]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[67/400]===Time:[3855.93]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[68/400]===Time:[3856.47]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[14]===Step:[69/400]===Time:[3857.01]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[14]===Step:[70/400]===Time:[3857.55]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[14]===Step:[71/400]===Time:[3858.09]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0500]]
+Epoch:[14]===Step:[72/400]===Time:[3858.63]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[14]===Step:[73/400]===Time:[3859.18]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+Epoch:[14]===Step:[74/400]===Time:[3859.73]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[14]===Step:[75/400]===Time:[3860.27]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[76/400]===Time:[3860.82]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[14]===Step:[77/400]===Time:[3861.37]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[14]===Step:[78/400]===Time:[3861.92]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0488]]
+Epoch:[14]===Step:[79/400]===Time:[3862.46]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0490]]
+Epoch:[14]===Step:[80/400]===Time:[3863.00]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[81/400]===Time:[3863.55]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[82/400]===Time:[3864.10]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[83/400]===Time:[3864.64]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[84/400]===Time:[3865.19]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0502]]
+Epoch:[14]===Step:[85/400]===Time:[3865.73]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0482]]
+Epoch:[14]===Step:[86/400]===Time:[3866.28]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+Epoch:[14]===Step:[87/400]===Time:[3866.83]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[14]===Step:[88/400]===Time:[3867.37]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[89/400]===Time:[3867.92]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+Epoch:[14]===Step:[90/400]===Time:[3868.46]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[14]===Step:[91/400]===Time:[3869.02]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[92/400]===Time:[3869.56]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[93/400]===Time:[3870.11]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[94/400]===Time:[3870.65]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[95/400]===Time:[3871.21]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[96/400]===Time:[3871.75]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+Epoch:[14]===Step:[97/400]===Time:[3872.30]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[98/400]===Time:[3872.85]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[14]===Step:[99/400]===Time:[3873.41]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[100/400]===Time:[3873.95]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+Epoch:[14]===Step:[101/400]===Time:[3874.51]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0482]]
+Epoch:[14]===Step:[102/400]===Time:[3875.05]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[14]===Step:[103/400]===Time:[3875.60]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[104/400]===Time:[3876.15]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[14]===Step:[105/400]===Time:[3876.70]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0488]]
+Epoch:[14]===Step:[106/400]===Time:[3877.25]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[14]===Step:[107/400]===Time:[3877.81]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[108/400]===Time:[3878.36]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0488]]
+Epoch:[14]===Step:[109/400]===Time:[3878.91]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[110/400]===Time:[3879.47]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[111/400]===Time:[3880.02]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[112/400]===Time:[3880.58]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[113/400]===Time:[3881.13]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[114/400]===Time:[3881.69]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[14]===Step:[115/400]===Time:[3882.23]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[116/400]===Time:[3882.78]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[117/400]===Time:[3883.34]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[118/400]===Time:[3883.89]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0488]]
+Epoch:[14]===Step:[119/400]===Time:[3884.44]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[14]===Step:[120/400]===Time:[3884.99]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+Epoch:[14]===Step:[121/400]===Time:[3885.55]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[14]===Step:[122/400]===Time:[3886.11]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[123/400]===Time:[3886.68]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0482]]
+Epoch:[14]===Step:[124/400]===Time:[3887.22]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[14]===Step:[125/400]===Time:[3887.77]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[14]===Step:[126/400]===Time:[3888.33]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[127/400]===Time:[3888.88]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[128/400]===Time:[3889.43]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0490]]
+Epoch:[14]===Step:[129/400]===Time:[3889.99]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[14]===Step:[130/400]===Time:[3890.55]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0489]]
+Epoch:[14]===Step:[131/400]===Time:[3891.10]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0491]]
+Epoch:[14]===Step:[132/400]===Time:[3891.65]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[14]===Step:[133/400]===Time:[3892.21]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[134/400]===Time:[3892.77]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[135/400]===Time:[3893.32]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[136/400]===Time:[3893.88]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[14]===Step:[137/400]===Time:[3894.44]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[138/400]===Time:[3895.00]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0482]]
+Epoch:[14]===Step:[139/400]===Time:[3895.54]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[14]===Step:[140/400]===Time:[3896.10]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0489]]
+Epoch:[14]===Step:[141/400]===Time:[3896.65]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[142/400]===Time:[3897.21]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[143/400]===Time:[3897.78]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[144/400]===Time:[3898.34]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[14]===Step:[145/400]===Time:[3898.89]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+Epoch:[14]===Step:[146/400]===Time:[3899.44]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[147/400]===Time:[3900.00]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0491]]
+Epoch:[14]===Step:[148/400]===Time:[3900.56]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[14]===Step:[149/400]===Time:[3901.11]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[150/400]===Time:[3901.67]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[151/400]===Time:[3902.22]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[14]===Step:[152/400]===Time:[3902.79]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[14]===Step:[153/400]===Time:[3903.34]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[154/400]===Time:[3903.91]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[155/400]===Time:[3904.47]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0482]]
+Epoch:[14]===Step:[156/400]===Time:[3905.03]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0482]]
+Epoch:[14]===Step:[157/400]===Time:[3905.58]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[158/400]===Time:[3906.14]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0490]]
+Epoch:[14]===Step:[159/400]===Time:[3906.69]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[14]===Step:[160/400]===Time:[3907.26]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+Epoch:[14]===Step:[161/400]===Time:[3916.62]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0491]]
+Epoch:[14]===Step:[162/400]===Time:[3917.18]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0482]]
+Epoch:[14]===Step:[163/400]===Time:[3917.71]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[14]===Step:[164/400]===Time:[3918.24]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[14]===Step:[165/400]===Time:[3918.78]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0482]]
+Epoch:[14]===Step:[166/400]===Time:[3919.31]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[167/400]===Time:[3919.85]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[168/400]===Time:[3920.39]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[14]===Step:[169/400]===Time:[3920.92]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0481]]
+Epoch:[14]===Step:[170/400]===Time:[3921.46]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[171/400]===Time:[3922.00]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[172/400]===Time:[3922.54]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[14]===Step:[173/400]===Time:[3923.07]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0489]]
+Epoch:[14]===Step:[174/400]===Time:[3923.62]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[175/400]===Time:[3924.16]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[176/400]===Time:[3924.70]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[177/400]===Time:[3925.24]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0488]]
+Epoch:[14]===Step:[178/400]===Time:[3925.78]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[179/400]===Time:[3926.32]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[180/400]===Time:[3926.86]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[181/400]===Time:[3927.41]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+Epoch:[14]===Step:[182/400]===Time:[3927.95]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[183/400]===Time:[3928.48]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0488]]
+Epoch:[14]===Step:[184/400]===Time:[3929.03]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[185/400]===Time:[3929.58]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[186/400]===Time:[3930.12]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+Epoch:[14]===Step:[187/400]===Time:[3930.67]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0488]]
+Epoch:[14]===Step:[188/400]===Time:[3931.22]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[14]===Step:[189/400]===Time:[3931.77]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[190/400]===Time:[3932.31]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[14]===Step:[191/400]===Time:[3932.86]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[14]===Step:[192/400]===Time:[3933.41]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0488]]
+Epoch:[14]===Step:[193/400]===Time:[3933.96]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0488]]
+Epoch:[14]===Step:[194/400]===Time:[3934.50]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[195/400]===Time:[3935.05]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[196/400]===Time:[3935.59]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[14]===Step:[197/400]===Time:[3936.15]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[198/400]===Time:[3936.69]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[14]===Step:[199/400]===Time:[3937.24]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+Epoch:[14]===Step:[200/400]===Time:[3937.78]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[14]===Step:[201/400]===Time:[3938.33]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0489]]
+Epoch:[14]===Step:[202/400]===Time:[3938.88]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[14]===Step:[203/400]===Time:[3939.42]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[204/400]===Time:[3939.97]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[14]===Step:[205/400]===Time:[3940.52]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+Epoch:[14]===Step:[206/400]===Time:[3941.08]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[207/400]===Time:[3941.62]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[208/400]===Time:[3942.17]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[209/400]===Time:[3942.72]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+Epoch:[14]===Step:[210/400]===Time:[3943.27]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[211/400]===Time:[3943.82]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[14]===Step:[212/400]===Time:[3944.37]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[14]===Step:[213/400]===Time:[3944.93]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[14]===Step:[214/400]===Time:[3945.47]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[14]===Step:[215/400]===Time:[3946.04]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[216/400]===Time:[3946.58]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[217/400]===Time:[3947.13]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[218/400]===Time:[3947.68]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[219/400]===Time:[3948.24]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[14]===Step:[220/400]===Time:[3948.78]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0494]]
+Epoch:[14]===Step:[221/400]===Time:[3949.34]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[222/400]===Time:[3949.89]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[14]===Step:[223/400]===Time:[3950.44]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[14]===Step:[224/400]===Time:[3951.00]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+Epoch:[14]===Step:[225/400]===Time:[3951.55]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[14]===Step:[226/400]===Time:[3952.11]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[227/400]===Time:[3952.67]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[228/400]===Time:[3953.23]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[229/400]===Time:[3953.78]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[14]===Step:[230/400]===Time:[3954.33]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[14]===Step:[231/400]===Time:[3954.89]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[14]===Step:[232/400]===Time:[3955.44]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[233/400]===Time:[3956.00]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[14]===Step:[234/400]===Time:[3956.56]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[14]===Step:[235/400]===Time:[3957.12]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[236/400]===Time:[3957.67]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0488]]
+Epoch:[14]===Step:[237/400]===Time:[3958.22]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0490]]
+Epoch:[14]===Step:[238/400]===Time:[3958.78]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+Epoch:[14]===Step:[239/400]===Time:[3959.34]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0489]]
+Epoch:[14]===Step:[240/400]===Time:[3959.89]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+Epoch:[14]===Step:[241/400]===Time:[3960.45]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[14]===Step:[242/400]===Time:[3961.01]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[243/400]===Time:[3961.59]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[14]===Step:[244/400]===Time:[3962.14]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[245/400]===Time:[3962.70]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+Epoch:[14]===Step:[246/400]===Time:[3963.27]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0482]]
+Epoch:[14]===Step:[247/400]===Time:[3963.81]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[248/400]===Time:[3964.36]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[249/400]===Time:[3964.93]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[250/400]===Time:[3965.49]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[251/400]===Time:[3966.05]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[252/400]===Time:[3966.59]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0489]]
+Epoch:[14]===Step:[253/400]===Time:[3967.15]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[14]===Step:[254/400]===Time:[3967.70]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[255/400]===Time:[3968.27]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[256/400]===Time:[3968.83]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[257/400]===Time:[3969.39]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[258/400]===Time:[3969.95]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[259/400]===Time:[3970.50]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0489]]
+Epoch:[14]===Step:[260/400]===Time:[3971.06]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[261/400]===Time:[3971.62]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[262/400]===Time:[3972.18]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[14]===Step:[263/400]===Time:[3972.73]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0489]]
+Epoch:[14]===Step:[264/400]===Time:[3973.29]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[14]===Step:[265/400]===Time:[3973.85]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[266/400]===Time:[3974.42]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[14]===Step:[267/400]===Time:[3974.98]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[14]===Step:[268/400]===Time:[3975.55]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[269/400]===Time:[3976.11]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[270/400]===Time:[3976.66]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0490]]
+Epoch:[14]===Step:[271/400]===Time:[3977.22]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[272/400]===Time:[3977.79]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[273/400]===Time:[3978.35]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0488]]
+Epoch:[14]===Step:[274/400]===Time:[3978.90]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+Epoch:[14]===Step:[275/400]===Time:[3979.46]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[276/400]===Time:[3980.02]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[277/400]===Time:[3980.58]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[14]===Step:[278/400]===Time:[3981.13]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[279/400]===Time:[3981.70]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[280/400]===Time:[3982.25]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+Epoch:[14]===Step:[281/400]===Time:[3991.83]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[14]===Step:[282/400]===Time:[3992.38]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+Epoch:[14]===Step:[283/400]===Time:[3992.92]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[14]===Step:[284/400]===Time:[3993.45]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0481]]
+Epoch:[14]===Step:[285/400]===Time:[3994.00]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[286/400]===Time:[3994.53]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0489]]
+Epoch:[14]===Step:[287/400]===Time:[3995.06]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0491]]
+Epoch:[14]===Step:[288/400]===Time:[3995.60]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[289/400]===Time:[3996.14]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[290/400]===Time:[3996.68]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[291/400]===Time:[3997.22]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[292/400]===Time:[3997.76]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[14]===Step:[293/400]===Time:[3998.30]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0488]]
+Epoch:[14]===Step:[294/400]===Time:[3998.84]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[295/400]===Time:[3999.37]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0482]]
+Epoch:[14]===Step:[296/400]===Time:[3999.92]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0482]]
+Epoch:[14]===Step:[297/400]===Time:[4000.46]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[298/400]===Time:[4001.00]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[14]===Step:[299/400]===Time:[4001.54]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[300/400]===Time:[4002.08]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[14]===Step:[301/400]===Time:[4002.62]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[14]===Step:[302/400]===Time:[4003.17]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[303/400]===Time:[4003.71]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0489]]
+Epoch:[14]===Step:[304/400]===Time:[4004.27]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0488]]
+Epoch:[14]===Step:[305/400]===Time:[4004.81]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0493]]
+Epoch:[14]===Step:[306/400]===Time:[4005.35]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0488]]
+Epoch:[14]===Step:[307/400]===Time:[4005.89]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[14]===Step:[308/400]===Time:[4006.44]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+Epoch:[14]===Step:[309/400]===Time:[4006.98]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[310/400]===Time:[4007.54]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[311/400]===Time:[4008.08]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[14]===Step:[312/400]===Time:[4008.62]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[14]===Step:[313/400]===Time:[4009.16]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[14]===Step:[314/400]===Time:[4009.72]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[14]===Step:[315/400]===Time:[4010.26]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0481]]
+Epoch:[14]===Step:[316/400]===Time:[4010.80]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0490]]
+Epoch:[14]===Step:[317/400]===Time:[4011.35]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[318/400]===Time:[4011.90]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0482]]
+Epoch:[14]===Step:[319/400]===Time:[4012.45]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[320/400]===Time:[4013.00]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[321/400]===Time:[4013.54]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[14]===Step:[322/400]===Time:[4014.09]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[323/400]===Time:[4014.64]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[324/400]===Time:[4015.19]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0482]]
+Epoch:[14]===Step:[325/400]===Time:[4015.74]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0489]]
+Epoch:[14]===Step:[326/400]===Time:[4016.29]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[327/400]===Time:[4016.84]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0482]]
+Epoch:[14]===Step:[328/400]===Time:[4017.39]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[329/400]===Time:[4017.94]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0482]]
+Epoch:[14]===Step:[330/400]===Time:[4018.49]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0491]]
+Epoch:[14]===Step:[331/400]===Time:[4019.04]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[332/400]===Time:[4019.59]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[333/400]===Time:[4020.14]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0493]]
+Epoch:[14]===Step:[334/400]===Time:[4020.69]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0482]]
+Epoch:[14]===Step:[335/400]===Time:[4021.25]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[336/400]===Time:[4021.80]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[14]===Step:[337/400]===Time:[4022.36]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[338/400]===Time:[4022.91]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[14]===Step:[339/400]===Time:[4023.46]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0488]]
+Epoch:[14]===Step:[340/400]===Time:[4024.01]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+Epoch:[14]===Step:[341/400]===Time:[4024.56]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+Epoch:[14]===Step:[342/400]===Time:[4025.12]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[343/400]===Time:[4025.67]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[14]===Step:[344/400]===Time:[4026.22]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[345/400]===Time:[4026.78]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[346/400]===Time:[4027.33]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[347/400]===Time:[4027.89]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0493]]
+Epoch:[14]===Step:[348/400]===Time:[4028.43]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[349/400]===Time:[4028.99]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[14]===Step:[350/400]===Time:[4029.54]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0482]]
+Epoch:[14]===Step:[351/400]===Time:[4030.09]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0482]]
+Epoch:[14]===Step:[352/400]===Time:[4030.65]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0488]]
+Epoch:[14]===Step:[353/400]===Time:[4031.21]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[14]===Step:[354/400]===Time:[4031.77]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[355/400]===Time:[4032.33]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[356/400]===Time:[4032.89]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[357/400]===Time:[4033.44]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[14]===Step:[358/400]===Time:[4033.98]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[14]===Step:[359/400]===Time:[4034.54]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[360/400]===Time:[4035.09]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[361/400]===Time:[4035.65]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0489]]
+Epoch:[14]===Step:[362/400]===Time:[4036.21]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0488]]
+Epoch:[14]===Step:[363/400]===Time:[4036.77]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[364/400]===Time:[4037.33]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[14]===Step:[365/400]===Time:[4037.87]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[14]===Step:[366/400]===Time:[4038.43]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0482]]
+Epoch:[14]===Step:[367/400]===Time:[4038.99]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[14]===Step:[368/400]===Time:[4039.55]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[14]===Step:[369/400]===Time:[4040.10]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[370/400]===Time:[4040.66]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[371/400]===Time:[4041.22]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[372/400]===Time:[4041.77]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[373/400]===Time:[4042.33]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0493]]
+Epoch:[14]===Step:[374/400]===Time:[4042.89]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0481]]
+Epoch:[14]===Step:[375/400]===Time:[4043.45]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[14]===Step:[376/400]===Time:[4044.01]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+Epoch:[14]===Step:[377/400]===Time:[4044.57]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[14]===Step:[378/400]===Time:[4045.13]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[379/400]===Time:[4045.69]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[14]===Step:[380/400]===Time:[4046.25]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[14]===Step:[381/400]===Time:[4046.81]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[14]===Step:[382/400]===Time:[4047.37]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[383/400]===Time:[4047.91]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[14]===Step:[384/400]===Time:[4048.48]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[14]===Step:[385/400]===Time:[4049.04]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[386/400]===Time:[4049.59]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0482]]
+Epoch:[14]===Step:[387/400]===Time:[4050.15]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0487]]
+Epoch:[14]===Step:[388/400]===Time:[4050.71]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[389/400]===Time:[4051.27]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[14]===Step:[390/400]===Time:[4051.83]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0482]]
+Epoch:[14]===Step:[391/400]===Time:[4052.39]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[14]===Step:[392/400]===Time:[4052.95]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[393/400]===Time:[4053.52]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0483]]
+Epoch:[14]===Step:[394/400]===Time:[4054.07]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+Epoch:[14]===Step:[395/400]===Time:[4054.63]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[396/400]===Time:[4055.19]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0485]]
+Epoch:[14]===Step:[397/400]===Time:[4055.75]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0484]]
+Epoch:[14]===Step:[398/400]===Time:[4056.30]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0482]]
+Epoch:[14]===Step:[399/400]===Time:[4056.86]===Learning Rate:1.0000000000000002e-06
+Train_loss:[1.0486]]
+********* 
+Validation Loss:2.0312 
+*********
+Traceback (most recent call last):
+  File "main.py", line 60, in <module>
+    operator.trainer(FLAGS.img_path, FLAGS.gt_path, FLAGS.bsize, FLAGS.lr, FLAGS.epoch)
+  File "/home/csgrad/pyan4/Chart_Project/Pytorch_DCGAN_ticks_mask/op.py", line 118, in trainer
+    self.validator(self.test_data, global_step)
+  File "/home/csgrad/pyan4/Chart_Project/Pytorch_DCGAN_ticks_mask/op.py", line 134, in validator
+    fake_val_images = self.netG(val_images)
+  File "/home/csgrad/pyan4/.local/lib/python3.6/site-packages/torch/nn/modules/module.py", line 493, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/home/csgrad/pyan4/.local/lib/python3.6/site-packages/torch/nn/parallel/data_parallel.py", line 152, in forward
+    outputs = self.parallel_apply(replicas, inputs, kwargs)
+  File "/home/csgrad/pyan4/.local/lib/python3.6/site-packages/torch/nn/parallel/data_parallel.py", line 162, in parallel_apply
+    return parallel_apply(replicas, inputs, kwargs, self.device_ids[:len(replicas)])
+  File "/home/csgrad/pyan4/.local/lib/python3.6/site-packages/torch/nn/parallel/parallel_apply.py", line 83, in parallel_apply
+    raise output
+  File "/home/csgrad/pyan4/.local/lib/python3.6/site-packages/torch/nn/parallel/parallel_apply.py", line 59, in _worker
+    output = module(*input, **kwargs)
+  File "/home/csgrad/pyan4/.local/lib/python3.6/site-packages/torch/nn/modules/module.py", line 493, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/home/csgrad/pyan4/Chart_Project/Pytorch_DCGAN_ticks_mask/unet/unet_model.py", line 23, in forward
+    x2 = self.down1(x1)
+  File "/home/csgrad/pyan4/.local/lib/python3.6/site-packages/torch/nn/modules/module.py", line 493, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/home/csgrad/pyan4/Chart_Project/Pytorch_DCGAN_ticks_mask/unet/unet_parts.py", line 45, in forward
+    x = self.mpconv(x)
+  File "/home/csgrad/pyan4/.local/lib/python3.6/site-packages/torch/nn/modules/module.py", line 493, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/home/csgrad/pyan4/.local/lib/python3.6/site-packages/torch/nn/modules/container.py", line 92, in forward
+    input = module(input)
+  File "/home/csgrad/pyan4/.local/lib/python3.6/site-packages/torch/nn/modules/module.py", line 493, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/home/csgrad/pyan4/Chart_Project/Pytorch_DCGAN_ticks_mask/unet/unet_parts.py", line 22, in forward
+    x = self.conv(x)
+  File "/home/csgrad/pyan4/.local/lib/python3.6/site-packages/torch/nn/modules/module.py", line 493, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/home/csgrad/pyan4/.local/lib/python3.6/site-packages/torch/nn/modules/container.py", line 92, in forward
+    input = module(input)
+  File "/home/csgrad/pyan4/.local/lib/python3.6/site-packages/torch/nn/modules/module.py", line 493, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/home/csgrad/pyan4/.local/lib/python3.6/site-packages/torch/nn/modules/conv.py", line 338, in forward
+    self.padding, self.dilation, self.groups)
+RuntimeError: CUDA out of memory. Tried to allocate 192.00 MiB (GPU 0; 10.76 GiB total capacity; 9.61 GiB already allocated; 181.56 MiB free; 143.79 MiB cached)

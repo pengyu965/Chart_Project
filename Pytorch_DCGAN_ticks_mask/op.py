@@ -174,7 +174,7 @@ class Operator:
                 ).permute(2,0,1).float().unsqueeze(0).to(self.device)
                 generated_img_tensor = self.netG(img_tensor)
                 generated_img = Image.fromarray(
-                    out_vis(generated_img_tensor.permute(1,2,0).detach().cpu().clone().numpy())
+                    out_vis(generated_img_tensor[0].permute(1,2,0).detach().cpu().clone().numpy())
                     # image_norm(
                     #     generated_img_tensor[0].permute(1,2,0).squeeze(2).detach().cpu().clone().numpy()
                     # ).astype("uint8")

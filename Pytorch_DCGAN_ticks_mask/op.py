@@ -71,6 +71,7 @@ class Operator:
                 # print(np.max(fake_images.detach().cpu().clone().numpy()),np.min(fake_images.detach().cpu().clone().numpy()))
                 # print(np.max(train_gt.detach().cpu().clone().numpy()), np.min(train_gt.detach().cpu().clone().numpy()))
                 # loss = self.criterion(fake_images*1. , train_gt*1./255)
+                print(fake_images.shape, train_gt.shape)
                 loss = self.criterion(fake_images, train_gt)
                 loss.backward()
                 self.optimizer.step()

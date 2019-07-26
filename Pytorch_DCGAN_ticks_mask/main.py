@@ -53,14 +53,14 @@ if __name__ == "__main__":
     FLAGS = get_args()
 
     if FLAGS.train:
-        netG = UNet(in_channels = 3, out_channels = 6)
+        netG = UNet(in_channels = 4, out_channels = 6)
         print(netG)
 
         operator = op.Operator(netG)
         operator.trainer(FLAGS.img_path, FLAGS.gt_path, FLAGS.bsize, FLAGS.lr, FLAGS.epoch)
 
     if FLAGS.predict:
-        netG = UNet(in_channels = 3, out_channels = 6)
+        netG = UNet(in_channels = 4, out_channels = 6)
         netG = nn.DataParallel(netG)
         print(netG)
 

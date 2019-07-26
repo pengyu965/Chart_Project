@@ -41,10 +41,6 @@ class Operator:
         # self.val_data = torch.utils.data.Subset(self.data, indices[-int(len(self.data)*2./10):-int(len(self.data)*1./10)])
         # self.test_data = torch.utils.data.Subset(self.data, indices[-int(len(self.data)*1./10):])
 
-
-
-        print(self.val_data)
-
         self.dataloader = DataLoader(dataset = self.train_data, batch_size = self.batch_size, shuffle = True, num_workers = 28)
 
         global_step = 0
@@ -78,7 +74,7 @@ class Operator:
                 # print(np.max(fake_images.detach().cpu().clone().numpy()),np.min(fake_images.detach().cpu().clone().numpy()))
                 # print(np.max(train_gt.detach().cpu().clone().numpy()), np.min(train_gt.detach().cpu().clone().numpy()))
                 # loss = self.criterion(fake_images*1. , train_gt*1./255)
-                print(fake_images.shape, train_gt.shape)
+                # print(fake_images.shape, train_gt.shape)
                 loss = self.criterion(fake_images, train_gt)
                 loss.backward()
                 self.optimizer.step()

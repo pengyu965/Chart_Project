@@ -38,6 +38,8 @@ class Operator:
         self.val_data = torch.utils.data.Subset(self.data, indices[-int(len(self.data)*2./10):-int(len(self.data)*1./10)])
         self.test_data = torch.utils.data.Subset(self.data, indices[-int(len(self.data)*1./10):])
 
+        print(self.val_data)
+
         self.dataloader = DataLoader(dataset = self.train_data, batch_size = self.batch_size, shuffle = True, num_workers = 28)
 
         global_step = 0

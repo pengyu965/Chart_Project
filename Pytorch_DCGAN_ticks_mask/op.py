@@ -115,7 +115,8 @@ class Operator:
                 torch.save(self.netG.state_dict(), "./weight/model.pt")
         
         ## Testing
-        self.validator(self.test_data, global_step)
+        with torch.no_grad():
+            self.validator(self.test_data, global_step)
 
 
     def validator(self, val_data, global_step):

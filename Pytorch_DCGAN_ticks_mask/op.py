@@ -106,7 +106,7 @@ class Operator:
 
             ## Validation
             with torch.no_grad():
-                val_loss = self.validator(self.val_data)
+                val_loss = self.validator(self.val_data, global_step)
 
             if val_loss < val_min_loss:
                 val_min_loss = val_loss 
@@ -115,13 +115,14 @@ class Operator:
                 torch.save(self.netG.state_dict(), "./weight/model.pt")
         
         ## Testing
-        self.validator(self.test_data)
+        self.validator(self.test_data, global_step)
 
 
-    def validator(self, val_data):
+    def validator(self, val_data, global_step):
 
         self.netG.eval()
-        val_dataloader = DataLoader(dataset = val_data, batch_size = 16, shuffle = True, num_workers = 28)
+        val_bsize = 16
+        val_dataloader = DataLoader(dataset = val_data, batch_size = val_bsize, shuffle = True, num_workers = 28)
         val_idx = len(val_dataloader)
 
         val_total_loss = 0
@@ -134,6 +135,24 @@ class Operator:
 
             valloss = self.criterion(fake_val_images*1., val_gt*1./255)
             val_total_loss += valloss.item()
+
+        index = 0
+        nroll = int(val_bsize**0.5)
+        new_im = Image.new('RGB', (5120,5120))
+        for i in range(0,5121-5120//nroll,5120//nroll):
+            try:
+                for j in range(0, 5121-5120//nroll,5120//nroll):
+                    # im = Image.fromarray(image_norm(fake_images[index].permute(1,2,0).squeeze(2).detach().cpu().clone().numpy()).astype("uint8"))
+                    im = Image.fromarray(out_vis(fake_val_images[index].permute(1,2,0).detach().cpu().clone().numpy()).astype("uint8"))
+                    im.thumbnail((512,512))
+                    new_im.paste(im, (i,j))
+                    index += 1
+            except:
+                break
+        if os.path.exists("./val_samples/") == False:
+            os.mkdir("./val_samples/")
+            
+        new_im.save("./val_samples/{}.png".format(global_step))
         
         print("***"*3, "\nValidation Loss:{:.4f}".format(val_total_loss*1./val_idx), "\n"+"***"*3)
         return val_total_loss*1. / val_idx

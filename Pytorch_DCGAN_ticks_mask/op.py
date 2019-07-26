@@ -25,18 +25,23 @@ class Operator:
         self.netG = nn.DataParallel(netG).to(self.device)
         self.netD = netD
 
-    def trainer(self, img_path, gt_path, batch_size, lr, epoch,):
+    def trainer(self, img_path, gt_path, batch_size, lr, epoch):
         self.batch_size = batch_size
         self.lr = lr 
         self.epoch = epoch 
         self.optimizer = optim.Adam(self.netG.parameters(), lr = self.lr)
         self.criterion = nn.CrossEntropyLoss()
-        self.data = Chartdata(img_path = img_path, gt_path = gt_path)
+
+        self.train_data = Chartdata(img_path = img_path+"/train/", gt_path = gt_path)
+        self.val_data = Chartdata(img_path = img_path+"/val/", gt_path = gt_path)
+        self.test_data = Chartdata(img_path = img_path+"/test/", gt_path = gt_path)
         
-        indices = torch.randperm(len(self.data)).tolist()
-        self.train_data = torch.utils.data.Subset(self.data, indices[:-int(len(self.data)*2./10)])
-        self.val_data = torch.utils.data.Subset(self.data, indices[-int(len(self.data)*2./10):-int(len(self.data)*1./10)])
-        self.test_data = torch.utils.data.Subset(self.data, indices[-int(len(self.data)*1./10):])
+        # indices = torch.randperm(len(self.data)).tolist()
+        # self.train_data = torch.utils.data.Subset(self.data, indices[:-int(len(self.data)*2./10)])
+        # self.val_data = torch.utils.data.Subset(self.data, indices[-int(len(self.data)*2./10):-int(len(self.data)*1./10)])
+        # self.test_data = torch.utils.data.Subset(self.data, indices[-int(len(self.data)*1./10):])
+
+
 
         print(self.val_data)
 
@@ -96,8 +101,10 @@ class Operator:
                                 index += 1
                         except:
                             break
-                    
-                    new_im.save("./samples/{}.png".format(global_step))
+                    if os.path.exists("./train_samples/") == False:
+                        os.mkdir("./train_samples/")
+                        
+                    new_im.save("./train_samples/{}.png".format(global_step))
 
                 global_step += 1
 

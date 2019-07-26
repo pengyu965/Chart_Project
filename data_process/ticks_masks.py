@@ -83,7 +83,13 @@ def masks_gen(gt_json):
         ),
         axis = 2
         )
-    np.save(ticks_mask_path+gt_json[:-5], final_arr)
+    class_arr = np.zeros((512,512))
+    x, y, z = final_arr.shape
+    for i in range(x):
+        for j in range(y):
+            idi = np.argmax(final_arr[i,j,:])
+            class_arr[i,j] = idi
+    np.save(ticks_mask_path+gt_json[:-5], class_arr)
         
             
             # print([x,y])

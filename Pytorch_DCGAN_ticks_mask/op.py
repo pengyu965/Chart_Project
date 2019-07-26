@@ -30,7 +30,7 @@ class Operator:
         self.lr = lr 
         self.epoch = epoch 
         self.optimizer = optim.Adam(self.netG.parameters(), lr = self.lr)
-        self.criterion = nn.MSELoss()
+        self.criterion = nn.CrossEntropyLoss()
         self.data = Chartdata(img_path = img_path, gt_path = gt_path)
         
         indices = torch.randperm(len(self.data)).tolist()
@@ -70,7 +70,8 @@ class Operator:
 
                 # print(np.max(fake_images.detach().cpu().clone().numpy()),np.min(fake_images.detach().cpu().clone().numpy()))
                 # print(np.max(train_gt.detach().cpu().clone().numpy()), np.min(train_gt.detach().cpu().clone().numpy()))
-                loss = self.criterion(fake_images*1. , train_gt*1./255)
+                # loss = self.criterion(fake_images*1. , train_gt*1./255)
+                loss = self.criterion(fake_images, train_gt)
                 loss.backward()
                 self.optimizer.step()
 
@@ -188,7 +189,7 @@ class Chartdata(Dataset):
         gt_npy_path = os.path.join(self.gt_path, img_name[:-3]+"npy")
         input_images = torch.tensor(np.array(cv2.imread(input_images_path))).float().permute(2,0,1)
         # print(np.array(cv2.imread(gt_images_path)).shape)
-        gt_images = torch.tensor(np.load(gt_npy_path)).float().permute(2,0,1)
+        gt_images = torch.tensor(np.load(gt_npy_path)).Long()
         
 
         return (input_images, gt_images)

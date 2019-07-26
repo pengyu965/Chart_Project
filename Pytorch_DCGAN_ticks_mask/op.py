@@ -189,7 +189,7 @@ class Chartdata(Dataset):
         gt_npy_path = os.path.join(self.gt_path, img_name[:-3]+"npy")
         input_images = torch.tensor(np.array(cv2.imread(input_images_path))).float().permute(2,0,1)
         # print(np.array(cv2.imread(gt_images_path)).shape)
-        gt_images = torch.tensor(np.load(gt_npy_path)).Long()
+        gt_images = torch.tensor(np.load(gt_npy_path)).long()
         
 
         return (input_images, gt_images)

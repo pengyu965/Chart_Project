@@ -46,7 +46,6 @@ def content_remover(image):
 
 
 
-content_remover("3.png")
 
 if os.path.exists("../data/SUMIT/rs_content_removed_sampled/") == False:
     os.mkdir("../data/SUMIT/rs_content_removed_sampled/")

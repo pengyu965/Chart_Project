@@ -159,7 +159,7 @@ class Operator:
         return val_total_loss*1. / val_idx
 
 
-    def predictor(self, image_path):
+    def predictor(self, image_path, visualize=True):
         self.netG.eval()
 
         if os.path.isdir(image_path):
@@ -174,13 +174,22 @@ class Operator:
                     )
                 ).permute(2,0,1).float().unsqueeze(0).to(self.device)
                 generated_img_tensor = self.netG(img_tensor)
-                generated_img = Image.fromarray(
-                    out_vis(generated_img_tensor[0].permute(1,2,0).detach().cpu().clone().numpy()).astype("uint8")
-                    # image_norm(
-                    #     generated_img_tensor[0].permute(1,2,0).squeeze(2).detach().cpu().clone().numpy()
-                    # ).astype("uint8")
-                )
-                generated_img.save("./predict_result/{}".format(image))
+                if visualize == True:
+                    generated_img = Image.fromarray(
+                        out_vis(generated_img_tensor[0].permute(1,2,0).detach().cpu().clone().numpy()).astype("uint8")
+                        # image_norm(
+                        #     generated_img_tensor[0].permute(1,2,0).squeeze(2).detach().cpu().clone().numpy()
+                        # ).astype("uint8")
+                    )
+                    generated_img.save("./predict_result/{}".format(image))
+                else:
+                    generated_arr = channel_binarization(
+                        generated_img_tensor[0].permute(1,2,0).detach().cpu().clone().numpy()
+                    )
+                    np.save(
+                        "./predict_result/{}".format(image[:-4]), 
+                        generated_arr
+                        )
                 print(idi)
                 idi += 1
         elif os.path.isfile(image_path):
@@ -220,7 +229,7 @@ class Chartdata(Dataset):
 
         # line_maps = torch.tensor(cv2.imread(line_map_path)[:,:,0]).float().unsqueeze(0)
         # input_images = torch.cat((input_images, line_maps), dim=0)
-        
+
         # print(np.array(cv2.imread(gt_images_path)).shape)
         gt_images = torch.tensor(np.load(gt_npy_path)).long()
         
@@ -275,6 +284,21 @@ def out_vis(arr):
             pixel = arr[i,j,:]
             idi = np.argmax(pixel)
             new_arr[i,j,:] = np.array(color_lib[idi])
+
+    return new_arr
+
+
+def channel_binarization(arr):
+    x, y, z = arr.shape
+    new_arr = np.zeros_like(arr)
+
+    for i in range(x):
+        for j in range(y):
+            pixel = arr[i,j,:]
+            idi = np.argmax(pixel)
+            new_channel = np.zeros((z))
+            new_channel[idi] = 1
+            new_arr[i,j,:] = new_channel
 
     return new_arr
                 

@@ -62,10 +62,10 @@ if __name__ == "__main__":
                 netG.load_state_dict(torch.load("./weight/model.pt"), strict=True)
             else:
                 netG.load_state_dict(torch.load("./weight/model.pt", map_location='cpu'), strict=True)
-            print("="*6, "\nModel loaded, start prediction", "\n"+"="*6)
+            print("="*6, "\nModel loaded, start retraining", "\n"+"="*6)
         else:
-            print("Model isn't found, train the network first.")
-            sys.exit()
+            print("Model isn't found, train the network from begining.")
+            
 
         operator = op.Operator(netG)
         operator.trainer(FLAGS.img_path, FLAGS.gt_path, FLAGS.bsize, FLAGS.lr, FLAGS.epoch)
@@ -81,7 +81,7 @@ if __name__ == "__main__":
                 netG.load_state_dict(torch.load("./weight/model.pt"), strict=True)
             else:
                 netG.load_state_dict(torch.load("./weight/model.pt", map_location='cpu'), strict=True)
-            print("="*6, "\nModel loaded, start prediction", "\n"+"="*6)
+            print("="*6, "\nModel loaded, start evaluation", "\n"+"="*6)
         else:
             print("Model isn't found, train the network first.")
             sys.exit()

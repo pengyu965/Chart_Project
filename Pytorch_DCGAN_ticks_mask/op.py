@@ -119,8 +119,8 @@ class Operator:
 
 
     def validator(self, val_img_path, val_gt_path, global_step):
-
         self.netG.eval()
+        self.criterion = nn.CrossEntropyLoss()
         val_bsize = 16
 
         val_data = Chartdata(img_path = val_img_path, gt_path = val_gt_path)

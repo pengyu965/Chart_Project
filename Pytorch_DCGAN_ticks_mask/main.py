@@ -76,7 +76,8 @@ if __name__ == "__main__":
             sys.exit()
 
         operator = op.Operator(netG)
-        operator.validator(FLAGS.img_path, FLAGS.gt_path, global_step = "ff")
+        with torch.no_grad():
+            operator.validator(FLAGS.img_path, FLAGS.gt_path, global_step = "ff")
 
     if FLAGS.predict:
         netG = UNet(in_channels = 3, out_channels = 6)

@@ -51,29 +51,20 @@ def get_args():
 
 if __name__ == "__main__":
     FLAGS = get_args()
+    device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
     if FLAGS.train:
         netG = UNet(in_channels = 3, out_channels = 6)
-        operator = op.Operator(netG)
+        netG = nn.DataParallel(netG).to(device)
         print(netG)
 
-        if os.path.exists("./weight/model.pt"):
-            if torch.cuda.is_available():
-                netG.load_state_dict(torch.load("./weight/model.pt"), strict=True)
-            else:
-                netG.load_state_dict(torch.load("./weight/model.pt", map_location='cpu'), strict=True)
-            print("="*6, "\nModel loaded, start prediction", "\n"+"="*6)
-        else:
-            print("Model isn't found, train the network first.")
-            sys.exit()
-
-        # operator = op.Operator(netG)
+        operator = op.Operator(netG)
         operator.trainer(FLAGS.img_path, FLAGS.gt_path, FLAGS.bsize, FLAGS.lr, FLAGS.epoch)
 
 
     if FLAGS.eval:
         netG = UNet(in_channels = 3, out_channels = 6)
-        operator = op.Operator(netG)
+        netG = nn.DataParallel(netG).to(device)
         print(netG)
 
         if os.path.exists("./weight/model.pt"):
@@ -86,12 +77,12 @@ if __name__ == "__main__":
             print("Model isn't found, train the network first.")
             sys.exit()
 
-        # operator = op.Operator(netG)
+        operator = op.Operator(netG)
         operator.validator(FLAGS.img_path, FLAGS.gt_path, global_step = "ff")
 
     if FLAGS.predict:
         netG = UNet(in_channels = 3, out_channels = 6)
-        operator = op.Operator(netG)
+        netG = nn.DataParallel(netG).to(device)
         print(netG)
 
         if os.path.exists("./weight/model.pt"):
@@ -107,5 +98,5 @@ if __name__ == "__main__":
         if os.path.exists("./predict_result/") == False:
             os.mkdir("./predict_result/")
 
-        # operator = op.Operator(netG)
+        operator = op.Operator(netG)
         operator.predictor(FLAGS.img_path, visualize = True)

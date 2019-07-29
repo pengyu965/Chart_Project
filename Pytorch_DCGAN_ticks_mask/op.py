@@ -172,11 +172,12 @@ class Operator:
                         cv2.imread(os.path.join(image_path, image)),
                         (512,512)
                     )
-                ).permute(2,0,1).float().unsqueeze(0).to(self.device)
+                ).float().permute(2,0,1).unsqueeze(0).to(self.device)
                 generated_img_tensor = self.netG(img_tensor)
                 if visualize == True:
+                    print(generated_img_tensor.shape)
                     generated_img = Image.fromarray(
-                        out_vis(generated_img_tensor[0].permute(1,2,0).detach().cpu().clone().numpy()).astype("uint8")
+                        out_vis(generated_img_tensor[0].permute(1,2,0).detach().cpu().clone().numpy()).astype(np.uint8)
                         # image_norm(
                         #     generated_img_tensor[0].permute(1,2,0).squeeze(2).detach().cpu().clone().numpy()
                         # ).astype("uint8")

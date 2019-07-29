@@ -62,6 +62,7 @@ if __name__ == "__main__":
 
     if FLAGS.eval:
         netG = UNet(in_channels = 3, out_channels = 6)
+        netG = nn.DataParallel(netG)
         print(netG)
 
         if os.path.exists("./weight/model.pt"):

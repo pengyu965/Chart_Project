@@ -182,6 +182,7 @@ class Operator:
                         #     generated_img_tensor[0].permute(1,2,0).squeeze(2).detach().cpu().clone().numpy()
                         # ).astype("uint8")
                     )
+                    generated_img.thumbnail((512,512))
                     generated_img.save("./predict_result/{}".format(image))
                 else:
                     generated_arr = channel_binarization(

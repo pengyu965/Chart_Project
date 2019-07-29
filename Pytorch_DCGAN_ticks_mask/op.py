@@ -175,7 +175,6 @@ class Operator:
                 ).float().permute(2,0,1).unsqueeze(0).to(self.device)
                 generated_img_tensor = self.netG(img_tensor)
                 if visualize == True:
-                    print(generated_img_tensor.shape)
                     generated_img = Image.fromarray(
                         out_vis(generated_img_tensor[0].permute(1,2,0).detach().cpu().clone().numpy()).astype(np.uint8)
                         # image_norm(

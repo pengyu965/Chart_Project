@@ -78,4 +78,5 @@ if __name__ == "__main__":
             os.mkdir("./predict_result/")
 
         operator = op.Operator(netG)
-        operator.predictor(FLAGS.img_path, visualize = True)
+        with torch.no_grad():
+            operator.predictor(FLAGS.img_path, visualize = True)

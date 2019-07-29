@@ -111,7 +111,9 @@ class Operator:
                 val_min_loss = val_loss 
                 if os.path.exists("./weight/") == False:
                     os.mkdir("./weight/")
-                torch.save(self.netG.state_dict(), "./weight/model.pt")
+                torch.save(self.netG.module.state_dict(), "./weight/model.pt")
+
+        torch.save(self.netG.module.state_dict(), "./weight/final.pt")
         
         ## Testing
         with torch.no_grad():

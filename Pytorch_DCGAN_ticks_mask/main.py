@@ -58,6 +58,16 @@ if __name__ == "__main__":
         netG = nn.DataParallel(netG).to(device)
         print(netG)
 
+        if os.path.exists("./weight/model.pt"):
+            if torch.cuda.is_available():
+                netG.load_state_dict(torch.load("./weight/model.pt"), strict=True)
+            else:
+                netG.load_state_dict(torch.load("./weight/model.pt", map_location='cpu'), strict=True)
+            print("="*6, "\nModel loaded, start prediction", "\n"+"="*6)
+        else:
+            print("Model isn't found, train the network first.")
+            sys.exit()
+
         operator = op.Operator(netG)
         operator.trainer(FLAGS.img_path, FLAGS.gt_path, FLAGS.bsize, FLAGS.lr, FLAGS.epoch)
 
@@ -69,7 +79,7 @@ if __name__ == "__main__":
 
         if os.path.exists("./weight/model.pt"):
             if torch.cuda.is_available():
-                netG.load_state_dict(torch.load("./weight/model.pt"), strict=True)
+                netG.load_state_dict(torch.load("./weight/model.pt", map_location="cuda:0"), strict=True)
             else:
                 netG.load_state_dict(torch.load("./weight/model.pt", map_location='cpu'), strict=True)
             print("="*6, "\nModel loaded, start prediction", "\n"+"="*6)

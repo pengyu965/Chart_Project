@@ -33,8 +33,7 @@ class Operator:
         self.criterion = nn.CrossEntropyLoss()
 
         self.train_data = Chartdata(img_path = img_path+"/train/", gt_path = gt_path)
-        self.val_data = Chartdata(img_path = img_path+"/val/", gt_path = gt_path)
-        self.test_data = Chartdata(img_path = img_path+"/test/", gt_path = gt_path)
+
         
         # indices = torch.randperm(len(self.data)).tolist()
         # self.train_data = torch.utils.data.Subset(self.data, indices[:-int(len(self.data)*2./10)])
@@ -106,7 +105,7 @@ class Operator:
 
             ## Validation
             with torch.no_grad():
-                val_loss = self.validator(self.val_data, global_step)
+                val_loss = self.validator(img_path+"/val/", gt_path, global_step)
 
             if val_loss < val_min_loss:
                 val_min_loss = val_loss 
@@ -116,13 +115,15 @@ class Operator:
         
         ## Testing
         with torch.no_grad():
-            self.validator(self.test_data, global_step)
+            self.validator(img_path+"/test/", gt_path, global_step)
 
 
-    def validator(self, val_data, global_step):
+    def validator(self, val_img_path, val_gt_path, global_step):
 
         self.netG.eval()
         val_bsize = 16
+
+        val_data = Chartdata(img_path = val_img_path, gt_path = val_gt_path)
         val_dataloader = DataLoader(dataset = val_data, batch_size = val_bsize, shuffle = True, num_workers = 28)
         val_idx = len(val_dataloader)
 

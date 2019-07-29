@@ -51,11 +51,10 @@ def get_args():
 
 if __name__ == "__main__":
     FLAGS = get_args()
-    device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
     if FLAGS.train:
         netG = UNet(in_channels = 3, out_channels = 6)
-        netG = nn.DataParallel(netG).to(device)
+        # netG = nn.DataParallel(netG).to(device)
         print(netG)
 
         if os.path.exists("./weight/model.pt"):
@@ -74,7 +73,7 @@ if __name__ == "__main__":
 
     if FLAGS.eval:
         netG = UNet(in_channels = 3, out_channels = 6)
-        netG = nn.DataParallel(netG).to(device)
+        # netG = nn.DataParallel(netG).to(device)
         print(netG)
 
         if os.path.exists("./weight/model.pt"):
@@ -87,14 +86,12 @@ if __name__ == "__main__":
             print("Model isn't found, train the network first.")
             sys.exit()
 
-        torch.save(netG.module.state_dict(), "./weight/model2.pt")
-
-        # operator = op.Operator(netG)
-        # operator.validator(FLAGS.img_path, FLAGS.gt_path, global_step = "ff")
+        operator = op.Operator(netG)
+        operator.validator(FLAGS.img_path, FLAGS.gt_path, global_step = "ff")
 
     if FLAGS.predict:
         netG = UNet(in_channels = 3, out_channels = 6)
-        netG = nn.DataParallel(netG).to(device)
+        # netG = nn.DataParallel(netG).to(device)
         print(netG)
 
         if os.path.exists("./weight/model.pt"):

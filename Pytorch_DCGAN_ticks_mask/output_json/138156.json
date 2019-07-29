@@ -1,0 +1,178 @@
+{
+    "input": {
+        "task2_output": {
+            "text_blocks": [
+                {
+                    "bb": {
+                        "height": 14,
+                        "width": 114,
+                        "x0": 206,
+                        "y0": 5
+                    },
+                    "id": null,
+                    "text": null
+                },
+                {
+                    "bb": {
+                        "height": 1,
+                        "width": 7,
+                        "x0": 260,
+                        "y0": 18
+                    },
+                    "id": null,
+                    "text": null
+                },
+                {
+                    "bb": {
+                        "height": 79,
+                        "width": 51,
+                        "x0": 221,
+                        "y0": 429
+                    },
+                    "id": null,
+                    "text": null
+                },
+                {
+                    "bb": {
+                        "height": 12,
+                        "width": 15,
+                        "x0": 7,
+                        "y0": 381
+                    },
+                    "id": null,
+                    "text": null
+                },
+                {
+                    "bb": {
+                        "height": 3,
+                        "width": 2,
+                        "x0": 19,
+                        "y0": 330
+                    },
+                    "id": null,
+                    "text": null
+                },
+                {
+                    "bb": {
+                        "height": 11,
+                        "width": 11,
+                        "x0": 7,
+                        "y0": 328
+                    },
+                    "id": null,
+                    "text": null
+                },
+                {
+                    "bb": {
+                        "height": 4,
+                        "width": 2,
+                        "x0": 19,
+                        "y0": 276
+                    },
+                    "id": null,
+                    "text": null
+                },
+                {
+                    "bb": {
+                        "height": 10,
+                        "width": 10,
+                        "x0": 8,
+                        "y0": 274
+                    },
+                    "id": null,
+                    "text": null
+                },
+                {
+                    "bb": {
+                        "height": 4,
+                        "width": 2,
+                        "x0": 19,
+                        "y0": 222
+                    },
+                    "id": null,
+                    "text": null
+                },
+                {
+                    "bb": {
+                        "height": 10,
+                        "width": 11,
+                        "x0": 7,
+                        "y0": 220
+                    },
+                    "id": null,
+                    "text": null
+                },
+                {
+                    "bb": {
+                        "height": 12,
+                        "width": 15,
+                        "x0": 7,
+                        "y0": 165
+                    },
+                    "id": null,
+                    "text": null
+                },
+                {
+                    "bb": {
+                        "height": 13,
+                        "width": 17,
+                        "x0": 5,
+                        "y0": 111
+                    },
+                    "id": null,
+                    "text": null
+                },
+                {
+                    "bb": {
+                        "height": 13,
+                        "width": 16,
+                        "x0": 5,
+                        "y0": 57
+                    },
+                    "id": null,
+                    "text": null
+                }
+            ]
+        },
+        "task4_output": {
+            "points_list": [
+                [
+                    261,
+                    423
+                ],
+                [
+                    262,
+                    423
+                ],
+                [
+                    19,
+                    387
+                ],
+                [
+                    19,
+                    333
+                ],
+                [
+                    19,
+                    279
+                ],
+                [
+                    19,
+                    225
+                ],
+                [
+                    20,
+                    172
+                ],
+                [
+                    19,
+                    118
+                ],
+                [
+                    19,
+                    64
+                ]
+            ]
+        }
+    }
+}

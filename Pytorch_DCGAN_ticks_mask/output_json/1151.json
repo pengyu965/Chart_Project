@@ -1,0 +1,468 @@
+{
+    "input": {
+        "task2_output": {
+            "text_blocks": [
+                {
+                    "bb": {
+                        "height": 3,
+                        "width": 5,
+                        "x0": 85,
+                        "y0": 90
+                    },
+                    "id": null,
+                    "text": null
+                },
+                {
+                    "bb": {
+                        "height": 3,
+                        "width": 7,
+                        "x0": 72,
+                        "y0": 89
+                    },
+                    "id": null,
+                    "text": null
+                },
+                {
+                    "bb": {
+                        "height": 4,
+                        "width": 21,
+                        "x0": 71,
+                        "y0": 81
+                    },
+                    "id": null,
+                    "text": null
+                },
+                {
+                    "bb": {
+                        "height": 15,
+                        "width": 250,
+                        "x0": 28,
+                        "y0": 8
+                    },
+                    "id": null,
+                    "text": null
+                },
+                {
+                    "bb": {
+                        "height": 1,
+                        "width": 5,
+                        "x0": 94,
+                        "y0": 22
+                    },
+                    "id": null,
+                    "text": null
+                },
+                {
+                    "bb": {
+                        "height": 1,
+                        "width": 5,
+                        "x0": 86,
+                        "y0": 22
+                    },
+                    "id": null,
+                    "text": null
+                },
+                {
+                    "bb": {
+                        "height": 2,
+                        "width": 3,
+                        "x0": 260,
+                        "y0": 495
+                    },
+                    "id": null,
+                    "text": null
+                },
+                {
+                    "bb": {
+                        "height": 39,
+                        "width": 22,
+                        "x0": 428,
+                        "y0": 451
+                    },
+                    "id": null,
+                    "text": null
+                },
+                {
+                    "bb": {
+                        "height": 39,
+                        "width": 24,
+                        "x0": 308,
+                        "y0": 451
+                    },
+                    "id": null,
+                    "text": null
+                },
+                {
+                    "bb": {
+                        "height": 39,
+                        "width": 24,
+                        "x0": 189,
+                        "y0": 451
+                    },
+                    "id": null,
+                    "text": null
+                },
+                {
+                    "bb": {
+                        "height": 39,
+                        "width": 25,
+                        "x0": 70,
+                        "y0": 451
+                    },
+                    "id": null,
+                    "text": null
+                },
+                {
+                    "bb": {
+                        "height": 15,
+                        "width": 16,
+                        "x0": 16,
+                        "y0": 437
+                    },
+                    "id": null,
+                    "text": null
+                },
+                {
+                    "bb": {
+                        "height": 13,
+                        "width": 11,
+                        "x0": 17,
+                        "y0": 375
+                    },
+                    "id": null,
+                    "text": null
+                },
+                {
+                    "bb": {
+                        "height": 14,
+                        "width": 10,
+                        "x0": 17,
+                        "y0": 311
+                    },
+                    "id": null,
+                    "text": null
+                },
+                {
+                    "bb": {
+                        "height": 13,
+                        "width": 10,
+                        "x0": 17,
+                        "y0": 248
+                    },
+                    "id": null,
+                    "text": null
+                },
+                {
+                    "bb": {
+                        "height": 7,
+                        "width": 7,
+                        "x0": 7,
+                        "y0": 246
+                    },
+                    "id": null,
+                    "text": null
+                },
+                {
+                    "bb": {
+                        "height": 2,
+                        "width": 3,
+                        "x0": 9,
+                        "y0": 229
+                    },
+                    "id": null,
+                    "text": null
+                },
+                {
+                    "bb": {
+                        "height": 7,
+                        "width": 5,
+                        "x0": 8,
+                        "y0": 221
+                    },
+                    "id": null,
+                    "text": null
+                },
+                {
+                    "bb": {
+                        "height": 11,
+                        "width": 9,
+                        "x0": 18,
+                        "y0": 186
+                    },
+                    "id": null,
+                    "text": null
+                },
+                {
+                    "bb": {
+                        "height": 11,
+                        "width": 27,
+                        "x0": 79,
+                        "y0": 122
+                    },
+                    "id": null,
+                    "text": null
+                },
+                {
+                    "bb": {
+                        "height": 14,
+                        "width": 11,
+                        "x0": 16,
+                        "y0": 121
+                    },
+                    "id": null,
+                    "text": null
+                },
+                {
+                    "bb": {
+                        "height": 4,
+                        "width": 8,
+                        "x0": 65,
+                        "y0": 109
+                    },
+                    "id": null,
+                    "text": null
+                },
+                {
+                    "bb": {
+                        "height": 3,
+                        "width": 3,
+                        "x0": 69,
+                        "y0": 110
+                    },
+                    "id": null,
+                    "text": null
+                },
+                {
+                    "bb": {
+                        "height": 4,
+                        "width": 16,
+                        "x0": 80,
+                        "y0": 108
+                    },
+                    "id": null,
+                    "text": null
+                },
+                {
+                    "bb": {
+                        "height": 44,
+                        "width": 53,
+                        "x0": 67,
+                        "y0": 78
+                    },
+                    "id": null,
+                    "text": null
+                },
+                {
+                    "bb": {
+                        "height": 3,
+                        "width": 3,
+                        "x0": 97,
+                        "y0": 92
+                    },
+                    "id": null,
+                    "text": null
+                },
+                {
+                    "bb": {
+                        "height": 3,
+                        "width": 3,
+                        "x0": 93,
+                        "y0": 90
+                    },
+                    "id": null,
+                    "text": null
+                },
+                {
+                    "bb": {
+                        "height": 4,
+                        "width": 3,
+                        "x0": 91,
+                        "y0": 87
+                    },
+                    "id": null,
+                    "text": null
+                },
+                {
+                    "bb": {
+                        "height": 3,
+                        "width": 3,
+                        "x0": 67,
+                        "y0": 87
+                    },
+                    "id": null,
+                    "text": null
+                },
+                {
+                    "bb": {
+                        "height": 6,
+                        "width": 6,
+                        "x0": 93,
+                        "y0": 86
+                    },
+                    "id": null,
+                    "text": null
+                },
+                {
+                    "bb": {
+                        "height": 3,
+                        "width": 3,
+                        "x0": 90,
+                        "y0": 86
+                    },
+                    "id": null,
+                    "text": null
+                },
+                {
+                    "bb": {
+                        "height": 3,
+                        "width": 3,
+                        "x0": 81,
+                        "y0": 80
+                    },
+                    "id": null,
+                    "text": null
+                },
+                {
+                    "bb": {
+                        "height": 4,
+                        "width": 5,
+                        "x0": 110,
+                        "y0": 75
+                    },
+                    "id": null,
+                    "text": null
+                },
+                {
+                    "bb": {
+                        "height": 12,
+                        "width": 11,
+                        "x0": 16,
+                        "y0": 59
+                    },
+                    "id": null,
+                    "text": null
+                },
+                {
+                    "bb": {
+                        "height": 4,
+                        "width": 13,
+                        "x0": 60,
+                        "y0": 36
+                    },
+                    "id": null,
+                    "text": null
+                },
+                {
+                    "bb": {
+                        "height": 11,
+                        "width": 25,
+                        "x0": 81,
+                        "y0": 35
+                    },
+                    "id": null,
+                    "text": null
+                }
+            ]
+        },
+        "task4_output": {
+            "points_list": [
+                [
+                    263,
+                    496
+                ],
+                [
+                    29,
+                    443
+                ],
+                [
+                    29,
+                    382
+                ],
+                [
+                    10,
+                    245
+                ],
+                [
+                    10,
+                    242
+                ],
+                [
+                    10,
+                    233
+                ],
+                [
+                    10,
+                    227
+                ],
+                [
+                    29,
+                    127
+                ],
+                [
+                    92,
+                    111
+                ],
+                [
+                    75,
+                    98
+                ],
+                [
+                    75,
+                    98
+                ],
+                [
+                    92,
+                    88
+                ],
+                [
+                    66,
+                    86
+                ],
+                [
+                    117,
+                    86
+                ],
+                [
+                    110,
+                    77
+                ],
+                [
+                    78,
+                    76
+                ],
+                [
+                    71,
+                    75
+                ],
+                [
+                    99,
+                    64
+                ],
+                [
+                    71,
+                    63
+                ],
+                [
+                    29,
+                    64
+                ],
+                [
+                    29,
+                    64
+                ],
+                [
+                    89,
+                    41
+                ],
+                [
+                    91,
+                    43
+                ],
+                [
+                    69,
+                    39
+                ]
+            ]
+        }
+    }
+}

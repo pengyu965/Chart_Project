@@ -35,6 +35,15 @@ def output_json(input_npy):
     o_json["input"]["task2_output"] = {}
     o_json["input"]["task2_output"]["text_blocks"] = []
 
+    # # Visualize each Channel
+    # for idi in range(0,6):
+    #     image = (arr[:,:,idi]*255).astype(np.uint8)
+    #     # cl_image = cv2.cvtColor(image, cv2.COLOR_GRAY2BGR)
+    #     bbs, centers = get_corner(image)
+    #     cv2.imshow("example", image)
+    #     cv2.waitKey(0)
+
+
     # Text Bounding Box
     for idi in range(0,4):
         image = (arr[:,:,idi]*255).astype(np.uint8)
@@ -56,8 +65,8 @@ def output_json(input_npy):
                 text_bb["bb"]["x0"] = x0 
                 text_bb["bb"]["y0"] = y0 
 
-                text_bb["id"] = None 
-                text_bb["text"] = None 
+                text_bb["id"] = 0
+                text_bb["text"] = "None" 
 
                 o_json["input"]["task2_output"]["text_blocks"].append(text_bb)
     
@@ -89,7 +98,7 @@ def output_json(input_npy):
         # print(bbs)
 
 
-# output_json("164826.npy")
+# output_json("83978.npy")
 
 
 pool = multiprocessing.Pool()

@@ -72,7 +72,7 @@ if __name__ == "__main__":
 
 
     if FLAGS.eval:
-        netG = UNet(in_channels = 3, out_channels = 6)
+        netG = UNet(in_channels = 3, out_channels = 8)
         # netG = nn.DataParallel(netG).to(device)
         print(netG)
 
@@ -88,10 +88,10 @@ if __name__ == "__main__":
 
         operator = op.Operator(netG)
         with torch.no_grad():
-            operator.validator(FLAGS.img_path, FLAGS.gt_path, global_step = "ff")
+            operator.validator(FLAGS.img_path, FLAGS.gt_path, global_step = "validation")
 
     if FLAGS.predict:
-        netG = UNet(in_channels = 3, out_channels = 6)
+        netG = UNet(in_channels = 3, out_channels = 8)
         # netG = nn.DataParallel(netG).to(device)
         print(netG)
 
@@ -109,4 +109,4 @@ if __name__ == "__main__":
             os.mkdir("./predict_result/")
 
         operator = op.Operator(netG)
-        operator.predictor(FLAGS.img_path, visualize = False)
+        operator.predictor(FLAGS.img_path, visualize = True)

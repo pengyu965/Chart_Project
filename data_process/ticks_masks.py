@@ -1,9 +1,31 @@
+r"""
+Generate the ground truth masks 
+The classes from top channel to the bottom channel [0:5] are:
+(
+    [0] Chart Title
+    [1] Axis Title
+    [2] Ticks Label
+    [3] Lengend_Label
+    [4] Ticks_Masks
+    [5] Background
+    [6] Ticks Label ID
+    [7] Ticks Marks ID
+)
+And the final output would be three channels
+(
+    [0] The masks Class layer [value of each pixel from 0-5], representing the pixel class
+    [1] Ticks Label ID Layer
+)
+"""
+
 import os 
 import json 
 import cv2
 import numpy as np
 from tqdm import tqdm 
 import multiprocessing
+import sys 
+
 
 gt_path = "../data/SUMIT/rs_json_gt_sampled/"
 img_path = "../data/SUMIT/rs_images_sampled/"
@@ -14,28 +36,46 @@ if os.path.exists(ticks_mask_path) == False:
     os.mkdir(ticks_mask_path)
 
 def masks_gen(gt_json):
+    img_size = (512,512)
 # for gt_json in os.listdir(gt_path):
     gt_file = json.load(open(os.path.join(gt_path, gt_json),'r'))
 
-    background_mask = np.ones((512,512)).astype(np.uint8)*255
-    chart_title_mask = np.zeros((512,512)).astype(np.uint8)
-    lengend_label_mask = np.zeros((512,512)).astype(np.uint8)
-    ticks_labels_mask = np.zeros((512,512)).astype(np.uint8)
-    axis_titles_mask = np.zeros((512,512)).astype(np.uint8)
-    axis_labels_mask = np.zeros((512,512)).astype(np.uint8)
-    ticks_mask = np.zeros((512,512)).astype(np.uint8)
-    
-    
+    chart_title_mask = np.zeros(img_size).astype(np.uint8)
+    axis_titles_mask = np.zeros(img_size).astype(np.uint8)
+    ticks_labels_mask = np.zeros(img_size).astype(np.uint8)
+    ## Legend_titles is not used
+    legend_titles_mask = np.zeros(img_size).astype(np.uint8)
+    ##
+    lengend_label_mask = np.zeros(img_size).astype(np.uint8)
+    ticks_mask = np.zeros(img_size).astype(np.uint8)
+    background_mask = np.ones(img_size).astype(np.uint8)*255
 
+    ticks_labels_ID_mask = np.full(img_size, np.nan)
+    ticks_ID_mask = np.full(img_size, np.nan)
+
+    vecter_center_masks = np.zeros(img_size+(2,))
+
+
+
+    
+    
+    tick_id_center = {}
     # ticks_mask
     for axis in gt_file["input"]["task4_output"]["axes"]:
         for item in gt_file["input"]["task4_output"]["axes"][axis]:
             x = item["tick_pt"]["x"]
             y = item["tick_pt"]["y"]
+            t_id = item["id"]
             cv2.circle(ticks_mask,(x,y), 5, (255,255,255), -1)
             cv2.circle(background_mask,(x,y), 5, (0,0,0), -1)
+            # Ticks ID Layer
+            cv2.circle(ticks_ID_mask, (x,y), 5, (t_id), -1)
+            # Ticks area center point
+            cv2.circle(vecter_center_masks, (x,y), 5, (x,y), -1)
+            tick_id_center[str(t_id)] = (x,y)
+
     
-    # ticks_labels_mask
+    # All kinds of labels' mask
     for t_bb in gt_file["input"]["task2_output"]["text_blocks"]:
         t_id = t_bb["id"]
         x0 = t_bb["bb"]["x0"]
@@ -54,7 +94,14 @@ def masks_gen(gt_json):
             cv2.rectangle(background_mask,(x0,y0), (x1,y1), (0,0,0), -1)
         elif t_type == "tick_label":
             cv2.rectangle(ticks_labels_mask, (x0,y0), (x1,y1), (255,255,255), -1)
-            cv2.rectangle(background_mask,(x0,y0), (x1,y1), (0,0,0), -1)
+            cv2.rectangle(background_mask, (x0,y0), (x1,y1), (0,0,0), -1)
+            # Tick Label ID layer
+            cv2.rectangle(ticks_labels_ID_mask, (x0,y0), (x1,y1), (t_id), -1)
+            # Tick Label area ---> tick point center. Need to fullfill the assumption that 
+            # all ticks labels would must have an associated ticks marks (though not all ticks marks have associated labels)
+            # Then all t_id would be one key in tick_id_center.
+            cv2.rectangle(vecter_center_masks, (x0,y0), (x1,y1), tick_id_center[str(t_id)],-1)
+
         elif t_type == "legend_label":
             cv2.rectangle(lengend_label_mask, (x0,y0), (x1,y1), (255,255,255), -1)
             cv2.rectangle(background_mask,(x0,y0), (x1,y1), (0,0,0), -1)
@@ -89,7 +136,12 @@ def masks_gen(gt_json):
         for j in range(y):
             idi = np.argmax(final_arr[i,j,:])
             class_arr[i,j] = idi
-    np.save(ticks_mask_path+gt_json[:-5], class_arr)
+    class_arr = np.expand_dims(class_arr, axis = 2)
+    ticks_labels_ID_mask = np.expand_dims(ticks_labels_ID_mask, axis = 2)
+    ticks_ID_mask = np.expand_dims(ticks_ID_mask, axis = 2)
+    final_masks = np.concatenate((class_arr, ticks_labels_ID_mask, ticks_ID_mask, vecter_center_masks), axis = 2)
+    np.save(ticks_mask_path+gt_json[:-5], final_masks)
+    # print(final_masks.shape)
         
             
             # print([x,y])

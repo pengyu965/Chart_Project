@@ -279,6 +279,6 @@ class Vector_Regression_Loss(nn.Module):
                             loss += (((rs_vector[0]-gt_vector[0])*1.)**2 + ((rs_vector[1]-gt_vector[1])*1.)**2)**0.5
         
         loss /= overlap_area
-        return loss
+        return loss.float()
 
 

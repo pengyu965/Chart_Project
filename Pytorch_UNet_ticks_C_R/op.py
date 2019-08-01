@@ -76,7 +76,7 @@ class Operator:
                 # print(np.max(train_gt.detach().cpu().clone().numpy()), np.min(train_gt.detach().cpu().clone().numpy()))
                 # loss = self.criterion(fake_images*1. , train_gt*1./255)
                 # print(fake_images.shape, train_gt.shape)
-                loss_c = self.criterion(fake_images[:,:6,:,:], train_gt[:,:,0].unsqueeze(2))
+                loss_c = self.criterion(fake_images[:,:6,:,:], train_gt[:,:,:,0].unsqueeze(2).long())
                 loss_r = self.criterion_r(fake_images, train_gt)
                 loss = loss_c + loss_r
                 loss.backward()
@@ -141,7 +141,7 @@ class Operator:
 
             fake_val_images = self.netG(val_images)
 
-            valloss_c = self.criterion(fake_val_images[:,:6,:,:], val_gt[:,:,0].unsqueeze)
+            valloss_c = self.criterion(fake_val_images[:,:6,:,:], val_gt[:,:,:,0].unsqueeze.long())
             valloss_r = self.criterion_r(fake_val_images, val_gt)
             valloss = valloss_c.item() + valloss_r.item()
             val_total_loss += valloss
@@ -243,7 +243,7 @@ class Chartdata(Dataset):
         # input_images = torch.cat((input_images, line_maps), dim=0)
 
         # print(np.array(cv2.imread(gt_images_path)).shape)
-        gt_images = torch.tensor(np.load(gt_npy_path)).long()
+        gt_images = torch.tensor(np.load(gt_npy_path))
         
 
         return (input_images, gt_images)

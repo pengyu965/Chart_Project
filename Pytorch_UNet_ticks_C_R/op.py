@@ -10,6 +10,7 @@ import time
 import cv2
 from PIL import Image
 import numpy as np
+from util import *
 
 def weights_init(m):
     classname = m.__class__.__name__
@@ -31,6 +32,7 @@ class Operator:
         self.epoch = epoch 
         self.optimizer = optim.Adam(self.netG.parameters(), lr = self.lr)
         self.criterion = nn.CrossEntropyLoss()
+        self.criterion_r = Vector_Regression_Loss()
 
         self.train_data = Chartdata(img_path = img_path+"/train/", gt_path = gt_path)
 
@@ -74,7 +76,9 @@ class Operator:
                 # print(np.max(train_gt.detach().cpu().clone().numpy()), np.min(train_gt.detach().cpu().clone().numpy()))
                 # loss = self.criterion(fake_images*1. , train_gt*1./255)
                 # print(fake_images.shape, train_gt.shape)
-                loss = self.criterion(fake_images, train_gt)
+                loss_c = self.criterion(fake_images[:6], train_gt[0])
+                loss_r = self.criterion_r(fake_images, train_gt)
+                loss = loss_c + loss_r
                 loss.backward()
                 self.optimizer.step()
 
@@ -137,8 +141,10 @@ class Operator:
 
             fake_val_images = self.netG(val_images)
 
-            valloss = self.criterion(fake_val_images*1., val_gt*1./255)
-            val_total_loss += valloss.item()
+            valloss_c = self.criterion(fake_val_images[:6], val_gt[0])
+            valloss_r = self.criterion_r(fake_val_images, val_gt)
+            valloss = valloss_c.item() + valloss_r.item()
+            val_total_loss += valloss
 
         index = 0
         nroll = int(val_bsize**0.5)
@@ -243,70 +249,33 @@ class Chartdata(Dataset):
         return (input_images, gt_images)
 
 
-def image_norm(arr):
-    if len(arr.shape) > 2:
-        (x, y, _) = arr.shape
-    else:
-        (x, y) = arr.shape
-    max_v = np.max(arr)
-    min_v = np.min(arr)
-    new_arr = np.zeros_like(arr)
+class Vector_Regression_Loss(nn.Module):
+    def __init__(self):
+        super(Vector_Regression_Loss, self).__init__()
+    def forward(self, result, gt):
+        x,y,z = result.shape
+        overlap_area = 0
+        total_area = 0
+        loss = 0
+        for i in range(x):
+            for j in range(y):
+                _class = torch.argmax(result[i,j,:6])
+                if _class == 2:
+                    if gt[i,j,0] == 2:
+                        overlap_area += 1
+                        gt_vector = [gt[i,j,3]-i, gt[i,j,4]-j]
+                        rs_vector = result[6:]
 
-    if len(arr.shape) > 2:
-        for i in range(x):
-            for j in range(y):
-                new_arr[i,j,:] = (arr[i,j,:] - min_v)*255.0/(max_v-min_v)
-    else:
-        for i in range(x):
-            for j in range(y):
-                new_arr[i,j] = (arr[i,j] - min_v)*255.0/(max_v-min_v)
+                        loss += np.linalg.norm((rs_vector[0]-gt_vector[0],rs_vector[1]-gt_vector[1]))
+                if _class == 4:
+                    if gt[i,j,0] == 4:
+                        overlap_area += 1
+                        gt_vector = [gt[i,j,3]-i, gt[i,j,4]-j]
+                        rs_vector = result[6:]
+
+                        loss += np.linalg.norm((rs_vector[0]-gt_vector[0],rs_vector[1]-gt_vector[1]))
         
-    
-    return new_arr
-
-def out_vis(arr):
-    color_lib = [
-        (255,255,0),
-        (255,0,255),
-        (0,255,255),
-        (135,206,250),
-        (255,192,203),
-        (0,0,0),
-        (191,62,255),
-        (255,215,0),
-        (255,128,0),
-        (100,149,237),
-        (0,255,255),
-        (202,255,112),
-        (255,165,0),
-        (250,128,114)
-    ]
-
-    x, y, z = arr.shape
-    new_arr = np.zeros((x,y,3))
-
-    for i in range(x):
-        for j in range(y):
-            pixel = arr[i,j,:]
-            idi = np.argmax(pixel)
-            new_arr[i,j,:] = np.array(color_lib[idi])
-
-    return new_arr
-
-
-def channel_binarization(arr):
-    x, y, z = arr.shape
-    new_arr = np.zeros_like(arr)
-
-    for i in range(x):
-        for j in range(y):
-            pixel = arr[i,j,:]
-            idi = np.argmax(pixel)
-            new_channel = np.zeros((z))
-            new_channel[idi] = 1
-            new_arr[i,j,:] = new_channel
-
-    return new_arr
-                
+        loss /= overlap_area
+        return loss
 
 

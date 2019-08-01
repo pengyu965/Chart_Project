@@ -10,11 +10,14 @@ The classes from top channel to the bottom channel [0:5] are:
     [5] Background
     [6] Ticks Label ID
     [7] Ticks Marks ID
+    [8] Vecter Center
 )
-And the final output would be three channels
+And the final output would be Five channels
 (
-    [0] The masks Class layer [value of each pixel from 0-5], representing the pixel class
-    [1] Ticks Label ID Layer
+    [0] The masks Class layer [value of each pixel from 0-5], representing the pixel class, one channel
+    [1] Ticks Label ID Layer, one channel
+    [2] Ticks ID Layer, one channel
+    [3] Vecter Center Layer, two channel
 )
 """
 

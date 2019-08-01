@@ -277,6 +277,9 @@ class Vector_Regression_Loss(nn.Module):
 
 
                             loss += (((rs_vector[0]-gt_vector[0])*1.)**2 + ((rs_vector[1]-gt_vector[1])*1.)**2)**0.5
+                            print(loss.dtype)
+                            print("==")
+                            print(loss.float().dytpe)
         
         loss /= overlap_area
         return loss.float()

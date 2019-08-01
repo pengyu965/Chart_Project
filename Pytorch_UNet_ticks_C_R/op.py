@@ -268,7 +268,7 @@ class Vector_Regression_Loss(nn.Module):
                             rs_vector = result[k,6:,i,j]
 
 
-                            loss += np.linalg.norm((rs_vector[0]-gt_vector[0],rs_vector[1]-gt_vector[1]))
+                            loss += (((rs_vector[0]-gt_vector[0])*1.)**2,((rs_vector[1]-gt_vector[1])*1.)**2)**0.5
                     if _class == 4:
                         if gt[k,i,j,0] == 4:
                             overlap_area += 1

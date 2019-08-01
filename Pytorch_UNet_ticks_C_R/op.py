@@ -260,19 +260,19 @@ class Vector_Regression_Loss(nn.Module):
         for k in range(b):
             for i in range(h):
                 for j in range(w):
-                    _class = torch.argmax(result[:6,i,j])
+                    _class = torch.argmax(result[k,:6,i,j])
                     if _class == 2:
-                        if gt[i,j,0] == 2:
+                        if gt[k,i,j,0] == 2:
                             overlap_area += 1
-                            gt_vector = [gt[i,j,3]-i, gt[i,j,4]-j]
-                            rs_vector = result[6:,i,j]
+                            gt_vector = [gt[k,i,j,3]-i, gt[k,i,j,4]-j]
+                            rs_vector = result[k,6:,i,j]
 
                             loss += np.linalg.norm((rs_vector[0]-gt_vector[0],rs_vector[1]-gt_vector[1]))
                     if _class == 4:
-                        if gt[i,j,0] == 4:
+                        if gt[k,i,j,0] == 4:
                             overlap_area += 1
-                            gt_vector = [gt[i,j,3]-i, gt[i,j,4]-j]
-                            rs_vector = result[6:,i,j]
+                            gt_vector = [gt[k,i,j,3]-i, gt[k,i,j,4]-j]
+                            rs_vector = result[k,6:,i,j]
 
                             loss += np.linalg.norm((rs_vector[0]-gt_vector[0],rs_vector[1]-gt_vector[1]))
         

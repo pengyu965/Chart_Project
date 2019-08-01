@@ -27,6 +27,7 @@ def image_norm(arr):
     return new_arr
 
 def out_vis(arr):
+    # Input is numpy array, [H,W,C]
     color_lib = [
         (255,255,0),
         (255,0,255),
@@ -65,6 +66,7 @@ def out_vis(arr):
 
 
 def channel_binarization(arr):
+    # Input is np array, [H,W,C]
     x, y, z = arr.shape
     new_arr = np.zeros((x,y,6))
 

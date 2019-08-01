@@ -76,7 +76,7 @@ class Operator:
                 # print(np.max(train_gt.detach().cpu().clone().numpy()), np.min(train_gt.detach().cpu().clone().numpy()))
                 # loss = self.criterion(fake_images*1. , train_gt*1./255)
                 # print(fake_images.shape, train_gt.shape)
-                loss_c = self.criterion(fake_images[:6], train_gt[0])
+                loss_c = self.criterion(fake_images[:,:6,:,:], train_gt[0].unsqueeze(2))
                 loss_r = self.criterion_r(fake_images, train_gt)
                 loss = loss_c + loss_r
                 loss.backward()
@@ -141,7 +141,7 @@ class Operator:
 
             fake_val_images = self.netG(val_images)
 
-            valloss_c = self.criterion(fake_val_images[:6], val_gt[0])
+            valloss_c = self.criterion(fake_val_images[:,:6,:,:], val_gt[0].unsqueeze)
             valloss_r = self.criterion_r(fake_val_images, val_gt)
             valloss = valloss_c.item() + valloss_r.item()
             val_total_loss += valloss
@@ -253,27 +253,28 @@ class Vector_Regression_Loss(nn.Module):
     def __init__(self):
         super(Vector_Regression_Loss, self).__init__()
     def forward(self, result, gt):
-        x,y,z = result.shape
+        b, c, h, w = result.shape
         overlap_area = 0
         total_area = 0
         loss = 0
-        for i in range(x):
-            for j in range(y):
-                _class = torch.argmax(result[i,j,:6])
-                if _class == 2:
-                    if gt[i,j,0] == 2:
-                        overlap_area += 1
-                        gt_vector = [gt[i,j,3]-i, gt[i,j,4]-j]
-                        rs_vector = result[6:]
+        for k in range(b):
+            for i in range(h):
+                for j in range(w):
+                    _class = torch.argmax(result[:6,i,j])
+                    if _class == 2:
+                        if gt[i,j,0] == 2:
+                            overlap_area += 1
+                            gt_vector = [gt[i,j,3]-i, gt[i,j,4]-j]
+                            rs_vector = result[6:,i,j]
 
-                        loss += np.linalg.norm((rs_vector[0]-gt_vector[0],rs_vector[1]-gt_vector[1]))
-                if _class == 4:
-                    if gt[i,j,0] == 4:
-                        overlap_area += 1
-                        gt_vector = [gt[i,j,3]-i, gt[i,j,4]-j]
-                        rs_vector = result[6:]
+                            loss += np.linalg.norm((rs_vector[0]-gt_vector[0],rs_vector[1]-gt_vector[1]))
+                    if _class == 4:
+                        if gt[i,j,0] == 4:
+                            overlap_area += 1
+                            gt_vector = [gt[i,j,3]-i, gt[i,j,4]-j]
+                            rs_vector = result[6:,i,j]
 
-                        loss += np.linalg.norm((rs_vector[0]-gt_vector[0],rs_vector[1]-gt_vector[1]))
+                            loss += np.linalg.norm((rs_vector[0]-gt_vector[0],rs_vector[1]-gt_vector[1]))
         
         loss /= overlap_area
         return loss

@@ -257,6 +257,7 @@ class Vector_Regression_Loss(nn.Module):
         overlap_area = 0
         total_area = 0
         loss = 0
+        print(result.shape)
         for k in range(b):
             for i in range(h):
                 for j in range(w):

@@ -53,7 +53,7 @@ if __name__ == "__main__":
     FLAGS = get_args()
 
     if FLAGS.train:
-        netG = UNet(in_channels = 3, out_channels = 6)
+        netG = UNet(in_channels = 3, out_channels = 8)
         # netG = nn.DataParallel(netG).to(device)
         print(netG)
 

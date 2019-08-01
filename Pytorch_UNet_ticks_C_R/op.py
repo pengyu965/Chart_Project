@@ -257,7 +257,6 @@ class Vector_Regression_Loss(nn.Module):
         overlap_area = 0
         total_area = 0
         loss = 0
-        print(result.shape)
         for k in range(b):
             for i in range(h):
                 for j in range(w):
@@ -267,7 +266,7 @@ class Vector_Regression_Loss(nn.Module):
                             overlap_area += 1
                             gt_vector = [gt[k,i,j,3]-i, gt[k,i,j,4]-j]
                             rs_vector = result[k,6:,i,j]
-                            print(rs_vector.shape)
+
 
                             loss += np.linalg.norm((rs_vector[0]-gt_vector[0],rs_vector[1]-gt_vector[1]))
                     if _class == 4:
@@ -275,7 +274,7 @@ class Vector_Regression_Loss(nn.Module):
                             overlap_area += 1
                             gt_vector = [gt[k,i,j,3]-i, gt[k,i,j,4]-j]
                             rs_vector = result[k,6:,i,j]
-                            print(rs_vector.shape)
+
 
                             loss += np.linalg.norm((rs_vector[0]-gt_vector[0],rs_vector[1]-gt_vector[1]))
         

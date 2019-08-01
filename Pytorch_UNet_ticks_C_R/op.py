@@ -273,6 +273,7 @@ class Vector_Regression_Loss(nn.Module):
 
 
                             loss += (((rs_vector[0]-gt_vector[0])*1.)**2 + ((rs_vector[1]-gt_vector[1])*1.)**2)**0.5
+                            print(loss)
                     if _class == 4:
                         if gt[k,i,j,0] == 4:
                             overlap_area += 1
@@ -281,6 +282,7 @@ class Vector_Regression_Loss(nn.Module):
 
 
                             loss += (((rs_vector[0]-gt_vector[0])*1.)**2 + ((rs_vector[1]-gt_vector[1])*1.)**2)**0.5
+                            print(loss)
 
         
         loss /= overlap_area

@@ -78,11 +78,7 @@ class Operator:
                 # print(fake_images.shape, train_gt.shape)
                 loss_c = self.criterion(fake_images[:,:6,:,:], train_gt[:,:,:,0].long())
                 loss_r = self.criterion_r(fake_images, train_gt)
-                print(loss_c.dtype)
-                print("fff")
-                print(loss_r.dtype)
                 loss = loss_c + loss_r
-                print("loss", loss.dtype)
                 loss.backward()
                 self.optimizer.step()
 

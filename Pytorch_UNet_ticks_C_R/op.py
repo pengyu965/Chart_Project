@@ -250,7 +250,7 @@ class Chartdata(Dataset):
 
 
 
-def Vector_Regression_Loss(self, result, gt):
+def Vector_Regression_Loss(result, gt):
     b, c, h, w = result.shape
     overlap_area = 0
     total_area = 0

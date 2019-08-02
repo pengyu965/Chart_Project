@@ -55,8 +55,8 @@ class Operator:
 
 
         for ep in range(self.epoch):
-            with torch.no_grad():
-                val_loss = self.validator(img_path+"/val/", gt_path, global_step)
+            # with torch.no_grad():
+            #     val_loss = self.validator(img_path+"/val/", gt_path, global_step)
 
             self.netG.train()
 

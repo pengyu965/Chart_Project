@@ -52,6 +52,7 @@ def out_vis(arr, regression_vis = False):
         for j in range(y):
             pixel = arr[i,j,:6]
             idi = np.argmax(pixel)
+            print(idi)
             new_arr[i,j,:] = np.array(color_lib[idi])
     
     if regression_vis == True:

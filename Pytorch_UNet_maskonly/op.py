@@ -74,7 +74,7 @@ class Operator:
                 # print(np.max(train_gt.detach().cpu().clone().numpy()), np.min(train_gt.detach().cpu().clone().numpy()))
                 # loss = self.criterion(fake_images*1. , train_gt*1./255)
                 # print(fake_images.shape, train_gt.shape)
-                loss = self.criterion(fake_images, train_gt)
+                loss = self.criterion(fake_images, train_gt[:,:,:,0])
                 loss.backward()
                 self.optimizer.step()
 
@@ -137,7 +137,7 @@ class Operator:
 
             fake_val_images = self.netG(val_images)
 
-            valloss = self.criterion(fake_val_images*1., val_gt*1./255)
+            valloss = self.criterion(fake_val_images, val_gt[:,:,:,0])
             val_total_loss += valloss.item()
 
         index = 0

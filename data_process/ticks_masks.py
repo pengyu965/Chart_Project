@@ -149,10 +149,15 @@ def masks_gen(gt_json):
                 vector = vector_center_masks[i,j,:] - np.array([i,j])
 
                 # Need to process the center, where vector = 0,0
-                if vector[0] == 0 and vector[1] == 0:
-                    vector_masks[i,j,:] = vector
-                else:
-                    vector_masks[i,j,:] = vector/((vector[0]**2+vector[1]**2)**0.5)
+                # if vector[0] == 0 and vector[1] == 0:
+                    # vector_masks[i,j,:] = vector
+                # else:
+                #     vector_masks[i,j,:] = vector/((vector[0]**2+vector[1]**2)**0.5)
+                a = vector_masks[:,:,0]
+                cv2.circle(a, tuple(vector_center_masks[i,j,:].astype(np.int)),5,(255), -1)
+
+    cv2.imshow("example", a)
+    cv2.waitKey(0)
 
 
                 
@@ -178,10 +183,10 @@ def masks_gen(gt_json):
 
     # cv2.imwrite(ticks_mask_path+gt_json[:-4]+"png", img)
 
-# for file in os.listdir(gt_path):
-#     masks_gen(file)
+for file in os.listdir(gt_path):
+    masks_gen(file)
 
-pool = multiprocessing.Pool()
-for i in tqdm(pool.imap(masks_gen, os.listdir(gt_path)), total = len(os.listdir(gt_path))):
-    pass
+# pool = multiprocessing.Pool()
+# for i in tqdm(pool.imap(masks_gen, os.listdir(gt_path)), total = len(os.listdir(gt_path))):
+#     pass
     

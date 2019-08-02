@@ -32,7 +32,7 @@ class Operator:
         self.epoch = epoch 
         self.optimizer = optim.Adam(self.netG.parameters(), lr = self.lr)
         self.criterion = nn.CrossEntropyLoss()
-        self.criterion_r = Vector_Regression_Loss
+        self.criterion_r = Vector_Regression_Loss()
 
         self.train_data = Chartdata(img_path = img_path+"/train/", gt_path = gt_path)
 
@@ -77,7 +77,7 @@ class Operator:
                 # loss = self.criterion(fake_images*1. , train_gt*1./255)
                 # print(fake_images.shape, train_gt.shape)
                 loss_c = self.criterion(fake_images[:,:6,:,:], train_gt[:,:,:,0].long())
-                loss_r = self.criterion_r(fake_images, train_gt)
+                loss_r = self.criterion_r(fake_images, train_gt.float())
                 loss = loss_c + loss_r
                 loss.backward()
                 self.optimizer.step()
@@ -249,38 +249,40 @@ class Chartdata(Dataset):
         return (input_images, gt_images)
 
 
+class Vector_Regression_Loss(nn.Module):
+    def __init__(self):
+        super(Vector_Regression_Loss, self).__init__()
+    def forward(self, result, gt):
+        b, c, h, w = result.shape
+        overlap_area = 0
+        total_area = 0
+        loss = 0
+        for k in range(b):
+            for i in range(h):
+                for j in range(w):
+                    _class = torch.argmax(result[k,:6,i,j])
+                    if _class == 2:
+                        if gt[k,i,j,0] == 2:
+                            overlap_area += 1
+                            gt_vector = [gt[k,i,j,3]-i, gt[k,i,j,4]-j]
+                            rs_vector = result[k,6:,i,j]
 
-def Vector_Regression_Loss(result, gt):
-    b, c, h, w = result.shape
-    overlap_area = 0
-    total_area = 0
-    loss = 0
-    for k in range(b):
-        for i in range(h):
-            for j in range(w):
-                _class = torch.argmax(result[k,:6,i,j])
-                if _class == 2:
-                    if gt[k,i,j,0] == 2:
-                        overlap_area += 1
-                        gt_vector = [gt[k,i,j,3]-i, gt[k,i,j,4]-j]
-                        rs_vector = result[k,6:,i,j]
 
+                            loss += torch.sqrt((rs_vector[0]-gt_vector[0])**2 + (rs_vector[1]-gt_vector[1])**2)
 
-                        loss += torch.sqrt((rs_vector[0]-gt_vector[0])**2 + (rs_vector[1]-gt_vector[1])**2)
-
-                elif _class == 4:
-                    if gt[k,i,j,0] == 4:
-                        overlap_area += 1
-                        gt_vector = [gt[k,i,j,3]-i, gt[k,i,j,4]-j]
-                        rs_vector = result[k,6:,i,j]
+                    elif _class == 4:
+                        if gt[k,i,j,0] == 4:
+                            overlap_area += 1
+                            gt_vector = [gt[k,i,j,3]-i, gt[k,i,j,4]-j]
+                            rs_vector = result[k,6:,i,j]
+                            
+                            loss += torch.sqrt((rs_vector[0]-gt_vector[0])**2 + (rs_vector[1]-gt_vector[1])**2)
+                    else:
+                        loss += torch.sum(result[k,6:,i,j]-result[k,6:,i,j])
                         
-                        loss += torch.sqrt((rs_vector[0]-gt_vector[0])**2 + (rs_vector[1]-gt_vector[1])**2)
-                else:
-                    loss += torch.sum(result[k,6:,i,j]-result[k,6:,i,j])
-                    
 
-    
-    loss /= overlap_area
-    return loss.float()
+        
+        loss /= overlap_area
+        return loss.float()
 
 

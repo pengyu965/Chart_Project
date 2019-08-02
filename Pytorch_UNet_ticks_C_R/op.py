@@ -55,6 +55,8 @@ class Operator:
 
 
         for ep in range(self.epoch):
+            with torch.no_grad():
+                val_loss = self.validator(img_path+"/val/", gt_path, global_step)
 
             self.netG.train()
 
@@ -90,16 +92,16 @@ class Operator:
                     nroll = int(self.batch_size**0.5)
                     new_im = Image.new('RGB', (5120,5120))
                     for i in range(0,5121-5120//nroll,5120//nroll):
-                        # try:
-                        for j in range(0, 5121-5120//nroll,5120//nroll):
-                            # im = Image.fromarray(image_norm(fake_images[index].permute(1,2,0).squeeze(2).detach().cpu().clone().numpy()).astype("uint8"))
-                            im = Image.fromarray(out_vis(fake_images[index].permute(1,2,0).detach().cpu().clone().numpy()).astype("uint8"))
-                            im.thumbnail((512,512))
-                            new_im.paste(im, (i,j))
-                            print(index)
-                            index += 1
-                        # except:
-                        #     break
+                        try:
+                            for j in range(0, 5121-5120//nroll,5120//nroll):
+                                # im = Image.fromarray(image_norm(fake_images[index].permute(1,2,0).squeeze(2).detach().cpu().clone().numpy()).astype("uint8"))
+                                im = Image.fromarray(out_vis(fake_images[index].permute(1,2,0).detach().cpu().clone().numpy()).astype("uint8"))
+                                im.thumbnail((512,512))
+                                new_im.paste(im, (i,j))
+                                print(index)
+                                index += 1
+                        except:
+                            break
                     if os.path.exists("./train_samples/") == False:
                         os.mkdir("./train_samples/")
                         
@@ -142,7 +144,7 @@ class Operator:
             fake_val_images = self.netG(val_images)
 
             valloss_c = self.criterion(fake_val_images[:,:6,:,:], val_gt[:,:,:,0].long())
-            valloss_r = self.criterion_r(fake_val_images, val_gt)
+            valloss_r = self.criterion_r(fake_val_images, val_gt.float())
             valloss = valloss_c.item() + valloss_r.item()
             val_total_loss += valloss
 

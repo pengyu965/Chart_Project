@@ -263,44 +263,6 @@ class Chartdata(Dataset):
         return (input_images, gt_images)
 
 
-class Vector_Regression_Loss(nn.Module):
-    # Weighted Masks
-    def __init__(self):
-        super(Vector_Regression_Loss, self).__init__()
-    def forward(self, result, gt):
-        b, c, h, w = result.shape
-        overlap_area = 0
-        total_area = 0
-        loss = 0
-        for k in range(b):
-            for i in range(h):
-                for j in range(w):
-                    _class = torch.argmax(result[k,:6,i,j])
-                    if _class == 2:
-                        if gt[k,i,j,0] == 2:
-                            overlap_area += 1
-                            gt_vector = [gt[k,i,j,3]-i, gt[k,i,j,4]-j]
-                            rs_vector = result[k,6:,i,j]
-
-
-                            loss += torch.sqrt((rs_vector[0]-gt_vector[0])**2 + (rs_vector[1]-gt_vector[1])**2)
-
-                    elif _class == 4:
-                        if gt[k,i,j,0] == 4:
-                            overlap_area += 1
-                            gt_vector = [gt[k,i,j,3]-i, gt[k,i,j,4]-j]
-                            rs_vector = result[k,6:,i,j]
-                            
-                            loss += torch.sqrt((rs_vector[0]-gt_vector[0])**2 + (rs_vector[1]-gt_vector[1])**2)
-                    else:
-                        loss += torch.sum(result[k,6:,i,j]-result[k,6:,i,j])
-                        
-
-        
-        loss /= overlap_area
-        return loss.float()
-
-
 # class Vector_Regression_Loss(nn.Module):
 #     # Weighted Masks
 #     def __init__(self):
@@ -361,6 +323,8 @@ class Vector_Regression_Loss(nn.Module):
         regression_loss_mask = res_masks*gt_masks #----->(b,1,h,w), uint8
 
         loss_map = self.criterion(result[:,6:,:,:], gt[:,:,:,1:].permute(0,3,1,2))
+        print(loss_map.shape)
+        print(regression_loss_mask.float().shape)
         loss_masked_map = loss_map.float() * regression_loss_mask.float()
         loss = torch.sum(loss_masked_map)/np.count_nonzero(regression_loss_mask)
         

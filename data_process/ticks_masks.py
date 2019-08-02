@@ -149,7 +149,7 @@ def masks_gen(gt_json):
                 vector = vecter_center_masks[i,j,:] - np.array([i,j])
                 # print(vector.dtype)
                 # print(((vector[0]**2+vector[1]**2)**0.5).dtype)
-                vecter_masks[i,j,:] = vector/((vector[0]**2+vector[1]**2)**0.5)
+                print(vector/((vector[0]**2+vector[1]**2)**0.5))
             
 
 

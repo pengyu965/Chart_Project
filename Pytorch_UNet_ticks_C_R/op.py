@@ -77,7 +77,7 @@ class Operator:
                 # loss = self.criterion(fake_images*1. , train_gt*1./255)
                 # print(fake_images.shape, train_gt.shape)
                 loss_c = self.criterion(fake_images[:,:6,:,:], train_gt[:,:,:,0].long())
-                loss_r = self.criterion_r(fake_images, train_gt).to(self.device)
+                loss_r = self.criterion_r(fake_images, train_gt)
                 loss = loss_c + loss_r
                 loss.backward()
                 self.optimizer.step()
@@ -269,16 +269,16 @@ class Vector_Regression_Loss(nn.Module):
 
 
                             loss += (((rs_vector[0]-gt_vector[0])*1.)**2 + ((rs_vector[1]-gt_vector[1])*1.)**2)**0.5
-                            print(loss)
-                    if _class == 4:
+
+                    elif _class == 4:
                         if gt[k,i,j,0] == 4:
                             overlap_area += 1
                             gt_vector = [gt[k,i,j,3]-i, gt[k,i,j,4]-j]
                             rs_vector = result[k,6:,i,j]
-
-
+                            
                             loss += (((rs_vector[0]-gt_vector[0])*1.)**2 + ((rs_vector[1]-gt_vector[1])*1.)**2)**0.5
-                            print(loss)
+                    else:
+                        loss += 0 
 
         
         loss /= overlap_area

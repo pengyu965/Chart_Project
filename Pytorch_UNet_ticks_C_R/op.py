@@ -349,6 +349,21 @@ class Vector_Regression_Loss(nn.Module):
         overlap_area = 0
         total_area = 0
         loss = 0
+
+        # Only calculate the regression loss on ticks label areas and ticks marks areas
+        classes_mask = torch.argmax(result[:,:6,:,:], 1).unsqueeze(1) #----->(b,1,h,w)
+        res_ticks_label_bool_mask = classes_mask == 2 #----->(b,1,h,w), uint8
+        res_ticks_marks_bool_mask = classes_mask == 4 #----->(b,1,h,w), uint8
+        gt_ticks_label_bool_mask = gt[:,:,:,0] == 2 #----->(b,1,h,w), uint8
+        gt_ticks_marks_bool_mask = gt[:,:,:,0] == 4
+        res_masks = res_ticks_label_bool_mask + res_ticks_marks_bool_mask
+        gt_masks = gt_ticks_label_bool_mask + gt_ticks_marks_bool_mask
+        regression_loss_mask = res_masks*gt_masks #----->(b,1,h,w), uint8
+
+        gt_vector_map = self.gen_gt_v_map(gt)
+        loss = self.criterion(result[:,6:,:,:], gt_vector_map)
+
+
         for k in range(b):
             for i in range(h):
                 for j in range(w):
@@ -376,4 +391,6 @@ class Vector_Regression_Loss(nn.Module):
         
         loss /= overlap_area
         return loss.float()
+
+
 

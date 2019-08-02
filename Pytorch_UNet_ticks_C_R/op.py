@@ -268,7 +268,7 @@ class Vector_Regression_Loss(nn.Module):
                             rs_vector = result[k,6:,i,j]
 
 
-                            loss += (((rs_vector[0]-gt_vector[0])*1.)**2 + ((rs_vector[1]-gt_vector[1])*1.)**2)**0.5
+                            loss += torch.sqrt((rs_vector[0]-gt_vector[0])**2 + (rs_vector[1]-gt_vector[1])**2)
 
                     elif _class == 4:
                         if gt[k,i,j,0] == 4:
@@ -276,7 +276,7 @@ class Vector_Regression_Loss(nn.Module):
                             gt_vector = [gt[k,i,j,3]-i, gt[k,i,j,4]-j]
                             rs_vector = result[k,6:,i,j]
                             
-                            loss += (((rs_vector[0]-gt_vector[0])*1.)**2 + ((rs_vector[1]-gt_vector[1])*1.)**2)**0.5
+                            loss += torch.sqrt((rs_vector[0]-gt_vector[0])**2 + (rs_vector[1]-gt_vector[1])**2)
                     else:
                         loss += torch.sum(result[k,6:,i,j]-result[k,6:,i,j])
                         

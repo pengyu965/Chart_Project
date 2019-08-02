@@ -314,6 +314,7 @@ class Vector_Regression_Loss(nn.Module):
 
         # Only calculate the regression loss on ticks label areas and ticks marks areas
         classes_mask = torch.argmax(result[:,:6,:,:], 1).unsqueeze(1) #----->(b,1,h,w)
+        print(classes_mask.shape)
         res_ticks_label_bool_mask = classes_mask == 2 #----->(b,1,h,w), uint8
         res_ticks_marks_bool_mask = classes_mask == 4 #----->(b,1,h,w), uint8
         gt_ticks_label_bool_mask = gt[:,:,:,0] == 2 #----->(b,1,h,w), uint8

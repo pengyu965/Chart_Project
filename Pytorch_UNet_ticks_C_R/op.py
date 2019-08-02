@@ -103,7 +103,7 @@ class Operator:
                         # try:
                         for j in range(0, 5121-5120//nroll,5120//nroll):
                             # im = Image.fromarray(image_norm(fake_images[index].permute(1,2,0).squeeze(2).detach().cpu().clone().numpy()).astype("uint8"))
-                            im = Image.fromarray(out_vis(fake_images[index].permute(1,2,0).detach().cpu().clone().numpy()).astype("uint8"), regression_vis =train_regression)
+                            im = Image.fromarray(out_vis(fake_images[index].permute(1,2,0).detach().cpu().clone().numpy(), regression_vis =train_regression).astype("uint8"))
                             im.thumbnail((512,512))
                             new_im.paste(im, (i,j))
                             print(index)
@@ -166,7 +166,7 @@ class Operator:
             try:
                 for j in range(0, 5121-5120//nroll,5120//nroll):
                     # im = Image.fromarray(image_norm(fake_images[index].permute(1,2,0).squeeze(2).detach().cpu().clone().numpy()).astype("uint8"))
-                    im = Image.fromarray(out_vis(fake_val_images[index].permute(1,2,0).detach().cpu().clone().numpy()).astype("uint8"), regression_vis = train_regression)
+                    im = Image.fromarray(out_vis(fake_val_images[index].permute(1,2,0).detach().cpu().clone().numpy(), regression_vis = train_regression).astype("uint8"))
                     im.thumbnail((512,512))
                     new_im.paste(im, (i,j))
                     index += 1
@@ -199,11 +199,10 @@ class Operator:
                 generated_img_tensor = self.netG(img_tensor)
                 if visualize == True:
                     generated_img = Image.fromarray(
-                        out_vis(generated_img_tensor[0].permute(1,2,0).detach().cpu().clone().numpy()).astype(np.uint8),
+                        out_vis(generated_img_tensor[0].permute(1,2,0).detach().cpu().clone().numpy(), regression_vis = True).astype(np.uint8)
                         # image_norm(
                         #     generated_img_tensor[0].permute(1,2,0).squeeze(2).detach().cpu().clone().numpy()
-                        # ).astype("uint8"),
-                        regression_vis = True
+                        # ).astype("uint8")
                     )
                     generated_img.thumbnail((512,512))
                     generated_img.save("./predict_result/{}".format(image))
@@ -231,9 +230,9 @@ class Operator:
             generated_img_tensor = self.netG(img_tensor)
             generated_img = Image.fromarray(
                 out_vis(
-                    generated_img_tensor[0].permute(1,2,0).detach().cpu().clone().numpy()
-                ).astype("uint8"),
-                regression_vis = True
+                    generated_img_tensor[0].permute(1,2,0).detach().cpu().clone().numpy(),
+                    regression_vis = True
+                ).astype("uint8")
             )
             generated_img.save("./predict_result/{}.png".format(image_name))
 

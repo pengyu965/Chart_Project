@@ -69,7 +69,7 @@ class Operator:
                 self.lr = self.lr/10
                 self.optimizer = optim.Adam(self.netG.parameters(), lr = self.lr)
 
-            if ep == int(self.epoch*1//2):
+            if ep == int(self.epoch*1//3):
                 train_regression = True
 
             for idi, train_batch in enumerate(self.dataloader):

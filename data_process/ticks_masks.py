@@ -156,7 +156,7 @@ def masks_gen(gt_json):
                 # else:
                 #     vector_masks[i,j,:] = vector/((vector[0]**2+vector[1]**2)**0.5)
 
-                cv2.circle(a, (j,i),5, (255,255,0),-1)
+                cv2.circle(a, (i,j),5, (255,255,0),-1)
                 # cv2.circle(a, tuple(vector_center_masks[i,j,:].astype(np.int)),5,(255,255,255), -1)
                 # cv2.arrowedLine(a, (i,j), (int(i+vector[0]),int(j+vector[1])),(255,0,0),1)
 

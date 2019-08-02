@@ -301,42 +301,42 @@ class Vector_Regression_Loss(nn.Module):
         return loss.float()
 
 
-class Vector_Regression_Loss(nn.Module):
-    # Weighted Masks
-    def __init__(self):
-        super(Vector_Regression_Loss, self).__init__()
-    def forward(self, result, gt):
-        b, c, h, w = result.shape
-        overlap_area = 0
-        total_area = 0
-        loss = 0
-        for k in range(b):
-            for i in range(h):
-                for j in range(w):
-                    _class = torch.argmax(result[k,:6,i,j])
-                    if _class == 2:
-                        if gt[k,i,j,0] == 2:
-                            overlap_area += 1
-                            gt_vector = [gt[k,i,j,3]-i, gt[k,i,j,4]-j]
-                            rs_vector = result[k,6:,i,j]
+# class Vector_Regression_Loss(nn.Module):
+#     # Weighted Masks
+#     def __init__(self):
+#         super(Vector_Regression_Loss, self).__init__()
+#     def forward(self, result, gt):
+#         b, c, h, w = result.shape
+#         overlap_area = 0
+#         total_area = 0
+#         loss = 0
+#         for k in range(b):
+#             for i in range(h):
+#                 for j in range(w):
+#                     _class = torch.argmax(result[k,:6,i,j])
+#                     if _class == 2:
+#                         if gt[k,i,j,0] == 2:
+#                             overlap_area += 1
+#                             gt_vector = [gt[k,i,j,3]-i, gt[k,i,j,4]-j]
+#                             rs_vector = result[k,6:,i,j]
 
 
-                            loss += torch.sqrt((rs_vector[0]-gt_vector[0])**2 + (rs_vector[1]-gt_vector[1])**2)
+#                             loss += torch.sqrt((rs_vector[0]-gt_vector[0])**2 + (rs_vector[1]-gt_vector[1])**2)
 
-                    elif _class == 4:
-                        if gt[k,i,j,0] == 4:
-                            overlap_area += 1
-                            gt_vector = [gt[k,i,j,3]-i, gt[k,i,j,4]-j]
-                            rs_vector = result[k,6:,i,j]
+#                     elif _class == 4:
+#                         if gt[k,i,j,0] == 4:
+#                             overlap_area += 1
+#                             gt_vector = [gt[k,i,j,3]-i, gt[k,i,j,4]-j]
+#                             rs_vector = result[k,6:,i,j]
                             
-                            loss += torch.sqrt((rs_vector[0]-gt_vector[0])**2 + (rs_vector[1]-gt_vector[1])**2)
-                    else:
-                        loss += torch.sum(result[k,6:,i,j]-result[k,6:,i,j])
+#                             loss += torch.sqrt((rs_vector[0]-gt_vector[0])**2 + (rs_vector[1]-gt_vector[1])**2)
+#                     else:
+#                         loss += torch.sum(result[k,6:,i,j]-result[k,6:,i,j])
                         
 
         
-        loss /= overlap_area
-        return loss.float()
+#         loss /= overlap_area
+#         return loss.float()
 
 
 class Vector_Regression_Loss(nn.Module):
@@ -348,7 +348,7 @@ class Vector_Regression_Loss(nn.Module):
         b, c, h, w = result.shape
         overlap_area = 0
         total_area = 0
-        loss = 0
+
 
         # Only calculate the regression loss on ticks label areas and ticks marks areas
         classes_mask = torch.argmax(result[:,:6,:,:], 1).unsqueeze(1) #----->(b,1,h,w)
@@ -360,36 +360,10 @@ class Vector_Regression_Loss(nn.Module):
         gt_masks = gt_ticks_label_bool_mask + gt_ticks_marks_bool_mask
         regression_loss_mask = res_masks*gt_masks #----->(b,1,h,w), uint8
 
-        gt_vector_map = self.gen_gt_v_map(gt)
-        loss = self.criterion(result[:,6:,:,:], gt_vector_map)
-
-
-        for k in range(b):
-            for i in range(h):
-                for j in range(w):
-                    _class = torch.argmax(result[k,:6,i,j])
-                    if _class == 2:
-                        if gt[k,i,j,0] == 2:
-                            overlap_area += 1
-                            gt_vector = [gt[k,i,j,3]-i, gt[k,i,j,4]-j]
-                            rs_vector = result[k,6:,i,j]
-
-
-                            loss += torch.sqrt((rs_vector[0]-gt_vector[0])**2 + (rs_vector[1]-gt_vector[1])**2)
-
-                    elif _class == 4:
-                        if gt[k,i,j,0] == 4:
-                            overlap_area += 1
-                            gt_vector = [gt[k,i,j,3]-i, gt[k,i,j,4]-j]
-                            rs_vector = result[k,6:,i,j]
-                            
-                            loss += torch.sqrt((rs_vector[0]-gt_vector[0])**2 + (rs_vector[1]-gt_vector[1])**2)
-                    else:
-                        loss += torch.sum(result[k,6:,i,j]-result[k,6:,i,j])
-                        
-
+        loss_map = self.criterion(result[:,6:,:,:], gt[:,:,:,1:].permute(0,3,1,2))
+        loss_masked_map = loss_map.float() * regression_loss_mask.float()
+        loss = torch.sum(loss_masked_map)/np.count_nonzero(regression_loss_mask)
         
-        loss /= overlap_area
         return loss.float()
 
 

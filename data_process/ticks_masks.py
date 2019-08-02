@@ -12,7 +12,7 @@ The classes from top channel to the bottom channel [0:5] are:
     [7] Ticks Marks ID
     [8] Vecter Center
 )
-And the final output would be Five channels
+And the final output would be Three channels
 (
     [0] The masks Class layer [value of each pixel from 0-5], representing the pixel class, one channel
     [X] Ticks Label ID Layer, one channel, [X] represents we don't have this layer for now

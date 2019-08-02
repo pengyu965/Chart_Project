@@ -58,9 +58,9 @@ def out_vis(arr):
         for j in range(y):
             _class = np.argmax(arr[i,j,:6])
             if _class == 2:
-                cv2.arrowedLine(new_arr, tuple(i,j), tuple(arr[i,j,6:]), (0,0,255),1)
+                cv2.arrowedLine(new_arr, (i,j), tuple(arr[i,j,6:]), (0,0,255),1)
             if _class == 4:
-                cv2.arrowedLine(new_arr, tuple(i,j), tuple(arr[i,j,6:]), (0,255,0),1)
+                cv2.arrowedLine(new_arr, (i,j), tuple(arr[i,j,6:]), (0,255,0),1)
 
     return new_arr
 

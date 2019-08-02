@@ -147,10 +147,11 @@ def masks_gen(gt_json):
         for j in range(y):
             if vector_center_masks[i,j,0] != 0 or vector_center_masks[i,j,1] != 0:
                 vector = vector_center_masks[i,j,:] - np.array([i,j])
-                try:
+                if vector[0] == 0 and vector[1] == 0:
+                    vector_masks[i,j,:] = vector
+                else:
                     vector_masks[i,j,:] = vector/((vector[0]**2+vector[1]**2)**0.5)
-                except:
-                    print(gt_json)
+
 
                 
             

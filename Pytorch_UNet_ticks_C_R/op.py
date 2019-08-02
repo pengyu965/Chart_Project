@@ -32,7 +32,7 @@ class Operator:
         self.epoch = epoch 
         self.optimizer = optim.Adam(self.netG.parameters(), lr = self.lr)
         self.criterion = nn.CrossEntropyLoss()
-        self.criterion_r = Vector_Regression_Loss()
+        self.criterion_r = Vector_Regression_Loss
 
         self.train_data = Chartdata(img_path = img_path+"/train/", gt_path = gt_path)
 

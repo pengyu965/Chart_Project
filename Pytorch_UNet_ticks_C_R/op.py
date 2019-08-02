@@ -53,7 +53,7 @@ class Operator:
 
         val_min_loss = 10
 
-        train_regression = True 
+        train_regression = False 
 
 
         for ep in range(self.epoch):
@@ -93,7 +93,7 @@ class Operator:
                 self.optimizer.step()
 
 
-                print("Epoch:[{}]===Step:[{}/{}]===Time:[{:.2f}]===Learning Rate:{}\nTrain_loss_c:[{:.4f}]===Train_loss:[{:.4f}]]".format(ep, idi, idx, time.time()-start_time, self.lr, loss.item(), loss_c.item()))
+                print("Epoch:[{}]===Step:[{}/{}]===Time:[{:.2f}]===Learning Rate:{}\nTrain_loss_c:[{:.4f}]===Train_loss:[{:.4f}]]".format(ep, idi, idx, time.time()-start_time, self.lr, loss_c.item(), loss.item()))
 
                 if (global_step%print_idx) == 0:
                     index = 0

@@ -314,24 +314,17 @@ class Vector_Regression_Loss(nn.Module):
 
         # Only calculate the regression loss on ticks label areas and ticks marks areas
         classes_mask = torch.argmax(result[:,:6,:,:], 1).unsqueeze(1) #----->(b,1,h,w)
-        print(classes_mask.shape)
         res_ticks_label_bool_mask = classes_mask == 2 #----->(b,1,h,w), uint8
-        print(res_ticks_label_bool_mask.shape)
         res_ticks_marks_bool_mask = classes_mask == 4 #----->(b,1,h,w), uint8
-        print(res_ticks_marks_bool_mask.shape)
         gt_ticks_label_bool_mask = torch.tensor(gt[:,:,:,0]).unsqueeze(1) == 2 #----->(b,1,h,w), uint8
-        print(gt_ticks_label_bool_mask.shape)
         gt_ticks_marks_bool_mask = torch.tensor(gt[:,:,:,0]).unsqueeze(1) == 4 #----->(b,1,h,w), uint8
-        print(gt_ticks_marks_bool_mask.shape)
         res_masks = res_ticks_label_bool_mask + res_ticks_marks_bool_mask
         gt_masks = gt_ticks_label_bool_mask + gt_ticks_marks_bool_mask
         regression_loss_mask = res_masks*gt_masks #----->(b,1,h,w), uint8
 
         loss_map = self.criterion(result[:,6:,:,:], gt[:,:,:,1:].permute(0,3,1,2))
-        print(loss_map.shape)
-        print(regression_loss_mask.float().shape)
         loss_masked_map = loss_map.float() * regression_loss_mask.float()
-        loss = torch.sum(loss_masked_map)/np.count_nonzero(regression_loss_mask)
+        loss = torch.sum(loss_masked_map)/torch.nonzero(regression_loss_mask).size(0)
         
         return loss.float()
 

@@ -278,7 +278,8 @@ class Vector_Regression_Loss(nn.Module):
                             
                             loss += (((rs_vector[0]-gt_vector[0])*1.)**2 + ((rs_vector[1]-gt_vector[1])*1.)**2)**0.5
                     else:
-                        loss += 0 
+                        loss += torch.sum(result[k,6:,i,j]-result[k,6:,i,j])
+                        
 
         
         loss /= overlap_area

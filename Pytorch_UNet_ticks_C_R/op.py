@@ -53,6 +53,8 @@ class Operator:
 
         val_min_loss = 10
 
+        train_regression = False 
+
 
         for ep in range(self.epoch):
             # with torch.no_grad():
@@ -67,6 +69,9 @@ class Operator:
                 self.lr = self.lr/10
                 self.optimizer = optim.Adam(self.netG.parameters(), lr = self.lr)
 
+            if ep == int(self.epoch*1//2):
+                train_regression = True
+
             for idi, train_batch in enumerate(self.dataloader):
                 train_images = train_batch[0].to(self.device)
                 train_gt = train_batch[1].to(self.device)
@@ -79,8 +84,11 @@ class Operator:
                 # loss = self.criterion(fake_images*1. , train_gt*1./255)
                 # print(fake_images.shape, train_gt.shape)
                 loss_c = self.criterion(fake_images[:,:6,:,:], train_gt[:,:,:,0].long())
-                loss_r = self.criterion_r(fake_images, train_gt.float())
-                loss = loss_c + loss_r
+                if train_regression == True:
+                    loss_r = self.criterion_r(fake_images, train_gt.float())
+                    loss = loss_c + loss_r
+                else:
+                    loss = loss_c
                 loss.backward()
                 self.optimizer.step()
 
@@ -95,7 +103,7 @@ class Operator:
                         try:
                             for j in range(0, 5121-5120//nroll,5120//nroll):
                                 # im = Image.fromarray(image_norm(fake_images[index].permute(1,2,0).squeeze(2).detach().cpu().clone().numpy()).astype("uint8"))
-                                im = Image.fromarray(out_vis(fake_images[index].permute(1,2,0).detach().cpu().clone().numpy()).astype("uint8"))
+                                im = Image.fromarray(out_vis(fake_images[index].permute(1,2,0).detach().cpu().clone().numpy()).astype("uint8"), regression_vis =train_regression)
                                 im.thumbnail((512,512))
                                 new_im.paste(im, (i,j))
                                 print(index)
@@ -111,7 +119,7 @@ class Operator:
 
             ## Validation
             with torch.no_grad():
-                val_loss = self.validator(img_path+"/val/", gt_path, global_step)
+                val_loss = self.validator(img_path+"/val/", gt_path, global_step, train_regression)
 
             if val_loss < val_min_loss:
                 val_min_loss = val_loss 
@@ -123,10 +131,10 @@ class Operator:
         
         ## Testing
         with torch.no_grad():
-            self.validator(img_path+"/test/", gt_path, global_step)
+            self.validator(img_path+"/test/", gt_path, global_step, train_regression)
 
 
-    def validator(self, val_img_path, val_gt_path, global_step):
+    def validator(self, val_img_path, val_gt_path, global_step, train_regression = False):
         self.netG.eval()
         self.criterion = nn.CrossEntropyLoss()
         val_bsize = 16
@@ -144,8 +152,11 @@ class Operator:
             fake_val_images = self.netG(val_images)
 
             valloss_c = self.criterion(fake_val_images[:,:6,:,:], val_gt[:,:,:,0].long())
-            valloss_r = self.criterion_r(fake_val_images, val_gt.float())
-            valloss = valloss_c.item() + valloss_r.item()
+            if train_regression == True:
+                valloss_r = self.criterion_r(fake_val_images, val_gt.float())
+                valloss = valloss_c.item() + valloss_r.item()
+            else:
+                valloss = valloss_c.item()
             val_total_loss += valloss
 
         index = 0
@@ -155,7 +166,7 @@ class Operator:
             try:
                 for j in range(0, 5121-5120//nroll,5120//nroll):
                     # im = Image.fromarray(image_norm(fake_images[index].permute(1,2,0).squeeze(2).detach().cpu().clone().numpy()).astype("uint8"))
-                    im = Image.fromarray(out_vis(fake_val_images[index].permute(1,2,0).detach().cpu().clone().numpy()).astype("uint8"))
+                    im = Image.fromarray(out_vis(fake_val_images[index].permute(1,2,0).detach().cpu().clone().numpy()).astype("uint8"), regression_vis = train_regression)
                     im.thumbnail((512,512))
                     new_im.paste(im, (i,j))
                     index += 1
@@ -188,10 +199,11 @@ class Operator:
                 generated_img_tensor = self.netG(img_tensor)
                 if visualize == True:
                     generated_img = Image.fromarray(
-                        out_vis(generated_img_tensor[0].permute(1,2,0).detach().cpu().clone().numpy()).astype(np.uint8)
+                        out_vis(generated_img_tensor[0].permute(1,2,0).detach().cpu().clone().numpy()).astype(np.uint8),
                         # image_norm(
                         #     generated_img_tensor[0].permute(1,2,0).squeeze(2).detach().cpu().clone().numpy()
-                        # ).astype("uint8")
+                        # ).astype("uint8"),
+                        regression_vis = True
                     )
                     generated_img.thumbnail((512,512))
                     generated_img.save("./predict_result/{}".format(image))
@@ -220,7 +232,8 @@ class Operator:
             generated_img = Image.fromarray(
                 out_vis(
                     generated_img_tensor[0].permute(1,2,0).detach().cpu().clone().numpy()
-                ).astype("uint8")
+                ).astype("uint8"),
+                regression_vis = True
             )
             generated_img.save("./predict_result/{}.png".format(image_name))
 

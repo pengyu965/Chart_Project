@@ -26,7 +26,7 @@ def image_norm(arr):
     
     return new_arr
 
-def out_vis(arr):
+def out_vis(arr, regression_vis = False):
     # Input is numpy array, [H,W,C]
     color_lib = [
         (255,255,0),
@@ -54,13 +54,14 @@ def out_vis(arr):
             idi = np.argmax(pixel)
             new_arr[i,j,:] = np.array(color_lib[idi])
     
-    for i in range(x):
-        for j in range(y):
-            _class = np.argmax(arr[i,j,:6])
-            if _class == 2:
-                cv2.arrowedLine(new_arr, (i,j), tuple(arr[i,j,6:]), (0,0,255),1)
-            if _class == 4:
-                cv2.arrowedLine(new_arr, (i,j), tuple(arr[i,j,6:]), (0,255,0),1)
+    if regression_vis == True:
+        for i in range(x):
+            for j in range(y):
+                _class = np.argmax(arr[i,j,:6])
+                if _class == 2:
+                    cv2.arrowedLine(new_arr, (i,j), tuple(arr[i,j,6:]), (0,0,255),1)
+                if _class == 4:
+                    cv2.arrowedLine(new_arr, (i,j), tuple(arr[i,j,6:]), (0,255,0),1)
 
     return new_arr
 

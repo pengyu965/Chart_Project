@@ -319,9 +319,9 @@ class Vector_Regression_Loss(nn.Module):
         print(res_ticks_label_bool_mask.shape)
         res_ticks_marks_bool_mask = classes_mask == 4 #----->(b,1,h,w), uint8
         print(res_ticks_marks_bool_mask.shape)
-        gt_ticks_label_bool_mask = gt[:,:,:,0] == 2 #----->(b,1,h,w), uint8
+        gt_ticks_label_bool_mask = torch.tensor(gt[:,:,:,0]).unsqueeze(1) == 2 #----->(b,1,h,w), uint8
         print(gt_ticks_label_bool_mask.shape)
-        gt_ticks_marks_bool_mask = gt[:,:,:,0] == 4 #----->(b,1,h,w), uint8
+        gt_ticks_marks_bool_mask = torch.tensor(gt[:,:,:,0]).unsqueeze(1) == 4 #----->(b,1,h,w), uint8
         print(gt_ticks_marks_bool_mask.shape)
         res_masks = res_ticks_label_bool_mask + res_ticks_marks_bool_mask
         gt_masks = gt_ticks_label_bool_mask + gt_ticks_marks_bool_mask

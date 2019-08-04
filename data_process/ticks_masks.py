@@ -144,21 +144,22 @@ def masks_gen(gt_json):
 
     # Process the vector layer
     a = np.zeros((512,512,3)).astype(np.uint8)
-    for i in range(x):
-        for j in range(y):
+    
+    for j in range(y):
+        for i in range(x):
             if vector_center_masks[i,j,0] != 0 or vector_center_masks[i,j,1] != 0:
-                vector = vector_center_masks[i,j,:] - np.array([i,j])
+                vector = vector_center_masks[i,j,:] - np.array([j,i])
                 print(vector_center_masks[i,j,:])
 
                 # Need to process the center, where vector = 0,0
                 # if vector[0] == 0 and vector[1] == 0:
-                    # vector_masks[i,j,:] = vector
+                #     vector_masks[i,j,:] = vector
                 # else:
                 #     vector_masks[i,j,:] = vector/((vector[0]**2+vector[1]**2)**0.5)
 
-                cv2.circle(a, (i,j),5, (255,255,0),-1)
-                # cv2.circle(a, tuple(vector_center_masks[i,j,:].astype(np.int)),5,(255,255,255), -1)
-                # cv2.arrowedLine(a, (i,j), (int(i+vector[0]),int(j+vector[1])),(255,0,0),1)
+                # cv2.circle(a, (j,i),5, (255,255,0),-1)
+                cv2.circle(a, tuple(vector_center_masks[i,j,:].astype(np.int)),5,(255,255,255), -1)
+                cv2.arrowedLine(a, (j,i), (int(j+vector[0]),int(i+vector[1])),(255,0,0),1)
 
     cv2.imshow("example", a)
     cv2.waitKey(0)

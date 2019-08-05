@@ -173,10 +173,10 @@ def masks_gen(gt_json):
         
 
 
-for file in os.listdir(gt_path):
-    masks_gen(file)
+# for file in os.listdir(gt_path):
+#     masks_gen(file)
 
-# pool = multiprocessing.Pool()
-# for i in tqdm(pool.imap(masks_gen, os.listdir(gt_path)), total = len(os.listdir(gt_path))):
-#     pass
+pool = multiprocessing.Pool()
+for i in tqdm(pool.imap(masks_gen, os.listdir(gt_path)), total = len(os.listdir(gt_path))):
+    pass
     

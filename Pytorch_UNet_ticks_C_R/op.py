@@ -53,7 +53,7 @@ class Operator:
 
         val_min_loss = 10
 
-        train_regression = False 
+        train_regression = True 
 
 
         for ep in range(self.epoch):

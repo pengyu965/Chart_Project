@@ -280,50 +280,40 @@ class Chartdata(Dataset):
 
         return (input_images, gt_images)
 
-
+# ## Loss with Normalized Vector
 # class Vector_Regression_Loss(nn.Module):
 #     # Weighted Masks
 #     def __init__(self):
 #         super(Vector_Regression_Loss, self).__init__()
+#         self.criterion = nn.MSELoss(reduction='none')
 #     def forward(self, result, gt):
 #         b, c, h, w = result.shape
 #         overlap_area = 0
 #         total_area = 0
-#         loss = 0
-#         for k in range(b):
-#             for i in range(h):
-#                 for j in range(w):
-#                     _class = torch.argmax(result[k,:6,i,j])
-#                     if _class == 2:
-#                         if gt[k,i,j,0] == 2:
-#                             overlap_area += 1
-#                             gt_vector = [gt[k,i,j,3]-i, gt[k,i,j,4]-j]
-#                             rs_vector = result[k,6:,i,j]
 
 
-#                             loss += torch.sqrt((rs_vector[0]-gt_vector[0])**2 + (rs_vector[1]-gt_vector[1])**2)
+#         # Only calculate the regression loss on ticks label areas and ticks marks areas
+#         classes_mask = torch.argmax(result[:,:6,:,:], 1).unsqueeze(1) #----->(b,1,h,w)
+#         res_ticks_label_bool_mask = classes_mask == 2 #----->(b,1,h,w), uint8
+#         res_ticks_marks_bool_mask = classes_mask == 4 #----->(b,1,h,w), uint8
+#         gt_ticks_label_bool_mask = gt[:,:,:,0].unsqueeze(1) == 2 #----->(b,1,h,w), uint8
+#         gt_ticks_marks_bool_mask = gt[:,:,:,0].unsqueeze(1) == 4 #----->(b,1,h,w), uint8
+#         res_masks = res_ticks_label_bool_mask + res_ticks_marks_bool_mask
+#         gt_masks = gt_ticks_label_bool_mask + gt_ticks_marks_bool_mask
+#         regression_loss_mask = res_masks*gt_masks #----->(b,1,h,w), uint8
 
-#                     elif _class == 4:
-#                         if gt[k,i,j,0] == 4:
-#                             overlap_area += 1
-#                             gt_vector = [gt[k,i,j,3]-i, gt[k,i,j,4]-j]
-#                             rs_vector = result[k,6:,i,j]
-                            
-#                             loss += torch.sqrt((rs_vector[0]-gt_vector[0])**2 + (rs_vector[1]-gt_vector[1])**2)
-#                     else:
-#                         loss += torch.sum(result[k,6:,i,j]-result[k,6:,i,j])
-                        
-
+#         loss_map = self.criterion(result[:,6:,:,:], gt[:,:,:,1:].permute(0,3,1,2))
+#         loss_masked_map = loss_map.float() * regression_loss_mask.float()
+#         loss = torch.sum(loss_masked_map)/torch.nonzero(regression_loss_mask).size(0)
         
-#         loss /= overlap_area
 #         return loss.float()
 
-
+## Normalized loss with Non-normalized vector
 class Vector_Regression_Loss(nn.Module):
     # Weighted Masks
     def __init__(self):
         super(Vector_Regression_Loss, self).__init__()
-        self.criterion = nn.MSELoss(reduction='none')
+        self.criterion = nn.L1Loss(reduction='none')
     def forward(self, result, gt):
         b, c, h, w = result.shape
         overlap_area = 0
@@ -345,6 +335,4 @@ class Vector_Regression_Loss(nn.Module):
         loss = torch.sum(loss_masked_map)/torch.nonzero(regression_loss_mask).size(0)
         
         return loss.float()
-
-
 

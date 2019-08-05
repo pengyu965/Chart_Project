@@ -94,7 +94,7 @@ class Operator:
                 self.optimizer.step()
 
                 ## Tensorboard
-                if not self.writer:
+                if self.writer:
                     self.writer.add_scalars(
                         "Train Curve",
                         {
@@ -135,7 +135,7 @@ class Operator:
                 val_loss = self.validator(img_path+"/val/", gt_path, global_step, train_regression, writer = self.writer)
 
             ## Validation tensorboard
-            if not self.writer:
+            if self.writer:
                 self.writer.add_scalar("Validation Total Loss", val_loss, global_step)
             
             ## Save Model based on the minimum validation loss

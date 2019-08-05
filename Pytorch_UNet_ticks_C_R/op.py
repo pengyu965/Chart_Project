@@ -314,8 +314,17 @@ class Vector_Regression_Loss(nn.Module):
     def __init__(self):
         super(Vector_Regression_Loss, self).__init__()
         self.criterion = nn.L1Loss(reduction='none')
+        self.h, self.w = 512,512
+        # self.position_matrix = np.zeros((self.h,self.w,2))
+        # for i in range(self.h):
+        #     for j in range(self.w):
+        #         self.position_matrix[j,i,:] = [i,j]
+
     def forward(self, result, gt):
         b, c, h, w = result.shape
+        if self.h != h or self.w != w:
+            print("Warning: you must need to change the vector regression loss function's self.c and self.h")
+        
         overlap_area = 0
         total_area = 0
 
@@ -329,10 +338,17 @@ class Vector_Regression_Loss(nn.Module):
         res_masks = res_ticks_label_bool_mask + res_ticks_marks_bool_mask
         gt_masks = gt_ticks_label_bool_mask + gt_ticks_marks_bool_mask
         regression_loss_mask = res_masks*gt_masks #----->(b,1,h,w), uint8
+        
+        norm_gt = gt[:,:,:,1:].float()/torch.sqrt(gt[:,:,:,1].float()**2 + gt[:,:,:,2].float()**2)
+        norm_result = result[:,6:,:,:].float()/torch.sqrt(result[:,6,:,:].float()**2-result[:,7,:,:].float()**2)
 
-        loss_map = self.criterion(result[:,6:,:,:], gt[:,:,:,1:].permute(0,3,1,2))
+
+
+
+
+        loss_map = self.criterion(norm_result, norm_gt.permute(0,3,1,2))
         loss_masked_map = loss_map.float() * regression_loss_mask.float()
         loss = torch.sum(loss_masked_map)/torch.nonzero(regression_loss_mask).size(0)
         
-        return 0.1*loss.float()
+        return loss.float()
 

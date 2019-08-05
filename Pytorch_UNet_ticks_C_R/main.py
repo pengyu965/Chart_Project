@@ -8,6 +8,7 @@ import torch.nn as nn
 from model import Generator
 from model import Discriminator
 from unet import UNet
+from torch.utils.tensorboard import SummaryWriter
 
 import op
 
@@ -65,10 +66,12 @@ if __name__ == "__main__":
             print("="*6, "\nModel loaded, start retraining", "\n"+"="*6)
         else:
             print("="*6, "\nModel isn't found, train the network from begining.","\n"+"="*6)
-            
+        
+        writer = SummaryWriter("./logs/")            
 
         operator = op.Operator(netG)
-        operator.trainer(FLAGS.img_path, FLAGS.gt_path, FLAGS.bsize, FLAGS.lr, FLAGS.epoch)
+        operator.trainer(FLAGS.img_path, FLAGS.gt_path, FLAGS.bsize, FLAGS.lr, FLAGS.epoch, writer = writer)
+        writer.close()
 
 
     if FLAGS.eval:

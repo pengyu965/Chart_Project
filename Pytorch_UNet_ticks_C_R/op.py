@@ -26,13 +26,14 @@ class Operator:
         self.netG = nn.DataParallel(netG).to(self.device)
         self.netD = netD
 
-    def trainer(self, img_path, gt_path, batch_size, lr, epoch):
+    def trainer(self, img_path, gt_path, batch_size, lr, epoch, writer = False):
         self.batch_size = batch_size
         self.lr = lr 
         self.epoch = epoch 
         self.optimizer = optim.Adam(self.netG.parameters(), lr = self.lr)
         self.criterion = nn.CrossEntropyLoss()
         self.criterion_r = Vector_Regression_Loss()
+        self.writer = writer
 
         self.train_data = Chartdata(img_path = img_path+"/train/", gt_path = gt_path)
 
@@ -92,9 +93,21 @@ class Operator:
                 loss.backward()
                 self.optimizer.step()
 
+                ## Tensorboard
+                if not self.writer:
+                    self.writer.add_scalars(
+                        "Train Curve",
+                        {
+                            "Classification Loss":loss_c.item(),
+                            "Regression Loss":loss.item()-loss_c.item(),
+                            "Total Loss":loss.item()
+                        },
+                        global_step
+                    )
 
                 print("Epoch:[{}]===Step:[{}/{}]===Time:[{:.2f}]===Learning Rate:{}\nTrain_Regression:[{}]===Classification_Loss:[{:.4f}]===Regression_Loss:[{:.4f}]===Total_Loss:[{:.4f}]]".format(ep, idi, idx, time.time()-start_time, self.lr, train_regression, loss_c.item(), loss.item()-loss_c.item(), loss.item()))
-
+                
+                ## Visualization
                 if (global_step%print_idx) == 0:
                     index = 0
                     nroll = int(self.batch_size**0.5)
@@ -119,22 +132,27 @@ class Operator:
 
             ## Validation
             with torch.no_grad():
-                val_loss = self.validator(img_path+"/val/", gt_path, global_step, train_regression)
+                val_loss = self.validator(img_path+"/val/", gt_path, global_step, train_regression, writer = self.writer)
 
+            ## Validation tensorboard
+            if not self.writer:
+                self.writer.add_scalar("Validation Total Loss", val_loss, global_step)
+            
+            ## Save Model based on the minimum validation loss
             if val_loss < val_min_loss:
                 val_min_loss = val_loss 
                 if os.path.exists("./weight/") == False:
                     os.mkdir("./weight/")
                 torch.save(self.netG.module.state_dict(), "./weight/model.pt")
-
+        ## Save the final step's model
         torch.save(self.netG.module.state_dict(), "./weight/final.pt")
         
         ## Testing
         with torch.no_grad():
-            self.validator(img_path+"/test/", gt_path, global_step, train_regression)
+            self.validator(img_path+"/test/", gt_path, global_step, train_regression, writer = self.writer)
 
 
-    def validator(self, val_img_path, val_gt_path, global_step, train_regression = False):
+    def validator(self, val_img_path, val_gt_path, global_step, train_regression = False, writer = False):
         self.netG.eval()
         self.criterion = nn.CrossEntropyLoss()
         val_bsize = 16

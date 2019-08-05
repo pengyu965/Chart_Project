@@ -59,9 +59,9 @@ def out_vis(arr, regression_vis = False):
             for j in range(y):
                 _class = np.argmax(arr[j,i,:6])
                 if _class == 2 and np.random.rand()>0.8:
-                    cv2.arrowedLine(new_arr, (i,j), (int(i+arr[j,i,6]*10), int(j+arr[j,i,7]*10)), (0,0,255),1)
+                    cv2.circle(new_arr, (int(i+arr[j,i,6]), int(j+arr[j,i,7])), 0, (0,0,255), -1)
                 if _class == 4 and np.random.rand()>0.8:
-                    cv2.arrowedLine(new_arr, (i,j), (int(i+arr[j,i,6]*10), int(j+arr[j,i,7]*10)), (0,255,0),1)
+                    cv2.circle(new_arr, (int(i+arr[j,i,6]), int(j+arr[j,i,7])), 0, (0,0,255), -1)
 
     return new_arr
 

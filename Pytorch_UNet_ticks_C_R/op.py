@@ -93,7 +93,7 @@ class Operator:
                 self.optimizer.step()
 
 
-                print("Epoch:[{}]===Step:[{}/{}]===Time:[{:.2f}]===Learning Rate:{}\nTrain_loss_c:[{:.4f}]===Train_loss:[{:.4f}]]".format(ep, idi, idx, time.time()-start_time, self.lr, loss_c.item(), loss.item()))
+                print("Epoch:[{}]===Step:[{}/{}]===Time:[{:.2f}]===Learning Rate:{}\nTrain_loss_c:[{:.4f}]===Train_Regression:[{}]===Train_loss_r:[{:.4f}]===Train_loss:[{:.4f}]]".format(ep, idi, idx, time.time()-start_time, self.lr, loss_c.item(), train_regression, loss.item()-loss_c.item(), loss.item()))
 
                 if (global_step%print_idx) == 0:
                     index = 0

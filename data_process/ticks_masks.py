@@ -159,6 +159,11 @@ def masks_gen(gt_json):
                 # else:
                 #     vector_masks[j,i,:] = vector/((vector[0]**2+vector[1]**2)**0.5)
 
+    #             cv2.circle(a, (int(i+vector[0]),int(j+vector[1])), 0, (255,255,255), -1)
+    
+    # cv2.imshow("example", a)
+    # cv2.waitKey(0)
+
     class_arr = np.expand_dims(class_arr, axis = 2)
     # ticks_labels_ID_mask = np.expand_dims(ticks_labels_ID_mask, axis = 2)
     # ticks_ID_mask = np.expand_dims(ticks_ID_mask, axis = 2)
@@ -168,10 +173,10 @@ def masks_gen(gt_json):
         
 
 
-# for file in os.listdir(gt_path):
-#     masks_gen(file)
+for file in os.listdir(gt_path):
+    masks_gen(file)
 
-pool = multiprocessing.Pool()
-for i in tqdm(pool.imap(masks_gen, os.listdir(gt_path)), total = len(os.listdir(gt_path))):
-    pass
+# pool = multiprocessing.Pool()
+# for i in tqdm(pool.imap(masks_gen, os.listdir(gt_path)), total = len(os.listdir(gt_path))):
+#     pass
     

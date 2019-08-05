@@ -143,26 +143,43 @@ def masks_gen(gt_json):
             class_arr[i,j] = idi
 
     # Process the vector layer
-    a = np.zeros((512,512,3)).astype(np.uint8)
+    # a = np.zeros((512,512,3)).astype(np.uint8)
     
-    for j in range(y):
-        for i in range(x):
-            if vector_center_masks[i,j,0] != 0 or vector_center_masks[i,j,1] != 0:
-                vector = vector_center_masks[i,j,:] - np.array([j,i])
-                print(vector_center_masks[i,j,:])
+    for i in range(x):
+        for j in range(y):
+            # The array and image axis are fliped, (x,y) ---> (y,x)
+            if vector_center_masks[j,i,0] != 0 or vector_center_masks[j,i,1] != 0:
+                vector = vector_center_masks[j,i,:] - np.array([i,j])
+        #         # print(vector_center_masks[i,j,:])
 
                 # Need to process the center, where vector = 0,0
-                # if vector[0] == 0 and vector[1] == 0:
-                #     vector_masks[i,j,:] = vector
-                # else:
-                #     vector_masks[i,j,:] = vector/((vector[0]**2+vector[1]**2)**0.5)
+                if vector[0] == 0 and vector[1] == 0:
+                    vector_masks[j,i,:] = vector
+                else:
+                    vector_masks[j,i,:] = vector/((vector[0]**2+vector[1]**2)**0.5)
 
-                # cv2.circle(a, (j,i),5, (255,255,0),-1)
-                cv2.circle(a, tuple(vector_center_masks[i,j,:].astype(np.int)),5,(255,255,255), -1)
-                cv2.arrowedLine(a, (j,i), (int(j+vector[0]),int(i+vector[1])),(255,0,0),1)
+                # a[j,i,:] = [255,255,0]
+        #         cv2.circle(a, tuple(vector_center_masks[i,j,:].astype(np.int)),1,(255,255,255), -1)
+                # cv2.arrowedLine(a, (i,j), (int(i+vector[0]),int(j+vector[1])),(255,0,0),1)
+                # cv2.arrowedLine(a, (i,j), (int(i+vector_masks[j,i,0]*50),int(j+vector_masks[j,i,1]*50)),(255,0,0),1)
+        # #     cv2.circle(a, (82,424),5, (255,255,0),-1)
+        # #     cv2.circle(a, (207,424),5, (255,255,0),-1)
+        # # break
+                # x0 = int(vector_center_masks[i,j,0])
+                # y0 = int(vector_center_masks[i,j,1])
+                # x0 = 125
+                # y0 = 200
+                # print(x0,y0)
+                # a[x0,y0,:] = 255
+                # cv2.circle(a, (x0,y0), 5,(255,0,0), 1)
+                # break
 
-    cv2.imshow("example", a)
-    cv2.waitKey(0)
+                
+            # cv2.circle(a, (i,j), 5,(255,0,0), -1)
+
+
+    # cv2.imshow("example", a)
+    # cv2.waitKey(0)
 
 
                 
@@ -188,10 +205,10 @@ def masks_gen(gt_json):
 
     # cv2.imwrite(ticks_mask_path+gt_json[:-4]+"png", img)
 
-for file in os.listdir(gt_path):
-    masks_gen(file)
+# for file in os.listdir(gt_path):
+#     masks_gen(file)
 
-# pool = multiprocessing.Pool()
-# for i in tqdm(pool.imap(masks_gen, os.listdir(gt_path)), total = len(os.listdir(gt_path))):
-#     pass
+pool = multiprocessing.Pool()
+for i in tqdm(pool.imap(masks_gen, os.listdir(gt_path)), total = len(os.listdir(gt_path))):
+    pass
     

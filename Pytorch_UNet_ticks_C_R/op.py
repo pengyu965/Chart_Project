@@ -341,7 +341,6 @@ class Vector_Regression_Loss(nn.Module):
         
         norm_gt = gt[:,:,:,1:].float()/(torch.sqrt(gt[:,:,:,1].float()**2 + gt[:,:,:,2].float()**2).unsqueeze(3)+0.000001)
         norm_result = result[:,6:,:,:].float()/(torch.sqrt(result[:,6,:,:].float()**2-result[:,7,:,:].float()**2).unsqueeze(1)+0.000001)
-        print(norm_gt)
 
 
 
@@ -349,6 +348,7 @@ class Vector_Regression_Loss(nn.Module):
 
         loss_map = self.criterion(norm_result, norm_gt.permute(0,3,1,2))
         loss_masked_map = loss_map.float() * regression_loss_mask.float()
+        print(torch.sum(loss_masked_map))
         loss = torch.sum(loss_masked_map)/torch.nonzero(regression_loss_mask).size(0)
         
         return loss.float()

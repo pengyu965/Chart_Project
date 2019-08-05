@@ -340,9 +340,9 @@ class Vector_Regression_Loss(nn.Module):
         regression_loss_mask = res_masks*gt_masks #----->(b,1,h,w), uint8
         
         norm_gt = gt[:,:,:,1:].float()/(torch.sqrt(gt[:,:,:,1].float()**2 + gt[:,:,:,2].float()**2).unsqueeze(3)+0.000001)
-        norm_result = result[:,6:,:,:].float()/(torch.sqrt(result[:,6,:,:].float()**2-result[:,7,:,:].float()**2).unsqueeze(1)+0.000001)
-        print(torch.min(norm_gt), torch.max(norm_gt))
-        print(torch.min(norm_result), torch.max(norm_result))
+        norm_result = result[:,6:,:,:].float()/(torch.sqrt(result[:,6,:,:].float()**2+result[:,7,:,:].float()**2).unsqueeze(1)+0.000001)
+        # print(torch.min(norm_gt), torch.max(norm_gt))
+        # print(torch.min(norm_result), torch.max(norm_result))
 
 
 

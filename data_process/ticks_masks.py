@@ -150,8 +150,8 @@ def masks_gen(gt_json):
             # The array and image axis are fliped, (x,y) ---> (y,x)
             if vector_center_masks[j,i,0] != 0 or vector_center_masks[j,i,1] != 0:
                 vector = vector_center_masks[j,i,:] - np.array([i,j])
+                vector_masks[j,i,:] = vector
 
-                
                 # ## Normalization
                 # ## Need to process the center, where vector = 0,0
                 # if vector[0] == 0 and vector[1] == 0:

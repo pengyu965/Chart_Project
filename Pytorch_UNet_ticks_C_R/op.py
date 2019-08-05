@@ -334,5 +334,5 @@ class Vector_Regression_Loss(nn.Module):
         loss_masked_map = loss_map.float() * regression_loss_mask.float()
         loss = torch.sum(loss_masked_map)/torch.nonzero(regression_loss_mask).size(0)
         
-        return loss.float()
+        return 0.1*loss.float()
 

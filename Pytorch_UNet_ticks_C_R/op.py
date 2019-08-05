@@ -53,7 +53,7 @@ class Operator:
 
         val_min_loss = 10
 
-        train_regression = True 
+        train_regression = False 
 
 
         for ep in range(self.epoch):
@@ -69,7 +69,7 @@ class Operator:
                 self.lr = self.lr/10
                 self.optimizer = optim.Adam(self.netG.parameters(), lr = self.lr)
 
-            if ep == int(self.epoch*1//3):
+            if ep == int(self.epoch*1//4):
                 train_regression = True
 
             for idi, train_batch in enumerate(self.dataloader):

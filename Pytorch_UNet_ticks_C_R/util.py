@@ -119,7 +119,7 @@ def channel_binarization(arr):
         for j in range(y):
             pixel = arr[i,j,:6]
             idi = np.argmax(pixel)
-            new_channel = np.zeros((z))
+            new_channel = np.zeros((6))
             new_channel[idi] = 1
             new_arr[i,j,:] = new_channel
 

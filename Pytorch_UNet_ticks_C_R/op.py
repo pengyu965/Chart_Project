@@ -347,7 +347,10 @@ class Vector_Regression_Loss(nn.Module):
 
         loss_map = self.criterion(norm_result, norm_gt.permute(0,3,1,2))
         loss_masked_map = loss_map.float() * regression_loss_mask.float()
-        loss = torch.sum(loss_masked_map)/torch.nonzero(regression_loss_mask).size(0)
+        if torch.nonzero(regression_loss_mask).size(0) == 0:
+            loss = torch.sum(loss_masked_map)
+        else:
+            loss = torch.sum(loss_masked_map)/torch.nonzero(regression_loss_mask).size(0)
         
         return loss.float()
 

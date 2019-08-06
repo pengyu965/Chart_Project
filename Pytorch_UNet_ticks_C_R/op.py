@@ -313,7 +313,7 @@ class Vector_Regression_Loss(nn.Module):
     # Weighted Masks
     def __init__(self):
         super(Vector_Regression_Loss, self).__init__()
-        self.criterion = nn.L1Loss(reduction='none')
+        self.criterion = nn.MSELoss(reduction='none')
         self.h, self.w = 512,512
         # self.position_matrix = np.zeros((self.h,self.w,2))
         # for i in range(self.h):
@@ -343,10 +343,6 @@ class Vector_Regression_Loss(nn.Module):
         norm_result = result[:,6:,:,:].float()/(torch.sqrt(result[:,6,:,:].float()**2+result[:,7,:,:].float()**2).unsqueeze(1)+0.000001)
         # print(torch.min(norm_gt), torch.max(norm_gt))
         # print(torch.min(norm_result), torch.max(norm_result))
-
-
-
-
 
         loss_map = self.criterion(norm_result, norm_gt.permute(0,3,1,2))
         loss_masked_map = loss_map.float() * regression_loss_mask.float()

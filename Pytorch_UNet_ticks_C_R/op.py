@@ -313,7 +313,7 @@ class Vector_Regression_Loss(nn.Module):
     # Weighted Masks
     def __init__(self):
         super(Vector_Regression_Loss, self).__init__()
-        self.criterion = nn.MSELoss(reduction='none')
+        self.criterion = nn.L1loss(reduction='none')
         self.h, self.w = 512,512
         # self.position_matrix = np.zeros((self.h,self.w,2))
         # for i in range(self.h):

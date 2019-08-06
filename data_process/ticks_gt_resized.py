@@ -89,4 +89,4 @@ def drawrectangle(img,x0,y0,width,height):
 # ticks_gt_gen("2.json")
 
 
-verify("160889.json")
+verify("160700.json")

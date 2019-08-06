@@ -26,6 +26,10 @@ def image_norm(arr):
     
     return new_arr
 
+def most_frequent_number(List): 
+    element = max(set(List), key = List.count)
+    return List.count(element)
+
 def out_vis(arr, regression_vis = False):
     # Input is numpy array, [H,W,C]
     color_lib = [
@@ -55,13 +59,37 @@ def out_vis(arr, regression_vis = False):
             new_arr[i,j,:] = np.array(color_lib[idi])
     
     if regression_vis == True:
+        internal_points = []
+        association_points = []
         for i in range(x):
             for j in range(y):
                 _class = np.argmax(arr[j,i,:6])
                 if _class == 2 and np.random.rand()>0.8:
-                    cv2.circle(new_arr, (int(i+arr[j,i,6]*100), int(j+arr[j,i,7]*100)), 0, (0,0,255), -1)
-                # if _class == 4 and np.random.rand()>0.8:
-                #     cv2.circle(new_arr, (int(i+arr[j,i,6]*100), int(j+arr[j,i,7]*100)), 0, (0,255,0), -1)
+                    # cv2.circle(new_arr, (int(i+arr[j,i,6]*100), int(j+arr[j,i,7]*100)), 0, (0,0,255), -1)
+                    association_points.append([int(i+arr[j,i,6]), int(j+arr[j,i,7])])
+                if _class == 4 and np.random.rand()>0.8:
+                    # cv2.circle(new_arr, (int(i+arr[j,i,6]*100), int(j+arr[j,i,7]*100)), 0, (0,255,0), -1)
+                    internal_points.append([int(i+arr[j,i,6]), int(j+arr[j,i,7])])
+
+        total_points = association_points + internal_points
+        no_duplicate_list = list(set(total_points))
+        max_num = most_frequent_number(total_points)
+
+        for point in no_duplicate_list:
+            if (point in association_points) and (point in internal_points):
+                num = total_points.count(point)
+                color = (np.array([255,255,255])*1.*num/max_num).astype(np.int)
+                cv2.circle(new_arr, (point[0], point[1]),0, tuple(color),-1)
+            
+            if (point in association_points) and (point not in internal_points):
+                num = total_points.count(point)
+                color = (np.array([0,0,255])*1.*num/max_num).astype(np.int)
+                cv2.circle(new_arr, (point[0], point[1]),0, tuple(color),-1)
+
+            if (point not in association_points) and (point in internal_points):
+                num = total_points.count(point)
+                color = (np.array([0,255,0])*1.*num/max_num).astype(np.int)
+                cv2.circle(new_arr, (point[0], point[1]),0, tuple(color),-1)
 
     return new_arr
 

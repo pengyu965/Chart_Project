@@ -60,7 +60,6 @@ def out_vis(arr, regression_vis = False):
                 _class = np.argmax(arr[j,i,:6])
                 if _class == 2 and np.random.rand()>0.8:
                     cv2.circle(new_arr, (int(i+arr[j,i,6]), int(j+arr[j,i,7])), 0, (0,0,255), -1)
-                    print(arr[j,i,6])
                 if _class == 4 and np.random.rand()>0.8:
                     cv2.circle(new_arr, (int(i+arr[j,i,6]), int(j+arr[j,i,7])), 0, (0,255,0), -1)
 

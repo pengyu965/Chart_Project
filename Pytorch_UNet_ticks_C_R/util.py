@@ -91,18 +91,18 @@ def out_vis(arr, regression_vis = False):
         for point in no_duplicate_list:
             if (point in association_points) and (point in internal_points):
                 num = total_points.count(point)
-                color = (np.array([255,255,255])*1.*num/max_num).astype(np.int)
-                cv2.circle(new_arr, (point[0], point[1]),0, (color[0], color[1], color[2]), -1)
+                color = np.array([255,255,255])*1.*num/max_num
+                cv2.circle(new_arr, (point[0], point[1]),0, (int(color[0]), int(color[1]), int(color[2])), -1)
             
             if (point in association_points) and (point not in internal_points):
                 num = total_points.count(point)
-                color = (np.array([0,0,255])*1.*num/max_num).astype(np.int)
-                cv2.circle(new_arr, (point[0], point[1]),0, (color[0], color[1], color[2]), -1)
+                color = np.array([0,0,255])*1.*num/max_num
+                cv2.circle(new_arr, (point[0], point[1]),0, (int(color[0]), int(color[1]), int(color[2])), -1)
 
             if (point not in association_points) and (point in internal_points):
                 num = total_points.count(point)
-                color = (np.array([0,255,0])*1.*num/max_num).astype(np.int)
-                cv2.circle(new_arr, (point[0], point[1]),0, (color[0], color[1], color[2]), -1)
+                color = np.array([0,255,0])*1.*num/max_num
+                cv2.circle(new_arr, (point[0], point[1]),0, (int(color[0]), int(color[1]), int(color[2])), -1)
 
     return new_arr
 

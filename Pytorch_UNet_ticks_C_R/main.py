@@ -91,7 +91,7 @@ if __name__ == "__main__":
 
         operator = op.Operator(netG)
         with torch.no_grad():
-            operator.validator(FLAGS.img_path, FLAGS.gt_path, global_step = "validation")
+            operator.validator(FLAGS.img_path, FLAGS.gt_path, global_step = "validation", train_regression = True)
 
     if FLAGS.predict:
         netG = UNet(in_channels = 3, out_channels = 8)

@@ -155,6 +155,7 @@ class Operator:
     def validator(self, val_img_path, val_gt_path, global_step, train_regression = False, writer = False):
         self.netG.eval()
         self.criterion = nn.CrossEntropyLoss()
+        self.criterion_r = Vector_Regression_Loss()
         val_bsize = 16
 
         val_data = Chartdata(img_path = val_img_path, gt_path = val_gt_path)

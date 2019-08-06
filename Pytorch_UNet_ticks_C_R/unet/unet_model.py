@@ -30,7 +30,7 @@ class UNet(nn.Module):
         x = self.up4(x, x1)
         x = self.outc(x)
         classification_layer = torch.softmax(x[:,:6,:,:], 1)
-        regression_layer = torch.leaky_relu(x[:,6:,:,:], 1)
+        regression_layer = F.leaky_relu(x[:,6:,:,:], 1)
         output = torch.cat((classification_layer, regression_layer),1)
 
         return output

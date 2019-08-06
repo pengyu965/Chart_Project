@@ -30,6 +30,8 @@ def remove_duplicates(List):
     arr = np.array(List)
     if arr.shape != (0,):
         new_arr = np.unique(arr, axis = 0)
+    else:
+        new_arr = arr
     new_List = new_arr.tolist()
     
     return new_List

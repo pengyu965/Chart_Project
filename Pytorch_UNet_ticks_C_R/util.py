@@ -28,7 +28,8 @@ def image_norm(arr):
 
 def remove_duplicates(List):
     arr = np.array(List)
-    new_arr = np.unique(arr, axis = 0)
+    if arr.shape != (0,):
+        new_arr = np.unique(arr, axis = 0)
     new_List = new_arr.tolist()
     
     return new_List

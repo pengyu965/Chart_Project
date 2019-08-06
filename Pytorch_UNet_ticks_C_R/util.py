@@ -26,9 +26,22 @@ def image_norm(arr):
     
     return new_arr
 
+def remove_duplicates(List):
+    new_List = []
+    for element in List:
+        if element not in new_List:
+            new_List.append(element)
+    
+    return new_List
+
 def most_frequent_number(List): 
-    element = max(set(List), key = List.count)
-    return List.count(element)
+    no_dup_list = remove_duplicates(List)
+    max_num = 0
+    for element in no_dup_list:
+        num = List.count(element)
+        if num > max_num:
+            max_num = num 
+    return max_num
 
 def out_vis(arr, regression_vis = False):
     # Input is numpy array, [H,W,C]
@@ -72,7 +85,7 @@ def out_vis(arr, regression_vis = False):
                     internal_points.append([int(i+arr[j,i,6]), int(j+arr[j,i,7])])
 
         total_points = association_points + internal_points
-        no_duplicate_list = list(set(total_points))
+        no_duplicate_list = remove_duplicates(total_points)
         max_num = most_frequent_number(total_points)
 
         for point in no_duplicate_list:

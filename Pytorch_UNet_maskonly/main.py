@@ -72,7 +72,7 @@ if __name__ == "__main__":
 
 
     if FLAGS.eval:
-        netG = UNet(in_channels = 3, out_channels = 8)
+        netG = UNet(in_channels = 3, out_channels = 6)
         # netG = nn.DataParallel(netG).to(device)
         print(netG)
 
@@ -91,7 +91,7 @@ if __name__ == "__main__":
             operator.validator(FLAGS.img_path, FLAGS.gt_path, global_step = "validation")
 
     if FLAGS.predict:
-        netG = UNet(in_channels = 3, out_channels = 8)
+        netG = UNet(in_channels = 3, out_channels = 6)
         # netG = nn.DataParallel(netG).to(device)
         print(netG)
 

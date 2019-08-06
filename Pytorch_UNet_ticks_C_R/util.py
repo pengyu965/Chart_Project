@@ -27,10 +27,9 @@ def image_norm(arr):
     return new_arr
 
 def remove_duplicates(List):
-    new_List = []
-    for element in List:
-        if element not in new_List:
-            new_List.append(element)
+    arr = np.array(List)
+    new_arr = np.unique(arr, axis = 0)
+    new_List = new_arr.tolist()
     
     return new_List
 

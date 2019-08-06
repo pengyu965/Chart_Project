@@ -29,4 +29,7 @@ class UNet(nn.Module):
         x = self.up3(x, x2)
         x = self.up4(x, x1)
         x = self.outc(x)
-        return torch.tanh(x)
+        classification_out = F.sigmoid(x[:,:6,:,:])
+        regression_out = x[:,6:,:,:]
+        out = torch.cat((classification_out,regression_out),1)
+        return out

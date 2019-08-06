@@ -340,10 +340,10 @@ class Vector_Regression_Loss(nn.Module):
         gt_masks = gt_ticks_label_bool_mask + gt_ticks_marks_bool_mask
         regression_loss_mask = res_masks*gt_masks #----->(b,1,h,w), uint8
         
-        # norm_gt = gt[:,:,:,1:].float()/(torch.sqrt(gt[:,:,:,1].float()**2 + gt[:,:,:,2].float()**2).unsqueeze(3)+0.000001)
-        # norm_result = result[:,6:,:,:].float()/(torch.sqrt(result[:,6,:,:].float()**2+result[:,7,:,:].float()**2).unsqueeze(1)+0.000001)
+        norm_gt = gt[:,:,:,1:].float()/(torch.sqrt(gt[:,:,:,1].float()**2 + gt[:,:,:,2].float()**2).unsqueeze(3)+0.000001)
+        norm_result = result[:,6:,:,:].float()/(torch.sqrt(result[:,6,:,:].float()**2+result[:,7,:,:].float()**2).unsqueeze(1)+0.000001)
 
-        norm_gt = gt[:,:,:,1:].float()/100.
+        norm_gt = gt[:,:,:,1:].float()
         norm_result = result[:,6:,:,:].float()
 
         loss_map = self.criterion(norm_result, norm_gt.permute(0,3,1,2))

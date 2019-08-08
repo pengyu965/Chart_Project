@@ -56,7 +56,7 @@ def output_json(input_npy):
             width = bb[2]
             height = bb[3]
             # Filter out the too small area (noises)
-            if width*height > 4:
+            if width*height > 20:
                 # cv2.rectangle(cl_image, (x0,y0), (x0+width, y0+height), (0,0,255),2)
                 text_bb = {}
                 text_bb["bb"] = {}

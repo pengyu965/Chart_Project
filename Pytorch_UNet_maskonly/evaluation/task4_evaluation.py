@@ -22,7 +22,10 @@ def get_score(gts, ress, lt, ht):
             res_y = res[1]
 
             dis.append(np.linalg.norm([res_x-gt_x, res_y-gt_y]))
-        min_d = np.min(np.array(dis))
+        if np.array(dis).shape != (0,):
+            min_d = np.min(np.array(dis))
+        else:
+            min_d = 100
 
         if min_d <= lt:
             score += 1.
@@ -39,6 +42,7 @@ def task4_eval(result_path, gt_path):
     total_precision = 0.
 
     for file in os.listdir(result_path):
+        print(file)
         result_js = json.load(open(os.path.join(result_path, file), 'r'))
         gt_js = json.load(open(os.path.join(gt_path, file), 'r'))
 
@@ -46,12 +50,20 @@ def task4_eval(result_path, gt_path):
 
         gt_points_list = []
 
-        for axis in gt_js["input"]["task4_output"]["axes"]:
-            for item in gt_js["input"]["task4_output"]["axes"][axis]:
-                x = item["tick_pt"]["x"]
-                y = item["tick_pt"]["y"]
-                gt_points_list.append([x,y])
-
+        # for axis in gt_js["input"]["task4_output"]["axes"]:
+        #     for item in gt_js["input"]["task4_output"]["axes"][axis]:
+        #         x = item["tick_pt"]["x"]
+        #         y = item["tick_pt"]["y"]
+        #         gt_points_list.append([x,y])
+        for axis in gt_js["task4"]["output"]["axes"]:
+            try:
+                for item in gt_js["task4"]["output"]["axes"][axis]:
+                    
+                    x0 = item["tick_pt"]["x"]
+                    y0 = item["tick_pt"]["y"]
+                    gt_points_list.append([x0,y0])
+            except:
+                pass
 
         h, w, = 512, 512
         diag = ((h ** 2) + (w ** 2)) ** 0.5
@@ -63,8 +75,8 @@ def task4_eval(result_path, gt_path):
         recall = score / len(gt_points_list) if len(gt_points_list) > 0 else 1.
 
         precision = score / len(result_points_list) if len(result_points_list) > 0 else 1.
-        if recall != 1 or precision !=1: 
-            print(file, "Recall ===>", recall, "Precision ===>", precision)
+        # if recall != 1 or precision !=1: 
+        #     print(file, "Recall ===>", recall, "Precision ===>", precision)
 
         total_recall += recall 
         total_precision += precision
@@ -82,6 +94,7 @@ def task4_eval(result_path, gt_path):
     print('Average F-Measure:', f_measure)
 
 if __name__ == '__main__':
+    task4_eval(sys.argv[1], sys.argv[2])
     try:
         task4_eval(sys.argv[1], sys.argv[2])
     except Exception as e:

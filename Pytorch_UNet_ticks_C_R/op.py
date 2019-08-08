@@ -208,12 +208,12 @@ class Operator:
             idi = 1
             for image in os.listdir(image_path):
                 img_tensor = torch.tensor(
-                    # cv2.imread(os.path.join(image_path, image)),
-                    cv2.resize(
-                        cv2.imread(os.path.join(image_path, image)),
-                        (512,512),
-                        interpolation = cv2.INTER_AREA
-                    )
+                    cv2.imread(os.path.join(image_path, image)),
+                    # cv2.resize(
+                    #     cv2.imread(os.path.join(image_path, image)),
+                    #     (512,512),
+                    #     interpolation = cv2.INTER_AREA
+                    # )
                 ).float().permute(2,0,1).unsqueeze(0).to(self.device)
                 generated_img_tensor = self.netG(img_tensor)
                 if visualize == True:

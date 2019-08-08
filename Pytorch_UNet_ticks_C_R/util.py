@@ -76,8 +76,8 @@ def out_vis(arr, regression_vis = False):
     if regression_vis == True:
         internal_points = []
         association_points = []
-        for i in range(x):
-            for j in range(y):
+        for i in range(y):
+            for j in range(x):
                 _class = np.argmax(arr[j,i,:6])
                 if _class == 2 and np.random.rand()>0.8:
                     # cv2.circle(new_arr, (int(i+arr[j,i,6]*100), int(j+arr[j,i,7]*100)), 0, (0,0,255), -1)

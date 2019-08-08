@@ -10,8 +10,12 @@ IOU_THRESHOLD = 0.5
 
 
 def bbox_iou(bboxes1, bboxes2, return_intersections=False):
-    x11, y11, x12, y12 = np.split(bboxes1[:, :4], 4, axis=1)
-    x21, y21, x22, y22 = np.split(bboxes2[:, :4], 4, axis=1)
+    try:
+        x11, y11, x12, y12 = np.split(bboxes1[:, :4], 4, axis=1)
+        x21, y21, x22, y22 = np.split(bboxes2[:, :4], 4, axis=1)
+    except:
+        x11, y11, x12, y12 = 0,0,0,0
+        x21, y21, x22, y22 = 0,0,0,0
     xA = np.maximum(x11, np.transpose(x21))
     yA = np.maximum(y11, np.transpose(y21))
     xB = np.minimum(x12, np.transpose(x22))
@@ -39,7 +43,10 @@ def sanitize_text(text):
 
 
 def extract_bboxes(js):
-    text_blocks = js['input']['task2_output']['text_blocks']
+    try:
+        text_blocks = js['input']['task2_output']['text_blocks']
+    except:
+        text_blocks = js['task2']['output']['text_blocks']
     bboxes = []
     ids = []
     texts = []
@@ -64,6 +71,7 @@ def eval_task2(gt_folder, result_folder):
     total_text_score = 0.
     for gt_file in os.listdir(gt_folder):
         gt_id = ''.join(gt_file.split('.')[:-1])
+        print(gt_id)
         # if this image has not been processed at all by a submission, it counts as zero for IOU and OCR scores
         if not os.path.isfile(os.path.join(result_folder, gt_id + '.json')):
             continue
@@ -91,18 +99,23 @@ def eval_task2(gt_folder, result_folder):
                 # fp_count -= 1.
                 # fn_count -= 1.
         iou_score /= max(len(gt_bboxes), len(res_bboxes))
-        text_score /= len(gt_bboxes)
+        if len(gt_bboxes) == 0:
+            text_score = 0
+        else:
+            text_score /= len(gt_bboxes)
         total_iou_score += iou_score
         total_text_score += text_score
     total_iou_score /= len(os.listdir(gt_folder))
     total_text_score /= len(os.listdir(gt_folder))
-    hmean_score = 2 * total_iou_score * total_text_score / (total_iou_score + total_text_score)
+    # hmean_score = 2 * total_iou_score * total_text_score / (total_iou_score + total_text_score)
+    hmean_score = 0
     print('Total IOU Score over all ground truth images: {}'.format(total_iou_score))
     print('Total OCR Score over all ground truth images: {}'.format(total_text_score))
     print('Harmonic Mean of overall IOU and OCR scores: {}'.format(hmean_score))
 
 
 if __name__ == '__main__':
+    eval_task2(sys.argv[1], sys.argv[2])
     try:
         eval_task2(sys.argv[1], sys.argv[2])
     except Exception as e:

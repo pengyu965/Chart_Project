@@ -4,7 +4,7 @@ import json
 import numpy as np
 
 
-def get_corner(img_path):
+def get_bbox(img_path):
     if type(img_path) == np.ndarray:
         img = img_path
     else:

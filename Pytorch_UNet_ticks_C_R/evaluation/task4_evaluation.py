@@ -1,89 +1,106 @@
-import os 
-import json 
-import cv2 
-import numpy as np 
-from tqdm import tqdm 
-import multiprocessing 
+import os
 import sys
+import cv2
+import json
+import numpy as np
 
 LOW_THRESHOLD = 0.01
 HIGH_THRESHOLD = 0.02
 
 
+def extract_tick_point_pairs(js):
+    def get_coords(tpp):
+        ID = tpp['id']
+        x, y = tpp['tick_pt']['x'], tpp['tick_pt']['y']
+        if ID is None or ID == 'null':
+            print(ID)
+        return (ID, (x, y))
+    axes = js["input"]['task4_output']['axes']
+    tpp_x = [get_coords(tpp) for tpp in axes['x-axis']]
+    tpp_y = [get_coords(tpp) for tpp in axes['y-axis']]
+    tpp = tpp_x + tpp_y
+    tpp = {ID: coords for ID, coords in tpp if ID is not None}
+    return tpp
 
-def get_score(gts, ress, lt, ht):
+def extract_tick_point_pairs_rs(js):
+    def get_coords(tpp):
+        ID = tpp['id']
+        x, y = tpp['tick_pt']['x'], tpp['tick_pt']['y']
+        if ID is None or ID == 'null':
+            print(ID)
+        return (ID, (x, y))
+    axes = js["input"]['task4_output']['axes']
+    tpp = [get_coords(tpp) for tpp in axes]
+    tpp = {ID: coords for ID, coords in tpp if ID is not None}
+    return tpp
+
+
+def get_distance(pt1, pt2):
+    x1, y1 = pt1
+    x2, y2 = pt2
+    return np.linalg.norm([x1 - x2, y1 - y2])
+
+
+def get_distance_score(distance, low, high):
+    if distance <= low:
+        return 1.
+    if distance >= high:
+        return 0.
+    return 1. - ((distance - low) / (high - low))
+
+def get_axis_score(gt, res, lt, ht):
+    if len(gt) == 0 and len(res) == 0:
+        return 1.
     score = 0.
-    for gt in gts:
-        gt_x = gt[0]
-        gt_y = gt[1]
-        dis = []
-        for res in ress:
-            res_x = res[0]
-            res_y = res[1]
-
-            dis.append(np.linalg.norm([res_x-gt_x, res_y-gt_y]))
-        min_d = np.min(np.array(dis))
-
-        if min_d <= lt:
-            score += 1.
-        elif min_d >= ht:
-            score += 0.
-        else:
-            score += 1. -((min_d - lt)/(ht-lt))
-    
+    for ID, gt_coords in gt.items():
+        if ID not in res:
+            continue
+        distance = get_distance(gt_coords, res[ID])
+        score += get_distance_score(distance, lt, ht)
     return score
 
-
-def task4_eval(result_path, gt_path):
+def eval_task4(gt_folder, result_folder, img_folder):
     total_recall = 0.
     total_precision = 0.
-
-    for file in os.listdir(result_path):
-        result_js = json.load(open(os.path.join(result_path, file), 'r'))
-        gt_js = json.load(open(os.path.join(gt_path, file), 'r'))
-
-        result_points_list = result_js["input"]["task4_output"]["points_list"]
-
-        gt_points_list = []
-
-        for axis in gt_js["input"]["task4_output"]["axes"]:
-            for item in gt_js["input"]["task4_output"]["axes"][axis]:
-                x = item["tick_pt"]["x"]
-                y = item["tick_pt"]["y"]
-                gt_points_list.append([x,y])
-
-
-        h, w, = 512, 512
+    gt_files = os.listdir(gt_folder)
+    for gt_file in gt_files:
+        gt_id = ''.join(gt_file.split('.')[:-1])
+        if not os.path.isfile(os.path.join(result_folder, gt_id + '.json')):
+            continue
+        with open(os.path.join(gt_folder, gt_file), 'r') as f:
+            gt = json.load(f)
+        gt_all = extract_tick_point_pairs_rs(gt)
+        with open(os.path.join(result_folder, gt_id + '.json'), 'r') as f:
+            res = json.load(f)
+        res_all = extract_tick_point_pairs(res)
+        im_file = '{}/{}.{}'.format(img_folder, gt_id, 'png')
+        im_file = im_file if os.path.isfile(im_file) else '{}/{}.{}'.format(img_folder, gt_id, 'jpg')
+        # print(im_file)
+        h, w, _ = cv2.imread(im_file).shape
+        # lt, ht = LOW_THRESHOLD * min(w, h), HIGH_THRESHOLD * min(w, h)
         diag = ((h ** 2) + (w ** 2)) ** 0.5
-
         lt, ht = LOW_THRESHOLD * diag, HIGH_THRESHOLD * diag
-        
-        score = get_score(gt_points_list, result_points_list, lt, ht)
-        
-        recall = score / len(gt_points_list) if len(gt_points_list) > 0 else 1.
+        score_all = get_axis_score(gt_all, res_all, lt, ht)
+        recall_all = score_all / len(gt_all) if len(gt_all) > 0 else 1.
+        precision_all = score_all / len(res_all) if len(res_all) > 0 else 1.
+        precision_all = 0. if len(gt_all) == 0 and len(res_all) > 0 else precision_all
 
-        precision = score / len(result_points_list) if len(result_points_list) > 0 else 1.
-        if recall != 1 or precision !=1: 
-            print(file, "Recall ===>", recall, "Precision ===>", precision)
-
-        total_recall += recall 
-        total_precision += precision
-    
-    total_recall /= len(os.listdir(result_path))
-    total_precision /= len(os.listdir(result_path))
-
+        # print(recall_x, recall_y, precision_x, precision_y)
+        total_recall += recall_all
+        total_precision += precision_all
+    total_recall /= len(gt_files)
+    total_precision /= len(gt_files)
     if total_recall == 0 and total_precision == 0:
         f_measure = 0
     else:
         f_measure = 2 * total_recall * total_precision / (total_recall + total_precision)
-
     print('Average Recall:', total_recall)
     print('Average Precision:', total_precision)
     print('Average F-Measure:', f_measure)
 
 if __name__ == '__main__':
     try:
-        task4_eval(sys.argv[1], sys.argv[2])
+        eval_task4(sys.argv[1], sys.argv[2], sys.argv[3])
     except Exception as e:
         print(e)
-        print('Usage Guide: python task4_evaluation.py <result_folder> <ground_truth_folder>')
+        print('Usage Guide: python eval_task4.py <ground_truth_folder> <result_folder> <img_folder>')

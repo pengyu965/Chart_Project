@@ -206,6 +206,7 @@ class Operator:
         if os.path.isdir(image_path):
             print("image_path is a directory")
             idi = 1
+            idx = len(os.listdir(image_path))
             for image in os.listdir(image_path):
                 img_tensor = torch.tensor(
                     cv2.imread(os.path.join(image_path, image)),
@@ -233,7 +234,7 @@ class Operator:
                         "./predict_result/{}".format(image[:-4]), 
                         generated_arr
                         )
-                print(idi)
+                print("{}/{}".format(idi, idx))
                 idi += 1
         elif os.path.isfile(image_path):
             image_name,_ = os.path.splitext(os.path.split(image_path)[1])

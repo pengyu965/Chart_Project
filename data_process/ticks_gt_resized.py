@@ -6,8 +6,8 @@ import multiprocessing
 import json
 
 img_path = "../data/SUMIT/rs_images/"
-gt_path = "../data/SUMIT/json_gt/"
-rs_gt_path = "../data/SUMIT/rs_json_gt/"
+gt_path = "../data/SUMIT/json_gt_sampled/"
+rs_gt_path = "../data/SUMIT/rs_json_gt_sampled/"
 
 def ticks_gt_gen(gt_file):
     img = cv2.imread(img_path+gt_file[:-4]+"png")
@@ -80,13 +80,13 @@ def verify(gt_file):
 def drawrectangle(img,x0,y0,width,height):
     return cv2.rectangle(img, (x0,y0),(x0+width,y0+height), (0,0,255),1)
 
-# pool = multiprocessing.Pool()
-# for i in tqdm(pool.imap(ticks_gt_gen, os.listdir(gt_path)), total = len(os.listdir(gt_path))):
-#     pass
+pool = multiprocessing.Pool()
+for i in tqdm(pool.imap(ticks_gt_gen, os.listdir(gt_path)), total = len(os.listdir(gt_path))):
+    pass
 
 
 
 # ticks_gt_gen("2.json")
 
 
-verify("160700.json")
+# verify("160700.json")

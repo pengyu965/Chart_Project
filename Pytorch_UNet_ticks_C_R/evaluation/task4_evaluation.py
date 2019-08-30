@@ -15,24 +15,12 @@ def extract_tick_point_pairs(js):
         if ID is None or ID == 'null':
             print(ID)
         return (ID, (x, y))
-    axes = js["input"]['task4_output']['axes']
+    axes = js['input']['task4_output']['axes']
     tpp_x = [get_coords(tpp) for tpp in axes['x-axis']]
+    tpp_x = {ID: coords for ID, coords in tpp_x if ID is not None}
     tpp_y = [get_coords(tpp) for tpp in axes['y-axis']]
-    tpp = tpp_x + tpp_y
-    tpp = {ID: coords for ID, coords in tpp if ID is not None}
-    return tpp
-
-def extract_tick_point_pairs_rs(js):
-    def get_coords(tpp):
-        ID = tpp['id']
-        x, y = tpp['tick_pt']['x'], tpp['tick_pt']['y']
-        if ID is None or ID == 'null':
-            print(ID)
-        return (ID, (x, y))
-    axes = js["input"]['task4_output']['axes']
-    tpp = [get_coords(tpp) for tpp in axes]
-    tpp = {ID: coords for ID, coords in tpp if ID is not None}
-    return tpp
+    tpp_y = {ID: coords for ID, coords in tpp_y if ID is not None}
+    return tpp_x, tpp_y
 
 
 def get_distance(pt1, pt2):
@@ -69,10 +57,10 @@ def eval_task4(gt_folder, result_folder, img_folder):
             continue
         with open(os.path.join(gt_folder, gt_file), 'r') as f:
             gt = json.load(f)
-        gt_all = extract_tick_point_pairs_rs(gt)
+        gt_x, gt_y = extract_tick_point_pairs(gt)
         with open(os.path.join(result_folder, gt_id + '.json'), 'r') as f:
             res = json.load(f)
-        res_all = extract_tick_point_pairs(res)
+        res_x, res_y = extract_tick_point_pairs(res)
         im_file = '{}/{}.{}'.format(img_folder, gt_id, 'png')
         im_file = im_file if os.path.isfile(im_file) else '{}/{}.{}'.format(img_folder, gt_id, 'jpg')
         # print(im_file)
@@ -80,14 +68,20 @@ def eval_task4(gt_folder, result_folder, img_folder):
         # lt, ht = LOW_THRESHOLD * min(w, h), HIGH_THRESHOLD * min(w, h)
         diag = ((h ** 2) + (w ** 2)) ** 0.5
         lt, ht = LOW_THRESHOLD * diag, HIGH_THRESHOLD * diag
-        score_all = get_axis_score(gt_all, res_all, lt, ht)
-        recall_all = score_all / len(gt_all) if len(gt_all) > 0 else 1.
-        precision_all = score_all / len(res_all) if len(res_all) > 0 else 1.
-        precision_all = 0. if len(gt_all) == 0 and len(res_all) > 0 else precision_all
-
-        # print(recall_x, recall_y, precision_x, precision_y)
-        total_recall += recall_all
-        total_precision += precision_all
+        score_x = get_axis_score(gt_x, res_x, lt, ht)
+        score_y = get_axis_score(gt_y, res_y, lt, ht)
+        print(score_x, score_y)
+        recall_x = score_x / len(gt_x) if len(gt_x) > 0 else 1.
+        recall_y = score_y / len(gt_y) if len(gt_y) > 0 else 1.
+        precision_x = score_x / len(res_x) if len(res_x) > 0 else 1.
+        precision_y = score_y / len(res_y) if len(res_y) > 0 else 1.
+        precision_x = 0. if len(gt_x) == 0 and len(res_y) > 0 else precision_x
+        precision_y = 0. if len(gt_y) == 0 and len(res_y) > 0 else precision_y
+        if precision_x < 0.9 or precision_y < 0.9 or recall_x < 0.9 or recall_y < 0.9:
+            print(gt_file)
+            print(recall_x, recall_y, precision_x, precision_y)
+        total_recall += (recall_x + recall_y) / 2.
+        total_precision += (precision_x + precision_y) / 2.
     total_recall /= len(gt_files)
     total_precision /= len(gt_files)
     if total_recall == 0 and total_precision == 0:

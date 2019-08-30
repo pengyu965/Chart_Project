@@ -18,7 +18,7 @@ def get_bbox(img_path):
     ret, thresh = cv2.threshold(gray, 50, 255, cv2.THRESH_BINARY)
     # cv2.imshow("ff", thresh)
     # cv2.waitKey(0)
-    contours, hierarchy = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)
+    _, contours, hierarchy = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)
 
     bbs = []
     centers = []

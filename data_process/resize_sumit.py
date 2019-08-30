@@ -6,7 +6,7 @@ import multiprocessing
 import time
 
 # bb_path = "./data/sumit/bb/"
-image_path = "./data/SUMIT/images/"
+image_path = "./data/SUMIT/images_sampled/"
 
 def img_resize(image):
 
@@ -18,7 +18,7 @@ def img_resize(image):
         
     try:
         input_images = cv2.resize(cv2.imread(image_path+image), (512,512), interpolation= cv2.INTER_AREA)
-        cv2.imwrite("./data/SUMIT/rs_images/"+image,input_images)
+        cv2.imwrite("./data/SUMIT/rs_images_sampled/"+image,input_images)
     except:
         print(image_path+image)
 

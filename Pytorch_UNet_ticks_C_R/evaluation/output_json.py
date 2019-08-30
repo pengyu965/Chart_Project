@@ -157,10 +157,12 @@ def output_json(input_npy):
     
     # Ticks Points
     o_json["input"]["task4_output"] = {}
-    o_json["input"]["task4_output"]["axes"] = []
+    o_json["input"]["task4_output"]["axes"] = {}
+    o_json["input"]["task4_output"]["axes"]["x-axis"] = []
+    o_json["input"]["task4_output"]["axes"]["y-axis"] = []
     # tick_points = []
     
-    imgg = np.zeros((512,512))
+
 
     # Internal offset voting
     tick_bbs, tick_centers = get_bbox((arr[:,:,4]*255).astype(np.uint8))
@@ -194,6 +196,9 @@ def output_json(input_npy):
         label_x1 = label_x0 + item["bb"]["width"]
         label_y1 = label_y0 + item["bb"]["height"]
 
+        label_center_x  = label_x0 + int(item["bb"]["width"]*1./2)
+        label_center_y  = label_y0 + int(item["bb"]["height"]*1./2)
+
         external_voted_tick_points = []
         if item["role"] == "tick_label":
             for i in range(label_x0, label_x1+1):
@@ -215,7 +220,15 @@ def output_json(input_npy):
                     tick_dic["tick_pt"]["x"] = int(final_coord[0])
                     tick_dic["tick_pt"]["y"] = int(final_coord[1])
 
-                    o_json["input"]["task4_output"]["axes"].append(tick_dic)
+                    if item["id"] == 10:
+                        print(point[0]-label_center_x, point[1]-label_center_y)
+
+                    # Process X, Y
+                    if abs(point[0]-label_center_x) <= abs(point[1]-label_center_y):
+                        o_json["input"]["task4_output"]["axes"]["x-axis"].append(tick_dic)
+                    else:
+                        o_json["input"]["task4_output"]["axes"]["y-axis"].append(tick_dic)
+
 
     #         cv2.circle(imgg, tuple(maximum_external_point), 2, (255), -1)
 
@@ -237,7 +250,7 @@ def output_json(input_npy):
         # print(bbs)
 
 
-output_json("1075.npy")
+output_json("2137.npy")
 
 # pool = multiprocessing.Pool()
 # for i in tqdm(pool.imap(output_json, os.listdir(input_npy_path)), total = len(os.listdir(input_npy_path))):

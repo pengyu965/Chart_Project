@@ -148,8 +148,8 @@ class Operator:
         torch.save(self.netG.module.state_dict(), "./weight/final.pt")
         
         ## Testing
-        with torch.no_grad():
-            self.validator(img_path+"/test/", gt_path, global_step, train_regression, writer = self.writer)
+        # with torch.no_grad():
+        #     self.validator(img_path+"/test/", gt_path, global_step, train_regression, writer = self.writer)
 
 
     def validator(self, val_img_path, val_gt_path, global_step, train_regression = False, writer = False):

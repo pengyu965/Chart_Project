@@ -6,7 +6,7 @@ import multiprocessing
 from tqdm import tqdm
 import threading 
 
-sumit_image_path = "../data/SUMIT/rs_images_sampled/"
+sumit_image_path = "../data/SUMIT/rs_padded_images_sampled/"
 
 sumit_train_image_path = "../data/SUMIT/train/"
 sumit_val_image_path = "../data/SUMIT/val/"

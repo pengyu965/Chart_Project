@@ -4,8 +4,9 @@ from PIL import Image
 from tqdm import tqdm
 import multiprocessing 
 import json
+from verify_gt_bb import verify
 
-img_path = "../data/SUMIT/rs_images/"
+img_path = "../data/SUMIT/rs_images_sampled/"
 gt_path = "../data/SUMIT/json_gt_sampled/"
 rs_gt_path = "../data/SUMIT/rs_json_gt_sampled/"
 
@@ -47,39 +48,6 @@ def ticks_gt_gen(gt_file):
     with open(rs_gt_path+gt_file, 'w') as f:
         f.write(json.dumps(needed_dic, indent=4))
 
-
-def verify(gt_file):
-    gt_dic = json.load(open(rs_gt_path+gt_file,'r'))
-    img =cv2.imread(img_path+gt_file[:-4]+"png")
-
-    for text_bb in gt_dic["input"]["task2_output"]["text_blocks"]:
-        x0 = text_bb["bb"]["x0"]
-        y0 = text_bb["bb"]["y0"]
-        width = text_bb["bb"]["width"]
-        height = text_bb["bb"]["height"]
-        drawrectangle(img, x0,y0,width,height)
-
-    for axis in gt_dic["input"]["task4_output"]["axes"]:
-        for item in gt_dic["input"]["task4_output"]["axes"][axis]:
-            x0 = item["tick_pt"]["x"]
-            y0 = item["tick_pt"]["y"]
-            drawrectangle(img, x0-5,y0-5,10,10)
-    
-    for text_bb in gt_dic["input"]["task5_output"]["legend_pairs"]:
-        x0 = text_bb["bb"]["x0"]
-        y0 = text_bb["bb"]["y0"]
-        width = text_bb["bb"]["width"]
-        height = text_bb["bb"]["height"]
-        drawrectangle(img, x0,y0,width,height)
-
-    cv2.imshow("gt_bb", img)
-    cv2.waitKey(0)
-        
-
-
-def drawrectangle(img,x0,y0,width,height):
-    return cv2.rectangle(img, (x0,y0),(x0+width,y0+height), (0,0,255),1)
-
 pool = multiprocessing.Pool()
 for i in tqdm(pool.imap(ticks_gt_gen, os.listdir(gt_path)), total = len(os.listdir(gt_path))):
     pass
@@ -89,4 +57,4 @@ for i in tqdm(pool.imap(ticks_gt_gen, os.listdir(gt_path)), total = len(os.listd
 # ticks_gt_gen("2.json")
 
 
-# verify("160700.json")
+# verify(img_path, rs_gt_path, "160700")

@@ -85,9 +85,9 @@ class Operator:
                 # print(np.max(train_gt.detach().cpu().clone().numpy()), np.min(train_gt.detach().cpu().clone().numpy()))
                 # loss = self.criterion(fake_images*1. , train_gt*1./255)
                 # print(fake_images.shape, train_gt.shape)
-                loss_c = self.criterion(fake_images[:,:6,:,:], train_gt[:,:,:,0].long())
+                loss_c = self.criterion(fake_images[:,:6,:,:], train_gt[:,:,:,0].long()).half()
                 if train_regression == True:
-                    loss_r = self.criterion_r(fake_images, train_gt.float())
+                    loss_r = self.criterion_r(fake_images, train_gt.float()).half()
                     loss = loss_c + loss_r
                 else:
                     loss = loss_c

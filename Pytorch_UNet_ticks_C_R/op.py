@@ -23,14 +23,14 @@ def weights_init(m):
 class Operator:
     def __init__(self, netG, netD = None):
         self.device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-        self.netG = nn.DataParallel(netG).to(self.device).half()
+        self.netG = nn.DataParallel(netG).to(self.device)
         self.netD = netD
 
     def trainer(self, img_path, gt_path, batch_size, lr, epoch, writer = False):
         self.batch_size = batch_size
         self.lr = lr 
         self.epoch = epoch 
-        self.optimizer = optim.Adam(self.netG.parameters(), lr = self.lr, eps=1e-4)
+        self.optimizer = optim.Adam(self.netG.parameters(), lr = self.lr)
         self.criterion = nn.CrossEntropyLoss()
         self.criterion_r = Vector_Regression_Loss()
         self.writer = writer
@@ -54,7 +54,7 @@ class Operator:
 
         val_min_loss = 10
 
-        train_regression = False 
+        train_regression = True 
 
 
         for ep in range(self.epoch):
@@ -65,29 +65,28 @@ class Operator:
 
             if ep == int(self.epoch //3):
                 self.lr = self.lr/10
-                self.optimizer = optim.Adam(self.netG.parameters(), lr = self.lr, eps=1e-4)
+                self.optimizer = optim.Adam(self.netG.parameters(), lr = self.lr)
             if ep == int(self.epoch*2//3):
                 self.lr = self.lr/10
-                self.optimizer = optim.Adam(self.netG.parameters(), lr = self.lr, eps=1e-4)
+                self.optimizer = optim.Adam(self.netG.parameters(), lr = self.lr)
 
             if ep == int(self.epoch*1//4):
                 train_regression = True
 
             for idi, train_batch in enumerate(self.dataloader):
-                train_images = train_batch[0].to(self.device).half()
-                train_gt = train_batch[1].to(self.device).half()
+                train_images = train_batch[0].to(self.device)
+                train_gt = train_batch[1].to(self.device)
 
                 self.optimizer.zero_grad()
                 fake_images = self.netG(train_images)
-
 
                 # print(np.max(fake_images.detach().cpu().clone().numpy()),np.min(fake_images.detach().cpu().clone().numpy()))
                 # print(np.max(train_gt.detach().cpu().clone().numpy()), np.min(train_gt.detach().cpu().clone().numpy()))
                 # loss = self.criterion(fake_images*1. , train_gt*1./255)
                 # print(fake_images.shape, train_gt.shape)
-                loss_c = self.criterion(fake_images[:,:6,:,:], train_gt[:,:,:,0].long()).half()
+                loss_c = self.criterion(fake_images[:,:6,:,:], train_gt[:,:,:,0].long())
                 if train_regression == True:
-                    loss_r = self.criterion_r(fake_images, train_gt.float()).half()
+                    loss_r = self.criterion_r(fake_images, train_gt.float())
                     loss = loss_c + loss_r
                 else:
                     loss = loss_c

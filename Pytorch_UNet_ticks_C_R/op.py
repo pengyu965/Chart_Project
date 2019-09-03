@@ -90,7 +90,7 @@ class Operator:
                     loss = loss_c + loss_r
                 else:
                     loss = loss_c
-                loss.backward()
+                loss.half().backward()
                 self.optimizer.step()
 
                 ## Tensorboard

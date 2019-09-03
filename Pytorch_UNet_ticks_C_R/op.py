@@ -30,7 +30,7 @@ class Operator:
         self.batch_size = batch_size
         self.lr = lr 
         self.epoch = epoch 
-        self.optimizer = optim.Adam(self.netG.parameters(), lr = self.lr)
+        self.optimizer = optim.Adam(self.netG.parameters(), lr = self.lr, eps=1e-4)
         self.criterion = nn.CrossEntropyLoss()
         self.criterion_r = Vector_Regression_Loss()
         self.writer = writer
@@ -65,10 +65,10 @@ class Operator:
 
             if ep == int(self.epoch //3):
                 self.lr = self.lr/10
-                self.optimizer = optim.Adam(self.netG.parameters(), lr = self.lr)
+                self.optimizer = optim.Adam(self.netG.parameters(), lr = self.lr, eps=1e-4)
             if ep == int(self.epoch*2//3):
                 self.lr = self.lr/10
-                self.optimizer = optim.Adam(self.netG.parameters(), lr = self.lr)
+                self.optimizer = optim.Adam(self.netG.parameters(), lr = self.lr, eps=1e-4)
 
             if ep == int(self.epoch*1//4):
                 train_regression = True

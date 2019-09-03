@@ -31,8 +31,8 @@ class Operator:
         self.lr = lr 
         self.epoch = epoch 
         self.optimizer = optim.Adam(self.netG.parameters(), lr = self.lr)
-        self.criterion = nn.CrossEntropyLoss().half()
-        self.criterion_r = Vector_Regression_Loss().half()
+        self.criterion = nn.CrossEntropyLoss()
+        self.criterion_r = Vector_Regression_Loss()
         self.writer = writer
 
         self.train_data = Chartdata(img_path = img_path+"/train/", gt_path = gt_path)
@@ -79,6 +79,7 @@ class Operator:
 
                 self.optimizer.zero_grad()
                 fake_images = self.netG(train_images)
+                print("fake_images type:", torch.typename(fake_images))
 
                 # print(np.max(fake_images.detach().cpu().clone().numpy()),np.min(fake_images.detach().cpu().clone().numpy()))
                 # print(np.max(train_gt.detach().cpu().clone().numpy()), np.min(train_gt.detach().cpu().clone().numpy()))
@@ -90,6 +91,8 @@ class Operator:
                     loss = loss_c + loss_r
                 else:
                     loss = loss_c
+                print("loss original type:", torch.typename(loss))
+                print("loss type:", torch.typename(loss.half()))
                 loss.half().backward()
                 self.optimizer.step()
 

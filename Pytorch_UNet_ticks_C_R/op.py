@@ -23,7 +23,8 @@ def weights_init(m):
 class Operator:
     def __init__(self, netG, netD = None):
         self.device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-        self.netG = nn.DataParallel(netG.half()).to(self.device)
+        self.netG = netG.half()
+        self.netG = nn.DataParallel(self.netG).to(self.device)
         self.netD = netD
 
     def trainer(self, img_path, gt_path, batch_size, lr, epoch, writer = False):
@@ -93,7 +94,8 @@ class Operator:
                     loss = loss_c
                 print("loss original type:", torch.typename(loss))
                 print("loss type:", torch.typename(loss.half()))
-                loss.half().backward()
+                loss = loss.half()
+                loss.backward()
                 self.optimizer.step()
 
                 ## Tensorboard

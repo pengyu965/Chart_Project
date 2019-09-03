@@ -23,15 +23,14 @@ def weights_init(m):
 class Operator:
     def __init__(self, netG, netD = None):
         self.device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-        self.netG = netG.half()
-        self.netG = nn.DataParallel(self.netG).to(self.device)
+        self.netG = nn.DataParallel(netG).to(self.device)
         self.netD = netD
 
     def trainer(self, img_path, gt_path, batch_size, lr, epoch, writer = False):
         self.batch_size = batch_size
         self.lr = lr 
         self.epoch = epoch 
-        self.optimizer = optim.Adam(self.netG.parameters(), lr = self.lr).half()
+        self.optimizer = optim.Adam(self.netG.parameters(), lr = self.lr)
         self.criterion = nn.CrossEntropyLoss()
         self.criterion_r = Vector_Regression_Loss()
         self.writer = writer

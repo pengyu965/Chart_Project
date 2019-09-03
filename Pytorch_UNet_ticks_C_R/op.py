@@ -23,7 +23,7 @@ def weights_init(m):
 class Operator:
     def __init__(self, netG, netD = None):
         self.device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-        self.netG = nn.DataParallel(netG).to(self.device)
+        self.netG = nn.DataParallel(netG.half()).to(self.device)
         self.netD = netD
 
     def trainer(self, img_path, gt_path, batch_size, lr, epoch, writer = False):
@@ -74,8 +74,8 @@ class Operator:
                 train_regression = True
 
             for idi, train_batch in enumerate(self.dataloader):
-                train_images = train_batch[0].to(self.device)
-                train_gt = train_batch[1].to(self.device)
+                train_images = train_batch[0].to(self.device).half()
+                train_gt = train_batch[1].to(self.device).half()
 
                 self.optimizer.zero_grad()
                 fake_images = self.netG(train_images)

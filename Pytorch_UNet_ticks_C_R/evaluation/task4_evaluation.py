@@ -93,6 +93,7 @@ def eval_task4(gt_folder, result_folder, img_folder):
     print('Average F-Measure:', f_measure)
 
 if __name__ == '__main__':
+    # eval_task4(sys.argv[1], sys.argv[2], sys.argv[3])
     try:
         eval_task4(sys.argv[1], sys.argv[2], sys.argv[3])
     except Exception as e:

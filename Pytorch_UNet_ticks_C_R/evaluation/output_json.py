@@ -24,7 +24,7 @@ import sys
 input_npy_path = "./predict_result/"
 output_json_path = "./output_json/"
 
-json_gt_path = "../../data/SUMIT/rs_json_gt_sampled/"
+json_gt_path = "../../data/SUMIT/rs_padded_json_gt_sampled/"
 if os.path.exists(output_json_path) == False:
     os.mkdir(output_json_path)
 
@@ -220,8 +220,8 @@ def output_json(input_npy):
                     tick_dic["tick_pt"]["x"] = int(final_coord[0])
                     tick_dic["tick_pt"]["y"] = int(final_coord[1])
 
-                    if item["id"] == 10:
-                        print(point[0]-label_center_x, point[1]-label_center_y)
+                    # if item["id"] == 10:
+                    #     print(point[0]-label_center_x, point[1]-label_center_y)
 
                     # Process X, Y
                     if abs(point[0]-label_center_x) <= abs(point[1]-label_center_y):
@@ -250,11 +250,11 @@ def output_json(input_npy):
         # print(bbs)
 
 
-output_json("2137.npy")
+# output_json("2137.npy")
 
-# pool = multiprocessing.Pool()
-# for i in tqdm(pool.imap(output_json, os.listdir(input_npy_path)), total = len(os.listdir(input_npy_path))):
-#     pass
+pool = multiprocessing.Pool()
+for i in tqdm(pool.imap(output_json, os.listdir(input_npy_path)), total = len(os.listdir(input_npy_path))):
+    pass
 
 
 

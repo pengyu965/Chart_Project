@@ -105,7 +105,7 @@ class Operator:
                         global_step
                     )
 
-                print("Epoch:[{}]===Step:[{}/{}]===Time:[{:.2f}]===Learning Rate:{}\nTrain_Regression:[{}]===Classification_Loss:[{:.4f}]===Regression_Loss:[{:.4f}]===Total_Loss:[{:.4f}]]".format(ep, idi, idx, time.time()-start_time, self.lr, train_regression, loss_c.item(), loss.item()-loss_c.item(), loss.item()))
+                print("Epoch:[{}]===Step:[{}/{}]===Time:[{:.2f}]===Learning Rate:{}\nTrain_Regression:[{}]===Classification_Loss:[{:.4f}]===Regression_Loss:[{:.4f}]===Total_Loss:[{:.4f}]".format(ep, idi, idx, time.time()-start_time, self.lr, train_regression, loss_c.item(), loss.item()-loss_c.item(), loss.item()))
                 
                 ## Visualization
                 if (global_step%print_idx) == 0:

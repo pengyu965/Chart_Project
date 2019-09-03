@@ -31,7 +31,7 @@ class Operator:
         self.batch_size = batch_size
         self.lr = lr 
         self.epoch = epoch 
-        self.optimizer = optim.Adam(self.netG.parameters(), lr = self.lr)
+        self.optimizer = optim.Adam(self.netG.parameters(), lr = self.lr).half()
         self.criterion = nn.CrossEntropyLoss()
         self.criterion_r = Vector_Regression_Loss()
         self.writer = writer

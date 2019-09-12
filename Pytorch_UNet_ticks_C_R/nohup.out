@@ -2139,3 +2139,675 @@ Train_Regression:[True]===Classification_Loss:[1.2614]===Regression_Loss:[0.1071
 ********* 
 Validation Loss:1.3465 
 *********
+Epoch:[3]===Step:[0/320]===Time:[1363.68]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2552]===Regression_Loss:[0.0821]===Total_Loss:[1.3374]
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+Epoch:[3]===Step:[1/320]===Time:[1378.33]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2696]===Regression_Loss:[0.1331]===Total_Loss:[1.4028]
+Epoch:[3]===Step:[2/320]===Time:[1378.86]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2549]===Regression_Loss:[0.0919]===Total_Loss:[1.3468]
+Epoch:[3]===Step:[3/320]===Time:[1379.37]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2633]===Regression_Loss:[0.1505]===Total_Loss:[1.4138]
+Epoch:[3]===Step:[4/320]===Time:[1379.88]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2498]===Regression_Loss:[0.0960]===Total_Loss:[1.3458]
+Epoch:[3]===Step:[5/320]===Time:[1380.40]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2649]===Regression_Loss:[0.1547]===Total_Loss:[1.4196]
+Epoch:[3]===Step:[6/320]===Time:[1380.91]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2674]===Regression_Loss:[0.1292]===Total_Loss:[1.3966]
+Epoch:[3]===Step:[7/320]===Time:[1381.42]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2574]===Regression_Loss:[0.0799]===Total_Loss:[1.3373]
+Epoch:[3]===Step:[8/320]===Time:[1381.94]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2448]===Regression_Loss:[0.0410]===Total_Loss:[1.2858]
+Epoch:[3]===Step:[9/320]===Time:[1382.45]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2577]===Regression_Loss:[0.1464]===Total_Loss:[1.4041]
+Epoch:[3]===Step:[10/320]===Time:[1382.96]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2602]===Regression_Loss:[0.1148]===Total_Loss:[1.3750]
+Epoch:[3]===Step:[11/320]===Time:[1383.48]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2508]===Regression_Loss:[0.0700]===Total_Loss:[1.3208]
+Epoch:[3]===Step:[12/320]===Time:[1383.99]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2622]===Regression_Loss:[0.0761]===Total_Loss:[1.3384]
+Epoch:[3]===Step:[13/320]===Time:[1384.50]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2627]===Regression_Loss:[0.0877]===Total_Loss:[1.3503]
+Epoch:[3]===Step:[14/320]===Time:[1385.02]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2571]===Regression_Loss:[0.1405]===Total_Loss:[1.3976]
+Epoch:[3]===Step:[15/320]===Time:[1385.53]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2501]===Regression_Loss:[0.0678]===Total_Loss:[1.3179]
+Epoch:[3]===Step:[16/320]===Time:[1386.04]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2373]===Regression_Loss:[0.0275]===Total_Loss:[1.2647]
+Epoch:[3]===Step:[17/320]===Time:[1386.56]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2439]===Regression_Loss:[0.0436]===Total_Loss:[1.2875]
+Epoch:[3]===Step:[18/320]===Time:[1387.07]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2457]===Regression_Loss:[0.0451]===Total_Loss:[1.2907]
+Epoch:[3]===Step:[19/320]===Time:[1387.58]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2549]===Regression_Loss:[0.0841]===Total_Loss:[1.3390]
+Epoch:[3]===Step:[20/320]===Time:[1388.11]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2584]===Regression_Loss:[0.1910]===Total_Loss:[1.4494]
+Epoch:[3]===Step:[21/320]===Time:[1388.62]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2500]===Regression_Loss:[0.1050]===Total_Loss:[1.3549]
+Epoch:[3]===Step:[22/320]===Time:[1389.14]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2545]===Regression_Loss:[0.0943]===Total_Loss:[1.3489]
+Epoch:[3]===Step:[23/320]===Time:[1389.65]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2622]===Regression_Loss:[0.1137]===Total_Loss:[1.3760]
+Epoch:[3]===Step:[24/320]===Time:[1390.17]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2422]===Regression_Loss:[0.0445]===Total_Loss:[1.2867]
+Epoch:[3]===Step:[25/320]===Time:[1390.68]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2544]===Regression_Loss:[0.0609]===Total_Loss:[1.3154]
+Epoch:[3]===Step:[26/320]===Time:[1391.19]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2708]===Regression_Loss:[0.1297]===Total_Loss:[1.4005]
+Epoch:[3]===Step:[27/320]===Time:[1391.71]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2492]===Regression_Loss:[0.0779]===Total_Loss:[1.3271]
+Epoch:[3]===Step:[28/320]===Time:[1392.26]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2526]===Regression_Loss:[0.0920]===Total_Loss:[1.3446]
+Epoch:[3]===Step:[29/320]===Time:[1392.78]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2627]===Regression_Loss:[0.1166]===Total_Loss:[1.3792]
+Epoch:[3]===Step:[30/320]===Time:[1393.30]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2470]===Regression_Loss:[0.1000]===Total_Loss:[1.3470]
+Epoch:[3]===Step:[31/320]===Time:[1393.82]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2545]===Regression_Loss:[0.0909]===Total_Loss:[1.3453]
+Epoch:[3]===Step:[32/320]===Time:[1394.34]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2517]===Regression_Loss:[0.0923]===Total_Loss:[1.3440]
+Epoch:[3]===Step:[33/320]===Time:[1394.85]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2506]===Regression_Loss:[0.0770]===Total_Loss:[1.3277]
+Epoch:[3]===Step:[34/320]===Time:[1395.37]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2415]===Regression_Loss:[0.0662]===Total_Loss:[1.3077]
+Epoch:[3]===Step:[35/320]===Time:[1395.88]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2447]===Regression_Loss:[0.0762]===Total_Loss:[1.3209]
+Epoch:[3]===Step:[36/320]===Time:[1396.41]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2399]===Regression_Loss:[0.0602]===Total_Loss:[1.3001]
+Epoch:[3]===Step:[37/320]===Time:[1396.93]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2372]===Regression_Loss:[0.0448]===Total_Loss:[1.2819]
+Epoch:[3]===Step:[38/320]===Time:[1397.45]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2542]===Regression_Loss:[0.1816]===Total_Loss:[1.4358]
+Epoch:[3]===Step:[39/320]===Time:[1397.98]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2391]===Regression_Loss:[0.0854]===Total_Loss:[1.3245]
+Epoch:[3]===Step:[40/320]===Time:[1398.50]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2390]===Regression_Loss:[0.0503]===Total_Loss:[1.2893]
+Epoch:[3]===Step:[41/320]===Time:[1399.02]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2382]===Regression_Loss:[0.0541]===Total_Loss:[1.2922]
+Epoch:[3]===Step:[42/320]===Time:[1399.54]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2454]===Regression_Loss:[0.0852]===Total_Loss:[1.3307]
+Epoch:[3]===Step:[43/320]===Time:[1400.07]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2409]===Regression_Loss:[0.0852]===Total_Loss:[1.3261]
+Epoch:[3]===Step:[44/320]===Time:[1400.58]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2548]===Regression_Loss:[0.1279]===Total_Loss:[1.3827]
+Epoch:[3]===Step:[45/320]===Time:[1401.10]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2374]===Regression_Loss:[0.0593]===Total_Loss:[1.2967]
+Epoch:[3]===Step:[46/320]===Time:[1401.62]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2473]===Regression_Loss:[0.0626]===Total_Loss:[1.3099]
+Epoch:[3]===Step:[47/320]===Time:[1402.14]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2346]===Regression_Loss:[0.0392]===Total_Loss:[1.2738]
+Epoch:[3]===Step:[48/320]===Time:[1402.65]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2421]===Regression_Loss:[0.1057]===Total_Loss:[1.3478]
+Epoch:[3]===Step:[49/320]===Time:[1403.17]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2407]===Regression_Loss:[0.0485]===Total_Loss:[1.2892]
+Epoch:[3]===Step:[50/320]===Time:[1403.70]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2479]===Regression_Loss:[0.1031]===Total_Loss:[1.3509]
+Epoch:[3]===Step:[51/320]===Time:[1404.23]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2316]===Regression_Loss:[0.0440]===Total_Loss:[1.2756]
+Epoch:[3]===Step:[52/320]===Time:[1404.76]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2540]===Regression_Loss:[0.1545]===Total_Loss:[1.4085]
+Epoch:[3]===Step:[53/320]===Time:[1405.29]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2318]===Regression_Loss:[0.0597]===Total_Loss:[1.2916]
+Epoch:[3]===Step:[54/320]===Time:[1405.81]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2448]===Regression_Loss:[0.1103]===Total_Loss:[1.3551]
+Epoch:[3]===Step:[55/320]===Time:[1406.32]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2435]===Regression_Loss:[0.0613]===Total_Loss:[1.3048]
+Epoch:[3]===Step:[56/320]===Time:[1406.84]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2416]===Regression_Loss:[0.0633]===Total_Loss:[1.3049]
+Epoch:[3]===Step:[57/320]===Time:[1407.37]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2367]===Regression_Loss:[0.0904]===Total_Loss:[1.3271]
+Epoch:[3]===Step:[58/320]===Time:[1407.90]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2519]===Regression_Loss:[0.1532]===Total_Loss:[1.4051]
+Epoch:[3]===Step:[59/320]===Time:[1408.44]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2307]===Regression_Loss:[0.0602]===Total_Loss:[1.2909]
+Epoch:[3]===Step:[60/320]===Time:[1408.97]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2364]===Regression_Loss:[0.0788]===Total_Loss:[1.3152]
+Epoch:[3]===Step:[61/320]===Time:[1409.50]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2406]===Regression_Loss:[0.0737]===Total_Loss:[1.3143]
+Epoch:[3]===Step:[62/320]===Time:[1410.04]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2365]===Regression_Loss:[0.1004]===Total_Loss:[1.3369]
+Epoch:[3]===Step:[63/320]===Time:[1410.57]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2345]===Regression_Loss:[0.1101]===Total_Loss:[1.3446]
+Epoch:[3]===Step:[64/320]===Time:[1411.10]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2391]===Regression_Loss:[0.0936]===Total_Loss:[1.3328]
+Epoch:[3]===Step:[65/320]===Time:[1411.63]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2308]===Regression_Loss:[0.0780]===Total_Loss:[1.3088]
+Epoch:[3]===Step:[66/320]===Time:[1412.16]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2351]===Regression_Loss:[0.0953]===Total_Loss:[1.3303]
+Epoch:[3]===Step:[67/320]===Time:[1412.69]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2514]===Regression_Loss:[0.0910]===Total_Loss:[1.3423]
+Epoch:[3]===Step:[68/320]===Time:[1413.22]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2409]===Regression_Loss:[0.0836]===Total_Loss:[1.3245]
+Epoch:[3]===Step:[69/320]===Time:[1413.75]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2382]===Regression_Loss:[0.0838]===Total_Loss:[1.3220]
+Epoch:[3]===Step:[70/320]===Time:[1414.28]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2365]===Regression_Loss:[0.0661]===Total_Loss:[1.3026]
+Epoch:[3]===Step:[71/320]===Time:[1414.81]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2444]===Regression_Loss:[0.1095]===Total_Loss:[1.3539]
+Epoch:[3]===Step:[72/320]===Time:[1415.35]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2338]===Regression_Loss:[0.0774]===Total_Loss:[1.3112]
+Epoch:[3]===Step:[73/320]===Time:[1415.88]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2352]===Regression_Loss:[0.1084]===Total_Loss:[1.3436]
+Epoch:[3]===Step:[74/320]===Time:[1416.42]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2453]===Regression_Loss:[0.0940]===Total_Loss:[1.3393]
+Epoch:[3]===Step:[75/320]===Time:[1416.95]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2432]===Regression_Loss:[0.0815]===Total_Loss:[1.3248]
+Epoch:[3]===Step:[76/320]===Time:[1417.48]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2395]===Regression_Loss:[0.0672]===Total_Loss:[1.3067]
+Epoch:[3]===Step:[77/320]===Time:[1418.01]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2306]===Regression_Loss:[0.0717]===Total_Loss:[1.3024]
+Epoch:[3]===Step:[78/320]===Time:[1418.55]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2302]===Regression_Loss:[0.0735]===Total_Loss:[1.3037]
+Epoch:[3]===Step:[79/320]===Time:[1419.08]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2420]===Regression_Loss:[0.0904]===Total_Loss:[1.3324]
+Epoch:[3]===Step:[80/320]===Time:[1419.62]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2333]===Regression_Loss:[0.0776]===Total_Loss:[1.3108]
+Epoch:[3]===Step:[81/320]===Time:[1420.15]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2330]===Regression_Loss:[0.0662]===Total_Loss:[1.2992]
+Epoch:[3]===Step:[82/320]===Time:[1420.69]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2246]===Regression_Loss:[0.0528]===Total_Loss:[1.2773]
+Epoch:[3]===Step:[83/320]===Time:[1421.22]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2218]===Regression_Loss:[0.0664]===Total_Loss:[1.2882]
+Epoch:[3]===Step:[84/320]===Time:[1421.75]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2376]===Regression_Loss:[0.1105]===Total_Loss:[1.3481]
+Epoch:[3]===Step:[85/320]===Time:[1422.29]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2551]===Regression_Loss:[0.2100]===Total_Loss:[1.4651]
+Epoch:[3]===Step:[86/320]===Time:[1422.82]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2405]===Regression_Loss:[0.1301]===Total_Loss:[1.3706]
+Epoch:[3]===Step:[87/320]===Time:[1423.36]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2318]===Regression_Loss:[0.0832]===Total_Loss:[1.3150]
+Epoch:[3]===Step:[88/320]===Time:[1423.89]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2301]===Regression_Loss:[0.0739]===Total_Loss:[1.3040]
+Epoch:[3]===Step:[89/320]===Time:[1424.43]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2212]===Regression_Loss:[0.0486]===Total_Loss:[1.2698]
+Epoch:[3]===Step:[90/320]===Time:[1424.96]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2329]===Regression_Loss:[0.1359]===Total_Loss:[1.3688]
+Epoch:[3]===Step:[91/320]===Time:[1425.49]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2367]===Regression_Loss:[0.1565]===Total_Loss:[1.3932]
+Epoch:[3]===Step:[92/320]===Time:[1426.03]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2292]===Regression_Loss:[0.1133]===Total_Loss:[1.3424]
+Epoch:[3]===Step:[93/320]===Time:[1426.57]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2294]===Regression_Loss:[0.0813]===Total_Loss:[1.3107]
+Epoch:[3]===Step:[94/320]===Time:[1427.10]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2369]===Regression_Loss:[0.1206]===Total_Loss:[1.3576]
+Epoch:[3]===Step:[95/320]===Time:[1427.63]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2170]===Regression_Loss:[0.0348]===Total_Loss:[1.2518]
+Epoch:[3]===Step:[96/320]===Time:[1428.17]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2195]===Regression_Loss:[0.0917]===Total_Loss:[1.3112]
+Epoch:[3]===Step:[97/320]===Time:[1428.71]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2152]===Regression_Loss:[0.0464]===Total_Loss:[1.2616]
+Epoch:[3]===Step:[98/320]===Time:[1429.25]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2295]===Regression_Loss:[0.0769]===Total_Loss:[1.3064]
+Epoch:[3]===Step:[99/320]===Time:[1429.78]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2416]===Regression_Loss:[0.3047]===Total_Loss:[1.5463]
+Epoch:[3]===Step:[100/320]===Time:[1430.31]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2263]===Regression_Loss:[0.0853]===Total_Loss:[1.3116]
+Epoch:[3]===Step:[101/320]===Time:[1430.85]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2270]===Regression_Loss:[0.1026]===Total_Loss:[1.3296]
+Epoch:[3]===Step:[102/320]===Time:[1431.39]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2483]===Regression_Loss:[0.2486]===Total_Loss:[1.4969]
+Epoch:[3]===Step:[103/320]===Time:[1431.92]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2215]===Regression_Loss:[0.0745]===Total_Loss:[1.2960]
+Epoch:[3]===Step:[104/320]===Time:[1432.45]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2183]===Regression_Loss:[0.0589]===Total_Loss:[1.2773]
+Epoch:[3]===Step:[105/320]===Time:[1432.98]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2146]===Regression_Loss:[0.0274]===Total_Loss:[1.2421]
+Epoch:[3]===Step:[106/320]===Time:[1433.52]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2237]===Regression_Loss:[0.0605]===Total_Loss:[1.2842]
+Epoch:[3]===Step:[107/320]===Time:[1434.06]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2416]===Regression_Loss:[0.1306]===Total_Loss:[1.3722]
+Epoch:[3]===Step:[108/320]===Time:[1434.59]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2322]===Regression_Loss:[0.1056]===Total_Loss:[1.3378]
+Epoch:[3]===Step:[109/320]===Time:[1435.13]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2184]===Regression_Loss:[0.0738]===Total_Loss:[1.2922]
+Epoch:[3]===Step:[110/320]===Time:[1435.67]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2115]===Regression_Loss:[0.0275]===Total_Loss:[1.2390]
+Epoch:[3]===Step:[111/320]===Time:[1436.21]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2162]===Regression_Loss:[0.0395]===Total_Loss:[1.2557]
+Epoch:[3]===Step:[112/320]===Time:[1436.74]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2239]===Regression_Loss:[0.0454]===Total_Loss:[1.2693]
+Epoch:[3]===Step:[113/320]===Time:[1437.27]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2172]===Regression_Loss:[0.0626]===Total_Loss:[1.2798]
+Epoch:[3]===Step:[114/320]===Time:[1437.81]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2132]===Regression_Loss:[0.0432]===Total_Loss:[1.2565]
+Epoch:[3]===Step:[115/320]===Time:[1438.35]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2176]===Regression_Loss:[0.0501]===Total_Loss:[1.2677]
+Epoch:[3]===Step:[116/320]===Time:[1438.88]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2239]===Regression_Loss:[0.1022]===Total_Loss:[1.3260]
+Epoch:[3]===Step:[117/320]===Time:[1439.41]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2197]===Regression_Loss:[0.1202]===Total_Loss:[1.3399]
+Epoch:[3]===Step:[118/320]===Time:[1439.95]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2370]===Regression_Loss:[0.1294]===Total_Loss:[1.3664]
+Epoch:[3]===Step:[119/320]===Time:[1440.49]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2233]===Regression_Loss:[0.1194]===Total_Loss:[1.3427]
+Epoch:[3]===Step:[120/320]===Time:[1441.03]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2238]===Regression_Loss:[0.0606]===Total_Loss:[1.2844]
+Epoch:[3]===Step:[121/320]===Time:[1441.56]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2323]===Regression_Loss:[0.1071]===Total_Loss:[1.3394]
+Epoch:[3]===Step:[122/320]===Time:[1442.10]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2201]===Regression_Loss:[0.0793]===Total_Loss:[1.2994]
+Epoch:[3]===Step:[123/320]===Time:[1442.65]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2258]===Regression_Loss:[0.0921]===Total_Loss:[1.3179]
+Epoch:[3]===Step:[124/320]===Time:[1443.18]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2390]===Regression_Loss:[0.1320]===Total_Loss:[1.3709]
+Epoch:[3]===Step:[125/320]===Time:[1443.71]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2338]===Regression_Loss:[0.1474]===Total_Loss:[1.3812]
+Epoch:[3]===Step:[126/320]===Time:[1444.25]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2379]===Regression_Loss:[0.1342]===Total_Loss:[1.3721]
+Epoch:[3]===Step:[127/320]===Time:[1444.79]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2168]===Regression_Loss:[0.0788]===Total_Loss:[1.2955]
+Epoch:[3]===Step:[128/320]===Time:[1445.33]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2366]===Regression_Loss:[0.1465]===Total_Loss:[1.3831]
+Epoch:[3]===Step:[129/320]===Time:[1445.87]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2255]===Regression_Loss:[0.0933]===Total_Loss:[1.3187]
+Epoch:[3]===Step:[130/320]===Time:[1446.39]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2220]===Regression_Loss:[0.0731]===Total_Loss:[1.2951]
+Epoch:[3]===Step:[131/320]===Time:[1446.94]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2283]===Regression_Loss:[0.1390]===Total_Loss:[1.3673]
+Epoch:[3]===Step:[132/320]===Time:[1447.47]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2249]===Regression_Loss:[0.1521]===Total_Loss:[1.3770]
+Epoch:[3]===Step:[133/320]===Time:[1448.00]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2166]===Regression_Loss:[0.0613]===Total_Loss:[1.2779]
+Epoch:[3]===Step:[134/320]===Time:[1448.53]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2228]===Regression_Loss:[0.0677]===Total_Loss:[1.2905]
+Epoch:[3]===Step:[135/320]===Time:[1449.10]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2161]===Regression_Loss:[0.0619]===Total_Loss:[1.2780]
+Epoch:[3]===Step:[136/320]===Time:[1449.64]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2125]===Regression_Loss:[0.0315]===Total_Loss:[1.2440]
+Epoch:[3]===Step:[137/320]===Time:[1450.18]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2155]===Regression_Loss:[0.0522]===Total_Loss:[1.2677]
+Epoch:[3]===Step:[138/320]===Time:[1450.72]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2306]===Regression_Loss:[0.1444]===Total_Loss:[1.3749]
+Epoch:[3]===Step:[139/320]===Time:[1451.26]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2280]===Regression_Loss:[0.1282]===Total_Loss:[1.3562]
+Epoch:[3]===Step:[140/320]===Time:[1451.80]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2136]===Regression_Loss:[0.0741]===Total_Loss:[1.2877]
+Epoch:[3]===Step:[141/320]===Time:[1452.33]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2044]===Regression_Loss:[0.0277]===Total_Loss:[1.2321]
+Epoch:[3]===Step:[142/320]===Time:[1452.87]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2251]===Regression_Loss:[0.1337]===Total_Loss:[1.3588]
+Epoch:[3]===Step:[143/320]===Time:[1453.41]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2239]===Regression_Loss:[0.0692]===Total_Loss:[1.2931]
+Epoch:[3]===Step:[144/320]===Time:[1453.95]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2288]===Regression_Loss:[0.1261]===Total_Loss:[1.3548]
+Epoch:[3]===Step:[145/320]===Time:[1454.50]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2227]===Regression_Loss:[0.0897]===Total_Loss:[1.3124]
+Epoch:[3]===Step:[146/320]===Time:[1455.04]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2092]===Regression_Loss:[0.0719]===Total_Loss:[1.2810]
+Epoch:[3]===Step:[147/320]===Time:[1455.58]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2062]===Regression_Loss:[0.0369]===Total_Loss:[1.2430]
+Epoch:[3]===Step:[148/320]===Time:[1456.13]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2309]===Regression_Loss:[0.1216]===Total_Loss:[1.3525]
+Epoch:[3]===Step:[149/320]===Time:[1456.67]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2248]===Regression_Loss:[0.0993]===Total_Loss:[1.3241]
+Epoch:[3]===Step:[150/320]===Time:[1457.21]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2069]===Regression_Loss:[0.0470]===Total_Loss:[1.2539]
+Epoch:[3]===Step:[151/320]===Time:[1457.75]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2174]===Regression_Loss:[0.0807]===Total_Loss:[1.2981]
+Epoch:[3]===Step:[152/320]===Time:[1458.29]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2446]===Regression_Loss:[0.1257]===Total_Loss:[1.3704]
+Epoch:[3]===Step:[153/320]===Time:[1458.85]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2351]===Regression_Loss:[0.1120]===Total_Loss:[1.3471]
+Epoch:[3]===Step:[154/320]===Time:[1459.39]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2315]===Regression_Loss:[0.1526]===Total_Loss:[1.3841]
+Epoch:[3]===Step:[155/320]===Time:[1459.92]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2230]===Regression_Loss:[0.1206]===Total_Loss:[1.3436]
+Epoch:[3]===Step:[156/320]===Time:[1460.46]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2088]===Regression_Loss:[0.1055]===Total_Loss:[1.3143]
+Epoch:[3]===Step:[157/320]===Time:[1460.99]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1984]===Regression_Loss:[0.0424]===Total_Loss:[1.2408]
+Epoch:[3]===Step:[158/320]===Time:[1461.53]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2217]===Regression_Loss:[0.0894]===Total_Loss:[1.3111]
+Epoch:[3]===Step:[159/320]===Time:[1462.07]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2142]===Regression_Loss:[0.0531]===Total_Loss:[1.2673]
+Epoch:[3]===Step:[160/320]===Time:[1462.61]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2068]===Regression_Loss:[0.0850]===Total_Loss:[1.2918]
+Epoch:[3]===Step:[161/320]===Time:[1463.16]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2014]===Regression_Loss:[0.0589]===Total_Loss:[1.2604]
+Epoch:[3]===Step:[162/320]===Time:[1463.70]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2091]===Regression_Loss:[0.0874]===Total_Loss:[1.2965]
+Epoch:[3]===Step:[163/320]===Time:[1464.23]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2176]===Regression_Loss:[0.0924]===Total_Loss:[1.3101]
+Epoch:[3]===Step:[164/320]===Time:[1464.78]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2223]===Regression_Loss:[0.0853]===Total_Loss:[1.3076]
+Epoch:[3]===Step:[165/320]===Time:[1465.31]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2232]===Regression_Loss:[0.1005]===Total_Loss:[1.3238]
+Epoch:[3]===Step:[166/320]===Time:[1465.84]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2079]===Regression_Loss:[0.0498]===Total_Loss:[1.2577]
+Epoch:[3]===Step:[167/320]===Time:[1466.39]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2002]===Regression_Loss:[0.0270]===Total_Loss:[1.2272]
+Epoch:[3]===Step:[168/320]===Time:[1466.93]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2217]===Regression_Loss:[0.1520]===Total_Loss:[1.3737]
+Epoch:[3]===Step:[169/320]===Time:[1467.47]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2140]===Regression_Loss:[0.1011]===Total_Loss:[1.3151]
+Epoch:[3]===Step:[170/320]===Time:[1468.01]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2215]===Regression_Loss:[0.1794]===Total_Loss:[1.4009]
+Epoch:[3]===Step:[171/320]===Time:[1468.55]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2117]===Regression_Loss:[0.0905]===Total_Loss:[1.3022]
+Epoch:[3]===Step:[172/320]===Time:[1469.10]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2146]===Regression_Loss:[0.1365]===Total_Loss:[1.3511]
+Epoch:[3]===Step:[173/320]===Time:[1469.65]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2009]===Regression_Loss:[0.0567]===Total_Loss:[1.2577]
+Epoch:[3]===Step:[174/320]===Time:[1470.19]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2033]===Regression_Loss:[0.0543]===Total_Loss:[1.2576]
+Epoch:[3]===Step:[175/320]===Time:[1470.73]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2182]===Regression_Loss:[0.1858]===Total_Loss:[1.4041]
+Epoch:[3]===Step:[176/320]===Time:[1471.27]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2253]===Regression_Loss:[0.0997]===Total_Loss:[1.3250]
+Epoch:[3]===Step:[177/320]===Time:[1471.80]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2220]===Regression_Loss:[0.1067]===Total_Loss:[1.3287]
+Epoch:[3]===Step:[178/320]===Time:[1472.35]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2084]===Regression_Loss:[0.0830]===Total_Loss:[1.2914]
+Epoch:[3]===Step:[179/320]===Time:[1472.88]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1962]===Regression_Loss:[0.0360]===Total_Loss:[1.2322]
+Epoch:[3]===Step:[180/320]===Time:[1473.41]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1929]===Regression_Loss:[0.0343]===Total_Loss:[1.2271]
+Epoch:[3]===Step:[181/320]===Time:[1473.96]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2109]===Regression_Loss:[0.0868]===Total_Loss:[1.2976]
+Epoch:[3]===Step:[182/320]===Time:[1474.50]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2053]===Regression_Loss:[0.0786]===Total_Loss:[1.2839]
+Epoch:[3]===Step:[183/320]===Time:[1475.04]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2101]===Regression_Loss:[0.0649]===Total_Loss:[1.2750]
+Epoch:[3]===Step:[184/320]===Time:[1475.59]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2226]===Regression_Loss:[0.0860]===Total_Loss:[1.3086]
+Epoch:[3]===Step:[185/320]===Time:[1476.13]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2076]===Regression_Loss:[0.1151]===Total_Loss:[1.3227]
+Epoch:[3]===Step:[186/320]===Time:[1476.67]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2076]===Regression_Loss:[0.0501]===Total_Loss:[1.2577]
+Epoch:[3]===Step:[187/320]===Time:[1477.22]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2038]===Regression_Loss:[0.0680]===Total_Loss:[1.2718]
+Epoch:[3]===Step:[188/320]===Time:[1477.76]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2117]===Regression_Loss:[0.0974]===Total_Loss:[1.3091]
+Epoch:[3]===Step:[189/320]===Time:[1478.30]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1986]===Regression_Loss:[0.0930]===Total_Loss:[1.2916]
+Epoch:[3]===Step:[190/320]===Time:[1478.84]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2148]===Regression_Loss:[0.1138]===Total_Loss:[1.3286]
+Epoch:[3]===Step:[191/320]===Time:[1479.37]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2332]===Regression_Loss:[0.1179]===Total_Loss:[1.3512]
+Epoch:[3]===Step:[192/320]===Time:[1479.92]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2150]===Regression_Loss:[0.0951]===Total_Loss:[1.3101]
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+Epoch:[3]===Step:[193/320]===Time:[1494.12]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2015]===Regression_Loss:[0.0591]===Total_Loss:[1.2606]
+Epoch:[3]===Step:[194/320]===Time:[1494.64]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2217]===Regression_Loss:[0.1374]===Total_Loss:[1.3591]
+Epoch:[3]===Step:[195/320]===Time:[1495.16]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2094]===Regression_Loss:[0.0842]===Total_Loss:[1.2936]
+Epoch:[3]===Step:[196/320]===Time:[1495.69]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2005]===Regression_Loss:[0.0616]===Total_Loss:[1.2621]
+Epoch:[3]===Step:[197/320]===Time:[1496.21]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2102]===Regression_Loss:[0.0895]===Total_Loss:[1.2997]
+Epoch:[3]===Step:[198/320]===Time:[1496.73]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2005]===Regression_Loss:[0.0878]===Total_Loss:[1.2883]
+Epoch:[3]===Step:[199/320]===Time:[1497.25]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1957]===Regression_Loss:[0.0430]===Total_Loss:[1.2387]
+Epoch:[3]===Step:[200/320]===Time:[1497.77]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2061]===Regression_Loss:[0.0982]===Total_Loss:[1.3043]
+Epoch:[3]===Step:[201/320]===Time:[1498.29]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2213]===Regression_Loss:[0.2248]===Total_Loss:[1.4461]
+Epoch:[3]===Step:[202/320]===Time:[1498.81]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1976]===Regression_Loss:[0.0599]===Total_Loss:[1.2575]
+Epoch:[3]===Step:[203/320]===Time:[1499.34]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1987]===Regression_Loss:[0.0546]===Total_Loss:[1.2533]
+Epoch:[3]===Step:[204/320]===Time:[1499.86]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2143]===Regression_Loss:[0.0766]===Total_Loss:[1.2909]
+Epoch:[3]===Step:[205/320]===Time:[1500.39]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2187]===Regression_Loss:[0.1102]===Total_Loss:[1.3289]
+Epoch:[3]===Step:[206/320]===Time:[1500.91]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1928]===Regression_Loss:[0.0543]===Total_Loss:[1.2471]
+Epoch:[3]===Step:[207/320]===Time:[1501.43]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1910]===Regression_Loss:[0.0776]===Total_Loss:[1.2686]
+Epoch:[3]===Step:[208/320]===Time:[1501.95]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2195]===Regression_Loss:[0.1439]===Total_Loss:[1.3634]
+Epoch:[3]===Step:[209/320]===Time:[1502.48]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2123]===Regression_Loss:[0.0861]===Total_Loss:[1.2984]
+Epoch:[3]===Step:[210/320]===Time:[1503.01]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2172]===Regression_Loss:[0.1470]===Total_Loss:[1.3642]
+Epoch:[3]===Step:[211/320]===Time:[1503.54]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1892]===Regression_Loss:[0.0395]===Total_Loss:[1.2287]
+Epoch:[3]===Step:[212/320]===Time:[1504.07]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2093]===Regression_Loss:[0.0857]===Total_Loss:[1.2950]
+Epoch:[3]===Step:[213/320]===Time:[1504.60]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1998]===Regression_Loss:[0.0927]===Total_Loss:[1.2925]
+Epoch:[3]===Step:[214/320]===Time:[1505.13]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2073]===Regression_Loss:[0.1108]===Total_Loss:[1.3181]
+Epoch:[3]===Step:[215/320]===Time:[1505.66]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2151]===Regression_Loss:[0.1017]===Total_Loss:[1.3169]
+Epoch:[3]===Step:[216/320]===Time:[1506.18]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1902]===Regression_Loss:[0.0430]===Total_Loss:[1.2332]
+Epoch:[3]===Step:[217/320]===Time:[1506.72]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2123]===Regression_Loss:[0.1098]===Total_Loss:[1.3221]
+Epoch:[3]===Step:[218/320]===Time:[1507.24]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2052]===Regression_Loss:[0.0690]===Total_Loss:[1.2742]
+Epoch:[3]===Step:[219/320]===Time:[1507.80]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1904]===Regression_Loss:[0.0563]===Total_Loss:[1.2466]
+Epoch:[3]===Step:[220/320]===Time:[1508.33]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1932]===Regression_Loss:[0.0559]===Total_Loss:[1.2491]
+Epoch:[3]===Step:[221/320]===Time:[1508.86]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2061]===Regression_Loss:[0.0981]===Total_Loss:[1.3043]
+Epoch:[3]===Step:[222/320]===Time:[1509.39]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2082]===Regression_Loss:[0.0530]===Total_Loss:[1.2612]
+Epoch:[3]===Step:[223/320]===Time:[1509.92]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2011]===Regression_Loss:[0.0466]===Total_Loss:[1.2477]
+Epoch:[3]===Step:[224/320]===Time:[1510.45]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2046]===Regression_Loss:[0.0676]===Total_Loss:[1.2722]
+Epoch:[3]===Step:[225/320]===Time:[1510.99]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2073]===Regression_Loss:[0.1071]===Total_Loss:[1.3144]
+Epoch:[3]===Step:[226/320]===Time:[1511.51]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2095]===Regression_Loss:[0.1372]===Total_Loss:[1.3468]
+Epoch:[3]===Step:[227/320]===Time:[1512.04]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1824]===Regression_Loss:[0.0217]===Total_Loss:[1.2041]
+Epoch:[3]===Step:[228/320]===Time:[1512.57]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1862]===Regression_Loss:[0.0384]===Total_Loss:[1.2247]
+Epoch:[3]===Step:[229/320]===Time:[1513.10]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2034]===Regression_Loss:[0.0905]===Total_Loss:[1.2939]
+Epoch:[3]===Step:[230/320]===Time:[1513.64]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1995]===Regression_Loss:[0.0853]===Total_Loss:[1.2849]
+Epoch:[3]===Step:[231/320]===Time:[1514.17]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1929]===Regression_Loss:[0.0420]===Total_Loss:[1.2348]
+Epoch:[3]===Step:[232/320]===Time:[1514.70]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2039]===Regression_Loss:[0.0835]===Total_Loss:[1.2874]
+Epoch:[3]===Step:[233/320]===Time:[1515.25]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1879]===Regression_Loss:[0.0357]===Total_Loss:[1.2236]
+Epoch:[3]===Step:[234/320]===Time:[1515.78]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2162]===Regression_Loss:[0.1566]===Total_Loss:[1.3728]
+Epoch:[3]===Step:[235/320]===Time:[1516.31]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2062]===Regression_Loss:[0.0930]===Total_Loss:[1.2991]
+Epoch:[3]===Step:[236/320]===Time:[1516.85]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1998]===Regression_Loss:[0.0934]===Total_Loss:[1.2932]
+Epoch:[3]===Step:[237/320]===Time:[1517.38]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2020]===Regression_Loss:[0.1228]===Total_Loss:[1.3247]
+Epoch:[3]===Step:[238/320]===Time:[1517.92]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1984]===Regression_Loss:[0.0646]===Total_Loss:[1.2630]
+Epoch:[3]===Step:[239/320]===Time:[1518.45]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1976]===Regression_Loss:[0.0535]===Total_Loss:[1.2511]
+Epoch:[3]===Step:[240/320]===Time:[1518.99]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1869]===Regression_Loss:[0.0777]===Total_Loss:[1.2645]
+Epoch:[3]===Step:[241/320]===Time:[1519.52]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1955]===Regression_Loss:[0.0677]===Total_Loss:[1.2632]
+Epoch:[3]===Step:[242/320]===Time:[1520.05]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1833]===Regression_Loss:[0.0255]===Total_Loss:[1.2087]
+Epoch:[3]===Step:[243/320]===Time:[1520.59]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1902]===Regression_Loss:[0.0331]===Total_Loss:[1.2234]
+Epoch:[3]===Step:[244/320]===Time:[1521.12]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2064]===Regression_Loss:[0.1318]===Total_Loss:[1.3382]
+Epoch:[3]===Step:[245/320]===Time:[1521.66]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1867]===Regression_Loss:[0.0349]===Total_Loss:[1.2216]
+Epoch:[3]===Step:[246/320]===Time:[1522.19]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1927]===Regression_Loss:[0.0681]===Total_Loss:[1.2607]
+Epoch:[3]===Step:[247/320]===Time:[1522.72]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2052]===Regression_Loss:[0.0947]===Total_Loss:[1.2999]
+Epoch:[3]===Step:[248/320]===Time:[1523.26]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1856]===Regression_Loss:[0.0395]===Total_Loss:[1.2251]
+Epoch:[3]===Step:[249/320]===Time:[1523.78]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2064]===Regression_Loss:[0.0837]===Total_Loss:[1.2900]
+Epoch:[3]===Step:[250/320]===Time:[1524.31]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1862]===Regression_Loss:[0.0656]===Total_Loss:[1.2518]
+Epoch:[3]===Step:[251/320]===Time:[1524.84]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1859]===Regression_Loss:[0.0425]===Total_Loss:[1.2284]
+Epoch:[3]===Step:[252/320]===Time:[1525.38]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1948]===Regression_Loss:[0.1066]===Total_Loss:[1.3014]
+Epoch:[3]===Step:[253/320]===Time:[1525.92]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1983]===Regression_Loss:[0.1021]===Total_Loss:[1.3004]
+Epoch:[3]===Step:[254/320]===Time:[1526.45]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1833]===Regression_Loss:[0.0391]===Total_Loss:[1.2224]
+Epoch:[3]===Step:[255/320]===Time:[1526.99]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2032]===Regression_Loss:[0.1379]===Total_Loss:[1.3411]
+Epoch:[3]===Step:[256/320]===Time:[1527.53]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2037]===Regression_Loss:[0.1635]===Total_Loss:[1.3672]
+Epoch:[3]===Step:[257/320]===Time:[1528.06]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1914]===Regression_Loss:[0.0791]===Total_Loss:[1.2705]
+Epoch:[3]===Step:[258/320]===Time:[1528.60]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1846]===Regression_Loss:[0.0598]===Total_Loss:[1.2444]
+Epoch:[3]===Step:[259/320]===Time:[1529.14]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1895]===Regression_Loss:[0.0559]===Total_Loss:[1.2455]
+Epoch:[3]===Step:[260/320]===Time:[1529.68]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1873]===Regression_Loss:[0.0463]===Total_Loss:[1.2335]
+Epoch:[3]===Step:[261/320]===Time:[1530.21]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1953]===Regression_Loss:[0.0611]===Total_Loss:[1.2564]
+Epoch:[3]===Step:[262/320]===Time:[1530.74]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1973]===Regression_Loss:[0.0635]===Total_Loss:[1.2608]
+Epoch:[3]===Step:[263/320]===Time:[1531.27]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1786]===Regression_Loss:[0.0495]===Total_Loss:[1.2281]
+Epoch:[3]===Step:[264/320]===Time:[1531.81]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1863]===Regression_Loss:[0.0496]===Total_Loss:[1.2359]
+Epoch:[3]===Step:[265/320]===Time:[1532.35]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1766]===Regression_Loss:[0.0186]===Total_Loss:[1.1953]
+Epoch:[3]===Step:[266/320]===Time:[1532.88]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1866]===Regression_Loss:[0.0922]===Total_Loss:[1.2788]
+Epoch:[3]===Step:[267/320]===Time:[1533.41]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1889]===Regression_Loss:[0.0824]===Total_Loss:[1.2713]
+Epoch:[3]===Step:[268/320]===Time:[1533.95]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1924]===Regression_Loss:[0.0634]===Total_Loss:[1.2557]
+Epoch:[3]===Step:[269/320]===Time:[1534.48]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1997]===Regression_Loss:[0.2259]===Total_Loss:[1.4256]
+Epoch:[3]===Step:[270/320]===Time:[1535.03]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1941]===Regression_Loss:[0.0395]===Total_Loss:[1.2337]
+Epoch:[3]===Step:[271/320]===Time:[1535.56]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1823]===Regression_Loss:[0.0262]===Total_Loss:[1.2085]
+Epoch:[3]===Step:[272/320]===Time:[1536.10]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1792]===Regression_Loss:[0.0439]===Total_Loss:[1.2231]
+Epoch:[3]===Step:[273/320]===Time:[1536.64]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1804]===Regression_Loss:[0.0572]===Total_Loss:[1.2375]
+Epoch:[3]===Step:[274/320]===Time:[1537.17]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1872]===Regression_Loss:[0.0595]===Total_Loss:[1.2467]
+Epoch:[3]===Step:[275/320]===Time:[1537.70]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2021]===Regression_Loss:[0.0819]===Total_Loss:[1.2840]
+Epoch:[3]===Step:[276/320]===Time:[1538.23]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2149]===Regression_Loss:[0.1185]===Total_Loss:[1.3335]
+Epoch:[3]===Step:[277/320]===Time:[1538.77]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2005]===Regression_Loss:[0.1039]===Total_Loss:[1.3043]
+Epoch:[3]===Step:[278/320]===Time:[1539.31]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1987]===Regression_Loss:[0.0967]===Total_Loss:[1.2954]
+Epoch:[3]===Step:[279/320]===Time:[1539.85]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1949]===Regression_Loss:[0.0831]===Total_Loss:[1.2780]
+Epoch:[3]===Step:[280/320]===Time:[1540.38]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1908]===Regression_Loss:[0.0687]===Total_Loss:[1.2595]
+Epoch:[3]===Step:[281/320]===Time:[1540.93]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1993]===Regression_Loss:[0.1327]===Total_Loss:[1.3320]
+Epoch:[3]===Step:[282/320]===Time:[1541.47]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2087]===Regression_Loss:[0.2241]===Total_Loss:[1.4328]
+Epoch:[3]===Step:[283/320]===Time:[1542.01]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1704]===Regression_Loss:[0.0222]===Total_Loss:[1.1926]
+Epoch:[3]===Step:[284/320]===Time:[1542.55]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1748]===Regression_Loss:[0.0452]===Total_Loss:[1.2201]
+Epoch:[3]===Step:[285/320]===Time:[1543.09]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1742]===Regression_Loss:[0.0213]===Total_Loss:[1.1955]
+Epoch:[3]===Step:[286/320]===Time:[1543.63]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2104]===Regression_Loss:[0.0999]===Total_Loss:[1.3103]
+Epoch:[3]===Step:[287/320]===Time:[1544.17]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1896]===Regression_Loss:[0.0744]===Total_Loss:[1.2639]
+Epoch:[3]===Step:[288/320]===Time:[1544.69]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1858]===Regression_Loss:[0.1175]===Total_Loss:[1.3032]
+Epoch:[3]===Step:[289/320]===Time:[1545.24]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1907]===Regression_Loss:[0.0749]===Total_Loss:[1.2656]
+Epoch:[3]===Step:[290/320]===Time:[1545.77]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1830]===Regression_Loss:[0.0726]===Total_Loss:[1.2557]
+Epoch:[3]===Step:[291/320]===Time:[1546.30]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1884]===Regression_Loss:[0.0999]===Total_Loss:[1.2884]
+Epoch:[3]===Step:[292/320]===Time:[1546.83]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1929]===Regression_Loss:[0.0922]===Total_Loss:[1.2851]
+Epoch:[3]===Step:[293/320]===Time:[1547.37]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1725]===Regression_Loss:[0.0570]===Total_Loss:[1.2295]
+Epoch:[3]===Step:[294/320]===Time:[1547.92]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1784]===Regression_Loss:[0.0886]===Total_Loss:[1.2670]
+Epoch:[3]===Step:[295/320]===Time:[1548.45]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1779]===Regression_Loss:[0.0454]===Total_Loss:[1.2233]
+Epoch:[3]===Step:[296/320]===Time:[1548.98]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2143]===Regression_Loss:[0.1762]===Total_Loss:[1.3905]
+Epoch:[3]===Step:[297/320]===Time:[1549.52]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1718]===Regression_Loss:[0.0377]===Total_Loss:[1.2094]
+Epoch:[3]===Step:[298/320]===Time:[1550.06]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1805]===Regression_Loss:[0.0413]===Total_Loss:[1.2219]
+Epoch:[3]===Step:[299/320]===Time:[1550.60]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1888]===Regression_Loss:[0.0711]===Total_Loss:[1.2599]
+Epoch:[3]===Step:[300/320]===Time:[1551.15]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1852]===Regression_Loss:[0.1120]===Total_Loss:[1.2972]
+Epoch:[3]===Step:[301/320]===Time:[1551.69]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1849]===Regression_Loss:[0.1298]===Total_Loss:[1.3148]
+Epoch:[3]===Step:[302/320]===Time:[1552.23]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1793]===Regression_Loss:[0.0593]===Total_Loss:[1.2387]
+Epoch:[3]===Step:[303/320]===Time:[1552.77]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.2247]===Regression_Loss:[0.1472]===Total_Loss:[1.3719]
+Epoch:[3]===Step:[304/320]===Time:[1553.30]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1992]===Regression_Loss:[0.1164]===Total_Loss:[1.3156]
+Epoch:[3]===Step:[305/320]===Time:[1553.85]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1845]===Regression_Loss:[0.0588]===Total_Loss:[1.2432]
+Epoch:[3]===Step:[306/320]===Time:[1554.39]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1827]===Regression_Loss:[0.0794]===Total_Loss:[1.2621]
+Epoch:[3]===Step:[307/320]===Time:[1554.93]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1947]===Regression_Loss:[0.1757]===Total_Loss:[1.3705]
+Epoch:[3]===Step:[308/320]===Time:[1555.47]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1985]===Regression_Loss:[0.1662]===Total_Loss:[1.3647]
+Epoch:[3]===Step:[309/320]===Time:[1556.01]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1809]===Regression_Loss:[0.0598]===Total_Loss:[1.2407]
+Epoch:[3]===Step:[310/320]===Time:[1556.55]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1871]===Regression_Loss:[0.0743]===Total_Loss:[1.2614]
+Epoch:[3]===Step:[311/320]===Time:[1557.10]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1737]===Regression_Loss:[0.0575]===Total_Loss:[1.2312]
+Epoch:[3]===Step:[312/320]===Time:[1557.64]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1821]===Regression_Loss:[0.1126]===Total_Loss:[1.2947]
+Epoch:[3]===Step:[313/320]===Time:[1558.18]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1769]===Regression_Loss:[0.1266]===Total_Loss:[1.3035]
+Epoch:[3]===Step:[314/320]===Time:[1558.73]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1796]===Regression_Loss:[0.0764]===Total_Loss:[1.2559]
+Epoch:[3]===Step:[315/320]===Time:[1559.28]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1742]===Regression_Loss:[0.0324]===Total_Loss:[1.2066]
+Epoch:[3]===Step:[316/320]===Time:[1559.82]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1866]===Regression_Loss:[0.1207]===Total_Loss:[1.3073]
+Epoch:[3]===Step:[317/320]===Time:[1560.36]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1770]===Regression_Loss:[0.0727]===Total_Loss:[1.2497]
+Epoch:[3]===Step:[318/320]===Time:[1560.90]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1805]===Regression_Loss:[0.0685]===Total_Loss:[1.2490]
+Epoch:[3]===Step:[319/320]===Time:[1561.45]===Learning Rate:0.0001
+Train_Regression:[True]===Classification_Loss:[1.1689]===Regression_Loss:[0.0659]===Total_Loss:[1.2349]

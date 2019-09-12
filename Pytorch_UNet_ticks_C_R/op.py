@@ -159,7 +159,7 @@ class Operator:
         val_bsize = 16
 
         val_data = Chartdata(img_path = val_img_path, gt_path = val_gt_path)
-        val_dataloader = DataLoader(dataset = val_data, batch_size = val_bsize, shuffle = True, num_workers = 28)
+        val_dataloader = DataLoader(dataset = val_data, batch_size = val_bsize, shuffle = True, num_workers = 12)
         val_idx = len(val_dataloader)
 
         val_total_loss = 0

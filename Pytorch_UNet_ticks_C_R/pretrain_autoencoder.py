@@ -52,8 +52,14 @@ class Chartdata(Dataset):
         input_image = torch.tensor(np.array(cv2.imread(input_image_path))).float().permute(2,0,1)
 
         return input_image
-        
+
 model = UNet(3,3)
+print(model) 
+
+batch_size = 20 
+lr = 0.0001
+optimizer = optim.Adam(model.parameters(), lr = lr)
+
 
 
 

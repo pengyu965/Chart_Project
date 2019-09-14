@@ -128,7 +128,7 @@ device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 model = nn.DataParallel(UNet(3,3)).to(device)
 print(model) 
 
-batch_size = 16 
+batch_size = 12
 lr = 0.0001
 epoch = 20
 

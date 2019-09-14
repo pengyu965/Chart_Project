@@ -39,7 +39,8 @@ class UNet(nn.Module):
         x = self.up13(x)
         x = self.up14(x)
         x = self.out1(x)
-        out = torch.tanh(x)
+        # out = torch.tanh(x)
+        x = out 
         return out
 
 class Chartdata(Dataset):
@@ -95,7 +96,7 @@ for ep in range(epoch):
 
         output_images = model(train_images)
 
-        loss = criterion(output_images, train_images*1./255)
+        loss = criterion(output_images*1./255, train_images*1./255)
         
         loss.backward
         optimizer.step()

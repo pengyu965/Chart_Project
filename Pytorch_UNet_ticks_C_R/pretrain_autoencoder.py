@@ -128,7 +128,7 @@ model = nn.DataParallel(UNet(3,3)).to(device)
 print(model) 
 
 batch_size = 16 
-lr = 0.001
+lr = 0.0001
 epoch = 20
 
 optimizer = optim.Adam(model.parameters(), lr = lr)

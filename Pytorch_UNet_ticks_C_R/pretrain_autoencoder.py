@@ -132,7 +132,7 @@ batch_size = 12
 lr = 0.0001
 epoch = 20
 
-optimizer = optim.Adam(model.parameters(), lr = lr)
+optimizer = optim.Adam(model.parameters(), lr = lr, weight_decay=1e-5)
 criterion = nn.MSELoss()
 
 train_data = Chartdata(img_path = "../../data/MIX/train_data/")

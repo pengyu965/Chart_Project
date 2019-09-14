@@ -135,7 +135,7 @@ optimizer = optim.Adam(model.parameters(), lr = lr)
 criterion = nn.MSELoss()
 
 train_data = Chartdata(img_path = "../../data/MIX/train_data/")
-dataloader = DataLoader(dataset=train_data, batch_size = batch_size, shuffle = True, num_workers=12)
+dataloader = DataLoader(dataset=train_data, batch_size = batch_size, shuffle = True, num_workers=28)
 
 global_step = 0
 start_time = time.time()
@@ -161,6 +161,8 @@ for ep in range(epoch):
         optimizer.zero_grad()
 
         output_images = model(train_images)
+
+        print(output_images)
 
         loss = criterion(output_images, train_images*1./255)
         

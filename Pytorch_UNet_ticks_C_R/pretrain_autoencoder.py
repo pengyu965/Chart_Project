@@ -62,7 +62,7 @@ model = nn.DataParallel(UNet(3,3)).to(device)
 print(model) 
 
 batch_size = 20 
-lr = 0.0001
+lr = 0.001
 epoch = 20
 
 optimizer = optim.Adam(model.parameters(), lr = lr)
@@ -96,7 +96,7 @@ for ep in range(epoch):
 
         output_images = model(train_images)
 
-        loss = criterion(output_images*1./255, train_images*1./255)*10
+        loss = criterion(output_images*1./255, train_images*1./255)
         
         loss.backward
         optimizer.step()

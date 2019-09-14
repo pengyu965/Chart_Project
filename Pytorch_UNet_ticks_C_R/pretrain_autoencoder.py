@@ -178,7 +178,7 @@ for ep in range(epoch):
             for i in range(0,5121-5120//nroll,5120//nroll):
                 try:
                     for j in range(0, 5121-5120//nroll,5120//nroll):
-                        im = Image.fromarray(image_norm(train_images[index]*1./255.permute(1,2,0).detach().cpu().clone().numpy()).astype("uint8"))
+                        im = Image.fromarray(image_norm(1./255*train_images[index].permute(1,2,0).detach().cpu().clone().numpy()).astype("uint8"))
                         im.thumbnail((512,512))
                         new_im.paste(im, (i,j))
                         print(index)

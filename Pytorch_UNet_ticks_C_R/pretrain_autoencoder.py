@@ -55,8 +55,9 @@ class Chartdata(Dataset):
         input_image = torch.tensor(np.array(cv2.imread(input_image_path))).float().permute(2,0,1)
 
         return input_image
+device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
-model = UNet(3,3)
+model = nn.DataParallel(UNet(3,3)).to(device)
 print(model) 
 
 batch_size = 20 
@@ -88,7 +89,7 @@ for ep in range(epoch):
         optimizer = optim.Adam(model.parameters(), lr = lr)
 
     for idi, train_batch in enumerate(dataloader):
-        train_images = train_batch
+        train_images = train_batch.to(device)
 
         optimizer.zero_grad()
 

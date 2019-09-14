@@ -50,7 +50,7 @@ class Discriminator(nn.Module):
             nn.Conv2d(3, 64, 4, 2, 1, bias=False),
             nn.LeakyReLU(0.2, inplace=True),
             # state size. 64 x 32 x 32
-            nn.Conv2d(ndf, 128, 4, 2, 1, bias=False),
+            nn.Conv2d(64, 128, 4, 2, 1, bias=False),
             nn.BatchNorm2d(128),
             nn.LeakyReLU(0.2, inplace=True),
             # state size. (ndf*2) x 16 x 16

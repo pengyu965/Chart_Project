@@ -162,7 +162,7 @@ for ep in range(epoch):
 
         output_images = model(train_images)
 
-        print(output_images)
+        # print(output_images)
 
         loss = criterion(output_images, train_images*1./255)
         

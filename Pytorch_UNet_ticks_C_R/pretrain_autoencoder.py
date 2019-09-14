@@ -11,7 +11,7 @@ import cv2
 from PIL import Image
 import numpy as np
 from util import *
-from unet import Unet
+from unet import UNet
 
 # class double_conv(nn.Module):
 #     '''(conv => BN => ReLU) * 2'''

@@ -40,7 +40,7 @@ class UNet(nn.Module):
         x = self.up14(x)
         x = self.out1(x)
         # out = torch.tanh(x)
-        x = out 
+        out = x 
         return out
 
 class Chartdata(Dataset):

@@ -10,6 +10,7 @@ import time
 import cv2
 from PIL import Image
 import numpy as np
+from util import *
 
 class double_conv(nn.Module):
     '''(conv => BN => ReLU) * 2'''
@@ -172,15 +173,15 @@ for ep in range(epoch):
             nroll = int(batch_size**0.5)
             new_im = Image.new('RGB', (5120,5120))
             for i in range(0,5121-5120//nroll,5120//nroll):
-                # try:
-                for j in range(0, 5121-5120//nroll,5120//nroll):
-                    im = Image.fromarray(image_norm(output_images[index].permute(1,2,0).detach().cpu().clone().numpy()).astype("uint8"))
-                    im.thumbnail((512,512))
-                    new_im.paste(im, (i,j))
-                    print(index)
-                    index += 1
-                # except:
-                #     break
+                try:
+                    for j in range(0, 5121-5120//nroll,5120//nroll):
+                        im = Image.fromarray(image_norm(output_images[index].permute(1,2,0).detach().cpu().clone().numpy()).astype("uint8"))
+                        im.thumbnail((512,512))
+                        new_im.paste(im, (i,j))
+                        print(index)
+                        index += 1
+                except:
+                    break
             if os.path.exists("./train_samples/") == False:
                 os.mkdir("./train_samples/")
                 

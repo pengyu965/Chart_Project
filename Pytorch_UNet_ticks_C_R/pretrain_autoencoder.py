@@ -62,7 +62,7 @@ class outconv(nn.Module):
         return x
 
 class up1(nn.Module):
-    def __init__(self, in_ch, out_ch, bilinear=False):
+    def __init__(self, in_ch, out_ch, bilinear=True):
         super(up1, self).__init__()
 
         #  would be a nice idea if the upsampling could be learned too,

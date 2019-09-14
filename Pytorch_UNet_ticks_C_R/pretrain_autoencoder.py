@@ -105,8 +105,7 @@ class UNet(nn.Module):
         x = self.up3(x)
         x = self.up4(x)
         x = self.outc(x)
-        # out = torch.tanh(x)
-        out = x 
+        out = torch.tanh(x)
         return out
 
 class Chartdata(Dataset):
@@ -162,7 +161,7 @@ for ep in range(epoch):
 
         output_images = model(train_images)
 
-        loss = criterion(output_images, train_images)
+        loss = criterion(output_images, train_images*1./255)
         
         loss.backward
         optimizer.step()
@@ -175,7 +174,7 @@ for ep in range(epoch):
             for i in range(0,5121-5120//nroll,5120//nroll):
                 try:
                     for j in range(0, 5121-5120//nroll,5120//nroll):
-                        im = Image.fromarray(image_norm(1./255*output_images[index].permute(1,2,0).detach().cpu().clone().numpy()).astype("uint8"))
+                        im = Image.fromarray(image_norm(output_images[index].permute(1,2,0).detach().cpu().clone().numpy()).astype("uint8"))
                         im.thumbnail((512,512))
                         new_im.paste(im, (i,j))
                         print(index)

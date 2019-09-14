@@ -96,7 +96,7 @@ for ep in range(epoch):
 
         output_images = model(train_images)
 
-        loss = criterion(output_images*1./255, train_images*1./255)
+        loss = criterion(output_images*1./255, train_images*1./255)*10
         
         loss.backward
         optimizer.step()

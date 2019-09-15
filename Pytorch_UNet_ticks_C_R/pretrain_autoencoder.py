@@ -172,7 +172,7 @@ for ep in range(epoch):
         loss.backward
         optimizer.step()
 
-        print(model.module.mpconv.grad)
+        print(model[0].grad)
 
         print("Epoch:[{}]===Step:[{}/{}]===Time:[{:.2f}]===Learning Rate:{}===Regression_Loss:[{:.4f}]".format(ep, idi, idx, time.time()-start_time, lr, loss.item()))
         

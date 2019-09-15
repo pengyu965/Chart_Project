@@ -197,6 +197,7 @@ for ep in range(epoch):
     
     if loss.item() < min_loss:
         torch.save(model.module.state_dict(), "./weight/model.pt")
+        min_loss = loss.item()
 
 
 

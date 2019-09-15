@@ -131,7 +131,7 @@ print(model)
 print(model.module.state_dict().keys())
 
 batch_size = 12
-lr = 0.001
+lr = 0.0001
 epoch = 20
 
 optimizer = optim.Adam(model.parameters(), lr = lr, weight_decay=1e-5)
@@ -172,7 +172,7 @@ for ep in range(epoch):
         loss.backward
         optimizer.step()
 
-        # print(model.mpconv.1.conv.0.weight.grad)
+        print(model.module.mpconv.grad)
 
         print("Epoch:[{}]===Step:[{}/{}]===Time:[{:.2f}]===Learning Rate:{}===Regression_Loss:[{:.4f}]".format(ep, idi, idx, time.time()-start_time, lr, loss.item()))
         

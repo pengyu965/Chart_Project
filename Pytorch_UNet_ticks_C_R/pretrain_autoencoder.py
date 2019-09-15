@@ -128,6 +128,7 @@ device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
 model = nn.DataParallel(UNet(3,3)).to(device)
 print(model) 
+print(model.module.state_dict().keys())
 
 batch_size = 12
 lr = 0.001
@@ -170,6 +171,9 @@ for ep in range(epoch):
         
         loss.backward
         optimizer.step()
+
+        print(down1.mpconv.1.conv.0.weight.grad)
+
         print("Epoch:[{}]===Step:[{}/{}]===Time:[{:.2f}]===Learning Rate:{}===Regression_Loss:[{:.4f}]".format(ep, idi, idx, time.time()-start_time, lr, loss.item()))
         
         if (global_step%print_idx) == 0:

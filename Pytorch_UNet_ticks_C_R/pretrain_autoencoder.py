@@ -107,7 +107,8 @@ class UNet(nn.Module):
         x = self.up3(x)
         x = self.up4(x)
         x = self.outc(x)
-        out = torch.tanh(x)
+        # out = torch.tanh(x)
+        out = x
         return out
 
 class Chartdata(Dataset):
@@ -133,7 +134,7 @@ lr = 0.001
 epoch = 20
 
 optimizer = optim.Adam(model.parameters(), lr = lr, weight_decay=1e-5)
-criterion = nn.L1Loss()
+criterion = nn.MSELoss()
 
 train_data = Chartdata(img_path = "../../data/MIX/train_data/")
 dataloader = DataLoader(dataset=train_data, batch_size = batch_size, shuffle = True, num_workers=28)

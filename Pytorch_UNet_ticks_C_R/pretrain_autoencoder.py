@@ -130,7 +130,7 @@ model = nn.DataParallel(UNet(3,3)).to(device)
 print(model) 
 # print(model.module.state_dict().keys())
 
-batch_size = 12
+batch_size = 20
 lr = 0.0001
 epoch = 20
 

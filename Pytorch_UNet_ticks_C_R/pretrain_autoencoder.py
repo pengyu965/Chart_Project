@@ -169,10 +169,10 @@ for ep in range(epoch):
 
         loss = criterion(output_images, train_images*1./255)
         
-        grad_v = model.module.down1.mpconv[1].conv[0].weight.grad
-        print(grad_v)
+        # grad_v = model.module.down1.mpconv[1].conv[0].weight.grad
+        # print(grad_v)
 
-        loss.backward
+        loss.backward()
         optimizer.step()
 
         print("Epoch:[{}]===Step:[{}/{}]===Time:[{:.2f}]===Learning Rate:{}===Regression_Loss:[{:.4f}]".format(ep, idi, idx, time.time()-start_time, lr, loss.item()))

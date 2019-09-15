@@ -126,8 +126,14 @@ class Chartdata(Dataset):
         return input_image
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
-model = nn.DataParallel(UNet(3,3)).to(device)
+model = UNet(3,3)
 print(model) 
+try:
+    model.load_state_dict(torch.load("./weight/model.pt"))
+    print("weight loaded succesfully")
+except:
+    pass
+model = nn.DataParallel(model).to(device)
 # print(model.module.state_dict().keys())
 
 batch_size = 20

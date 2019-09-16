@@ -90,7 +90,7 @@ class Operator:
                     loss = loss_c + loss_r
                 else:
                     loss = loss_c
-                    
+
                 loss.backward()
                 self.optimizer.step()
 
@@ -356,5 +356,5 @@ class Vector_Regression_Loss(nn.Module):
         else:
             loss = torch.sum(loss_masked_map)/torch.nonzero(regression_loss_mask).size(0)
         
-        return (loss*1./100).float()
+        return (loss*1./10).float()
 

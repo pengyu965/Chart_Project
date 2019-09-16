@@ -70,8 +70,8 @@ class Operator:
                 self.lr = self.lr/10
                 self.optimizer = optim.Adam(self.netG.parameters(), lr = self.lr)
 
-            # if ep == int(self.epoch*1//4):
-            #     train_regression = True
+            if ep == int(self.epoch*1//3):
+                train_regression = True
 
             for idi, train_batch in enumerate(self.dataloader):
                 train_images = train_batch[0].to(self.device)
@@ -356,5 +356,5 @@ class Vector_Regression_Loss(nn.Module):
         else:
             loss = torch.sum(loss_masked_map)/torch.nonzero(regression_loss_mask).size(0)
         
-        return (loss*1./10).float()
+        return (loss*1./100).float()
 

@@ -129,7 +129,7 @@ device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 model = UNet(3,3)
 print(model) 
 try:
-    model.load_state_dict(torch.load("./weight/model.pt"))
+    model.load_state_dict(torch.load("./weight/autoencoder_model.pt"))
     print("weight loaded succesfully")
 except:
     pass
@@ -202,7 +202,7 @@ for ep in range(epoch):
         global_step += 1
     
     if loss.item() < min_loss:
-        torch.save(model.module.state_dict(), "./weight/model.pt")
+        torch.save(model.module.state_dict(), "./weight/autoencoder_model.pt")
         min_loss = loss.item()
 
 

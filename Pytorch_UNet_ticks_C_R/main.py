@@ -59,14 +59,47 @@ if __name__ == "__main__":
         # netG = nn.DataParallel(netG).to(device)
         print(netG)
 
-        if os.path.exists("./weight/model.pt"):
+        pretrained_autoencoder = True 
+
+        if pretrained_autoencoder == True:
+            print("="*6, "\nTrain the network from loading pretrained model.","\n"+"="*6)
+            if os.path.exists("./weight/autoencoder_model.pt") == False:
+                print("An error happened, no model file founded here. Stopped!")
+                sys.exit()
+
             if torch.cuda.is_available():
-                netG.load_state_dict(torch.load("./weight/model.pt"), strict=True)
+                state_dict = torch.load("./weight/autoencoder_model.pt")
             else:
-                netG.load_state_dict(torch.load("./weight/model.pt", map_location='cpu'), strict=True)
-            print("="*6, "\nModel loaded, start retraining", "\n"+"="*6)
+                state_dict = torch.load("./weight/autoencoder_model.pt", map_location='cpu')
+
+            # netG.load_state_dict(state_dict, strict = False)
+            part_state_dict = {}
+            for name in state_dict:
+                if "inc" in name or "down" in name:
+                    part_state_dict[name] = state_dict[name]
+            
+            netG.load_state_dict(part_state_dict, strict = False)
+            for param in netG.inc.parameters():
+                param.requires_grad = False
+            for param in netG.down1.parameters():
+                param.requires_grad = False
+            for param in netG.down2.parameters():
+                param.requires_grad = False
+            for param in netG.down3.parameters():
+                param.requires_grad = False
+            for param in netG.down4.parameters():
+                param.requires_grad = False
+
         else:
-            print("="*6, "\nModel isn't found, train the network from begining.","\n"+"="*6)
+
+            if os.path.exists("./weight/model.pt"):
+                if torch.cuda.is_available():
+                    netG.load_state_dict(torch.load("./weight/model.pt"), strict=True)
+                else:
+                    netG.load_state_dict(torch.load("./weight/model.pt", map_location='cpu'), strict=True)
+                print("="*6, "\nModel loaded, start retraining", "\n"+"="*6)
+            else:
+                print("="*6, "\nModel isn't found, train the network from begining.","\n"+"="*6)
         
         writer = SummaryWriter("./logs/")            
 

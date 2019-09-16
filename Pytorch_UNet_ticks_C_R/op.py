@@ -90,11 +90,9 @@ class Operator:
                     loss = loss_c + loss_r
                 else:
                     loss = loss_c
-                print(self.netG.module.down1.mpconv[1].conv[0].weight.grad)
                 loss.backward()
-                print(self.netG.module.down1.mpconv[1].conv[0].weight.grad)
+                print(self.netG.module.up1.conv.conv[0].weight.grad)
                 self.optimizer.step()
-                print(self.netG.module.down1.mpconv[1].conv[0].weight.grad)
                 ## Tensorboard
                 if self.writer:
                     self.writer.add_scalars(

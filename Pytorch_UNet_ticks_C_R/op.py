@@ -160,7 +160,6 @@ class Operator:
         self.netG.eval()
         self.criterion = nn.CrossEntropyLoss()
         self.criterion_r = Vector_Regression_Loss()
-        self.loss_coefficent = 200.0
         val_bsize = 16
 
         val_data = Chartdata(img_path = val_img_path, gt_path = val_gt_path)

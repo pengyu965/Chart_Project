@@ -27,15 +27,15 @@ class Operator:
         self.device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
         self.netG = nn.DataParallel(netG).to(self.device)
         self.netD = netD
+        self.criterion = nn.CrossEntropyLoss()
+        self.criterion_r = Vector_Regression_Loss()
+        self.loss_coefficent = 200.0
 
     def trainer(self, img_path, gt_path, batch_size, lr, epoch, writer = False):
         self.batch_size = batch_size
         self.lr = lr 
         self.epoch = epoch 
         self.optimizer = optim.Adam(self.netG.parameters(), lr = self.lr)
-        self.criterion = nn.CrossEntropyLoss()
-        self.criterion_r = Vector_Regression_Loss()
-        self.loss_coefficent = 200.0
         self.writer = writer
 
         self.train_data = Chartdata(img_path = img_path+"/train/", gt_path = gt_path)
@@ -158,8 +158,6 @@ class Operator:
 
     def validator(self, val_img_path, val_gt_path, global_step, train_regression = False, writer = False):
         self.netG.eval()
-        self.criterion = nn.CrossEntropyLoss()
-        self.criterion_r = Vector_Regression_Loss()
         val_bsize = 16
 
         val_data = Chartdata(img_path = val_img_path, gt_path = val_gt_path)

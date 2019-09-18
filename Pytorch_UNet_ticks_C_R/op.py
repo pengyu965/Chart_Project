@@ -6,6 +6,7 @@ import torch.nn.parallel
 import torch.optim as optim
 import torchvision.utils as vutils
 from torch.utils.data import Dataset, DataLoader
+from torchvision import transforms
 import time
 import cv2
 from PIL import Image
@@ -263,6 +264,10 @@ class Chartdata(Dataset):
     def __init__(self, img_path, gt_path):
         self.img_path = img_path
         self.gt_path = gt_path
+        self.transformer = transforms.Compose([
+            transforms.ToTensor(),
+            transforms.Normalize(torch.tensor([0.9222, 0.9216, 0.9238]), torch.tensor([0.2174, 0.2112, 0.2152]))
+        ])
     def __len__(self):
         return len(os.listdir(self.img_path))
     
@@ -273,7 +278,7 @@ class Chartdata(Dataset):
         # line_map_path = os.path.join("../../data/SUMIT/rs_linemap_sampled/", img_name)
         ### 
         gt_npy_path = os.path.join(self.gt_path, img_name[:-3]+"npy")
-        input_images = torch.tensor(np.array(cv2.imread(input_images_path))).float().permute(2,0,1)
+        input_images = self.transformer(cv2.imread(input_images_path))
 
         # line_maps = torch.tensor(cv2.imread(line_map_path)[:,:,0]).float().unsqueeze(0)
         # input_images = torch.cat((input_images, line_maps), dim=0)

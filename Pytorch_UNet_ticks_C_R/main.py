@@ -59,7 +59,7 @@ if __name__ == "__main__":
         # netG = nn.DataParallel(netG).to(device)
         print(netG)
 
-        pretrained_autoencoder = True 
+        pretrained_autoencoder = False 
 
         if pretrained_autoencoder == True:
             print("="*6, "\nTrain the network from loading pretrained model.","\n"+"="*6)

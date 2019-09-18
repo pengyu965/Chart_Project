@@ -128,9 +128,10 @@ class Chartdata(Dataset):
         input_image_path = os.path.join(self.img_path, img_name)
         img = cv2.imread(input_image_path)
         input_image = self.transformer(img)
+        gt = transforms.ToTensor()(img)
 
-        return (input_image, img)
-        
+        return (input_image, gt)
+
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
 model = UNet(3,3)
@@ -181,7 +182,7 @@ for ep in range(epoch):
 
         # print(output_images)
 
-        loss = criterion(output_images, train_gts*1./255)
+        loss = criterion(output_images, train_gts)
 
         loss.backward()
         optimizer.step()

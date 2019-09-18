@@ -279,7 +279,6 @@ class Chartdata(Dataset):
         ### 
         gt_npy_path = os.path.join(self.gt_path, img_name[:-3]+"npy")
         input_images = self.transformer(cv2.imread(input_images_path))
-
         # line_maps = torch.tensor(cv2.imread(line_map_path)[:,:,0]).float().unsqueeze(0)
         # input_images = torch.cat((input_images, line_maps), dim=0)
 
@@ -362,5 +361,5 @@ class Vector_Regression_Loss(nn.Module):
         else:
             loss = torch.sum(loss_masked_map)/torch.nonzero(regression_loss_mask).size(0)
         
-        return (loss*1./100).float()
+        return (loss*1./150).float()
 

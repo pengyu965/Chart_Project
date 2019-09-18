@@ -112,7 +112,7 @@ class Operator:
                 print("Epoch:[{}]===Step:[{}/{}]===Time:[{:.2f}]===Learning Rate:{}\nTrain_Regression:[{}]===Classification_Loss:[{:.4f}]===Regression_Loss:[{:.4f}]===Total_Loss:[{:.4f}]".format(ep, idi, idx, time.time()-start_time, self.lr, train_regression, loss_c.item(), loss_r.item(), loss.item()))
                 
                 ## Visualization
-                if (global_step%print_idx) == 0:
+                if (global_step%print_idx) == 0 and global_step !=0:
                     index = 0
                     nroll = int(self.batch_size**0.5)
                     new_im = Image.new('RGB', (5120,5120))

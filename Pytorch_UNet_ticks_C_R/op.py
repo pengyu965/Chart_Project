@@ -108,7 +108,7 @@ class Operator:
                         },
                         global_step
                     )
-
+                self.validator(img_path+"/val/", gt_path, global_step, train_regression, writer = self.writer)
                 print("Epoch:[{}]===Step:[{}/{}]===Time:[{:.2f}]===Learning Rate:{}\nTrain_Regression:[{}]===Classification_Loss:[{:.4f}]===Regression_Loss:[{:.4f}]===Total_Loss:[{:.4f}]".format(ep, idi, idx, time.time()-start_time, self.lr, train_regression, loss_c.item(), loss_r.item(), loss.item()))
                 
                 ## Visualization
@@ -175,7 +175,7 @@ class Operator:
             valloss_c = self.criterion(fake_val_images[:,:6,:,:], val_gt[:,:,:,0].long())
             if train_regression == True:
                 valloss_r = self.criterion_r(fake_val_images, val_gt.float())
-                valloss = valloss_c.item() + valloss_r.item()
+                valloss = (self.loss_coefficent* valloss_c.item() + valloss_r.item())/self.loss_coefficent
             else:
                 valloss = valloss_c.item()
             val_total_loss += valloss

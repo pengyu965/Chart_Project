@@ -35,6 +35,7 @@ class Operator:
         self.optimizer = optim.Adam(self.netG.parameters(), lr = self.lr)
         self.criterion = nn.CrossEntropyLoss()
         self.criterion_r = Vector_Regression_Loss()
+        self.loss_coefficent = 200.0
         self.writer = writer
 
         self.train_data = Chartdata(img_path = img_path+"/train/", gt_path = gt_path)
@@ -89,7 +90,7 @@ class Operator:
                 loss_c = self.criterion(fake_images[:,:6,:,:], train_gt[:,:,:,0].long())
                 if train_regression == True:
                     loss_r = self.criterion_r(fake_images, train_gt.float())
-                    loss = loss_c + loss_r
+                    loss = (self.loss_coefficent*loss_c + loss_r)/self.loss_coefficent
                 else:
                     loss = loss_c
 
@@ -108,7 +109,7 @@ class Operator:
                         global_step
                     )
 
-                print("Epoch:[{}]===Step:[{}/{}]===Time:[{:.2f}]===Learning Rate:{}\nTrain_Regression:[{}]===Classification_Loss:[{:.4f}]===Regression_Loss:[{:.4f}]===Total_Loss:[{:.4f}]".format(ep, idi, idx, time.time()-start_time, self.lr, train_regression, loss_c.item(), loss.item()-loss_c.item(), loss.item()))
+                print("Epoch:[{}]===Step:[{}/{}]===Time:[{:.2f}]===Learning Rate:{}\nTrain_Regression:[{}]===Classification_Loss:[{:.4f}]===Regression_Loss:[{:.4f}]===Total_Loss:[{:.4f}]".format(ep, idi, idx, time.time()-start_time, self.lr, train_regression, loss_c.item(), loss_r.item(), loss.item()))
                 
                 ## Visualization
                 if (global_step%print_idx) == 0:
@@ -159,6 +160,7 @@ class Operator:
         self.netG.eval()
         self.criterion = nn.CrossEntropyLoss()
         self.criterion_r = Vector_Regression_Loss()
+        self.loss_coefficent = 200.0
         val_bsize = 16
 
         val_data = Chartdata(img_path = val_img_path, gt_path = val_gt_path)
@@ -176,7 +178,7 @@ class Operator:
             valloss_c = self.criterion(fake_val_images[:,:6,:,:], val_gt[:,:,:,0].long())
             if train_regression == True:
                 valloss_r = self.criterion_r(fake_val_images, val_gt.float())
-                valloss = valloss_c.item() + valloss_r.item()
+                valloss = self.loss_coefficent(valloss_c.item() + valloss_r.item())/self.loss_coefficent
             else:
                 valloss = valloss_c.item()
             val_total_loss += valloss
@@ -361,5 +363,5 @@ class Vector_Regression_Loss(nn.Module):
         else:
             loss = torch.sum(loss_masked_map)/torch.nonzero(regression_loss_mask).size(0)
         
-        return (loss*1./150).float()
+        return (loss).float()
 

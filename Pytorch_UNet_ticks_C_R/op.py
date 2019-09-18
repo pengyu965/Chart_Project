@@ -175,7 +175,7 @@ class Operator:
             valloss_c = self.criterion(fake_val_images[:,:6,:,:], val_gt[:,:,:,0].long())
             if train_regression == True:
                 valloss_r = self.criterion_r(fake_val_images, val_gt.float())
-                valloss = self.loss_coefficent(valloss_c.item() + valloss_r.item())/self.loss_coefficent
+                valloss = valloss_c.item() + valloss_r.item()
             else:
                 valloss = valloss_c.item()
             val_total_loss += valloss

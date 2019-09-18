@@ -10,6 +10,7 @@ import time
 import cv2
 from PIL import Image
 import numpy as np
+import torchvision.transforms as T
 from util import *
 
 def weights_init(m):
@@ -19,7 +20,7 @@ def weights_init(m):
     elif classname.find('BatchNorm') != -1:
         m.weight.data.normal_(1.0, 0.02)
         m.bias.data.fill_(0)
-    
+
 class Operator:
     def __init__(self, netG, netD = None):
         self.device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
@@ -54,7 +55,7 @@ class Operator:
 
         val_min_loss = 10
 
-        train_regression = False 
+        train_regression = True 
 
 
         for ep in range(self.epoch):

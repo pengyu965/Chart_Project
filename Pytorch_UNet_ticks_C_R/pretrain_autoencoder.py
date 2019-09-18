@@ -6,6 +6,7 @@ import torch.nn.parallel
 import torch.optim as optim
 import torchvision.utils as vutils
 from torch.utils.data import Dataset, DataLoader
+from torchvision import transforms
 import time
 import cv2
 from PIL import Image
@@ -114,6 +115,10 @@ class UNet(nn.Module):
 class Chartdata(Dataset):
     def __init__(self, img_path):
         self.img_path = img_path
+        self.transformer = transforms.Compose([
+            transforms.ToTensor(),
+            transforms.Normalize(torch.tensor([0.9222, 0.9216, 0.9238]), torch.tensor([0.2174, 0.2112, 0.2152]))
+        ])
 
     def __len__(self):
         return len(os.listdir(self.img_path))
@@ -121,9 +126,11 @@ class Chartdata(Dataset):
     def __getitem__(self, idx):
         img_name = os.listdir(self.img_path)[idx]
         input_image_path = os.path.join(self.img_path, img_name)
-        input_image = torch.tensor(np.array(cv2.imread(input_image_path))).float().permute(2,0,1)
+        img = cv2.imread(input_image_path)
+        input_image = self.transformer(img)
 
-        return input_image
+        return (input_image, img)
+        
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
 model = UNet(3,3)
@@ -165,7 +172,8 @@ for ep in range(epoch):
         optimizer = optim.Adam(model.parameters(), lr = lr)
 
     for idi, train_batch in enumerate(dataloader):
-        train_images = train_batch.to(device)
+        train_images = train_batch[0].to(device)
+        train_gts = train_batch[1].to(device)
 
         optimizer.zero_grad()
 
@@ -173,7 +181,7 @@ for ep in range(epoch):
 
         # print(output_images)
 
-        loss = criterion(output_images, train_images*1./255)
+        loss = criterion(output_images, train_gts*1./255)
 
         loss.backward()
         optimizer.step()

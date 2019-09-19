@@ -203,13 +203,17 @@ class Operator:
 
     def predictor(self, image_path, visualize=True):
         self.netG.eval()
+        transformer = transforms.Compose([
+            transforms.ToTensor(),
+            transforms.Normalize(torch.tensor([0.9222, 0.9216, 0.9238]), torch.tensor([0.2174, 0.2112, 0.2152]))
+        ])
 
         if os.path.isdir(image_path):
             print("image_path is a directory")
             idi = 1
             idx = len(os.listdir(image_path))
             for image in os.listdir(image_path):
-                img_tensor = transforms.ToTensor()(
+                img_tensor = transformer(
                     cv2.imread(os.path.join(image_path, image))
                     ).unsqueeze(0).to(self.device)
                 generated_img_tensor = self.netG(img_tensor)
@@ -235,7 +239,7 @@ class Operator:
         elif os.path.isfile(image_path):
             image_name,_ = os.path.splitext(os.path.split(image_path)[1])
             print("image_path is a image file")
-            img_tensor = transforms.ToTensor()(
+            img_tensor = transformer(
                 # cv2.imread(image_path)
                 cv2.imread(image_path),
                 ).unsqueeze(0).to(self.device)

@@ -134,9 +134,9 @@ if __name__ == "__main__":
 
         if os.path.exists("./weight/model.pt"):
             if torch.cuda.is_available():
-                netG.load_state_dict(torch.load("./weight/model.pt"), strict=True)
+                netG.load_state_dict(torch.load("./weight/final.pt"), strict=True)
             else:
-                netG.load_state_dict(torch.load("./weight/model.pt", map_location='cpu'), strict=True)
+                netG.load_state_dict(torch.load("./weight/final.pt", map_location='cpu'), strict=True)
             print("="*6, "\nModel loaded, start prediction", "\n"+"="*6)
         else:
             print("="*6, "\nModel isn't found, train the network first.","\n"+"="*6)
@@ -146,4 +146,4 @@ if __name__ == "__main__":
             os.mkdir("./predict_result/")
 
         operator = op.Operator(netG)
-        operator.predictor(FLAGS.img_path, visualize = False)
+        operator.predictor(FLAGS.img_path, visualize = True)

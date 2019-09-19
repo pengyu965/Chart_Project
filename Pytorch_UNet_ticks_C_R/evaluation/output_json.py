@@ -201,8 +201,8 @@ def output_json(input_npy):
 
         external_voted_tick_points = []
         if item["role"] == "tick_label":
-            for i in range(label_x0, label_x1+1):
-                for j in range(label_y0, label_y1+1):
+            for i in range(label_x0, label_x1):
+                for j in range(label_y0, label_y1):
                     vector_x = arr[j,i,6]
                     vector_y = arr[j,i,7]
                     tick_point = [int(i+vector_x),int(j+vector_y)]

@@ -41,8 +41,8 @@ def get_args():
                         help='Keep probability for dropout')
     parser.add_argument('--class_num', type=int, default = 10, 
                         help='class number')
-    parser.add_argument("--ngpu", type=int, default = 1,
-                        help="The number of avaliable GPU")
+    parser.add_argument("--vis", action = 'store_true',
+                        help = "Visualizing the Prediction output, only use when predict")
     # parser.add_argument('--maxepoch', type=int, default=100,
     #                     help='Max number of epochs for training')
 

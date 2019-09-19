@@ -176,8 +176,8 @@ def output_json(input_npy):
         tick_y1 = tick_y0 +tick_bb[3]
 
         internal_voted_tick_points = []
-        for i in range(tick_x0, tick_x1+1):
-            for j in range(tick_y0, tick_y1+1):
+        for i in range(tick_x0, tick_x1):
+            for j in range(tick_y0, tick_y1):
                 if arr[j,i,4] != 0:
                     vector_x = arr[j,i,6]
                     vector_y = arr[j,i,7]

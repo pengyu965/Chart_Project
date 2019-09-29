@@ -74,9 +74,9 @@ class up(nn.Module):
             in_ch = in_ch/2
             if additive == True:
                 if add_ch%self.additive_dim == 0:
-                    in_ch = in_ch/self.additive_dim
+                    in_ch = in_ch//self.additive_dim
                 else:
-                    in_ch = in_ch/self.additive_dim + in_ch%self.additive_dim
+                    in_ch = in_ch//self.additive_dim + in_ch%self.additive_dim
 
         self.conv = double_conv(in_ch, out_ch)
 
@@ -105,7 +105,7 @@ class up(nn.Module):
             x = torch.cat([x2, x1], dim=1)
         else:
             x = x1 
-            
+
         x = self.conv(x)
         return x
 

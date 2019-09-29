@@ -88,7 +88,7 @@ class up(nn.Module):
             print(x1[:,:(c-c%self.additive_dim),:,:].shape)
             x1 = torch.cat([
                 x1[:,:(c-c%self.additive_dim),:,:].reshape(b,c//self.additive_dim,self.additive_dim,h,w).sum(2), 
-                x1[:,-(c%self.additive_dim):,:,:]
+                x1[:,(c-c%self.additive_dim):,:,:]
             ], dim = 1)
         
         if self.skip_connection == True:

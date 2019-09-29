@@ -25,7 +25,7 @@ def weights_init(m):
 class Operator:
     def __init__(self, netG, netD = None):
         self.device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-        self.netG = nn.DataParallel(netG).to(self.device)
+        self.netG = nn.DataParallel(netG, [1,2,3]).to(self.device)
         self.netD = netD
         self.criterion = nn.CrossEntropyLoss()
         self.criterion_r = Vector_Regression_Loss()

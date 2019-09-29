@@ -85,7 +85,6 @@ class up(nn.Module):
         b,c,h,w = x1.shape
 
         if self.additive == True:
-            print(x1[:,:(c-c%self.additive_dim),:,:].shape)
             x1 = torch.cat([
                 x1[:,:(c-c%self.additive_dim),:,:].reshape(b,c//self.additive_dim,self.additive_dim,h,w).sum(2), 
                 x1[:,(c-c%self.additive_dim):,:,:]

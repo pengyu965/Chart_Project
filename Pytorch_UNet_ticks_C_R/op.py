@@ -29,7 +29,7 @@ class Operator:
         self.netD = netD
         self.criterion = nn.CrossEntropyLoss()
         self.criterion_r = Vector_Regression_Loss()
-        self.loss_coefficent = 200.0
+        self.loss_coefficent = 100.0
 
     def trainer(self, img_path, gt_path, batch_size, lr, epoch, writer = False):
         self.batch_size = batch_size

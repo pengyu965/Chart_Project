@@ -64,14 +64,14 @@ class up(nn.Module):
         if skip_connection == True:
             in_ch = in_ch
             if additive == True:
-                add_ch = in_ch/2
+                add_ch = in_ch//2
                 if add_ch%self.additive_dim == 0:
-                    in_ch = in_ch/2 + add_ch/self.additive_dim
+                    in_ch = in_ch//2 + add_ch//self.additive_dim
                 else:
-                    in_ch = in_ch/2 + add_ch/self.additive_dim + add_ch%self.additive_dim
+                    in_ch = in_ch//2 + add_ch//self.additive_dim + add_ch%self.additive_dim
         
         else:
-            in_ch = in_ch/2
+            in_ch = in_ch//2
             if additive == True:
                 if add_ch%self.additive_dim == 0:
                     in_ch = in_ch//self.additive_dim

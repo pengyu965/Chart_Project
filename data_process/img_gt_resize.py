@@ -12,6 +12,12 @@ gt_path = "../data/SUMIT/padded_json_gt_sampled/"
 rs_img_path = "../data/SUMIT/rs_padded_images_sampled/"
 rs_gt_path = "../data/SUMIT/rs_padded_json_gt_sampled/"
 
+# img_path = "../data/SUMIT/images_sampled/"
+# gt_path = "../data/SUMIT/json_gt_sampled/"
+
+# rs_img_path = "../data/SUMIT/rs_images_sampled/"
+# rs_gt_path = "../data/SUMIT/rs_json_gt_sampled/"
+
 if os.path.exists(rs_img_path) == False:
     os.mkdir(rs_img_path)
 if os.path.exists(rs_gt_path) == False:

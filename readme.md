@@ -57,3 +57,7 @@ Then Datasets are ready for the model usage
 If no padding during processing, just ignore the python3 data_process/padding.py step above and rip off "padded_" in name of each directory.
 
 Change the path name by the same rule indicated above within each python3 code at the begining where define the path.
+
+## Model
+
+Refer to the readme.md in Pytorch_UNet_ticks_C_R dir

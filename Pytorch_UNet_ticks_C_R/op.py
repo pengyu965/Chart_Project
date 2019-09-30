@@ -29,7 +29,7 @@ class Operator:
         self.netD = netD
         self.criterion = nn.CrossEntropyLoss(weight=torch.tensor([0.15,0.25,0.15,0.25,0.15,0.05]).to(self.device))
         self.criterion_r = Vector_Regression_Loss()
-        self.loss_coefficent = 100.0
+        self.loss_coefficent = 50.0
 
     def trainer(self, img_path, gt_path, batch_size, lr, epoch, writer = False):
         self.batch_size = batch_size

@@ -78,14 +78,14 @@ def out_vis(arr, regression_vis = False):
         association_points = []
         for i in range(x):
             for j in range(y):
-                _class = np.argmax(arr[j,i,:6])
+                _class = np.argmax(arr[i,j,:6])
                 if _class == 2 and np.random.rand()>0.8:
                     # cv2.circle(new_arr, (int(i+arr[j,i,6]*100), int(j+arr[j,i,7]*100)), 0, (0,0,255), -1)
-                    association_points.append([int(i+arr[i,j,6]), int(i+arr[i,j,7])]) # (Y,X)
+                    association_points.append([int(i+arr[i,j,6]), int(j+arr[i,j,7])]) # (Y,X)
                     # print(arr[j,i,6],arr[j,i,7])
                 if _class == 4 and np.random.rand()>0.8:
                     # cv2.circle(new_arr, (int(i+arr[j,i,6]*100), int(j+arr[j,i,7]*100)), 0, (0,255,0), -1)
-                    internal_points.append([int(i+arr[i,j,6]), int(i+arr[i,j,7])]) # (Y,X)
+                    internal_points.append([int(i+arr[i,j,6]), int(j+arr[i,j,7])]) # (Y,X)
 
         total_points = association_points + internal_points
         no_duplicate_list = remove_duplicates(total_points)

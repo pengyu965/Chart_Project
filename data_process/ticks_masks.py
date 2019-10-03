@@ -165,10 +165,10 @@ def masks_gen(gt_json):
                 # else:
                 #     vector_masks[j,i,:] = vector/((vector[0]**2+vector[1]**2)**0.5)
 
-                cv2.circle(a, (int(j+vector[1]),int(i+vector[0])), 0, (255,255,255), -1)
+    #             cv2.circle(a, (int(j+vector[1]),int(i+vector[0])), 0, (255,255,255), -1)
     
-    cv2.imshow("example", a)
-    cv2.waitKey(0)
+    # cv2.imshow("example", a)
+    # cv2.waitKey(0)
 
     class_arr = np.expand_dims(class_arr, axis = 2)
     # ticks_labels_ID_mask = np.expand_dims(ticks_labels_ID_mask, axis = 2)

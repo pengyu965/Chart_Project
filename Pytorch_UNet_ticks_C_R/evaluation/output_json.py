@@ -178,11 +178,11 @@ def output_json(input_npy):
         tick_y1 = tick_y0 +tick_bb[3]
 
         internal_voted_tick_points = []
-        for i in range(tick_x0, tick_x1):
-            for j in range(tick_y0, tick_y1):
-                if arr[j,i,4] != 0:
-                    vector_x = arr[j,i,6]
-                    vector_y = arr[j,i,7]
+        for i in range(tick_y0, tick_y1):
+            for j in range(tick_x0, tick_x1):
+                if arr[i,j,4] != 0:
+                    vector_x = arr[i,j,6]
+                    vector_y = arr[i,j,7]
                     tick_point = [int(i+vector_x),int(j+vector_y)]
                     internal_voted_tick_points.append(tick_point)
         
@@ -203,10 +203,10 @@ def output_json(input_npy):
 
         external_voted_tick_points = []
         if item["role"] == "tick_label":
-            for i in range(label_x0, label_x1):
-                for j in range(label_y0, label_y1):
-                    vector_x = arr[j,i,6]
-                    vector_y = arr[j,i,7]
+            for i in range(label_y0, label_y1):
+                for j in range(label_x0, label_x1):
+                    vector_x = arr[i,j,6]
+                    vector_y = arr[i,j,7]
                     tick_point = [int(i+vector_x),int(j+vector_y)]
                     external_voted_tick_points.append(tick_point)
 
@@ -219,14 +219,14 @@ def output_json(input_npy):
                     # final_coord = final_coord.astype(np.int)
                     tick_dic["id"] = item["id"]
                     tick_dic["tick_pt"] = {}
-                    tick_dic["tick_pt"]["x"] = int(final_coord[0])
-                    tick_dic["tick_pt"]["y"] = int(final_coord[1])
+                    tick_dic["tick_pt"]["x"] = int(final_coord[1])
+                    tick_dic["tick_pt"]["y"] = int(final_coord[0])
 
                     # if item["id"] == 10:
                     #     print(point[0]-label_center_x, point[1]-label_center_y)
 
                     # Process X, Y
-                    if abs(point[0]-label_center_x) <= abs(point[1]-label_center_y):
+                    if abs(point[1]-label_center_x) <= abs(point[0]-label_center_y): # Arr coordinate base: Y<=X
                         o_json["input"]["task4_output"]["axes"]["x-axis"].append(tick_dic)
                     else:
                         o_json["input"]["task4_output"]["axes"]["y-axis"].append(tick_dic)

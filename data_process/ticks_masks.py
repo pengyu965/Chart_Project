@@ -75,7 +75,7 @@ def masks_gen(gt_json):
             # Ticks ID Layer
             # cv2.circle(ticks_ID_mask, (x,y), 5, (t_id), -1)
             # Ticks area center point
-            cv2.circle(vector_center_masks, (x,y), 5, (x,y), -1)
+            cv2.circle(vector_center_masks, (x,y), 5, (y,x), -1)
             tick_id_center[str(t_id)] = (x,y)
 
     
@@ -148,8 +148,8 @@ def masks_gen(gt_json):
     for i in range(x):
         for j in range(y):
             # The array and image axis are fliped, (x,y) ---> (y,x)
-            if vector_center_masks[j,i,0] != 0 or vector_center_masks[j,i,1] != 0:
-                vector = vector_center_masks[j,i,:] - np.array([i,j])
+            if vector_center_masks[i,j,0] != 0 or vector_center_masks[i,j,1] != 0:
+                vector = vector_center_masks[i,j,:] - np.array([i,j])
                 vector_masks[i,j,:] = vector
 
                 # ## Normalization

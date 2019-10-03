@@ -24,8 +24,8 @@ import sys
 input_npy_path = "./predict_result/"
 output_json_path = "./output_json/"
 
-# json_gt_path = "../../data/SUMIT/rs_padded_json_gt_sampled/"
-json_gt_path = "../../data/SUMIT/rs_json_gt_sampled/"
+json_gt_path = "../../data/SUMIT/rs_padded_json_gt_sampled/"
+# json_gt_path = "../../data/SUMIT/rs_json_gt_sampled/"
 if os.path.exists(output_json_path) == False:
     os.mkdir(output_json_path)
 
@@ -252,7 +252,7 @@ def output_json(input_npy):
         # print(bbs)
 
 
-# output_json("190701.npy")
+# output_json("199656.npy")
 
 pool = multiprocessing.Pool()
 for i in tqdm(pool.imap(output_json, os.listdir(input_npy_path)), total = len(os.listdir(input_npy_path))):

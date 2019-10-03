@@ -105,7 +105,7 @@ def out_vis(arr, regression_vis = False):
             if (point not in association_points) and (point in internal_points):
                 num = total_points.count(point)
                 color = np.array([0,255,0])*1.*num/max_num
-                cv2.circle(new_arr, (point[0], point[1]),0, (int(color[0]), int(color[1]), int(color[2])), -1)
+                cv2.circle(new_arr, (point[1], point[0]),0, (int(color[0]), int(color[1]), int(color[2])), -1)
 
     return new_arr
 

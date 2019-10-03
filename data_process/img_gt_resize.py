@@ -29,8 +29,8 @@ def ticks_gt_gen(file_name):
     rs_w, rs_h = 512,512
     rs_img = cv2.resize(img, (rs_w, rs_h), interpolation=cv2.INTER_AREA)
     gt_dic = json.load(open(gt_path + file_name+".json",'r'))
-    # needed_dic = gt_dic["task6"]
-    needed_dic = gt_dic
+    needed_dic = gt_dic["task6"]
+    # needed_dic = gt_dic
     for text_bb in needed_dic["input"]["task2_output"]["text_blocks"]:
         for item in text_bb["bb"]:
             if item == "height" or item =="y0":
@@ -47,6 +47,17 @@ def ticks_gt_gen(file_name):
     needed_dic["input"]["task4_output"]["_plot_bb"]["y0"] = round(needed_dic["input"]["task4_output"]["_plot_bb"]["y0"]*rs_h/h)
     needed_dic["input"]["task4_output"]["_plot_bb"]["x0"] = round(needed_dic["input"]["task4_output"]["_plot_bb"]["x0"]*rs_w/w)
     needed_dic["input"]["task4_output"]["_plot_bb"]["width"] = round(needed_dic["input"]["task4_output"]["_plot_bb"]["width"]*rs_w/w)
+    
+    # Revert the reverted x and y axis in horizontal bar & box plot
+    chart_type = needed_dic["input"]["task1_output"]["chart_type"]
+
+    if chart_type == "Horizontal box" or chart_type == "Grouped horizontal bar" or chart_type == "Stacked horizontal bar":
+        needed_dic["input"]["task4_output"]["axes"]["x1-axis"] = needed_dic["input"]["task4_output"]["axes"].pop("y-axis")
+        needed_dic["input"]["task4_output"]["axes"]["y1-axis"] = needed_dic["input"]["task4_output"]["axes"].pop("x-axis")
+
+        needed_dic["input"]["task4_output"]["axes"]["x-axis"] = needed_dic["input"]["task4_output"]["axes"].pop("x1-axis")
+        needed_dic["input"]["task4_output"]["axes"]["y-axis"] = needed_dic["input"]["task4_output"]["axes"].pop("y1-axis")
+
     for axis in needed_dic["input"]["task4_output"]["axes"]:
         for sub_dic in needed_dic["input"]["task4_output"]["axes"][axis]:
             sub_dic["tick_pt"]["x"] = round(sub_dic["tick_pt"]["x"]*rs_w/w)

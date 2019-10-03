@@ -24,11 +24,12 @@ import sys
 input_npy_path = "./predict_result/"
 output_json_path = "./output_json/"
 
-json_gt_path = "../../data/SUMIT/rs_padded_json_gt_sampled/"
+# json_gt_path = "../../data/SUMIT/rs_padded_json_gt_sampled/"
+json_gt_path = "../../data/SUMIT/rs_json_gt_sampled/"
 if os.path.exists(output_json_path) == False:
     os.mkdir(output_json_path)
 
-IOU_THRESHOLD = 0.5
+IOU_THRESHOLD = 0.3
 
 role_class_dic ={
     0:"chart_title",
@@ -55,7 +56,6 @@ def IoU_Score(boxA, boxB):
     # compute the intersection over union by taking the intersection
     # area and dividing it by the sum of prediction + ground-truth
     # areas - the interesection area
-
     iou = interArea / float(boxAArea + boxBArea - interArea)
     
     # return the intersection over union value
@@ -139,6 +139,8 @@ def output_json(input_npy):
                     gt_text = item["text"]
                     gt_bb = [gt_x0,gt_y0,gt_x1,gt_y1]
                     iou_score = IoU_Score(res_bb, gt_bb)
+
+                    # print(item, res_bb, gt_bb, iou_score)
                     
                     if iou_score > IOU_THRESHOLD:
                         text_bb["id"] = gt_id
@@ -250,7 +252,7 @@ def output_json(input_npy):
         # print(bbs)
 
 
-# output_json("2137.npy")
+# output_json("190701.npy")
 
 pool = multiprocessing.Pool()
 for i in tqdm(pool.imap(output_json, os.listdir(input_npy_path)), total = len(os.listdir(input_npy_path))):

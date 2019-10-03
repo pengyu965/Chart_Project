@@ -150,7 +150,7 @@ def masks_gen(gt_json):
             # The array and image axis are fliped, (x,y) ---> (y,x)
             if vector_center_masks[j,i,0] != 0 or vector_center_masks[j,i,1] != 0:
                 vector = vector_center_masks[j,i,:] - np.array([i,j])
-                vector_masks[j,i,:] = vector
+                vector_masks[i,j,:] = vector
 
                 # ## Normalization
                 # ## Need to process the center, where vector = 0,0
@@ -176,7 +176,9 @@ def masks_gen(gt_json):
 # for file in os.listdir(gt_path):
 #     masks_gen(file)
 
-pool = multiprocessing.Pool()
-for i in tqdm(pool.imap(masks_gen, os.listdir(gt_path)), total = len(os.listdir(gt_path))):
-    pass
+masks_gen("162996.json")
+
+# pool = multiprocessing.Pool()
+# for i in tqdm(pool.imap(masks_gen, os.listdir(gt_path)), total = len(os.listdir(gt_path))):
+#     pass
     

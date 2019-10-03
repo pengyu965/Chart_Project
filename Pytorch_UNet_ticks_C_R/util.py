@@ -76,16 +76,16 @@ def out_vis(arr, regression_vis = False):
     if regression_vis == True:
         internal_points = []
         association_points = []
-        for i in range(y):
-            for j in range(x):
+        for i in range(x):
+            for j in range(y):
                 _class = np.argmax(arr[j,i,:6])
                 if _class == 2 and np.random.rand()>0.8:
                     # cv2.circle(new_arr, (int(i+arr[j,i,6]*100), int(j+arr[j,i,7]*100)), 0, (0,0,255), -1)
-                    association_points.append([int(i+arr[j,i,6]), int(j+arr[j,i,7])])
+                    association_points.append([int(i+arr[i,j,6]), int(i+arr[i,j,7])]) # (Y,X)
                     # print(arr[j,i,6],arr[j,i,7])
                 if _class == 4 and np.random.rand()>0.8:
                     # cv2.circle(new_arr, (int(i+arr[j,i,6]*100), int(j+arr[j,i,7]*100)), 0, (0,255,0), -1)
-                    internal_points.append([int(i+arr[j,i,6]), int(j+arr[j,i,7])])
+                    internal_points.append([int(i+arr[i,j,6]), int(i+arr[i,j,7])]) # (Y,X)
 
         total_points = association_points + internal_points
         no_duplicate_list = remove_duplicates(total_points)
@@ -95,12 +95,12 @@ def out_vis(arr, regression_vis = False):
             if (point in association_points) and (point in internal_points):
                 num = total_points.count(point)
                 color = np.array([255,255,255])*1.*num/max_num
-                cv2.circle(new_arr, (point[0], point[1]),0, (int(color[0]), int(color[1]), int(color[2])), -1)
+                cv2.circle(new_arr, (point[1], point[0]),0, (int(color[0]), int(color[1]), int(color[2])), -1)
             
             if (point in association_points) and (point not in internal_points):
                 num = total_points.count(point)
                 color = np.array([0,0,255])*1.*num/max_num
-                cv2.circle(new_arr, (point[0], point[1]),0, (int(color[0]), int(color[1]), int(color[2])), -1)
+                cv2.circle(new_arr, (point[1], point[0]),0, (int(color[0]), int(color[1]), int(color[2])), -1)
 
             if (point not in association_points) and (point in internal_points):
                 num = total_points.count(point)

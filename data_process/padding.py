@@ -59,15 +59,15 @@ def padding(img, gt_json, top=0, bottom=0, left=0, right=0):
     needed_dic["input"]["task4_output"]["_plot_bb"]["y0"] = round(needed_dic["input"]["task4_output"]["_plot_bb"]["y0"]+top)
     needed_dic["input"]["task4_output"]["_plot_bb"]["x0"] = round(needed_dic["input"]["task4_output"]["_plot_bb"]["x0"]+left)
 
-    chart_type = needed_dic["input"]["task1_output"]["chart_type"]
+    # chart_type = needed_dic["input"]["task1_output"]["chart_type"]
 
     # Revert the reverted x and y axis in horizontal bar & box plot
-    if chart_type == "Horizontal box" or chart_type == "Grouped horizontal bar" or chart_type == "Stacked horizontal bar":
-        needed_dic["input"]["task4_output"]["axes"]["x1-axis"] = needed_dic["input"]["task4_output"]["axes"].pop("y-axis")
-        needed_dic["input"]["task4_output"]["axes"]["y1-axis"] = needed_dic["input"]["task4_output"]["axes"].pop("x-axis")
+    # if chart_type == "Horizontal box" or chart_type == "Grouped horizontal bar" or chart_type == "Stacked horizontal bar":
+    #     needed_dic["input"]["task4_output"]["axes"]["x1-axis"] = needed_dic["input"]["task4_output"]["axes"].pop("y-axis")
+    #     needed_dic["input"]["task4_output"]["axes"]["y1-axis"] = needed_dic["input"]["task4_output"]["axes"].pop("x-axis")
 
-        needed_dic["input"]["task4_output"]["axes"]["x-axis"] = needed_dic["input"]["task4_output"]["axes"].pop("x1-axis")
-        needed_dic["input"]["task4_output"]["axes"]["y-axis"] = needed_dic["input"]["task4_output"]["axes"].pop("y1-axis")
+    #     needed_dic["input"]["task4_output"]["axes"]["x-axis"] = needed_dic["input"]["task4_output"]["axes"].pop("x1-axis")
+    #     needed_dic["input"]["task4_output"]["axes"]["y-axis"] = needed_dic["input"]["task4_output"]["axes"].pop("y1-axis")
 
 
     for axis in needed_dic["input"]["task4_output"]["axes"]:

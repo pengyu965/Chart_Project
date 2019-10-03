@@ -79,7 +79,7 @@ def masks_gen(gt_json):
             # cv2.circle(ticks_ID_mask, (x,y), 5, (t_id), -1)
             # Ticks area center point
             cv2.circle(vector_center_masks, (x,y), 5, (y,x), -1)
-            tick_id_center[str(t_id)] = (x,y)
+            tick_id_center[str(t_id)] = (y,x)
 
     
     # All kinds of labels' mask
@@ -153,7 +153,7 @@ def masks_gen(gt_json):
             # The array and image axis are fliped, (x,y) ---> (y,x)
             if vector_center_masks[i,j,0] != 0 or vector_center_masks[i,j,1] != 0:
 
-                cv2.circle(a, (j,i), 5,(255,255,255), -1)
+                # cv2.circle(a, (j,i), 5,(255,255,255), -1)
 
                 vector = vector_center_masks[i,j,:] - np.array([i,j])
                 vector_masks[i,j,:] = vector
@@ -165,7 +165,7 @@ def masks_gen(gt_json):
                 # else:
                 #     vector_masks[j,i,:] = vector/((vector[0]**2+vector[1]**2)**0.5)
 
-    #             cv2.circle(a, (int(i+vector[0]),int(j+vector[1])), 0, (255,255,255), -1)
+                cv2.circle(a, (int(j+vector[1]),int(i+vector[0])), 0, (255,255,255), -1)
     
     cv2.imshow("example", a)
     cv2.waitKey(0)
@@ -182,9 +182,9 @@ def masks_gen(gt_json):
 # for file in os.listdir(gt_path):
 #     masks_gen(file)
 
-masks_gen("162996.json")
+# masks_gen("162996.json")
 
-# pool = multiprocessing.Pool()
-# for i in tqdm(pool.imap(masks_gen, os.listdir(gt_path)), total = len(os.listdir(gt_path))):
-#     pass
+pool = multiprocessing.Pool()
+for i in tqdm(pool.imap(masks_gen, os.listdir(gt_path)), total = len(os.listdir(gt_path))):
+    pass
     

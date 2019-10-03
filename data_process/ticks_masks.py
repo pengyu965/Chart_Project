@@ -33,6 +33,9 @@ import sys
 gt_path = "../data/SUMIT/rs_padded_json_gt_sampled/"
 img_path = "../data/SUMIT/rs_padded_images_sampled/"
 
+# gt_path = "../data/SUMIT/rs_json_gt_sampled/"
+# img_path = "../data/SUMIT/rs_images_sampled/"
+
 ticks_mask_path = "../data/SUMIT/rs_padded_masks_sampled/"
 
 if os.path.exists(ticks_mask_path) == False:

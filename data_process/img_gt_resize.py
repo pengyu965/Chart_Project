@@ -6,17 +6,17 @@ import multiprocessing
 import json
 from verify_gt_bb import verify
 
-img_path = "../data/SUMIT/padded_images_sampled/"
-gt_path = "../data/SUMIT/padded_json_gt_sampled/"
+# img_path = "../data/SUMIT/padded_images_sampled/"
+# gt_path = "../data/SUMIT/padded_json_gt_sampled/"
 
-rs_img_path = "../data/SUMIT/rs_padded_images_sampled/"
-rs_gt_path = "../data/SUMIT/rs_padded_json_gt_sampled/"
+# rs_img_path = "../data/SUMIT/rs_padded_images_sampled/"
+# rs_gt_path = "../data/SUMIT/rs_padded_json_gt_sampled/"
 
-# img_path = "../data/SUMIT/images_sampled/"
-# gt_path = "../data/SUMIT/json_gt_sampled/"
+img_path = "../data/SUMIT/images_sampled/"
+gt_path = "../data/SUMIT/json_gt_sampled/"
 
-# rs_img_path = "../data/SUMIT/rs_images_sampled/"
-# rs_gt_path = "../data/SUMIT/rs_json_gt_sampled/"
+rs_img_path = "../data/SUMIT/rs_images_sampled/"
+rs_gt_path = "../data/SUMIT/rs_json_gt_sampled/"
 
 # img_path = "../data/SUMIT/task345_test/images/"
 # gt_path = "../data/SUMIT/task345_test/json_gt/"

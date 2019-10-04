@@ -27,7 +27,8 @@ class Operator:
         self.device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
         self.netG = nn.DataParallel(netG).to(self.device)
         self.netD = netD
-        self.criterion = nn.CrossEntropyLoss(weight=torch.tensor([0.15,0.25,0.15,0.25,0.15,0.05]).to(self.device))
+        # self.criterion = nn.CrossEntropyLoss(weight=torch.tensor([0.15,0.25,0.15,0.25,0.15,0.05]).to(self.device))
+        self.criterion = nn.CrossEntropyLoss(weight=torch.tensor([15,25,15,55,5,1]).to(self.device))
         self.criterion_r = Vector_Regression_Loss()
         self.loss_coefficent = 50.0
 

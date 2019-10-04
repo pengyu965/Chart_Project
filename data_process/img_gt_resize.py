@@ -6,17 +6,17 @@ import multiprocessing
 import json
 from verify_gt_bb import verify
 
-# img_path = "../data/SUMIT/padded_images_sampled/"
-# gt_path = "../data/SUMIT/padded_json_gt_sampled/"
+img_path = "../data/SUMIT/padded_images_sampled/"
+gt_path = "../data/SUMIT/padded_json_gt_sampled/"
 
-# rs_img_path = "../data/SUMIT/rs_padded_images_sampled/"
-# rs_gt_path = "../data/SUMIT/rs_padded_json_gt_sampled/"
+rs_img_path = "../data/SUMIT/rs_padded_images_sampled/"
+rs_gt_path = "../data/SUMIT/rs_padded_json_gt_sampled/"
 
-img_path = "../data/SUMIT/images_sampled/"
-gt_path = "../data/SUMIT/json_gt_sampled/"
+# img_path = "../data/SUMIT/images_sampled/"
+# gt_path = "../data/SUMIT/json_gt_sampled/"
 
-rs_img_path = "../data/SUMIT/rs_images_sampled/"
-rs_gt_path = "../data/SUMIT/rs_json_gt_sampled/"
+# rs_img_path = "../data/SUMIT/rs_images_sampled/"
+# rs_gt_path = "../data/SUMIT/rs_json_gt_sampled/"
 
 # img_path = "../data/SUMIT/task345_test/images/"
 # gt_path = "../data/SUMIT/task345_test/json_gt/"
@@ -35,8 +35,8 @@ def ticks_gt_gen(file_name):
     rs_w, rs_h = 512,512
     rs_img = cv2.resize(img, (rs_w, rs_h), interpolation=cv2.INTER_AREA)
     gt_dic = json.load(open(gt_path + file_name+".json",'r'))
-    needed_dic = gt_dic["task6"]
-    # needed_dic = gt_dic
+    # needed_dic = gt_dic["task6"]
+    needed_dic = gt_dic
     for text_bb in needed_dic["input"]["task2_output"]["text_blocks"]:
         for item in text_bb["bb"]:
             if item == "height" or item =="y0":

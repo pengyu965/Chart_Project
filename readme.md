@@ -37,6 +37,8 @@ Generate the resized and padded images an json_gt in:
 - rs_padded_images_sampled/
 - rs_padded_json_gt_sampled/
 
+**This img_gt_resize.py code would reverse the horizontal chart's x and y axis in json_gt files, while original horizontal chart's x is vertical axis and y axis is horizontal axis**
+
 According to images and json gt showed in the directory right above, generate the ground truth masks for the model, where masks contain ground truth of both classicification and regression.
 
 Run the following code to split the images into train, val and test:

@@ -35,8 +35,8 @@ def ticks_gt_gen(file_name):
     rs_w, rs_h = 512,512
     rs_img = cv2.resize(img, (rs_w, rs_h), interpolation=cv2.INTER_AREA)
     gt_dic = json.load(open(gt_path + file_name+".json",'r'))
-    # needed_dic = gt_dic["task6"]
-    needed_dic = gt_dic
+    needed_dic = gt_dic["task6"]
+    # needed_dic = gt_dic
     for text_bb in needed_dic["input"]["task2_output"]["text_blocks"]:
         for item in text_bb["bb"]:
             if item == "height" or item =="y0":

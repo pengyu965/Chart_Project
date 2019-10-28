@@ -1,3 +1,5 @@
+flipping --> padding --> resizing --> masks_generating
+
 ## Sequence
 
 1st: Masking the tick label (img + gt)

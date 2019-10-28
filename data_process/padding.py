@@ -8,8 +8,8 @@ from tqdm import tqdm
 from matplotlib import pyplot as plt 
 from verify_gt_bb import verify
 
-images_path = "../data/SUMIT/images_sampled/"
-gts_path = "../data/SUMIT/json_gt_sampled/"
+images_path = "../data/SUMIT/flipped_images_sampled/"
+gts_path = "../data/SUMIT/flipped_json_gt_sampled/"
 
 padded_images_path = "../data/SUMIT/padded_images_sampled/"
 padded_gts_path = "../data/SUMIT/padded_json_gt_sampled/"

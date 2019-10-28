@@ -14,9 +14,9 @@ gts_path = "../data/SUMIT/json_gt_sampled/"
 padded_images_path = "../data/SUMIT/padded_images_sampled/"
 padded_gts_path = "../data/SUMIT/padded_json_gt_sampled/"
 
-if os.path.exists(padded_images_path) == False:
+if not os.path.exists(padded_images_path):
     os.mkdir(padded_images_path)
-if os.path.exists(padded_gts_path) == False:
+if not os.path.exists(padded_gts_path):
     os.mkdir(padded_gts_path)
 
 #             Top 
@@ -50,7 +50,7 @@ height_padding_sizes = [120,240,480] # 1/8, 1/4, 1/2
 def padding(img, gt_json, top=0, bottom=0, left=0, right=0):
     padded_img = cv2.copyMakeBorder(img, top,bottom,left,right, cv2.BORDER_CONSTANT, value=(255,255,255))
 
-    needed_dic = gt_json["task6"]
+    needed_dic = gt_json
     for text_bb in needed_dic["input"]["task2_output"]["text_blocks"]:
         text_bb["bb"]["x0"] = text_bb["bb"]["x0"] + left 
         text_bb["bb"]["y0"] = text_bb["bb"]["y0"] + top 

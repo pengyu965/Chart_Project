@@ -17,7 +17,11 @@ if os.path.exists(gt_sampled_path) == False:
 
 def sample_mv(name):
     shutil.copy2(images_path+name+".png", images_sampled_path)
-    shutil.copy2(gt_path+name+".json", gt_sampled_path)
+    j_file = json.load(open(gt_path + name + ".json", 'r'))
+    needed_dic = j_file["task6"]
+    with open(gt_sampled_path + name + ".json", 'w') as f:
+        f.write(json.dumps(needed_dic, indent=4))
+    # shutil.copy2(gt_path+name+".json", gt_sampled_path)
 
 with open("../data/SUMIT/sample_list.json",'r') as f:
     sample_list = json.load(f)

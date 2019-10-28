@@ -1,5 +1,5 @@
 ### Train
-python3 main.py --train --img_path="/home/csgrad/pyan4/data/SUMIT/rs_images_sampled/" --gt_path="/home/csgrad/pyan4/data/SUMIT/rs_masks_sampled/" --lr=0.0001 --epoch=15 --bsize=16
+python3 main.py --train --img_path="/home/csgrad/pyan4/data/SUMIT/rs_images_sampled/" --gt_path="/home/csgrad/pyan4/data/SUMIT/masks_sampled/" --lr=0.0001 --epoch=24 --bsize=16
 
 python3 main.py --train --img_path="/home/csgrad/pyan4/data/SUMIT/rs_padded_images_sampled/" --gt_path="/home/csgrad/pyan4/data/SUMIT/rs_padded_masks_sampled/" --lr=0.0001 --epoch=24 --bsize=20
 

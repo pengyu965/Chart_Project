@@ -93,6 +93,7 @@ class Operator:
                     loss = (self.loss_coefficent*loss_c + loss_r)/self.loss_coefficent
                 else:
                     loss = loss_c
+                    loss_r = loss_c - loss
 
                 loss.backward()
                 self.optimizer.step()

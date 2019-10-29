@@ -213,6 +213,7 @@ class Operator:
             idi = 1
             idx = len(os.listdir(image_path))
             for image in os.listdir(image_path):
+                image_name, _ = os.path.splitext(image)
                 img_tensor = transformer(
                     cv2.resize(
                     cv2.imread(os.path.join(image_path, image)),
@@ -228,13 +229,13 @@ class Operator:
                         # ).astype("uint8")
                     )
                     # generated_img.thumbnail((512,512))
-                    generated_img.save("./predict_result/{}".format(image))
+                    generated_img.save("./predict_result/{}.png".format(image_name))
                 else:
                     generated_arr = channel_binarization(
                         generated_img_tensor[0].permute(1,2,0).detach().cpu().clone().numpy()
                     )
                     np.save(
-                        "./predict_result/{}".format(image[:-4]), 
+                        "./predict_result/{}".format(image_name), 
                         generated_arr
                         )
                 print("{}/{}".format(idi, idx))

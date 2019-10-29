@@ -45,7 +45,7 @@ def most_frequent_number(List):
             max_num = num 
     return max_num
 
-def out_vis(arr, regression_vis = False):
+def out_vis(arr, regression_vis = True):
     # Input is numpy array, [H,W,C]
     color_lib = [
         (255,255,0),

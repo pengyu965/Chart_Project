@@ -223,7 +223,7 @@ class Operator:
                 generated_img_tensor = self.netG(img_tensor)
                 if visualize == True:
                     generated_img = Image.fromarray(
-                        out_vis(generated_img_tensor[0].permute(1,2,0).detach().cpu().clone().numpy(), regression_vis = False).astype(np.uint8)
+                        out_vis(generated_img_tensor[0].permute(1,2,0).detach().cpu().clone().numpy(), regression_vis = True).astype(np.uint8)
                         # image_norm(
                         #     generated_img_tensor[0].permute(1,2,0).squeeze(2).detach().cpu().clone().numpy()
                         # ).astype("uint8")

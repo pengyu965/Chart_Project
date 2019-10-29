@@ -73,8 +73,8 @@ class Operator:
                 self.lr = self.lr/10
                 self.optimizer = optim.Adam(self.netG.parameters(), lr = self.lr)
 
-            if ep == int(self.epoch*1//3):
-                train_regression = False
+            # if ep == int(self.epoch*1//3):
+            #     train_regression = True
 
             for idi, train_batch in enumerate(self.dataloader):
                 train_images = train_batch[0].to(self.device)
@@ -208,6 +208,7 @@ class Operator:
             transforms.ToTensor(),
             transforms.Normalize(torch.tensor([0.9222, 0.9216, 0.9238]), torch.tensor([0.2174, 0.2112, 0.2152]))
         ])
+        regression_vis = False
 
         if os.path.isdir(image_path):
             print("image_path is a directory")
@@ -224,7 +225,7 @@ class Operator:
                 generated_img_tensor = self.netG(img_tensor)
                 if visualize == True:
                     generated_img = Image.fromarray(
-                        out_vis(generated_img_tensor[0].permute(1,2,0).detach().cpu().clone().numpy(), regression_vis = True).astype(np.uint8)
+                        out_vis(generated_img_tensor[0].permute(1,2,0).detach().cpu().clone().numpy(), regression_vis).astype(np.uint8)
                         # image_norm(
                         #     generated_img_tensor[0].permute(1,2,0).squeeze(2).detach().cpu().clone().numpy()
                         # ).astype("uint8")
@@ -255,7 +256,7 @@ class Operator:
             generated_img = Image.fromarray(
                 out_vis(
                     generated_img_tensor[0].permute(1,2,0).detach().cpu().clone().numpy(),
-                    regression_vis = True
+                    regression_vis
                 ).astype("uint8")
             )
             generated_img.save("./predict_result/{}.png".format(image_name))

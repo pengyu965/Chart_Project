@@ -27,7 +27,7 @@ class Operator:
         self.device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
         self.netG = nn.DataParallel(netG).to(self.device)
         self.netD = netD
-        self.criterion = nn.CrossEntropyLoss(weight=torch.tensor([0.15,0.25,0.35,0.25,0.35,0.05]).to(self.device))
+        self.criterion = nn.CrossEntropyLoss(weight=torch.tensor([0.15,0.25,0.20,0.35,0.25,0.05]).to(self.device))
         self.criterion_r = Vector_Regression_Loss()
         self.loss_coefficent = 100.0
 
@@ -57,7 +57,7 @@ class Operator:
 
         val_min_loss = 10
 
-        train_regression = False 
+        train_regression = True 
 
 
         for ep in range(self.epoch):
@@ -208,7 +208,7 @@ class Operator:
             transforms.ToTensor(),
             transforms.Normalize(torch.tensor([0.9222, 0.9216, 0.9238]), torch.tensor([0.2174, 0.2112, 0.2152]))
         ])
-        regression_vis = False
+        regression_vis = True
 
         if os.path.isdir(image_path):
             print("image_path is a directory")

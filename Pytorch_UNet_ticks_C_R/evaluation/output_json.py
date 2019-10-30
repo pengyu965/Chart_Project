@@ -24,8 +24,8 @@ import sys
 input_npy_path = "./predict_result/"
 output_json_path = "./output_json/"
 
-json_gt_path = "../../data/SUMIT/rs_padded_json_gt_sampled/"
 # json_gt_path = "../../data/SUMIT/rs_json_gt_sampled/"
+json_gt_path = "../../data/PMC/tasks345_data/rs_json_gt_new/"
 if os.path.exists(output_json_path) == False:
     os.mkdir(output_json_path)
 

@@ -217,10 +217,7 @@ class Operator:
             for image in os.listdir(image_path):
                 image_name, _ = os.path.splitext(image)
                 img_tensor = transformer(
-                    cv2.resize(
-                    cv2.imread(os.path.join(image_path, image)),
-                    (512,512)
-                    )
+                    cv2.imread(os.path.join(image_path, image))
                     ).unsqueeze(0).to(self.device)
                 generated_img_tensor = self.netG(img_tensor)
                 if visualize == True:
@@ -247,10 +244,7 @@ class Operator:
             print("image_path is a image file")
             img_tensor = transformer(
                 # cv2.imread(image_path)
-                cv2.resize(
-                cv2.imread(image_path),
-                (512,512)
-                )
+                cv2.imread(image_path)
                 ).unsqueeze(0).to(self.device)
             generated_img_tensor = self.netG(img_tensor)
             generated_img = Image.fromarray(

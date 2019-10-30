@@ -1,4 +1,4 @@
-flipping --> padding --> resizing --> masks_generating
+masking --> flipping --> padding --> resizing --> masks_generating --> train_val split
 
 ## Sequence
 

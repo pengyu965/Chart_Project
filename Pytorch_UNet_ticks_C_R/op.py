@@ -121,7 +121,7 @@ class Operator:
                         # try:
                         for j in range(0, 5121-5120//nroll,5120//nroll):
                             # im = Image.fromarray(image_norm(fake_images[index].permute(1,2,0).squeeze(2).detach().cpu().clone().numpy()).astype("uint8"))
-                            im = Image.fromarray(out_vis(fake_images[index].permute(1,2,0).detach().cpu().clone().numpy(), original_images[index], regression_vis =train_regression).astype("uint8"))
+                            im = Image.fromarray(out_vis(fake_images[index].permute(1,2,0).detach().cpu().clone().numpy(), original_images[index].numpy(), regression_vis =train_regression).astype("uint8"))
                             im.thumbnail((512,512))
                             new_im.paste(im, (i,j))
                             print(index)
@@ -189,7 +189,7 @@ class Operator:
             try:
                 for j in range(0, 5121-5120//nroll,5120//nroll):
                     # im = Image.fromarray(image_norm(fake_images[index].permute(1,2,0).squeeze(2).detach().cpu().clone().numpy()).astype("uint8"))
-                    im = Image.fromarray(out_vis(fake_val_images[index].permute(1,2,0).detach().cpu().clone().numpy(), val_original_images[index], regression_vis = train_regression).astype("uint8"))
+                    im = Image.fromarray(out_vis(fake_val_images[index].permute(1,2,0).detach().cpu().clone().numpy(), val_original_images[index].numpy(), regression_vis = train_regression).astype("uint8"))
                     im.thumbnail((512,512))
                     new_im.paste(im, (i,j))
                     index += 1
@@ -278,7 +278,7 @@ class Chartdata(Dataset):
         Return three items:
         - input_images: transformed torch tensor (b,c,h,w)
         - gt_images: masks as ground truth, torch tensor (b,h,w,c)
-        - original_images: numpy.array (b,h,w,c)
+        - original_images: torch tensor (b,h,w,c)
         '''
         img_name = os.listdir(self.img_path)[idx]
         input_images_path = os.path.join(self.img_path, img_name)

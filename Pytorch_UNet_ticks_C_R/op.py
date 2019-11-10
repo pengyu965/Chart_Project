@@ -79,6 +79,7 @@ class Operator:
             for idi, train_batch in enumerate(self.dataloader):
                 train_images = train_batch[0].to(self.device)
                 train_gt = train_batch[1].to(self.device)
+                original_images = train_batch[2]
 
                 self.optimizer.zero_grad()
                 fake_images = self.netG(train_images)
@@ -120,7 +121,7 @@ class Operator:
                         # try:
                         for j in range(0, 5121-5120//nroll,5120//nroll):
                             # im = Image.fromarray(image_norm(fake_images[index].permute(1,2,0).squeeze(2).detach().cpu().clone().numpy()).astype("uint8"))
-                            im = Image.fromarray(out_vis(fake_images[index].permute(1,2,0).detach().cpu().clone().numpy(), regression_vis =train_regression).astype("uint8"))
+                            im = Image.fromarray(out_vis(fake_images[index].permute(1,2,0).detach().cpu().clone().numpy(), original_images[index], regression_vis =train_regression).astype("uint8"))
                             im.thumbnail((512,512))
                             new_im.paste(im, (i,j))
                             print(index)
@@ -169,6 +170,7 @@ class Operator:
         for idi, val_batch in enumerate(val_dataloader):
             val_images = val_batch[0].to(self.device)
             val_gt = val_batch[1].to(self.device)
+            val_original_images = val_batch[2]
 
             fake_val_images = self.netG(val_images)
 
@@ -187,7 +189,7 @@ class Operator:
             try:
                 for j in range(0, 5121-5120//nroll,5120//nroll):
                     # im = Image.fromarray(image_norm(fake_images[index].permute(1,2,0).squeeze(2).detach().cpu().clone().numpy()).astype("uint8"))
-                    im = Image.fromarray(out_vis(fake_val_images[index].permute(1,2,0).detach().cpu().clone().numpy(), regression_vis = train_regression).astype("uint8"))
+                    im = Image.fromarray(out_vis(fake_val_images[index].permute(1,2,0).detach().cpu().clone().numpy(), val_original_images[index], regression_vis = train_regression).astype("uint8"))
                     im.thumbnail((512,512))
                     new_im.paste(im, (i,j))
                     index += 1
@@ -206,8 +208,9 @@ class Operator:
         self.netG.eval()
         transformer = transforms.Compose([
             transforms.ToTensor(),
-            transforms.Normalize(torch.tensor([0.9222, 0.9216, 0.9238]), torch.tensor([0.2174, 0.2112, 0.2152]))
+            transforms.Normalize(torch.tensor([0.5, 0.5, 0.5]), torch.tensor([1., 1., 1.]))
         ])
+
         regression_vis = True
 
         if os.path.isdir(image_path):
@@ -216,13 +219,14 @@ class Operator:
             idx = len(os.listdir(image_path))
             for image in os.listdir(image_path):
                 image_name, _ = os.path.splitext(image)
+                original_img = cv2.imread(os.path.join(image_path, image))
                 img_tensor = transformer(
-                    cv2.imread(os.path.join(image_path, image))
+                    original_img
                     ).unsqueeze(0).to(self.device)
                 generated_img_tensor = self.netG(img_tensor)
                 if visualize == True:
                     generated_img = Image.fromarray(
-                        out_vis(generated_img_tensor[0].permute(1,2,0).detach().cpu().clone().numpy(), regression_vis).astype(np.uint8)
+                        out_vis(generated_img_tensor[0].permute(1,2,0).detach().cpu().clone().numpy(), original_img, regression_vis).astype(np.uint8)
                         # image_norm(
                         #     generated_img_tensor[0].permute(1,2,0).squeeze(2).detach().cpu().clone().numpy()
                         # ).astype("uint8")
@@ -242,14 +246,16 @@ class Operator:
         elif os.path.isfile(image_path):
             image_name,_ = os.path.splitext(os.path.split(image_path)[1])
             print("image_path is a image file")
+            original_img =  cv2.imread(image_path)
             img_tensor = transformer(
                 # cv2.imread(image_path)
-                cv2.imread(image_path)
+                original_img
                 ).unsqueeze(0).to(self.device)
             generated_img_tensor = self.netG(img_tensor)
             generated_img = Image.fromarray(
                 out_vis(
                     generated_img_tensor[0].permute(1,2,0).detach().cpu().clone().numpy(),
+                    original_img,
                     regression_vis
                 ).astype("uint8")
             )
@@ -262,27 +268,33 @@ class Chartdata(Dataset):
         self.gt_path = gt_path
         self.transformer = transforms.Compose([
             transforms.ToTensor(),
-            transforms.Normalize(torch.tensor([0.9222, 0.9216, 0.9238]), torch.tensor([0.2174, 0.2112, 0.2152]))
+            transforms.Normalize(torch.tensor([0.5, 0.5, 0.5]), torch.tensor([1.,1.,1.]))
         ])
     def __len__(self):
         return len(os.listdir(self.img_path))
     
     def __getitem__(self, idx):
+        r'''
+        Return three items:
+        - input_images: transformed torch tensor (b,c,h,w)
+        - gt_images: masks as ground truth, torch tensor (b,h,w,c)
+        - original_images: numpy.array (b,h,w,c)
+        '''
         img_name = os.listdir(self.img_path)[idx]
         input_images_path = os.path.join(self.img_path, img_name)
         ## This line map code should be modified to a good manner in future
         # line_map_path = os.path.join("../../data/SUMIT/rs_linemap_sampled/", img_name)
         ### 
         gt_npy_path = os.path.join(self.gt_path, img_name[:-3]+"npy")
-        input_images = self.transformer(cv2.imread(input_images_path))
+        original_images = cv2.imread(input_images_path)
+        input_images = self.transformer(original_images)
         # line_maps = torch.tensor(cv2.imread(line_map_path)[:,:,0]).float().unsqueeze(0)
         # input_images = torch.cat((input_images, line_maps), dim=0)
 
         # print(np.array(cv2.imread(gt_images_path)).shape)
         gt_images = torch.tensor(np.load(gt_npy_path))
         
-
-        return (input_images, gt_images)
+        return (input_images, gt_images, original_images)
 
 class Vector_Regression_Loss(nn.Module):
     # Weighted Masks

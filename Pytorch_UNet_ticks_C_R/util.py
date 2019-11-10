@@ -53,7 +53,7 @@ def out_vis(arr, original_image, regression_vis = False):
         (0,255,255),
         (135,206,250),
         (255,192,203),
-        (180,180,180),
+        (255,255,255),
         (191,62,255),
         (255,215,0),
         (255,128,0),
@@ -107,7 +107,7 @@ def out_vis(arr, original_image, regression_vis = False):
                 color = np.array([0,255,0])*1.*num/max_num
                 cv2.circle(new_arr, (point[1], point[0]),0, (int(color[0]), int(color[1]), int(color[2])), -1)
                 
-        new_arr = 0.7*new_arr + 0.3*original_image
+        new_arr = 0.5*new_arr + 0.5*original_image
     return new_arr
 
 

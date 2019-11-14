@@ -4,6 +4,15 @@ import json
 import sys 
 import random
 
+r'''
+This is a function, you could simply write a loop to looping all the file within the images and gt folder. 
+Requirement: 
+- file_name should be without extension, and the paired image and gt have same file name
+- img is png, gt is json
+
+You could modified the verify function slightly to fit your json structure.
+'''
+
 def verify(images_path, gts_path, file_name):
     gt_dic = json.load(open(gts_path+file_name+".json",'r'))
     img =cv2.imread(images_path+file_name+".png")
@@ -16,6 +25,8 @@ def verify(images_path, gts_path, file_name):
         drawrectangle(img, x0,y0,width,height)
 
     for axis in gt_dic["input"]["task4_output"]["axes"]:
+        ## If you have multiple keys here, e.g., axes type, add an if judgement here  
+        ## to only process the key items which include tick points coords.
         for item in gt_dic["input"]["task4_output"]["axes"][axis]:
             x0 = item["tick_pt"]["x"]
             y0 = item["tick_pt"]["y"]
@@ -28,6 +39,8 @@ def verify(images_path, gts_path, file_name):
         height = text_bb["bb"]["height"]
         drawrectangle(img, x0,y0,width,height)
 
+    ## You could comment the following and add the cv2.imwrite("path/to/file.png", img) to save the img
+    ## Rather then showing it.
     cv2.imshow("gt_bb", img)
     cv2.waitKey(0)
 

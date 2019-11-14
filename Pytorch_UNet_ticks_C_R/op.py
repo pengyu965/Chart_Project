@@ -13,6 +13,7 @@ from PIL import Image
 import numpy as np
 import torchvision.transforms as T
 from util import *
+from PIL import Image
 
 def weights_init(m):
     classname = m.__class__.__name__
@@ -21,6 +22,8 @@ def weights_init(m):
     elif classname.find('BatchNorm') != -1:
         m.weight.data.normal_(1.0, 0.02)
         m.bias.data.fill_(0)
+
+train_regression = False
 
 class Operator:
     def __init__(self, netG, netD = None):
@@ -32,6 +35,7 @@ class Operator:
         self.loss_coefficent = 100.0
 
     def trainer(self, img_path, gt_path, batch_size, lr, epoch, writer = False):
+        global train_regression
         self.batch_size = batch_size
         self.lr = lr 
         self.epoch = epoch 
@@ -57,7 +61,7 @@ class Operator:
 
         val_min_loss = 10
 
-        train_regression = True 
+        # train_regression = True 
 
 
         for ep in range(self.epoch):
@@ -205,13 +209,13 @@ class Operator:
 
 
     def predictor(self, image_path, visualize=True):
+        global train_regression
+
         self.netG.eval()
         transformer = transforms.Compose([
             transforms.ToTensor(),
             transforms.Normalize(torch.tensor([0.5, 0.5, 0.5]), torch.tensor([1., 1., 1.]))
         ])
-
-        regression_vis = True
 
         if os.path.isdir(image_path):
             print("image_path is a directory")
@@ -226,7 +230,7 @@ class Operator:
                 generated_img_tensor = self.netG(img_tensor)
                 if visualize == True:
                     generated_img = Image.fromarray(
-                        out_vis(generated_img_tensor[0].permute(1,2,0).detach().cpu().clone().numpy(), original_img, regression_vis).astype(np.uint8)
+                        out_vis(generated_img_tensor[0].permute(1,2,0).detach().cpu().clone().numpy(), original_img, train_regression).astype(np.uint8)
                         # image_norm(
                         #     generated_img_tensor[0].permute(1,2,0).squeeze(2).detach().cpu().clone().numpy()
                         # ).astype("uint8")
@@ -256,17 +260,51 @@ class Operator:
                 out_vis(
                     generated_img_tensor[0].permute(1,2,0).detach().cpu().clone().numpy(),
                     original_img,
-                    regression_vis
+                    train_regression
                 ).astype("uint8")
             )
             generated_img.save("./predict_result/{}.png".format(image_name))
 
 
+# class Chartdata(Dataset):
+#     def __init__(self, img_path, gt_path):
+#         self.img_path = img_path
+#         self.gt_path = gt_path
+#         self.transformer = transforms.Compose([
+#             transforms.ToTensor(),
+#             transforms.Normalize(torch.tensor([0.5, 0.5, 0.5]), torch.tensor([1.,1.,1.]))
+#         ])
+#     def __len__(self):
+#         return len(os.listdir(self.img_path))
+    
+#     def __getitem__(self, idx):
+#         r'''
+#         Return three items:
+#         - input_images: transformed torch tensor (b,c,h,w)
+#         - gt_images: masks as ground truth, torch tensor (b,h,w,c)
+#         - original_images: torch tensor (b,h,w,c)
+#         '''
+#         img_name = os.listdir(self.img_path)[idx]
+#         input_images_path = os.path.join(self.img_path, img_name)
+
+#         gt_npy_path = os.path.join(self.gt_path, img_name[:-3]+"npy")
+#         original_images = cv2.imread(input_images_path)
+#         input_images = self.transformer(original_images)
+
+#         gt_images = torch.tensor(np.load(gt_npy_path))
+        
+#         return (input_images, gt_images, original_images)
+
 class Chartdata(Dataset):
     def __init__(self, img_path, gt_path):
         self.img_path = img_path
         self.gt_path = gt_path
-        self.transformer = transforms.Compose([
+        self.transformer0 = transforms.Compose([
+            transforms.RandomRotation(180),
+            transforms.RandomResizedCrop(size=(512,512), scale=(0.7,1.0))
+        ])
+        self.transformer1 = transforms.Compose([
+            transforms.ColorJitter(brightness=0.5, contrast=0.5, saturation=0.5, hue=0.5),
             transforms.ToTensor(),
             transforms.Normalize(torch.tensor([0.5, 0.5, 0.5]), torch.tensor([1.,1.,1.]))
         ])
@@ -282,17 +320,22 @@ class Chartdata(Dataset):
         '''
         img_name = os.listdir(self.img_path)[idx]
         input_images_path = os.path.join(self.img_path, img_name)
-        ## This line map code should be modified to a good manner in future
-        # line_map_path = os.path.join("../../data/SUMIT/rs_linemap_sampled/", img_name)
-        ### 
-        gt_npy_path = os.path.join(self.gt_path, img_name[:-3]+"npy")
-        original_images = cv2.imread(input_images_path)
-        input_images = self.transformer(original_images)
-        # line_maps = torch.tensor(cv2.imread(line_map_path)[:,:,0]).float().unsqueeze(0)
-        # input_images = torch.cat((input_images, line_maps), dim=0)
 
-        # print(np.array(cv2.imread(gt_images_path)).shape)
-        gt_images = torch.tensor(np.load(gt_npy_path))
+        gt_npy_path = os.path.join(self.gt_path, img_name[:-3]+"npy")
+        
+        original_images = cv2.imread(input_images_path)
+        gt_images = np.load(gt_npy_path)
+
+        img_gt_arr = Image.fromarray(np.concatenate((original_images, gt_images[:,:,:1].astype(np.uint8)), axis = 2))
+
+        trsm0_arr = self.transformer0(img_gt_arr)
+        trsm0_arr = np.array(trsm0_arr)
+
+        original_images = trsm0_arr[:,:,:3]
+        gt_images = trsm0_arr[:,:,3:4]
+
+        input_images = self.transformer1(Image.fromarray(original_images))
+
         
         return (input_images, gt_images, original_images)
 

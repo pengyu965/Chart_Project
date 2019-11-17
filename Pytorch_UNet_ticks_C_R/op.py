@@ -85,6 +85,7 @@ class Operator:
                 train_gt = train_batch[1].to(self.device)
                 original_images = train_batch[2]
 
+
                 self.optimizer.zero_grad()
                 fake_images = self.netG(train_images)
 
@@ -299,11 +300,11 @@ class Chartdata(Dataset):
         self.img_path = img_path
         self.gt_path = gt_path
         self.transformer0 = transforms.Compose([
-            transforms.RandomRotation(180),
-            transforms.RandomResizedCrop(size=(512,512), scale=(0.7,1.0))
+            s_tsfm.RandomRotation(180),
+            s_tsfm.RandomResizedCrop(size=(512,512), scale=(0.7,1.0))
         ])
-        self.transformer1 = transforms.Compose([
-            # transforms.ColorJitter(brightness=0.5, contrast=0.5, saturation=0.5, hue=0.5),
+        self.transformer1 = transforms.ColorJitter(brightness=0.5, contrast=0.5, saturation=0.5, hue=0.5)
+        self.transformer2 = transforms.Compose([
             transforms.ToTensor(),
             transforms.Normalize(torch.tensor([0.5, 0.5, 0.5]), torch.tensor([1.,1.,1.]))
         ])
@@ -319,23 +320,27 @@ class Chartdata(Dataset):
         '''
         img_name = os.listdir(self.img_path)[idx]
         input_images_path = os.path.join(self.img_path, img_name)
-
         gt_npy_path = os.path.join(self.gt_path, img_name[:-3]+"npy")
         
         original_images = cv2.imread(input_images_path)
         gt_images = np.load(gt_npy_path)
 
-        img_gt_arr = Image.fromarray(np.concatenate((original_images, gt_images[:,:,:1].astype(np.uint8)), axis = 2))
+        original_images = Image.fromarray(original_images.astype("uint8"))
+        gt_images = Image.fromarray(gt_images[:,:,0].astype("uint8"), mode = "L")
 
-        trsm0_arr = self.transformer0(img_gt_arr)
-        trsm0_arr = np.array(trsm0_arr)
+        stacked_images = [original_images, gt_images]
 
-        original_images = trsm0_arr[:,:,:3]
-        gt_images = trsm0_arr[:,:,3:4]
+        stacked_images = self.transformer0(stacked_images)
 
-        input_images = self.transformer1(Image.fromarray(original_images))
+        original_images = stacked_images[0]
+        gt_images = stacked_images[1]
+        gt_images = torch.tensor(np.array(gt_images)).unsqueeze(2)
 
-        
+        original_images = self.transformer1(original_images)
+        input_images = self.transformer2(original_images)
+
+        original_images = np.array(original_images)
+
         return (input_images, gt_images, original_images)
 
 class Vector_Regression_Loss(nn.Module):

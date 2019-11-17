@@ -32,10 +32,10 @@ if os.path.exists(output_json_path) == False:
 IOU_THRESHOLD = 0.3
 
 role_class_dic ={
-    0:"chart_title",
     1:"axis_title",
     2:"tick_label",
-    3:"legend_label"
+    3:"legend_label",
+    5:"chart_title"
 }
 
 def IoU_Score(boxA, boxB):
@@ -105,7 +105,7 @@ def output_json(input_npy):
 
 
     # Text Bounding Box
-    for idi in range(0,4):
+    for idi in [1,2,3,5]:
         image = (arr[:,:,idi]*255).astype(np.uint8)
 
         bbs, centers = get_bbox(image)

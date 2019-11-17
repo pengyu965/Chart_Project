@@ -48,12 +48,12 @@ def most_frequent_number(List):
 def out_vis(arr, original_image, regression_vis = False):
     # Input is numpy array, [H,W,C]
     color_lib = [
-        (255,255,0),
+        (255,255,255),
         (255,0,255),
         (0,255,255),
         (135,206,250),
         (255,192,203),
-        (255,255,255),
+        (255,255,0),
         (191,62,255),
         (255,215,0),
         (255,128,0),

@@ -30,7 +30,7 @@ class Operator:
         self.device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
         self.netG = nn.DataParallel(netG).to(self.device)
         self.netD = netD
-        self.criterion = nn.CrossEntropyLoss(weight=torch.tensor([0.15,0.25,0.20,0.35,0.25,0.05]).to(self.device))
+        self.criterion = nn.CrossEntropyLoss(weight=torch.tensor([0.05,0.25,0.20,0.35,0.25,0.15]).to(self.device))
         self.criterion_r = Vector_Regression_Loss()
         self.loss_coefficent = 100.0
 
@@ -299,8 +299,8 @@ class Chartdata(Dataset):
         self.img_path = img_path
         self.gt_path = gt_path
         self.transformer0 = transforms.Compose([
-            s_tsfm.RandomRotation(180, fill = 0),
-            # transforms.RandomResizedCrop(size=(512,512), scale=(0.7,1.0))
+            transforms.RandomRotation(180),
+            transforms.RandomResizedCrop(size=(512,512), scale=(0.7,1.0))
         ])
         self.transformer1 = transforms.Compose([
             # transforms.ColorJitter(brightness=0.5, contrast=0.5, saturation=0.5, hue=0.5),

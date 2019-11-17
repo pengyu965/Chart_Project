@@ -2,12 +2,12 @@ r"""
 Generate the ground truth masks 
 The classes from top channel to the bottom channel [0:5] are:
 (
-    [0] Chart Title
+    [0] Background
     [1] Axis Title
     [2] Ticks Label
     [3] Lengend_Label
     [4] Ticks_Masks
-    [5] Background
+    [5] Chart Title
     [6] Ticks Label ID
     [7] Ticks Marks ID
     [8] vector Center
@@ -131,12 +131,12 @@ def masks_gen(gt_json):
     
     final_arr = np.concatenate(
         (
-            np.expand_dims(chart_title_mask, axis = 2),
+            np.expand_dims(background_mask,axis = 2),
             np.expand_dims(axis_titles_mask, axis = 2),
             np.expand_dims(ticks_labels_mask, axis = 2),
             np.expand_dims(lengend_label_mask, axis = 2),
             np.expand_dims(ticks_mask, axis = 2),
-            np.expand_dims(background_mask,axis = 2),
+            np.expand_dims(chart_title_mask, axis = 2)
         ),
         axis = 2
         )

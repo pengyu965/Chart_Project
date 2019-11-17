@@ -38,6 +38,7 @@ class RandomRotation(object):
         self.resample = resample
         self.expand = expand
         self.center = center
+        self.fill = fill
 
     @staticmethod
     def get_params(degrees):
@@ -61,7 +62,7 @@ class RandomRotation(object):
 
         angle = self.get_params(self.degrees)
 
-        return rotate(img, angle, self.resample, self.expand, self.center)
+        return rotate(img, angle, self.resample, self.expand, self.center, self.fill)
 
     def __repr__(self):
         format_string = self.__class__.__name__ + '(degrees={0}'.format(self.degrees)

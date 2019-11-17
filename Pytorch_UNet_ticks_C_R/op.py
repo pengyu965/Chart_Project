@@ -116,7 +116,7 @@ class Operator:
                     )
                 print("Epoch:[{}]===Step:[{}/{}]===Time:[{:.2f}]===Learning Rate:{}\nTrain_Regression:[{}]===Classification_Loss:[{:.4f}]===Regression_Loss:[{:.4f}]===Total_Loss:[{:.4f}]".format(ep, idi, idx, time.time()-start_time, self.lr, train_regression, loss_c.item(), loss_r.item(), loss.item()))
                 ## Visualization
-                if (global_step%print_idx) == 0 and global_step !=0:
+                if (global_step%print_idx) == 0:
                     index = 0
                     nroll = int(self.batch_size**0.5)
                     new_im = Image.new('RGB', (5120,5120))
@@ -299,11 +299,11 @@ class Chartdata(Dataset):
         self.img_path = img_path
         self.gt_path = gt_path
         self.transformer0 = transforms.Compose([
-            s_tsfm.RandomRotation(180, fill = (255,255,255,5)),
-            transforms.RandomResizedCrop(size=(512,512), scale=(0.7,1.0))
+            s_tsfm.RandomRotation(180, fill = 0),
+            # transforms.RandomResizedCrop(size=(512,512), scale=(0.7,1.0))
         ])
         self.transformer1 = transforms.Compose([
-            transforms.ColorJitter(brightness=0.5, contrast=0.5, saturation=0.5, hue=0.5),
+            # transforms.ColorJitter(brightness=0.5, contrast=0.5, saturation=0.5, hue=0.5),
             transforms.ToTensor(),
             transforms.Normalize(torch.tensor([0.5, 0.5, 0.5]), torch.tensor([1.,1.,1.]))
         ])

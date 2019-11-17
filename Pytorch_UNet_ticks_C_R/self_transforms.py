@@ -18,7 +18,8 @@ def rotate(img, angle, resample=False, expand=False, center=None, fill = 0):
             fill = tuple([fill] * 4)
         elif img.mode == "RGB":
             fill = tuple([fill] * 3)
-
+    
+    print(fill)
     return img.rotate(angle, resample, expand, center, fill)
 
 class RandomRotation(object):
@@ -40,8 +41,8 @@ class RandomRotation(object):
         self.center = center
         self.fill = fill
 
-    @staticmethod
-    def get_params(degrees):
+    # @staticmethod
+    def get_params(self, degrees):
         """Get parameters for ``rotate`` for a random rotation.
 
         Returns:
@@ -61,7 +62,6 @@ class RandomRotation(object):
         """
 
         angle = self.get_params(self.degrees)
-
         return rotate(img, angle, self.resample, self.expand, self.center, self.fill)
 
     def __repr__(self):
@@ -70,5 +70,6 @@ class RandomRotation(object):
         format_string += ', expand={0}'.format(self.expand)
         if self.center is not None:
             format_string += ', center={0}'.format(self.center)
+        format_string += ', fill={0}'.format(self.fill)
         format_string += ')'
         return format_string

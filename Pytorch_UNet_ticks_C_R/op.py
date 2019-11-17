@@ -7,11 +7,11 @@ import torch.optim as optim
 import torchvision.utils as vutils
 from torch.utils.data import Dataset, DataLoader
 from torchvision import transforms
+import self_transforms as s_tsfm
 import time
 import cv2
 from PIL import Image
 import numpy as np
-import torchvision.transforms as T
 from util import *
 from PIL import Image
 
@@ -115,7 +115,7 @@ class Operator:
                         global_step
                     )
                 print("Epoch:[{}]===Step:[{}/{}]===Time:[{:.2f}]===Learning Rate:{}\nTrain_Regression:[{}]===Classification_Loss:[{:.4f}]===Regression_Loss:[{:.4f}]===Total_Loss:[{:.4f}]".format(ep, idi, idx, time.time()-start_time, self.lr, train_regression, loss_c.item(), loss_r.item(), loss.item()))
-                
+                print(train_gt[0,:,:,0].detach().cpu().numpy())
                 ## Visualization
                 if (global_step%print_idx) == 0 and global_step !=0:
                     index = 0
@@ -300,7 +300,7 @@ class Chartdata(Dataset):
         self.img_path = img_path
         self.gt_path = gt_path
         self.transformer0 = transforms.Compose([
-            transforms.RandomRotation(180),
+            s_tsfm.RandomRotation(180, fill = (255,255,255,5)),
             transforms.RandomResizedCrop(size=(512,512), scale=(0.7,1.0))
         ])
         self.transformer1 = transforms.Compose([

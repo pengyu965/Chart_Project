@@ -116,9 +116,6 @@ class Operator:
                     )
                 print("Epoch:[{}]===Step:[{}/{}]===Time:[{:.2f}]===Learning Rate:{}\nTrain_Regression:[{}]===Classification_Loss:[{:.4f}]===Regression_Loss:[{:.4f}]===Total_Loss:[{:.4f}]".format(ep, idi, idx, time.time()-start_time, self.lr, train_regression, loss_c.item(), loss_r.item(), loss.item()))
                 
-                # print(original_images.numpy().shape)
-                cv2.imshow("example", out_vis(fake_images[0].permute(1,2,0).detach().cpu().clone().numpy(), original_images[0].numpy(), regression_vis =train_regression).astype("uint8"))
-                cv2.waitKey(0)
                 ## Visualization
                 if (global_step%print_idx) == 0 and global_step !=0:
                     index = 0

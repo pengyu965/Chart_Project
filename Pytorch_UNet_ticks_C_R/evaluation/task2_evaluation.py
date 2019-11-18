@@ -75,6 +75,7 @@ def eval_task2(gt_folder, result_folder):
         res_bboxes, res_ids, res_texts = extract_bboxes(res)
 
         if res_bboxes == []:
+            print("hh")
             iou = 0
         else:
             iou = bbox_iou(gt_bboxes, res_bboxes)

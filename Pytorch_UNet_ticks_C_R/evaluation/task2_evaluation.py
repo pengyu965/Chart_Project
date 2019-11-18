@@ -74,6 +74,7 @@ def eval_task2(gt_folder, result_folder):
             res = json.load(f)
         res_bboxes, res_ids, res_texts = extract_bboxes(res)
 
+        print(gt_file)
         print(res_bboxes)
         iou = bbox_iou(gt_bboxes, res_bboxes)
         iou_flag = iou >= IOU_THRESHOLD

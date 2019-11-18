@@ -102,9 +102,9 @@ def eval_task2(gt_folder, result_folder):
             text_score /= len(gt_bboxes)
             total_iou_score += iou_score
             total_text_score += text_score
-        total_iou_score /= len(os.listdir(gt_folder))
-        total_text_score /= len(os.listdir(gt_folder))
-        hmean_score = 2 * total_iou_score * total_text_score / (total_iou_score + total_text_score)
+    total_iou_score /= len(os.listdir(gt_folder))
+    total_text_score /= len(os.listdir(gt_folder))
+    hmean_score = 2 * total_iou_score * total_text_score / (total_iou_score + total_text_score)
     print('Total IOU Score over all ground truth images: {}'.format(total_iou_score))
     print('Total OCR Score over all ground truth images: {}'.format(total_text_score))
     print('Harmonic Mean of overall IOU and OCR scores: {}'.format(hmean_score))

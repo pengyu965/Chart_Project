@@ -74,8 +74,7 @@ def eval_task2(gt_folder, result_folder):
             res = json.load(f)
         res_bboxes, res_ids, res_texts = extract_bboxes(res)
 
-        print(res_bboxes, res_bboxes.any())
-        if res_bboxes == []:
+        if not res_bboxes.any():
             print("hh")
             iou = 0
         else:

@@ -74,9 +74,10 @@ def eval_task2(gt_folder, result_folder):
             res = json.load(f)
         res_bboxes, res_ids, res_texts = extract_bboxes(res)
 
-        print(gt_file)
-        print(res_bboxes)
-        iou = bbox_iou(gt_bboxes, res_bboxes)
+        if res_bboxes == []:
+            iou = 0
+        else:
+            iou = bbox_iou(gt_bboxes, res_bboxes)
         iou_flag = iou >= IOU_THRESHOLD
         # fp_count = len(res_bboxes)
         # fn_count = len(gt_bboxes)

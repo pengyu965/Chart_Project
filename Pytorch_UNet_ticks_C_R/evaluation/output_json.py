@@ -157,87 +157,89 @@ def output_json(input_npy):
 
                 o_json["input"]["task2_output"]["text_blocks"].append(text_bb)
     
-    # Ticks Points
-    o_json["input"]["task4_output"] = {}
-    o_json["input"]["task4_output"]["axes"] = {}
-    o_json["input"]["task4_output"]["axes"]["x-axis"] = []
-    o_json["input"]["task4_output"]["axes"]["y-axis"] = []
-    # tick_points = []
     
-
-
-    # Internal offset voting
-    tick_bbs, tick_centers = get_bbox((arr[:,:,4]*255).astype(np.uint8))
-
-    points_list_internal = []
-
-    for tick_bb in tick_bbs:
-        tick_x0 = tick_bb[0]
-        tick_y0 = tick_bb[1]
-        tick_x1 = tick_x0 + tick_bb[2]
-        tick_y1 = tick_y0 +tick_bb[3]
-
-        internal_voted_tick_points = []
-        for i in range(tick_y0, tick_y1):
-            for j in range(tick_x0, tick_x1):
-                if arr[i,j,4] != 0:
-                    vector_x = arr[i,j,6]
-                    vector_y = arr[i,j,7]
-                    tick_point = [int(i+vector_x),int(j+vector_y)]
-                    internal_voted_tick_points.append(tick_point)
+    if arr.shape[2] > 6:
+        # Ticks Points
+        o_json["input"]["task4_output"] = {}
+        o_json["input"]["task4_output"]["axes"] = {}
+        o_json["input"]["task4_output"]["axes"]["x-axis"] = []
+        o_json["input"]["task4_output"]["axes"]["y-axis"] = []
+        # tick_points = []
         
-        maximum_internal_point, internal_maximum_vote = most_frequent_number(internal_voted_tick_points)
-        points_list_internal.append(maximum_internal_point)
-        # cv2.circle(imgg, tuple(maximum_internal_point), 2, (255), -1)
 
 
-    all_final_tick = []
-    for item in o_json["input"]["task2_output"]["text_blocks"]:
-        label_x0 = item["bb"]["x0"]
-        label_y0 = item["bb"]["y0"]
-        label_x1 = label_x0 + item["bb"]["width"]
-        label_y1 = label_y0 + item["bb"]["height"]
+        # Internal offset voting
+        tick_bbs, tick_centers = get_bbox((arr[:,:,4]*255).astype(np.uint8))
 
-        label_center_x  = label_x0 + int(item["bb"]["width"]*1./2)
-        label_center_y  = label_y0 + int(item["bb"]["height"]*1./2)
+        points_list_internal = []
 
-        external_voted_tick_points = []
-        if item["role"] == "tick_label":
-            for i in range(label_y0, label_y1):
-                for j in range(label_x0, label_x1):
-                    vector_x = arr[i,j,6]
-                    vector_y = arr[i,j,7]
-                    tick_point = [int(i+vector_x),int(j+vector_y)]
-                    external_voted_tick_points.append(tick_point)
+        for tick_bb in tick_bbs:
+            tick_x0 = tick_bb[0]
+            tick_y0 = tick_bb[1]
+            tick_x1 = tick_x0 + tick_bb[2]
+            tick_y1 = tick_y0 +tick_bb[3]
 
-            maximum_external_point, external_maximum_vote = most_frequent_number(external_voted_tick_points)
-            tick_dic = {}
-            for point in points_list_internal:
-                dis = np.linalg.norm([maximum_external_point[0]-point[0], maximum_external_point[1]-point[1]])
-                if dis < 10:
-                    final_coord = (np.array(maximum_external_point) + np.array(point))*1/2
-                    # final_coord = final_coord.astype(np.int)
-                    tick_dic["id"] = item["id"]
-                    tick_dic["tick_pt"] = {}
-                    tick_dic["tick_pt"]["x"] = int(final_coord[1])
-                    tick_dic["tick_pt"]["y"] = int(final_coord[0])
-
-                    # if item["id"] == 10:
-                    #     print(point[0]-label_center_x, point[1]-label_center_y)
-
-                    # Process X, Y
-                    if abs(point[1]-label_center_x) <= abs(point[0]-label_center_y): # Arr coordinate base: Y<=X
-                        o_json["input"]["task4_output"]["axes"]["x-axis"].append(tick_dic)
-                    else:
-                        o_json["input"]["task4_output"]["axes"]["y-axis"].append(tick_dic)
+            internal_voted_tick_points = []
+            for i in range(tick_y0, tick_y1):
+                for j in range(tick_x0, tick_x1):
+                    if arr[i,j,4] != 0:
+                        vector_x = arr[i,j,6]
+                        vector_y = arr[i,j,7]
+                        tick_point = [int(i+vector_x),int(j+vector_y)]
+                        internal_voted_tick_points.append(tick_point)
+            
+            maximum_internal_point, internal_maximum_vote = most_frequent_number(internal_voted_tick_points)
+            points_list_internal.append(maximum_internal_point)
+            # cv2.circle(imgg, tuple(maximum_internal_point), 2, (255), -1)
 
 
-    #         cv2.circle(imgg, tuple(maximum_external_point), 2, (255), -1)
+        all_final_tick = []
+        for item in o_json["input"]["task2_output"]["text_blocks"]:
+            label_x0 = item["bb"]["x0"]
+            label_y0 = item["bb"]["y0"]
+            label_x1 = label_x0 + item["bb"]["width"]
+            label_y1 = label_y0 + item["bb"]["height"]
 
-    
+            label_center_x  = label_x0 + int(item["bb"]["width"]*1./2)
+            label_center_y  = label_y0 + int(item["bb"]["height"]*1./2)
 
-    # cv2.imshow("examplle", imgg)
-    # cv2.waitKey(0)
+            external_voted_tick_points = []
+            if item["role"] == "tick_label":
+                for i in range(label_y0, label_y1):
+                    for j in range(label_x0, label_x1):
+                        vector_x = arr[i,j,6]
+                        vector_y = arr[i,j,7]
+                        tick_point = [int(i+vector_x),int(j+vector_y)]
+                        external_voted_tick_points.append(tick_point)
+
+                maximum_external_point, external_maximum_vote = most_frequent_number(external_voted_tick_points)
+                tick_dic = {}
+                for point in points_list_internal:
+                    dis = np.linalg.norm([maximum_external_point[0]-point[0], maximum_external_point[1]-point[1]])
+                    if dis < 10:
+                        final_coord = (np.array(maximum_external_point) + np.array(point))*1/2
+                        # final_coord = final_coord.astype(np.int)
+                        tick_dic["id"] = item["id"]
+                        tick_dic["tick_pt"] = {}
+                        tick_dic["tick_pt"]["x"] = int(final_coord[1])
+                        tick_dic["tick_pt"]["y"] = int(final_coord[0])
+
+                        # if item["id"] == 10:
+                        #     print(point[0]-label_center_x, point[1]-label_center_y)
+
+                        # Process X, Y
+                        if abs(point[1]-label_center_x) <= abs(point[0]-label_center_y): # Arr coordinate base: Y<=X
+                            o_json["input"]["task4_output"]["axes"]["x-axis"].append(tick_dic)
+                        else:
+                            o_json["input"]["task4_output"]["axes"]["y-axis"].append(tick_dic)
+
+
+        #         cv2.circle(imgg, tuple(maximum_external_point), 2, (255), -1)
+
+        
+
+        # cv2.imshow("examplle", imgg)
+        # cv2.waitKey(0)
 
 
     with open(output_json_path+input_npy[:-3]+"json", 'w') as f:

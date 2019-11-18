@@ -76,33 +76,35 @@ def eval_task2(gt_folder, result_folder):
 
         if not res_bboxes.any():
             print("hh")
-            iou = 0
+            total_iou_score = 0
+            total_text_score = 0
+            hmean_score = 0
         else:
             iou = bbox_iou(gt_bboxes, res_bboxes)
 
-        iou_flag = iou >= IOU_THRESHOLD
-        # fp_count = len(res_bboxes)
-        # fn_count = len(gt_bboxes)
-        iou_score = 0.
-        text_score = 0.
-        for g in range(len(gt_bboxes)):
-            # exact match or one-many match
-            if iou_flag[g, :].sum() >= 1:
-                # take the best match in case of multiple predictions mapping to one gt
-                # rest are considered FP
-                r = np.argmax(iou_flag[g, :])
-                iou_score += iou[g, r]
-                ncer = editdistance.eval(gt_texts[g], res_texts[r]) / float(len(gt_texts[g]))
-                text_score += max(1. - ncer, 0.)
-                # fp_count -= 1.
-                # fn_count -= 1.
-        iou_score /= max(len(gt_bboxes), len(res_bboxes))
-        text_score /= len(gt_bboxes)
-        total_iou_score += iou_score
-        total_text_score += text_score
-    total_iou_score /= len(os.listdir(gt_folder))
-    total_text_score /= len(os.listdir(gt_folder))
-    hmean_score = 2 * total_iou_score * total_text_score / (total_iou_score + total_text_score)
+            iou_flag = iou >= IOU_THRESHOLD
+            # fp_count = len(res_bboxes)
+            # fn_count = len(gt_bboxes)
+            iou_score = 0.
+            text_score = 0.
+            for g in range(len(gt_bboxes)):
+                # exact match or one-many match
+                if iou_flag[g, :].sum() >= 1:
+                    # take the best match in case of multiple predictions mapping to one gt
+                    # rest are considered FP
+                    r = np.argmax(iou_flag[g, :])
+                    iou_score += iou[g, r]
+                    ncer = editdistance.eval(gt_texts[g], res_texts[r]) / float(len(gt_texts[g]))
+                    text_score += max(1. - ncer, 0.)
+                    # fp_count -= 1.
+                    # fn_count -= 1.
+            iou_score /= max(len(gt_bboxes), len(res_bboxes))
+            text_score /= len(gt_bboxes)
+            total_iou_score += iou_score
+            total_text_score += text_score
+        total_iou_score /= len(os.listdir(gt_folder))
+        total_text_score /= len(os.listdir(gt_folder))
+        hmean_score = 2 * total_iou_score * total_text_score / (total_iou_score + total_text_score)
     print('Total IOU Score over all ground truth images: {}'.format(total_iou_score))
     print('Total OCR Score over all ground truth images: {}'.format(total_text_score))
     print('Harmonic Mean of overall IOU and OCR scores: {}'.format(hmean_score))

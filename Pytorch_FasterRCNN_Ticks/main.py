@@ -16,7 +16,7 @@ import resource
 rlimit = resource.getrlimit(resource.RLIMIT_NOFILE)
 resource.setrlimit(resource.RLIMIT_NOFILE, (20480, rlimit[1]))
 
-device = torch.device('cuda:1') if torch.cuda.is_available() else torch.device('cpu')
+device = torch.device('cuda:0') if torch.cuda.is_available() else torch.device('cpu')
 
 
 parser = argparse.ArgumentParser()
@@ -157,7 +157,7 @@ model = FasterRCNN(backbone,
 
 if cfg.train:
 
-    dataset = axisdataset("../../data/SUMIT/rs_images_sampled/", "../../data/SUMIT/rs_json_gt_sampled/", None)
+    dataset = axisdataset("../../data/SUMIT/rs_images_sampled/train/", "../../data/SUMIT/rs_json_gt_sampled/", None)
 
     dataloader = DataLoader(dataset = dataset, batch_size = 2, num_workers = 28, collate_fn=utils.collate_fn)
 

@@ -111,7 +111,7 @@ def eval_task2(gt_folder, result_folder):
 
 
 if __name__ == '__main__':
-    eval_task2(sys.argv[1], sys.argv[2])
+    # eval_task2(sys.argv[1], sys.argv[2])
     try:
         eval_task2(sys.argv[1], sys.argv[2])
     except Exception as e:

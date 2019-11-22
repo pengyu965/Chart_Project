@@ -13,7 +13,6 @@ import cv2
 from PIL import Image
 import numpy as np
 from util import *
-from PIL import Image
 
 def weights_init(m):
     classname = m.__class__.__name__
@@ -166,7 +165,7 @@ class Operator:
         val_bsize = 16
 
         val_data = Chartdata(img_path = val_img_path, gt_path = val_gt_path)
-        val_dataloader = DataLoader(dataset = val_data, batch_size = val_bsize, shuffle = True, num_workers = 12)
+        val_dataloader = DataLoader(dataset = val_data, batch_size = val_bsize, shuffle = True, num_workers = 28)
         val_idx = len(val_dataloader)
 
         val_total_loss = 0

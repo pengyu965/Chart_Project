@@ -55,6 +55,7 @@ class Operator:
         idx = len(self.dataloader)
         print_idx = int(self.epoch * idx*1. /50)
         val_min_loss = 10
+        test_min_loss = 10
 
         for ep in range(self.epoch):
             self.model.train()
@@ -146,11 +147,22 @@ class Operator:
                 global_step += 1
             
             with torch.no_grad():
-                val_loss = self.validator("../../data/PMC/tasks345_data/rs_images/", "../../data/PMC/tasks345_data/rs_json_gt_new/", global_step)
+                val_loss = self.validator(img_path + "/val/", gt_path, global_step)
 
             if val_loss < val_min_loss:
                 val_min_loss = val_loss
-                torch.save(self.model.module.state_dict(), "./weight/model.pt")
+                torch.save(self.model.module.state_dict(), "./weight/val_model.pt")
+                open("./weight/val_snapshot.txt", 'w').write(str(global_step))
+
+
+            with torch.no_grad():
+                test_loss = self.validator("../../data/PMC/tasks345_data/rs_images/", "../../data/PMC/tasks345_data/rs_json_gt_new/", global_step)
+
+            if test_loss < test_min_loss:
+                test_min_loss = test_loss
+                torch.save(self.model.module.state_dict(), "./weight/test_model.pt")
+                open("./weight/test_snapshot.txt", 'w').write(str(global_step))
+            
 
     def validator(self, val_img_path, val_gt_path, global_step):
         # self.model.eval()
@@ -170,7 +182,7 @@ class Operator:
             val_losses = sum(val_loss for val_loss in val_loss_dict.values())
             val_total_loss += val_losses.item()
         
-        # Visulization
+        # Visualization
         # ==================================================
         self.model.eval()
 
@@ -182,7 +194,7 @@ class Operator:
 
         max_h, max_w = np.array(val_shape_arr).max(0)
 
-        new_im = Image.new("RGB", (max_w*2,max_h*len(val_images)))
+        new_im = Image.new("RGB", (max_w*2, max_h*len(val_images)))
 
         for i in range(len(val_images)):
             vis_images = val_images[i]

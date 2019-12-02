@@ -68,39 +68,45 @@ def flip(img, gt, flipcode):
     0: vertical flipping
     1: horizontal flipping
     -1: vertical and horizontal flipping
+    2: maintain the original
     '''
-    img = cv2.flip(img, flipcode)
-    needed_dic = gt 
-    for text_bb in needed_dic["input"]["task2_output"]["text_blocks"]:
-        text_bb["bb"]["x0"] = gt_flip_func(text_bb["bb"]["x0"], flipcode, "x")
-        text_bb["bb"]["y0"] = gt_flip_func(text_bb["bb"]["y0"], flipcode, "y")
-        text_bb["bb"]["width"] = gt_flip_func(text_bb["bb"]["width"], flipcode, "w")
-        text_bb["bb"]["height"] = gt_flip_func(text_bb["bb"]["height"], flipcode, "h")
 
-    needed_dic["input"]["task4_output"]["_plot_bb"]["y0"] = gt_flip_func(needed_dic["input"]["task4_output"]["_plot_bb"]["y0"], flipcode, "y")
-    needed_dic["input"]["task4_output"]["_plot_bb"]["x0"] = gt_flip_func(needed_dic["input"]["task4_output"]["_plot_bb"]["x0"], flipcode, "x")
-    needed_dic["input"]["task4_output"]["_plot_bb"]["height"] = gt_flip_func(needed_dic["input"]["task4_output"]["_plot_bb"]["height"], flipcode, "h")
-    needed_dic["input"]["task4_output"]["_plot_bb"]["width"] = gt_flip_func(needed_dic["input"]["task4_output"]["_plot_bb"]["width"], flipcode, "w")
-
-    for axis in needed_dic["input"]["task4_output"]["axes"]:
-        for sub_dic in needed_dic["input"]["task4_output"]["axes"][axis]:
-            sub_dic["tick_pt"]["x"] = gt_flip_func(sub_dic["tick_pt"]["x"], flipcode, "x")
-            sub_dic["tick_pt"]["y"] = gt_flip_func(sub_dic["tick_pt"]["y"], flipcode, "y")
-
-    for lengend_pair in needed_dic["input"]["task5_output"]:
-        for text_bb in needed_dic["input"]["task5_output"][lengend_pair]:
+    if flipcode == 2:
+        img = img
+        needed_dic = gt 
+    else:
+        img = cv2.flip(img, flipcode)
+        needed_dic = gt 
+        for text_bb in needed_dic["input"]["task2_output"]["text_blocks"]:
             text_bb["bb"]["x0"] = gt_flip_func(text_bb["bb"]["x0"], flipcode, "x")
             text_bb["bb"]["y0"] = gt_flip_func(text_bb["bb"]["y0"], flipcode, "y")
             text_bb["bb"]["width"] = gt_flip_func(text_bb["bb"]["width"], flipcode, "w")
             text_bb["bb"]["height"] = gt_flip_func(text_bb["bb"]["height"], flipcode, "h")
-                
+
+        needed_dic["input"]["task4_output"]["_plot_bb"]["y0"] = gt_flip_func(needed_dic["input"]["task4_output"]["_plot_bb"]["y0"], flipcode, "y")
+        needed_dic["input"]["task4_output"]["_plot_bb"]["x0"] = gt_flip_func(needed_dic["input"]["task4_output"]["_plot_bb"]["x0"], flipcode, "x")
+        needed_dic["input"]["task4_output"]["_plot_bb"]["height"] = gt_flip_func(needed_dic["input"]["task4_output"]["_plot_bb"]["height"], flipcode, "h")
+        needed_dic["input"]["task4_output"]["_plot_bb"]["width"] = gt_flip_func(needed_dic["input"]["task4_output"]["_plot_bb"]["width"], flipcode, "w")
+
+        for axis in needed_dic["input"]["task4_output"]["axes"]:
+            for sub_dic in needed_dic["input"]["task4_output"]["axes"][axis]:
+                sub_dic["tick_pt"]["x"] = gt_flip_func(sub_dic["tick_pt"]["x"], flipcode, "x")
+                sub_dic["tick_pt"]["y"] = gt_flip_func(sub_dic["tick_pt"]["y"], flipcode, "y")
+
+        for lengend_pair in needed_dic["input"]["task5_output"]:
+            for text_bb in needed_dic["input"]["task5_output"][lengend_pair]:
+                text_bb["bb"]["x0"] = gt_flip_func(text_bb["bb"]["x0"], flipcode, "x")
+                text_bb["bb"]["y0"] = gt_flip_func(text_bb["bb"]["y0"], flipcode, "y")
+                text_bb["bb"]["width"] = gt_flip_func(text_bb["bb"]["width"], flipcode, "w")
+                text_bb["bb"]["height"] = gt_flip_func(text_bb["bb"]["height"], flipcode, "h")
+                    
     return img, needed_dic
 
 
 
 def main(f_name):
     global img_size
-    flipcode = [0,1,-1]
+    flipcode = [0,1,-1,2]
     img, gt = img_gt_reader(f_name)
     img_size = img.shape
     

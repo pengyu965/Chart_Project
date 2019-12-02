@@ -15,6 +15,7 @@ from utils0 import *
 import utils
 from torch import autograd
 import sys
+import json
 
 
 class Operator:
@@ -22,6 +23,13 @@ class Operator:
         self.device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
         # self.device = torch.device("cpu")
         self.model = nn.DataParallel(model).to(self.device)
+
+        if not os.path.exists("./train_samples/"):
+            os.mkdir("./train_samples/")
+        if not os.path.exists("./val_samples/"):
+            os.mkdir("./val_samples/")
+        if not os.path.exists("./weight/"):
+            os.mkdir("./weight/")
 
     def trainer(self, img_path, gt_path, batch_size, lr, epoch, writer = False):
         self.batch_size = batch_size
@@ -38,6 +46,8 @@ class Operator:
         self.sampler = RandomSampler(self.train_data, True, 3000)
 
         self.dataloader = DataLoader(dataset = self.train_data, batch_size = self.batch_size, shuffle = False, num_workers = 4, collate_fn=utils.collate_fn, sampler=self.sampler)
+        
+
 
         global_step = 0
         start_time = time.time()
@@ -89,8 +99,21 @@ class Operator:
                 # =============================================
                 if (global_step%print_idx) == 0:
                     self.model.eval()
+                    
+                    shape_arr = []
 
-                    new_im = Image.new("RGB", (520*2,520*len(images)))
+                    for i in range(len(images)):
+                        img_size = np.array([images[i].shape[1]+10, images[i].shape[2]+10])
+                        shape_arr.append(img_size.tolist())
+                    
+                    max_h, max_w = np.array(shape_arr).max(0)
+                    max_h += 10
+                    max_w += 10
+
+                    
+                    ## Require all images are 512*512 size, 
+                    ## If not, need to modify the new_im size to fit for the image
+                    new_im = Image.new("RGB", (max_w*2,max_h*len(images)))
 
                     print("Visualizing.....")
 
@@ -102,12 +125,9 @@ class Operator:
 
                         im = Image.fromarray(vis_map)
                         masked_im = Image.fromarray(masked_map)
-                        new_im.paste(im, (0, i*520))
-                        new_im.paste(masked_im, (520, i*520))
+                        new_im.paste(im, (0, i*max_h))
+                        new_im.paste(masked_im, (max_w, i*max_h))
                         print(i)
-
-                    if os.path.exists("./train_samples/") == False:
-                            os.mkdir("./train_samples/")
                             
                     new_im.save("./train_samples/{}.png".format(global_step))
 
@@ -119,12 +139,10 @@ class Operator:
                 global_step += 1
             
             with torch.no_grad():
-                val_loss = self.validator(img_path + "/val", gt_path, global_step)
+                val_loss = self.validator("../../data/PMC/tasks345_data/rs_images/", "../../data/PMC/tasks345_data/rs_json_gt_new/", global_step)
 
             if val_loss < val_min_loss:
                 val_min_loss = val_loss
-                if os.path.exists("./weight/") == False:
-                    os.mkdir("./weight/")
                 torch.save(self.model.module.state_dict(), "./weight/model.pt")
 
     def validator(self, val_img_path, val_gt_path, global_step):
@@ -145,9 +163,118 @@ class Operator:
             val_losses = sum(val_loss for val_loss in val_loss_dict.values())
             val_total_loss += val_losses.item()
         
+        # Visulization
+        # ==================================================
+        self.model.eval()
+
+        val_shape_arr = []
+
+        for i in range(len(val_images)):
+            img_size = np.array([val_images[i].shape[1]+10, val_images[i].shape[2]+10])
+            val_shape_arr.append(img_size.tolist()) 
+
+        max_h, max_w = np.array(val_shape_arr).max(0)
+
+        new_im = Image.new("RGB", (max_w*2,max_h*len(val_images)))
+
+        for i in range(len(val_images)):
+            vis_images = val_images[i]
+            r_dic = self.model(vis_images.unsqueeze(0))
+            
+            vis_map, masked_map = vis(vis_images.cpu(), r_dic)
+
+            im = Image.fromarray(vis_map)
+            masked_im = Image.fromarray(masked_map)
+            new_im.paste(im, (0, i*max_h))
+            new_im.paste(masked_im, (max_w, i*max_h))
+                
+        new_im.save("./val_samples/{}.png".format(global_step))
+
+        self.model.train()
+        # ==================================================
+
+        
         
         print("***"*3, "\nValidation Loss:{:.4f}".format(val_total_loss*1./val_idx), "\n"+"***"*3)
         return val_total_loss*1. / val_idx
+
+    def predictor(self, image_path, visualize = True):
+        self.model.eval()
+
+        transformer = transforms.Compose([
+            transforms.ToTensor()
+        ])
+
+        if not os.path.exists("./prediction_vis/"):
+            os.mkdir("./prediction_vis/")
+        if not os.path.exists("./prediction_dic/"):
+            os.mkdir("./prediction_dic/")
+
+        if os.path.isdir(image_path):
+            print("image path is a directory")
+
+            idi = 1 
+            idx = len(os.listdir(image_path))
+
+            for image_name in os.listdir(image_path):
+                f_name, _ = os.path.splitext(image_name)
+                img = cv2.imread(os.path.join(image_path, image_name))
+                h,w,c = img.shape
+                img = transformer(img)
+                img = img.unsqueeze(0).to(self.device)
+
+                result_dic = self.model(img)
+
+                new_im = Image.new("RGB", ((w+10)*2,h+10))
+                
+                r_map, r_masked_map = vis(img.squeeze(0).cpu(), result_dic)
+
+                im = Image.fromarray(r_map)
+                masked_im = Image.fromarray(r_masked_map)
+
+                new_im.paste(im, (0, 0))
+                new_im.paste(masked_im, (w, 0))
+
+                new_im.save("./prediction_vis/{}.png".format(f_name))
+
+                final_dic = {k: v.detach().cpu().numpy().tolist() for k, v in result_dic[0].items() if k != "masks"}
+                open("./prediction_dic/{}.json".format(f_name), 'w').write(json.dumps(final_dic, indent=4))
+                
+                print("{}/{}".format(idi, idx))
+                idi += 1
+
+            print("Prediction Finished")
+
+        elif os.path.isfile(image_path):
+            print("image_path is a image file")
+
+            f_name,_ = os.path.splitext(os.path.split(image_path)[1])
+            img = cv2.imread(image_path)
+            h,w,c = img.shape
+            img = transformer(img)
+            img = img.unsqueeze(0).to(self.device)
+
+            result_dic = self.model(img)
+
+            new_im = Image.new("RGB", ((w+10)*2,h+10))
+            
+            r_map, r_masked_map = vis(img.squeeze(0).cpu(), result_dic)
+
+            im = Image.fromarray(r_map)
+            masked_im = Image.fromarray(r_masked_map)
+
+            new_im.paste(im, (0, 0))
+            new_im.paste(masked_im, (w, 0))
+
+            new_im.save("./prediction_vis/{}.png".format(f_name))
+
+            open("./prediction_dic/{}.json".format(f_name), 'w').write(json.dumps(result_dic, indent=4))
+
+            print("Prediction Finished")
+
+
+
+
 
 class ChartDataset:
     def __init__(self, img_folder, gt_folder):
@@ -175,6 +302,11 @@ class ChartDataset:
         bb = torch.as_tensor(bb, dtype=torch.float32) 
         label = torch.as_tensor(label, dtype=torch.int64)
         mask = torch.as_tensor(mask, dtype = torch.uint8)
+        
+        # print(img_name)
+        # print(bb.shape)
+        # print(label.shape)
+        # print(mask.shape)
 
         area = (bb[:, 3] - bb[:, 1]) * (bb[:, 2] - bb[:, 0])
         image_id = torch.tensor([idx])

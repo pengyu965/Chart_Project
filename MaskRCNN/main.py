@@ -43,8 +43,7 @@ def get_args():
                         help='Keep probability for dropout')
     parser.add_argument('--class_num', type=int, default = 10, 
                         help='class number')
-    parser.add_argument("--vis", action = 'store_true',
-                        help = "Visualizing the Prediction output, only use when predict")
+
     # parser.add_argument('--maxepoch', type=int, default=100,
     #                     help='Max number of epochs for training')
 
@@ -62,20 +61,15 @@ if __name__ == "__main__":
         num_classes = 6
 
         model = torchvision.models.detection.maskrcnn_resnet50_fpn(pretrained=True)
-
-        # get the number of input features for the classifier
         in_features = model.roi_heads.box_predictor.cls_score.in_features
-        # replace the pre-trained head with a new one
         model.roi_heads.box_predictor = FastRCNNPredictor(in_features, num_classes)
-
-        # now get the number of input features for the mask classifier
         in_features_mask = model.roi_heads.mask_predictor.conv5_mask.in_channels
         hidden_layer = 512
-        # and replace the mask predictor with a new one
         model.roi_heads.mask_predictor = MaskRCNNPredictor(in_features_mask,
                                                         hidden_layer,
                                                         num_classes)
 
+        print(model)
 
         # backbone = torchvision.models.mobilenet_v2(pretrained=True).features
         # backbone.out_channels = 1280
@@ -106,8 +100,45 @@ if __name__ == "__main__":
         #     box_roi_pool=roi_pooler,
         #     # mask_roi_pool=mask_roi_pooler
         # )
-        
+
+
+        if os.path.exists("./weight/model.pt"):
+            if torch.cuda.is_available():
+                model.load_state_dict(torch.load("./weight/model.pt"), strict=True)
+            else:
+                model.load_state_dict(torch.load("./weight/model.pt", map_location='cpu'), strict=True)
+            
+            print("="*6, "\nModel loaded, start retraining", "\n"+"="*6)
+        else:
+            print("="*6, "\nModel isn't found, train the network from begining.","\n"+"="*6)
         
         operator = op.Operator(model)
         operator.trainer(FLAGS.img_path, FLAGS.gt_path, FLAGS.bsize, FLAGS.lr, FLAGS.epoch)
 
+    if FLAGS.predict:
+        num_classes = 6
+
+        model = torchvision.models.detection.maskrcnn_resnet50_fpn(pretrained=True)
+        in_features = model.roi_heads.box_predictor.cls_score.in_features
+        model.roi_heads.box_predictor = FastRCNNPredictor(in_features, num_classes)
+        in_features_mask = model.roi_heads.mask_predictor.conv5_mask.in_channels
+        hidden_layer = 512
+        model.roi_heads.mask_predictor = MaskRCNNPredictor(in_features_mask,
+                                                        hidden_layer,
+                                                        num_classes)
+
+        print(model)
+
+        if os.path.exists("./weight/model.pt"):
+            if torch.cuda.is_available():
+                model.load_state_dict(torch.load("./weight/model.pt"), strict=True)
+            else:
+                model.load_state_dict(torch.load("./weight/model.pt", map_location='cpu'), strict=True)
+            print("="*6, "\nModel loaded, start prediction", "\n"+"="*6)
+        else:
+            print("="*6, "\nModel isn't found, train the network first.","\n"+"="*6)
+            sys.exit()
+
+        with torch.no_grad():
+            operator = op.Operator(model)
+            operator.predictor(FLAGS.img_path)

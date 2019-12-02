@@ -44,14 +44,15 @@ def bb_label_mask(j_path, img):
             y1 = y_inter
 
         text_id = item["id"]
+
+
         text_role = id_role[text_id]
 
-        # if text_role == "axis_title" or text_role == "chart_title":
-        #     continue
+        if text_role not in textrole_label.keys():
+            continue
 
-        bb_list.append([x0,y0,x1,y1]) 
         label_list.append(textrole_label[text_role])
-
+        bb_list.append([x0,y0,x1,y1]) 
 
         mask = np.zeros((h,w), dtype = np.uint8)
         cv2.rectangle(mask, (x0,y0), (x1,y1),(1),-1)
@@ -122,15 +123,16 @@ def vis(img, r_dic):
     masks = r_dic["masks"].detach().cpu()
 
     masked_img = np.copy(img)
- 
+
     for i in range(boxes.shape[0]):
-        label = labels[i]
-        color = color_lib[label]
-        class_txt = class_id[label]
-        cv2.rectangle(img, (boxes[i][0],boxes[i][1]), (boxes[i][2],boxes[i][3]), color, 1)
-        cv2.putText(img, str(round(scores[i],2))+","+class_txt, (boxes[i][0],boxes[i][1]), cv2.FONT_HERSHEY_PLAIN, 0.8, color, 1, cv2.LINE_AA)
-        mask = masks[i][0]
-        masked_img = apply_mask(masked_img, mask, color)
+        if scores[i] > -0.1:
+            label = labels[i]
+            color = color_lib[label]
+            class_txt = class_id[label]
+            cv2.rectangle(img, (boxes[i][0],boxes[i][1]), (boxes[i][2],boxes[i][3]), color, 1)
+            cv2.putText(img, str(round(scores[i],2))+","+class_txt, (boxes[i][0],boxes[i][1]), cv2.FONT_HERSHEY_PLAIN, 0.8, color, 1, cv2.LINE_AA)
+            mask = masks[i][0]
+            masked_img = apply_mask(masked_img, mask, color)
 
     return img, masked_img
     

@@ -37,9 +37,9 @@ class Operator:
         self.epoch = epoch 
         params = [p for p in self.model.parameters() if p.requires_grad]
 
-        self.optimizer = torch.optim.SGD(params, lr=self.lr,
-                                momentum=0.9, weight_decay=0.0005)
-        # self.optimizer = optim.Adam(self.model.parameters(), lr = self.lr)
+        # self.optimizer = torch.optim.SGD(params, lr=self.lr,
+        #                         momentum=0.9, weight_decay=0.0005)
+        self.optimizer = optim.Adam(self.model.parameters(), lr = self.lr)
         self.writer = writer
 
         self.train_data = ChartDataset(img_folder = img_path+"/train/", gt_folder = gt_path)
@@ -58,6 +58,13 @@ class Operator:
 
         for ep in range(self.epoch):
             self.model.train()
+
+            if ep == int(self.epoch //3):
+                self.lr = self.lr/10
+                self.optimizer = optim.Adam(self.model.parameters(), lr = self.lr)
+            if ep == int(self.epoch*2//3):
+                self.lr = self.lr/10
+                self.optimizer = optim.Adam(self.model.parameters(), lr = self.lr)
 
 
             for idi, (images, targets) in enumerate(self.dataloader):

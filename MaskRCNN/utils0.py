@@ -125,7 +125,7 @@ def vis(img, r_dic):
     masked_img = np.copy(img)
 
     for i in range(boxes.shape[0]):
-        if scores[i] > -0.1:
+        if scores[i] > -0.5:
             label = labels[i]
             color = color_lib[label]
             class_txt = class_id[label]

@@ -101,12 +101,12 @@ if __name__ == "__main__":
         #     # mask_roi_pool=mask_roi_pooler
         # )
 
-
-        if os.path.exists("./weight/model.pt"):
+        weight_path = "./weight/test_model.pt"
+        if os.path.exists(weight_path):
             if torch.cuda.is_available():
-                model.load_state_dict(torch.load("./weight/model.pt"), strict=True)
+                model.load_state_dict(torch.load(weight_path), strict=True)
             else:
-                model.load_state_dict(torch.load("./weight/model.pt", map_location='cpu'), strict=True)
+                model.load_state_dict(torch.load(weight_path, map_location='cpu'), strict=True)
             
             print("="*6, "\nModel loaded, start retraining", "\n"+"="*6)
         else:
@@ -129,11 +129,12 @@ if __name__ == "__main__":
 
         print(model)
 
-        if os.path.exists("./weight/model.pt"):
+        weight_path = "./weight/test_model.pt"
+        if os.path.exists(weight_path):
             if torch.cuda.is_available():
-                model.load_state_dict(torch.load("./weight/model.pt"), strict=True)
+                model.load_state_dict(torch.load(weight_path), strict=True)
             else:
-                model.load_state_dict(torch.load("./weight/model.pt", map_location='cpu'), strict=True)
+                model.load_state_dict(torch.load(weight_path, map_location='cpu'), strict=True)
             print("="*6, "\nModel loaded, start prediction", "\n"+"="*6)
         else:
             print("="*6, "\nModel isn't found, train the network first.","\n"+"="*6)

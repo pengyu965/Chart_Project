@@ -129,7 +129,7 @@ if __name__ == "__main__":
 
         print(model)
 
-        weight_path = "./weight/test_model.pt"
+        weight_path = "./weight/val_model.pt"
         if os.path.exists(weight_path):
             if torch.cuda.is_available():
                 model.load_state_dict(torch.load(weight_path), strict=True)

@@ -5,12 +5,12 @@ import numpy as np
 import torch
 from torchvision import transforms
 
-textrole_label = {
-    "axis_title" : 1,
-    "tick_label" : 2,
-    "legend_label":3,
-    "tick_mark" :  4,
-    "chart_title": 5
+role_label = {
+    "axis_area" : 1,
+    "plot_area":2,
+    "legend_area" : 3,
+    "chart_title": 4,
+    "axis_title": 5
 } 
 
 def min_max_point(bb_list):
@@ -39,128 +39,18 @@ def bb_label_mask(j_path, img):
     label_list = []
     mask_list = []
 
-    id_role_dic = {}
-    id_axis_dic = {}
+    for item in j_file:
+        try:
+            label_id = role_label[item[0]]
+        except KeyError:
+            print(j_path)
+        label_list.append(label_id)
 
-    x_tick_bb_list = []
-    y_tick_bb_list = []
+        bb = item[1]
+        bb_list.append(bb)
 
-    x_tick_label_list = []
-    y_tick_label_list = []
-
-    axis_title = []
-
-    chart_title = []
-
-    legend_label = []
-
-
-    for item in j_file["input"]["task3_output"]["text_roles"]:
-        id_role_dic[item["id"]] = item["role"]
-
-    for axis in j_file["input"]["task4_output"]["axes"]:
-        for item in j_file["input"]["task4_output"]["axes"][axis]:
-            id_axis_dic[item["id"]] = axis
-            if axis == "x-axis":
-                x_tick_bb_list.append([item["tick_pt"]["x"], item["tick_pt"]["y"]])
-            elif axis == "y-axis":
-                y_tick_bb_list.append([item["tick_pt"]["x"], item["tick_pt"]["y"]])
-
-    for item in j_file["input"]["task2_output"]["text_blocks"]:
-        x0 = item["bb"]["x0"]
-        y0 = item["bb"]["y0"]
-        x1 = x0 + item["bb"]["width"]
-        y1 = y0 + item["bb"]["height"]
-
-        if id_role_dic[item["id"]] == "chart_title":
-            if x1 < x0:
-                x_inter = x0 
-                x0 = x1 
-                x1 = x_inter 
-            if y1 < y0:
-                y_inter = y0 
-                y0 = y1 
-                y1 = y_inter
-            chart_title = [x0, y0, x1, y1]
-
-        elif id_role_dic[item["id"]] == "axis_title":
-            if x1 < x0:
-                x_inter = x0 
-                x0 = x1 
-                x1 = x_inter 
-            if y1 < y0:
-                y_inter = y0 
-                y0 = y1 
-                y1 = y_inter
-            axis_title.append([x0, y0, x1, y1])
-
-        elif id_role_dic[item["id"]] == "tick_label":
-            if id_axis_dic[item["id"]] == "x-axis":
-                x_tick_label_list.append([x0,y0])
-                x_tick_label_list.append([x1,y1])
-            else:
-                y_tick_label_list.append([x0,y0])
-                y_tick_label_list.append([x1,y1])
-
-        elif id_role_dic[item["id"]] == "legend_label":
-            legend_label.append([x0,y0])
-            legend_label.append([x1,y1])
-
-    x0 = j_file["input"]["task4_output"]["_plot_bb"]["x0"]
-    y0 = j_file["input"]["task4_output"]["_plot_bb"]["y0"]
-    x1 = j_file["input"]["task4_output"]["_plot_bb"]["x0"] + j_file["input"]["task4_output"]["_plot_bb"]["width"]
-    y1 = j_file["input"]["task4_output"]["_plot_bb"]["y0"] + j_file["input"]["task4_output"]["_plot_bb"]["height"]
-    if x1 < x0:
-        x_inter = x0 
-        x0 = x1 
-        x1 = x_inter 
-    if y1 < y0:
-        y_inter = y0 
-        y0 = y1 
-        y1 = y_inter
-
-    plot_area = [x0,y0,x1,y1]
-
-
-    x_axis_area = min_max_point(x_tick_bb_list + x_tick_label_list)
-    y_axis_area = min_max_point(y_tick_bb_list + y_tick_label_list)
-
-    # print(x_axis_area, y_axis_area)
-
-    chart_title = chart_title
-    axis_title = axis_title
-    
-    
-
-    bb_list.append(plot_area)
-    bb_list.append(x_axis_area)
-    bb_list.append(y_axis_area)
-    if chart_title != []:
-        bb_list.append(chart_title)
-    if legend_label != []:
-        legend_area = min_max_point(legend_label)
-        bb_list.append(legend_area)
-    else:
-        legend_area = []
-    if axis_title != []:
-        bb_list.append(axis_title[0])
-        bb_list.append(axis_title[1])
-
-    chart_title_label = [3]*len(chart_title)
-    legend_area_label = [4]*len(legend_area)
-    axis_title_label = [5]*len(axis_title)
-
-
-    label_list = [0,1,2] + chart_title + legend_area_label + axis_title_label
-
-    # print(bb_list)
-
-    for bb in bb_list:
-        # print(bb)
-        x0, y0, x1, y1 = bb 
-        # print(x0, y0, x1, y1)
         mask = np.zeros((h,w), dtype = np.uint8)
-        cv2.rectangle(mask, (x0,y0), (x1,y1), (1), -1)
+        cv2.rectangle(mask, (int(bb[0]),int(bb[1])), (int(bb[2]),int(bb[3])),(1),-1)
         mask_list.append(list(mask))
 
     return bb_list, label_list, mask_list
@@ -195,11 +85,11 @@ def vis(img, r_dic):
     ]
     class_id = {
         0: "background",
-        1: "axis_title",
-        2: "tick_label",
-        3: "legend_label",
-        4: "tick_mark",
-        5: "chart_title"
+        1: "axis_area",
+        2: "plot_area",
+        3: "legend_area",
+        4: "chart_title",
+        5: "axis_title"
     }
     img = transforms.ToPILImage()(img)
     img = np.array(img)

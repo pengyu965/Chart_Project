@@ -93,6 +93,7 @@ class Operator:
                 
 
                 loss_dict = self.model(images, targets)
+                # print(targets)
                 # print(loss_dict)
 
                 losses = sum(loss for loss in loss_dict.values())
@@ -155,13 +156,13 @@ class Operator:
                 open("./weight/val_snapshot.txt", 'w').write(str(global_step))
 
 
-            with torch.no_grad():
-                test_loss = self.validator("../../data/PMC/tasks345_data/rs_images/", "../../data/PMC/tasks345_data/rs_json_gt_new/", global_step)
+            # with torch.no_grad():
+            #     test_loss = self.validator("../../data/PMC/tasks345_data/rs_images/", "../../data/PMC/tasks345_data/rs_json_gt_new/", global_step)
 
-            if test_loss < test_min_loss:
-                test_min_loss = test_loss
-                torch.save(self.model.module.state_dict(), "./weight/test_model.pt")
-                open("./weight/test_snapshot.txt", 'w').write(str(global_step))
+            # if test_loss < test_min_loss:
+            #     test_min_loss = test_loss
+            #     torch.save(self.model.module.state_dict(), "./weight/test_model.pt")
+            #     open("./weight/test_snapshot.txt", 'w').write(str(global_step))
             
 
     def validator(self, val_img_path, val_gt_path, global_step):
@@ -236,6 +237,7 @@ class Operator:
             idx = len(os.listdir(image_path))
 
             for image_name in os.listdir(image_path):
+
                 f_name, _ = os.path.splitext(image_name)
                 img = cv2.imread(os.path.join(image_path, image_name))
                 h,w,c = img.shape
